@@ -1264,11 +1264,50 @@ Volumen: \(V = \frac{64 \cdot 7}{3} = \frac{448}{3} \approx 149.3\) cm³</div>
 <li>27-mal so gross</li></ol></details>`,
 
 M23: R`<div class="merke"><b>Erlaubt ist genau 1 dieser 4 Modelle:</b> TI-30 ECO RS, TI-30X IIS, CASIO FX-82 SOLAR II, SHARP EL-501 T. Andere Modelle werden eingezogen, auch ähnliche mit Batterie (zum Beispiel TI-30X IIB).</div>
-<ul><li>Brüche: Zähler und Nenner in Klammern setzen: \((3 + 5) : (2 \cdot 4)\).</li>
-<li>Negative Zahlen quadrieren: Klammer setzen, sonst rechnet der Rechner \(-(3^2)\).</li>
-<li>Vorzeichen und Minus sind oft 2 verschiedene Tasten. Probiere es an deinem Modell aus.</li>
-<li>Wurzeln und Potenzen: Übe die Tasten mit Aufgaben, deren Lösung du kennst: \(\sqrt{144} = 12\), \(2^{10} = 1024\).</li></ul>
-<div class="falle"><b>Falle:</b> Übe nur mit deinem eigenen Prüfungsrechner. Ein fremdes Modell kostet an der Prüfung Zeit.</div>`,
+
+<h3>Die wichtigsten Regeln</h3>
+<ul><li><b>Brüche:</b> Zähler und Nenner in Klammern setzen: \(\frac{3 + 5}{2 \cdot 4}\) tippst du als \((3 + 5) : (2 \cdot 4)\).</li>
+<li><b>Negative Zahlen quadrieren:</b> Klammer setzen, sonst rechnet der Rechner \(-(3^2) = -9\) statt \((-3)^2 = 9\).</li>
+<li><b>Vorzeichen und Minus</b> sind oft 2 verschiedene Tasten. Probiere es an deinem Modell aus.</li>
+<li><b>Prozent:</b> Die %-Taste rechnet je nach Modell anders. Rechne lieber mit Dezimalzahlen: 15 % = \(0.15\), 15 % mehr = \(\cdot 1.15\).</li>
+<li><b>Zwischenresultate</b> nicht runden. Rechne mit dem vollen Wert weiter (Speicher oder Ans-Taste) und runde erst am Schluss.</li></ul>
+
+<h3>Tasten mit bekannten Resultaten üben</h3>
+<table><tr><th>Eingabe</th><th>Resultat</th></tr>
+<tr><td>\(\sqrt{144}\)</td><td>12</td></tr>
+<tr><td>\(2^{10}\)</td><td>1024</td></tr>
+<tr><td>\((-3)^2\) und \(-3^2\)</td><td>9 und −9</td></tr>
+<tr><td>\(\frac{3 + 5}{2 \cdot 4}\)</td><td>1</td></tr>
+<tr><td>\(\frac{3}{4} + \frac{5}{6}\)</td><td>\(\frac{19}{12} \approx 1.5833\)</td></tr></table>
+<p>Kommt etwas anderes heraus, suche den Fehler, bevor du weiterübst. Viele Modelle haben eine Bruchtaste. Prüfe, ob deines eine hat und wie sie funktioniert.</p>
+
+<h3>Überschlag: Stimmt das Resultat ungefähr?</h3>
+<p>Runde die Zahlen grob und rechne im Kopf. Liegt das Resultat des Rechners weit weg, hast du dich vertippt.</p>
+<div class="bsp">\(48.7 \cdot 21.3\): Überschlag \(50 \cdot 20 = 1000\). Rechner: \(1037.31\). Passt.<br>
+\(397 \cdot 0.52\): Überschlag \(400 \cdot 0.5 = 200\). Rechner: \(206.44\). Passt.</div>
+
+<h3>Wann der Rechner nicht hilft</h3>
+<p>Heisst es «Gib das Resultat als gekürzten Bruch an» oder «Vereinfache den Term», dann zählt das exakte Resultat: \(\frac{2}{3}\) und nicht \(0.6667\), \(5\sqrt{2}\) und nicht \(7.07\). Rechne solche Aufgaben von Hand und nutze den Rechner nur zur Kontrolle.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Übe nur mit deinem eigenen Prüfungsrechner. Ein fremdes Modell kostet an der Prüfung Zeit.</li>
+<li>\(3 + 5 : 2 \cdot 4\) ist nicht \(\frac{3 + 5}{2 \cdot 4}\). Setze die Klammern selbst.</li>
+<li>Abgelesene Werte nicht falsch abschreiben. Kontrolliere die letzte Stelle.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Rechne mit deinem Prüfungsrechner.</p>
+<ol class="check">
+<li>\((12.5 - 4.25) : (1.5 \cdot 2.2)\)</li>
+<li>\(\sqrt{7.2^2 + 9.6^2}\)</li>
+<li>\((-2.5)^3\)</li>
+<li>\(1.05^4\) (auf 4 Dezimalen)</li>
+<li>Überschlag und Resultat: \(397 \cdot 0.52\)</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(8.25 : 3.3 = 2.5\)</li>
+<li>\(\sqrt{144} = 12\)</li>
+<li>\(-15.625\)</li>
+<li>\(1.2155\)</li>
+<li>etwa 200; genau \(206.44\)</li></ol></details>`,
 
 M24: R`<ul><li>Lösungsweg klar zeigen: Zwischenresultate und Skizzen ins Heft. So gibt es Teilpunkte, auch wenn das Resultat falsch ist.</li>
 <li>Schlussresultat deutlich markieren (zum Beispiel doppelt unterstreichen).</li>
