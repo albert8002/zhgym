@@ -596,9 +596,41 @@ D12: R`<p><b>Oberbegriff:</b> fasst mehrere Wörter zusammen. <b>Unterbegriffe:<
 <li>rief</li>
 <li>zum Beispiel Auto, Velo, Bus</li></ol></details>`,
 
-D13: R`<p>In der Prüfung suchst du für einen Satz ein Wort aus dem Text, das passt.</p>
+D13: R`<p>In der Prüfung suchst du für einen Satz oder eine Erklärung ein Wort aus dem Text, das passt.</p>
 <div class="merke"><b>Vorgehen:</b> 1. Satz lesen und klären, welche Wortart fehlt. 2. Die angegebene Stelle im Text suchen. 3. Das Wort genau so abschreiben, wie es dort steht.</div>
-<div class="falle"><b>Falle:</b> Nur <b>1 Wort</b> pro Satz. Mehrere Wörter geben 0 Punkte, auch wenn das richtige dabei ist.</div>`,
+
+<h3>Schritt für Schritt</h3>
+<ol><li><b>Bedeutung klären:</b> Was genau ist gesucht? Eine Tätigkeit, ein Ding, eine Eigenschaft?</li>
+<li><b>Wortart bestimmen:</b> Fehlt ein Verb, ein Nomen oder ein Adjektiv?</li>
+<li><b>Stelle im Text</b> suchen (Zeilenangabe beachten) und alle Wörter dieser Wortart anschauen.</li>
+<li><b>Ersatzprobe:</b> Das Wort aus dem Text an die Stelle setzen. Stimmt der Sinn?</li>
+<li><b>Abschreiben:</b> Buchstabe für Buchstabe, genau wie im Text.</li></ol>
+
+<h3>Unbekannte Wörter verstehen</h3>
+<ul><li><b>Zusammenhang:</b> «Nach dem langen Aufstieg war der Wanderer völlig <i>erschöpft</i> und liess sich ins Gras fallen.» Der Satz zeigt: erschöpft heisst sehr müde.</li>
+<li><b>Wortbausteine:</b> «lautlos» = ohne Laut; «unbeweglich» = nicht beweglich; «spiegelglatt» = glatt wie ein Spiegel.</li></ul>
+<div class="bsp">Im Text steht: «Die Katze schlich <b>lautlos</b> um die Ecke.»<br>
+Gesucht: ein Wort für «ohne ein Geräusch zu machen». → lautlos</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nur <b>1 Wort</b> pro Satz. Mehrere Wörter geben 0 Punkte, auch wenn das richtige dabei ist.</li>
+<li>Ein ähnliches Wort aus dem Kopf zählt nicht. Es muss aus dem Text sein.</li>
+<li>Falsch abgeschrieben ist falsch: Rechtschreibung genau kontrollieren.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Text: «Am Morgen war der See spiegelglatt. Nur ein einsamer Fischer ruderte gemächlich hinaus. Plötzlich zerriss ein Donnerschlag die Stille.»</p>
+<ol class="check">
+<li>Welches Wort bedeutet «ohne Wellen, ganz ruhig»?</li>
+<li>Welches Wort bedeutet «langsam und ohne Eile»?</li>
+<li>Welches Wort bedeutet «allein, ohne andere Menschen»?</li>
+<li>Welches Wort bedeutet «lautes Geräusch bei einem Gewitter»?</li>
+<li>Warum gibt die Antwort «ruderte gemächlich» keinen Punkt?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>spiegelglatt</li>
+<li>gemächlich</li>
+<li>einsamer</li>
+<li>Donnerschlag</li>
+<li>Es sind 2 Wörter. Verlangt ist genau 1 Wort.</li></ol></details>`,
 
 D14: R`<h3>Komma</h3><ul>
 <li><b>Aufzählung:</b> «Ich kaufe Brot, Milch, Käse und Äpfel.» Kein Komma vor «und» oder «oder».</li>
