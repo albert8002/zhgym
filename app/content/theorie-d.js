@@ -467,11 +467,55 @@ D9: R`<p>Beim Umformen bleibt der Inhalt gleich. Zeitform und Fall müssen stimm
 <li>«Nachdem wir trainiert hatten, duschten wir.»</li></ol></details>`,
 
 D10: R`<p>Wörter mit dem gleichen Stamm bilden eine Wortfamilie: <b>der Mut – ermutigen – mutig</b>.</p>
-<ul><li>Nomen mit Artikel: oft mit -ung, -heit, -keit, -schaft, -nis (die Hoffnung, die Freiheit)</li>
+
+<h3>Den Stamm finden</h3>
+<p>Der Stamm ist der Kern, der in allen Wörtern der Familie steckt. Er kann sich etwas verändern:</p>
+<ul><li>mit Umlaut: die Kraft – kräftig; warm – die Wärme</li>
+<li>mit anderem Vokal: sprechen – die Sprache; binden – das Band</li></ul>
+
+<h3>Endungen und Vorsilben helfen</h3>
+<ul><li>Nomen mit Artikel: oft mit -ung, -heit, -keit, -schaft, -nis, -er (die Hoffnung, die Freiheit, der Schwimmer)</li>
 <li>Verb: oft mit be-, ver-, er-, ent- oder -igen (beruhigen, verschmutzen, kräftigen)</li>
 <li>Adjektiv: oft mit -ig, -lich, -isch, -bar, -sam (ruhig, ängstlich, sparsam)</li></ul>
-<div class="bsp"><b>Beispiele:</b> die Ruhe – beruhigen – ruhig; die Angst – ängstigen – ängstlich; die Kraft – kräftigen – kräftig; die Wärme – wärmen – warm; die Gefahr – gefährden – gefährlich.</div>
-<div class="falle"><b>Falle:</b> Nicht erlaubt sind zusammengesetzte Wörter (die Mutprobe), nominalisierte Verben (das Ermutigen) und Partizipien als Adjektiv (ermutigend). Das Nomen immer mit Artikel schreiben.</div>`,
+
+<h3>Beispiele</h3>
+<table><tr><th>Nomen</th><th>Verb</th><th>Adjektiv</th></tr>
+<tr><td>die Ruhe</td><td>beruhigen</td><td>ruhig</td></tr>
+<tr><td>die Angst</td><td>ängstigen</td><td>ängstlich</td></tr>
+<tr><td>die Kraft</td><td>kräftigen</td><td>kräftig</td></tr>
+<tr><td>die Wärme</td><td>wärmen</td><td>warm</td></tr>
+<tr><td>die Gefahr</td><td>gefährden</td><td>gefährlich</td></tr>
+<tr><td>die Freiheit</td><td>befreien</td><td>frei</td></tr>
+<tr><td>das Glück</td><td>beglücken</td><td>glücklich</td></tr>
+<tr><td>die Sprache</td><td>sprechen</td><td>sprachlich</td></tr></table>
+
+<h3>So gehst du vor</h3>
+<ol><li>Stamm bestimmen.</li>
+<li>Für jede Wortart die typischen Endungen und Vorsilben ausprobieren.</li>
+<li>Jedes Wort in einem kurzen Satz testen: «Das ist <i>gefährlich</i>.» Klingt es richtig?</li>
+<li>Nomen mit Artikel und gross schreiben.</li></ol>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nicht erlaubt sind zusammengesetzte Wörter (die Mutprobe), nominalisierte Verben (das Ermutigen) und Partizipien als Adjektiv (ermutigend).</li>
+<li>Das Nomen immer mit Artikel schreiben.</li>
+<li>Rechtschreibung zählt: ein falsch geschriebenes Wort gibt keinen Punkt.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Bilde Nomen (mit Artikel), Verb und Adjektiv.</p>
+<ol class="check">
+<li>Freude</li>
+<li>Kälte</li>
+<li>Ordnung</li>
+<li>Nutzen</li>
+<li>stark</li>
+<li>Ist «das Schwimmen» als Nomen zu «schwimmen» erlaubt?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>die Freude – (sich) freuen – freudig</li>
+<li>die Kälte – (sich) erkälten – kalt</li>
+<li>die Ordnung – ordnen – ordentlich</li>
+<li>der Nutzen – nutzen (benutzen) – nützlich</li>
+<li>die Stärke – stärken – stark</li>
+<li>Nein, das ist ein nominalisiertes Verb. Möglich ist zum Beispiel «der Schwimmer».</li></ol></details>`,
 
 D11: R`<p><b>Synonym:</b> Wort mit gleicher oder ähnlicher Bedeutung (schnell – rasch). <b>Antonym:</b> Wort mit gegenteiliger Bedeutung (schnell – langsam).</p>
 <div class="merke"><b>Merke:</b> Das Wort muss in den Satz passen und die gleiche Wortart haben. Der Satz entscheidet: «ein <b>alter</b> Mann» ↔ jung, aber «<b>altes</b> Brot» ↔ frisch.</div>
