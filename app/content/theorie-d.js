@@ -1019,13 +1019,57 @@ D22: R`<div class="merke"><b>Kurz:</b> Einleitung → Gegenseite → deine Seite
 <li>zum Beispiel: «Es gibt jedoch auch gute Gründe für eine Ganztagesschule.»</li>
 <li>ans Ende des Hauptteils, direkt vor den Schluss</li></ol></details>`,
 
-D23: R`<ul><li><b>Aufbau:</b> kurze Einleitung (wer, wo, wann) → Spannung steigt → Höhepunkt → passender Schluss (Wendung oder Pointe).</li>
+D23: R`<div class="merke"><b>Kurz:</b> Kurze Einleitung, steigende Spannung, ausführlicher Höhepunkt, passender Schluss. Präteritum. Zeigen statt nur sagen. Die Vorgaben aus dem Auftrag sind der Kern der Handlung.</div>
+
+<h3>Aufbau</h3>
+<ul><li><b>Aufbau:</b> kurze Einleitung (wer, wo, wann) → Spannung steigt → Höhepunkt → passender Schluss (Wendung oder Pointe).</li>
 <li><b>Innere Handlung:</b> Gedanken, Gefühle, Sinne. Zeigen statt nur sagen: «Meine Knie zitterten» statt «Ich hatte Angst».</li>
 <li><b>Zeitform:</b> Präteritum. Was vorher geschah: Plusquamperfekt.</li>
 <li><b>Perspektive:</b> Ich-Form oder Er/Sie-Form wählen und behalten.</li>
 <li><b>Direkte Rede:</b> wenig und korrekt mit Anführungszeichen.</li></ul>
 <div class="merke"><b>Merke:</b> Die Vorgabe im Titel oder im Auftrag ist der Kern der Handlung. 2026 mussten alle 4 vorgegebenen Dinge eine zentrale Rolle spielen.</div>
-<div class="falle"><b>Falle:</b> «Dann bin ich aufgewacht» als Schluss, viele Figuren ohne Grund, Nebenhandlungen, ins Präsens rutschen, Titel-Element nur erwähnen.</div>`,
+
+<h3>Wie viel Platz für welchen Teil?</h3>
+<table><tr><th>Teil</th><th>Umfang</th></tr>
+<tr><td>Einleitung</td><td>kurz: 2 bis 4 Sätze</td></tr>
+<tr><td>Hauptteil bis zum Höhepunkt</td><td>der grösste Teil, in Schritten steigernd</td></tr>
+<tr><td>Höhepunkt</td><td>ausführlich, wie in Zeitlupe</td></tr>
+<tr><td>Schluss</td><td>kurz: 2 bis 4 Sätze</td></tr></table>
+
+<h3>Zeigen statt sagen</h3>
+<table><tr><th>gesagt</th><th>gezeigt</th></tr>
+<tr><td>Ich war nervös.</td><td>Meine Hände waren feucht, und ich zählte zum dritten Mal die Stufen.</td></tr>
+<tr><td>Es war unheimlich.</td><td>Irgendwo tropfte Wasser. Der Gang roch nach Moder.</td></tr>
+<tr><td>Sie war wütend.</td><td>Sie knallte die Tür zu, dass die Gläser im Schrank klirrten.</td></tr></table>
+<p>Nutze alle Sinne: sehen, hören, riechen, fühlen, schmecken.</p>
+
+<h3>Spannung erzeugen</h3>
+<ul><li><b>Direkt einsteigen:</b> «Der Schlüssel war weg.» statt «Es war ein ganz normaler Tag.»</li>
+<li><b>Zeitlupe am Höhepunkt:</b> einen kurzen Moment genau erzählen, mit Gedanken und Sinnen.</li>
+<li><b>Andeuten und verzögern:</b> Hinweise geben, aber nicht alles sofort verraten.</li>
+<li><b>Kurze Sätze</b> im spannendsten Moment.</li></ul>
+<div class="bsp"><b>Zeitlupe:</b> «Die Klinke bewegte sich. Langsam, ganz langsam. Ich hielt den Atem an und presste mich an die Wand. Mein Herz schlug so laut, dass ich dachte, man müsse es im ganzen Haus hören. Dann ging die Tür auf.»</div>
+
+<h3>Schluss</h3>
+<p>Der Schluss löst die Spannung: eine Wendung, eine Pointe oder ein kurzer Gedanke, was die Figur daraus mitnimmt.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>«Dann bin ich aufgewacht» als Schluss.</li>
+<li>Viele Figuren ohne Grund, Nebenhandlungen.</li>
+<li>Ins Präsens rutschen.</li>
+<li>Ein Element aus dem Titel oder Auftrag nur erwähnen, statt es zum Kern zu machen.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Schreibe den Satz «Ich hatte grosse Angst.» so um, dass man die Angst sieht.</li>
+<li>Was ist an diesem Anfang schwach? «Es war ein ganz normaler Montag. Ich stand auf und frühstückte.»</li>
+<li>Finde den Fehler: «Ich rannte zur Tür. Plötzlich höre ich ein Geräusch.»</li>
+<li>Welcher Teil der Erzählung soll am ausführlichsten sein?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>zum Beispiel: «Meine Knie zitterten, und ich brachte kein Wort heraus.»</li>
+<li>Er beginnt nicht im Geschehen und hat noch keine Spannung.</li>
+<li>Zeitform wechselt ins Präsens: «Plötzlich hörte ich ein Geräusch.»</li>
+<li>der Höhepunkt</li></ol></details>`,
 
 D24: R`<div class="merke"><b>Merke:</b> Übernimm aus dem Anfang: Erzählperspektive (Ich- oder Er-Form), Zeitform, Figuren, Ort und alle wichtigen Gegenstände.</div>
 <p>Mach klar: Was passiert? Warum? Wie endet es? Wenn verlangt (2021), schreibst du den Anfang zuerst wörtlich ab.</p>
