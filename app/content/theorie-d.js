@@ -1107,10 +1107,44 @@ Anschluss: «Nora zögerte. Wer klebt schon einen Zettel auf eine Kiste, die nie
 <li>der Hund und der Rucksack; offen ist, wo beide sind</li>
 <li>Er wechselt in die Er-Form (Lisa) und ins Präsens.</li></ol></details>`,
 
-D25: R`<ol><li><b>Beschreiben</b> (Präsens): zuerst ein Überblick, dann Einzelheiten in fester Reihenfolge (vorne/hinten, links/rechts).</li>
+D25: R`<div class="merke"><b>Kurz:</b> Erst beschreiben (Überblick, dann geordnete Einzelheiten, Präsens), dann deuten (Was will das Bild sagen?), dann den Hauptauftrag erfüllen. Das Bild im ganzen Text wieder aufgreifen.</div>
+
+<ol><li><b>Beschreiben</b> (Präsens): zuerst ein Überblick, dann Einzelheiten in fester Reihenfolge (vorne/hinten, links/rechts).</li>
 <li><b>Deuten:</b> Was sagt das Bild zum Thema? Signalwörter: vermutlich, könnte, wirkt, steht für.</li>
 <li><b>Hauptauftrag</b> erfüllen und das Bild im ganzen Text wieder aufgreifen.</li></ol>
-<div class="falle"><b>Falle:</b> Einzelheiten ohne Zusammenhang aufzählen oder das Bild nach der Einleitung nicht mehr erwähnen.</div>`,
+
+<h3>Beschreiben</h3>
+<ul><li><b>Überblick in 1 Satz:</b> Was zeigt das Bild? Wer, wo, welche Situation?</li>
+<li><b>Ordnung:</b> vom Vordergrund zum Hintergrund oder von links nach rechts. Nicht hin und her springen.</li>
+<li><b>Ortswörter:</b> im Vordergrund, im Hintergrund, in der Mitte, am linken Rand, oben rechts.</li>
+<li><b>Sachlich:</b> nur, was man sieht. Die Meinung kommt später.</li></ul>
+
+<h3>Cartoons</h3>
+<p>Ein Cartoon übertreibt und zeigt oft einen Widerspruch. Achte auf Sprechblasen, Bildunterschrift, Gesichtsausdruck und Details, die nicht zusammenpassen. Frage: Was wird hier kritisiert oder lächerlich gemacht?</p>
+
+<h3>Deuten</h3>
+<ul><li>Welche Stimmung hat das Bild (Farben, Licht, Gesichter)?</li>
+<li>Was fällt besonders auf?</li>
+<li>Was will die Zeichnerin oder der Zeichner zeigen?</li></ul>
+<div class="bsp"><b>Beschreibung:</b> «Ein Mann sitzt im Park auf einer Bank. Um ihn herum stehen Bäume, Vögel sitzen auf den Ästen. Er schaut nur auf sein Handy. Darauf ist ein Foto von einem Wald zu sehen.»<br>
+<b>Deutung:</b> «Der Cartoon kritisiert vermutlich, dass viele Menschen die echte Natur nicht mehr wahrnehmen. Das Bild auf dem Handy wirkt für den Mann wichtiger als der Wald um ihn herum.»</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Einzelheiten ohne Zusammenhang aufzählen.</li>
+<li>Das Bild nach der Einleitung nicht mehr erwähnen.</li>
+<li>Beschreibung und Deutung vermischen: zuerst sehen, dann deuten.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Beschreibung oder Deutung? «Im Vordergrund steht ein Kind mit einem roten Ballon.»</li>
+<li>Beschreibung oder Deutung? «Der rote Ballon steht vermutlich für Hoffnung.»</li>
+<li>In welcher Zeitform beschreibst du ein Bild?</li>
+<li>Womit beginnt eine Bildbeschreibung?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Beschreibung</li>
+<li>Deutung (Signalwort «vermutlich», «steht für»)</li>
+<li>Präsens</li>
+<li>mit einem Überblick in einem Satz</li></ol></details>`,
 
 D26: R`<ul><li><b>Teil 1, Erlebnis</b> (Präteritum): knapp und konkret erzählen.</li>
 <li><b>Teil 2, Reflexion</b> (Präsens): Was bedeutet das Erlebnis? Wie sehe ich es heute? Was gilt allgemein?</li></ul>
