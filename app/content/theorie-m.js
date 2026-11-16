@@ -318,11 +318,60 @@ Zusammen: \(5a + 4a^2 - 9a = 4a^2 - 4a\)</div>
 <li>\(4\sqrt{3} + 5\sqrt{3} = 9\sqrt{3}\)</li>
 <li>\(4a - \sqrt{36a^2} = 4a - 6a = -2a\)</li></ol></details>`,
 
-M6: R`<p>Eine Gleichung bleibt richtig, wenn du auf <b>beiden Seiten dasselbe</b> tust (addieren, subtrahieren, multiplizieren, durch eine Zahl ≠ 0 teilen).</p>
-<div class="merke"><b>Vorgehen:</b> 1. Klammern auflösen. 2. Brüche wegschaffen (mit dem kgV der Nenner multiplizieren). 3. Glieder mit \(x\) auf eine Seite, Zahlen auf die andere. 4. Durch die Zahl vor \(x\) teilen. 5. Probe.</div>
-<div class="bsp">\(3(x - 2) = x + 4\) → \(3x - 6 = x + 4\) → \(2x = 10\) → \(x = 5\).<br>Probe: links \(3 \cdot 3 = 9\), rechts \(5 + 4 = 9\). Stimmt.</div>
-<div class="bsp">\(\frac{x}{2} + \frac{x}{3} = 10 \quad | \cdot 6\) → \(3x + 2x = 60\) → \(5x = 60\) → \(x = 12\).</div>
-<div class="falle"><b>Falle:</b> Beim Multiplizieren mit dem Hauptnenner jedes Glied multiplizieren, auch die Zahl ohne Bruch. Am Ende \(0 = 5\): keine Lösung. Am Ende \(0 = 0\): jede Zahl ist Lösung.</div>`,
+M6: R`<div class="merke"><b>Kurz:</b> Eine Gleichung ist wie eine Waage. Sie bleibt im Gleichgewicht, wenn du auf <b>beiden Seiten dasselbe</b> tust: addieren, subtrahieren, mit einer Zahl multiplizieren oder durch eine Zahl ≠ 0 teilen.</div>
+
+<h3>Vorgehen</h3>
+<ol><li>Klammern auflösen.</li>
+<li>Brüche wegschaffen: jedes Glied mit dem kgV der Nenner multiplizieren.</li>
+<li>Glieder mit \(x\) auf eine Seite, Zahlen auf die andere.</li>
+<li>Durch die Zahl vor \(x\) teilen.</li>
+<li>Probe: Lösung in die <b>ursprüngliche</b> Gleichung einsetzen.</li></ol>
+<p>Schreibe die Umformung rechts hinter einen Strich, zum Beispiel \(| -3x\) oder \(| :2\).</p>
+
+<h3>Beispiele</h3>
+<div class="bsp"><b>Ohne Klammern:</b> \(5x - 7 = 3x + 9 \quad | -3x\) → \(2x - 7 = 9 \quad | +7\) → \(2x = 16 \quad | :2\) → \(x = 8\)</div>
+<div class="bsp"><b>Mit Klammern:</b> \(3(x - 2) = x + 4\) → \(3x - 6 = x + 4\) → \(2x = 10\) → \(x = 5\)<br>Probe: links \(3 \cdot 3 = 9\), rechts \(5 + 4 = 9\). Stimmt.</div>
+<div class="bsp"><b>Minus vor der Klammer:</b> \(7 - 2(x - 4) = 3x - 5\) → \(7 - 2x + 8 = 3x - 5\) → \(15 - 2x = 3x - 5\) → \(20 = 5x\) → \(x = 4\)<br>Probe: links \(7 - 2 \cdot 0 = 7\), rechts \(12 - 5 = 7\). Stimmt.</div>
+<div class="bsp"><b>Mit Brüchen:</b> \(\frac{x}{2} + \frac{x}{3} = 10 \quad | \cdot 6\) → \(3x + 2x = 60\) → \(5x = 60\) → \(x = 12\)</div>
+<div class="bsp"><b>Summe im Zähler:</b> \(\frac{x + 1}{3} - \frac{x - 2}{4} = 1 \quad | \cdot 12\)<br>
+\(4(x + 1) - 3(x - 2) = 12\) → \(4x + 4 - 3x + 6 = 12\) → \(x + 10 = 12\) → \(x = 2\)</div>
+<div class="bsp"><b>Dezimalzahlen:</b> mit 10 oder 100 multiplizieren. \(0.5x + 1.2 = 0.3x + 2 \quad | \cdot 10\) → \(5x + 12 = 3x + 20\) → \(x = 4\)</div>
+<p><b>Lösung als Bruch:</b> \(4x = 6\) → \(x = \frac{6}{4} = \frac{3}{2}\). Gib Brüche gekürzt an.</p>
+
+<h3>Sonderfälle</h3>
+<ul><li>\(2(x + 3) = 2x + 1\) → \(6 = 1\): falsche Aussage → <b>keine Lösung</b>.</li>
+<li>\(2(x + 3) = 2x + 6\) → \(6 = 6\): wahre Aussage → <b>jede Zahl</b> ist eine Lösung.</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Aufgabe 2 ist meist eine Gleichung mit Brüchen und Klammern. Punkte gibt es für den Weg: Hauptnenner, Klammern, Zusammenfassen, Lösung.</p>
+<div class="bsp">\(\frac{3x - 1}{4} - \frac{x + 1}{3} = \frac{x}{2} \quad | \cdot 12\)<br>
+\(3(3x - 1) - 4(x + 1) = 6x\)<br>
+\(9x - 3 - 4x - 4 = 6x\)<br>
+\(5x - 7 = 6x \quad | -5x\)<br>
+\(x = -7\)<br>
+Probe: links \(\frac{-22}{4} - \frac{-6}{3} = -5.5 + 2 = -3.5\), rechts \(\frac{-7}{2} = -3.5\). Stimmt.</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Beim Multiplizieren mit dem Hauptnenner <b>jedes</b> Glied multiplizieren, auch die Zahl ohne Bruch.</li>
+<li>Minus vor einem Bruch: Zähler in Klammern setzen, dann ausmultiplizieren.</li>
+<li>\(-3x = 12\) → \(x = -4\). Das Minus gehört zur Zahl vor x.</li>
+<li>Die Probe immer in der ursprünglichen Gleichung machen, nicht in einer umgeformten.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>\(4x + 7 = x - 8\)</li>
+<li>\(2(3x - 1) = 4(x + 2)\)</li>
+<li>\(10 - (2x - 3) = 3(x - 4)\)</li>
+<li>\(\frac{x}{4} - \frac{x}{6} = 2\)</li>
+<li>\(\frac{x + 3}{2} = \frac{2x - 1}{3}\)</li>
+<li>\(3(x + 2) = 3x + 5\)</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(3x = -15\) → \(x = -5\)</li>
+<li>\(6x - 2 = 4x + 8\) → \(x = 5\)</li>
+<li>\(13 - 2x = 3x - 12\) → \(25 = 5x\) → \(x = 5\)</li>
+<li>\(3x - 2x = 24\) → \(x = 24\)</li>
+<li>\(3x + 9 = 4x - 2\) → \(x = 11\)</li>
+<li>\(6 = 5\) ist falsch: keine Lösung</li></ol></details>`,
 
 M7: R`<p>Eine Formel löst du nach einer Variablen auf wie eine Gleichung.</p>
 <div class="bsp">Trapez: \(A = \frac{a + c}{2} \cdot h\)<br>nach \(h\): \(h = \frac{2A}{a + c}\)<br>nach \(a\): \(\frac{2A}{h} = a + c\) → \(a = \frac{2A}{h} - c\)</div>
