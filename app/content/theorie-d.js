@@ -816,8 +816,42 @@ D17: R`<p>Du wählst Adjektive, die zum Charakter einer Figur passen.</p>
 <li>Es beschreibt das Aussehen, nicht den Charakter (und steht nicht im Text).</li></ol></details>`,
 
 D18: R`<div class="merke"><b>Vorgehen:</b> 1. Frage genau lesen: Was ist gefragt (warum → Grund, wie → Art und Weise)? 2. Stelle im Text suchen und Zeile angeben. 3. Mit eigenen Worten antworten, in ganzen Sätzen.</div>
+
+<h3>Was will die Frage?</h3>
+<table><tr><th>Frage</th><th>gesucht</th><th>Antwort beginnt mit</th></tr>
+<tr><td>Warum? Weshalb?</td><td>Grund</td><td>… weil …</td></tr>
+<tr><td>Wozu?</td><td>Zweck</td><td>… damit … / … um … zu …</td></tr>
+<tr><td>Wie?</td><td>Art und Weise</td><td>… indem … / beschreibend</td></tr>
+<tr><td>Was bedeutet …?</td><td>Erklärung</td><td>… heisst, dass …</td></tr>
+<tr><td>Woran erkennst du …?</td><td>Hinweis im Text</td><td>… daran, dass … (Zeile)</td></tr>
+<tr><td>Was meinst du? Begründe.</td><td>Meinung mit Grund</td><td>Ich finde …, weil …</td></tr></table>
+
+<h3>Bauplan einer guten Antwort</h3>
+<ol><li>Die Frage aufnehmen: «Tom lügt, …»</li>
+<li>Die Antwort geben: «… weil er Angst vor der Strafe hat.»</li>
+<li>Den Beleg nennen: «(Zeile 12)»</li></ol>
 <div class="bsp"><b>Beispiel:</b> «Warum lügt Tom?» → «Tom lügt, weil er Angst vor der Strafe hat (Zeile 12).»</div>
-<div class="falle"><b>Falle:</b> Nicht ganze Sätze aus dem Text abschreiben. Wenn du mehrere Antworten gibst, gibt es den Punkt nur, wenn alle richtig sind. (Im Lösungsschlüssel 2026 kosteten unvollständige Sätze keinen Punkt. Ganze Sätze machen die Antwort aber klarer.)</div>`,
+<p>Gibt eine Frage 2 Punkte, werden oft 2 Gedanken erwartet: zum Beispiel 2 Gründe oder eine Aussage und ein Beleg.</p>
+
+<h3>Mit eigenen Worten</h3>
+<p>Zeige, dass du verstanden hast. Steht im Text «Er war mucksmäuschenstill», schreibst du «Er war ganz leise». Kurze Zitate als Beleg sind erlaubt, aber die Antwort selbst formulierst du.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nicht ganze Sätze aus dem Text abschreiben.</li>
+<li>Wenn du mehrere Antworten gibst, gibt es den Punkt nur, wenn alle richtig sind.</li>
+<li>Im Lösungsschlüssel 2026 kosteten unvollständige Sätze keinen Punkt. Ganze Sätze machen die Antwort aber klarer.</li>
+<li>Nur antworten, was gefragt ist. Eine Nacherzählung bringt keine Punkte.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Text: «Jonas versteckte das Zeugnis unter der Matratze. Beim Abendessen sprach er kaum und schaute auf seinen Teller. Als die Mutter fragte, wie die Schule war, sagte er nur: ‹Gut.›»</p>
+<ol class="check">
+<li>Woran erkennt man, dass Jonas sich unwohl fühlt?</li>
+<li>Warum versteckt Jonas das Zeugnis vermutlich?</li>
+<li>Welche Antwort ist besser? a) «Weil Zeugnis.» b) «Jonas versteckt das Zeugnis, weil er nicht will, dass seine Eltern die Noten sehen.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Er spricht kaum, schaut auf seinen Teller und antwortet nur mit einem Wort.</li>
+<li>Er will vermutlich nicht, dass seine Eltern die Noten sehen. Hinweise: Er versteckt das Zeugnis und weicht der Frage der Mutter aus.</li>
+<li>b: Sie nimmt die Frage auf und gibt einen klaren Grund.</li></ol></details>`,
 
 D19: R`<ul><li><b>Absicht:</b> Will der Text informieren, unterhalten, überzeugen oder Gefühle ausdrücken?</li>
 <li><b>Kernaussage:</b> der wichtigste Gedanke. Frage: Was soll ich nach dem Lesen verstanden haben?</li>
