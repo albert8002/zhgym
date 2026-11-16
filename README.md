@@ -74,6 +74,7 @@ Hinweise:
 ## Neu in 1.4.0
 - Endlos-Training: einzelne Themen wählen, nicht nur ganze Bereiche. Dazu «Meine 5 schwächsten Themen» und «Keine». In der Auswertung übernimmt «Genau diese Themen im Endlos-Training üben» die schwächsten Themen.
 - Lernen → Üben: Jede Aufgabenart lässt sich einzeln üben (Knopf «Üben»), mit Erklärung zu Quelle und Schwierigkeit.
+- «Quellen wählen» direkt in jedem Lernen-Thema und im Endlos-Training: Fenster mit Aufgabenarten zum Ankreuzen (Generator, Datenbank, Web; mehrere möglich), Shuffle als Schalter und Pakete. Die App zeigt sofort, ob es mit der Auswahl Aufgaben gibt.
 - Inhalte → Pakete: ankreuzen, welche Pakete verwendet werden, auch die eingebaute Datenbank. «Nur das neueste Paket» mit einem Klick. Die App zeigt, welche Themen mit der Auswahl keine Aufgaben mehr haben. Simulationen funktionieren immer.
 - Farben: alle Texte in den Themen hell, dunkel und Kontrast mindestens 4.5:1 (WCAG AA), Rahmen von Eingabefeldern mindestens 3:1. Wochenbericht und Arbeitsblätter immer auf hellem Papier.
 - Theorie ausgebaut: alle 56 Themen (25 Mathematik, 31 Deutsch) mit Schritt-für-Schritt-Vorgehen, mehr Beispielen, typischen Prüfungsaufgaben, Fallen und «Selbst prüfen» mit aufklappbaren Lösungen. Auf Arbeitsblättern bleiben die Lösungen verborgen.

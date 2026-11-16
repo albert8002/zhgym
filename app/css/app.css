@@ -470,3 +470,17 @@ table.list tr.off td { color: var(--muted); } table.list tr.off td b { font-weig
 table.packs td:nth-child(4) { white-space: nowrap; }
 
 ::placeholder { color: var(--muted); opacity: 1; }
+
+/* Aufgabenquellen (Fenster «Quellen wählen») */
+.srcpop { display: grid; gap: 0.9rem; }
+.src-group { border: 1.5px solid var(--line); border-radius: var(--r-s); padding: 0.5rem 0.9rem 0.8rem; margin: 0; display: grid; gap: 0.45rem; min-width: 0; }
+.src-group legend { font-weight: 700; font-family: var(--font-head); padding: 0 0.3rem; }
+.src-group .hint { margin: 0 0 0.2rem; }
+.switch-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; border: 1.5px solid var(--line); border-radius: var(--r-s); padding: 0.6rem 0.9rem; cursor: pointer; }
+input.switch { appearance: none; -webkit-appearance: none; flex: none; width: 46px; height: 26px; margin: 0; border-radius: 13px; background: var(--card); border: 2px solid var(--field); position: relative; cursor: pointer; transition: background 0.15s; }
+input.switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: var(--field); transition: transform 0.15s; }
+input.switch:checked { background: var(--ink); border-color: var(--ink); }
+input.switch:checked::after { transform: translateX(20px); background: var(--on-ink); }
+@media (prefers-reduced-motion: reduce) { input.switch, input.switch::after { transition: none; } }
+.src-row { align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.src-sum { font-weight: 600; }

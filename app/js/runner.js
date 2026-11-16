@@ -78,7 +78,7 @@ export function runSession(root, opts) {
     const card = h('div', { class: 'card' });
     const tp = task.textId ? textPanel(task.textId) : null;
     if (tp) body.append(h('div', { class: 'split' }, tp, card)); else body.append(card);
-    if (task.fallback && opts.mode !== 'fehler') card.append(h('p', { class: 'hint' }, 'Für diesen Skill gibt es in der gewählten Quelle keine Aufgaben. Diese Aufgabe stammt aus einer anderen Quelle.'));
+    if (task.fallback && opts.mode !== 'fehler') card.append(h('p', { class: 'hint' }, 'Für dieses Thema gibt es in den gewählten Quellen keine Aufgaben. Diese Aufgabe stammt aus einer anderen Quelle.'));
     if (task.note) card.append(h('p', { class: 'note warn small', html: task.note }));
     const tEl = h('div'); card.append(tEl);
     ctl = mountTask(task, tEl, ui, {});

@@ -9,29 +9,22 @@ import { runSession, summaryCard } from '../runner.js';
 import { THEORY } from '../../content/theorie.js';
 import { setLeave, refresh } from '../main.js';
 import { newSeed, fmtDur, dayKey, addDays, fmtDateShort, RNG } from '../util.js';
-import { webTask, WEB_SKILLS } from '../engine/web.js';
+import { webTask } from '../engine/web.js';
+import { sourceRow, srcAllow, useWeb, webOnly } from '../quellen.js';
 
 const LEVEL = { neu: ['neu', ''], schwach: ['schwach', 'bad'], mittel: ['mittel', 'warn'], stark: ['stark', 'ok'] };
-export const MODES = [['mix', 'Mix'], ['gen', 'Generator'], ['db', 'Datenbank'], ['shuffle', 'Shuffle'], ['web', 'Web (experimentell)']];
-export const MODE_HELP = { mix: 'Alle Quellen gemischt.', gen: 'Vom Computer berechnete Aufgaben: unendlich viele.', db: 'Geprüfte Aufgaben aus der Datenbank (erweiterbar unter «Inhalte»).', shuffle: 'Datenbank-Aufgaben mit neuen Zahlen und anderer Formulierung.', web: 'Sätze und Zahlen aus dem Internet (Wikipedia, Wikidata). Kann Fehler enthalten.' };
-
-export function modePicker(onPick) {
-  const p = state.profile; const sel = h('select', { 'aria-label': 'Aufgabenquelle', onchange: () => { if (sel.value === 'web' && !p.settings.web) { toast('Schalte den Web-Modus zuerst unter «Einstellungen» ein.', 'bad'); sel.value = p.settings.mode; return; } p.settings.mode = sel.value; save(); hint.textContent = MODE_HELP[sel.value]; if (onPick) onPick(sel.value); } });
-  MODES.forEach(([v, t]) => sel.append(h('option', { value: v, selected: v === p.settings.mode || null }, t)));
-  const hint = h('span', { class: 'hint' }, MODE_HELP[p.settings.mode] || '');
-  return h('div', { class: 'row' }, h('label', { class: 'small' }, 'Quelle: '), sel, hint);
-}
+export const MODE_HELP = { gen: 'Vom Computer berechnete Aufgaben: unendlich viele.', db: 'Geprüfte Aufgaben aus den gewählten Paketen.', shuffle: 'Aufgaben aus den Paketen mit neuen Zahlen und anderer Formulierung.' };
 
 // Nächste Aufgabe für einen Skill: Schwierigkeit steigt innerhalb der Runde
-export async function nextTaskFor(skill, i, n, mode) {
-  if (mode === 'web' && state.profile.settings.web && WEB_SKILLS.includes(skill)) { try { const t = await webTask(skill, newSeed()); if (t) return t; } catch (e) { console.warn(e); } }
-  const { keys, fallback } = keysFor(skill, mode === 'web' ? 'mix' : mode);
+export async function nextTaskFor(skill, i, n) {
+  if (useWeb(skill)) { try { const t = await webTask(skill, newSeed()); if (t) return t; } catch (e) { console.warn(e); } }
+  const { keys, fallback } = keysFor(skill, srcAllow());
   const sorted = keys.slice().sort((a, b) => genInfo(a).diff - genInfo(b).diff);
   const r = new RNG(newSeed());
   // erstes Drittel leichter, dann alles, am Schluss Prüfungsniveau
   const frac = n > 1 ? i / (n - 1) : 1; let pool = sorted;
   if (sorted.length >= 3) { const hard = sorted.filter((k) => genInfo(k).diff >= 3), easy = sorted.filter((k) => genInfo(k).diff <= 2); if (frac < 0.34 && easy.length) pool = easy; else if (frac > 0.66 && hard.length) pool = hard; }
-  const t = makeTask(r.pick(pool), newSeed()); t.fallback = fallback && mode !== 'web'; return t;
+  const t = makeTask(r.pick(pool), newSeed()); t.fallback = fallback && !webOnly(); return t;
 }
 
 function index(page, subj) {
@@ -92,10 +85,9 @@ function skillPage(page, id, tab) {
   const essayType = { D22: 'eroerterung', D23: 'erzaehlung', D24: 'fortsetzung', D25: 'bild', D26: 'erlebnis', D29: '' }[id];
   const start = h('div', { class: 'card' });
   const N = id === 'M25' ? 9 : ['D16', 'D17', 'D13', 'D15', 'D21', 'D28'].includes(id) ? 4 : 8;
-  let mode = p.settings.mode;
-  start.append(h('h3', null, id === 'M25' ? '9 Kurzaufgaben wie in Aufgabe 1 (Ziel: höchstens 24 Minuten)' : 'Übungsrunde mit ' + N + ' Aufgaben'), h('p', { class: 'muted' }, 'Die Aufgaben werden innerhalb der Runde schwieriger. Nach jeder Aufgabe siehst du den Lösungsweg.'), modePicker((m) => { mode = m; }));
+  start.append(h('h3', null, id === 'M25' ? '9 Kurzaufgaben wie in Aufgabe 1 (Ziel: höchstens 24 Minuten)' : 'Übungsrunde mit ' + N + ' Aufgaben'), h('p', { class: 'muted' }, 'Die Aufgaben werden innerhalb der Runde schwieriger. Nach jeder Aufgabe siehst du den Lösungsweg.'), sourceRow({ skill: id, onChange: (r) => { if (r.packsChanged) refresh(); } }));
   const run = () => { box.innerHTML = ''; const host = h('div'); box.append(host);
-    const sess = runSession(host, { title: s.name, mode: 'lernen', limit: N, backHref: '#/lernen/' + id, next: (i) => nextTaskFor(id, i, N, mode),
+    const sess = runSession(host, { title: s.name, mode: 'lernen', limit: N, backHref: '#/lernen/' + id, next: (i) => nextTaskFor(id, i, N),
       onDone: (sum, root) => { root.append(summaryCard(sum, { again: run, backHref: '#/lernen/' + s.subj, backLabel: 'Alle Themen' })); const nx = nextSkill(id); if (nx) root.append(h('p', { style: { marginTop: '0.8rem' } }, h('a', { class: 'btn', href: '#/lernen/' + nx.id }, 'Nächstes Thema: ' + nx.id + ' ' + nx.name))); if (id === 'M25' && sum.n >= 9) root.append(h('p', { class: 'note ' + (sum.sec <= 24 * 60 ? 'ok' : 'warn'), style: { marginTop: '1rem' } }, 'Gesamtzeit: ' + fmtDur(sum.sec) + '. Ziel an der Prüfung: höchstens 24:00 für Aufgabe 1.')); } });
     setLeave(() => sess.stop()); };
   start.append(h('div', { class: 'row', style: { marginTop: '0.8rem' } }, btn('Runde starten', run, { kind: 'primary big', icon: 'play' }), essayType !== undefined ? h('a', { class: 'btn', href: '#/aufsatz/neu/' + essayType }, icon('pen', 18), 'Ganzen Aufsatz schreiben') : null, !['D13', 'D16', 'D17', 'D18', 'D19'].includes(id) ? h('a', { class: 'btn quiet', href: '#/blatt/' + id }, icon('print', 18), 'Arbeitsblatt für Papier') : null));

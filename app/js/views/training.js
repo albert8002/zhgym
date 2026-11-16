@@ -6,7 +6,7 @@ import { adaptiveWeights, readiness, skillStats, strengths } from '../stats.js';
 import { stagePips } from '../progress.js';
 import { randomTask, makeTask, keysFor, hasSources, genInfo } from '../engine/sources.js';
 import { runSession, summaryCard } from '../runner.js';
-import { modePicker } from './learn.js';
+import { sourceRow, srcAllow, useWeb, webOnly } from '../quellen.js';
 import { setLeave, setGuard, go } from '../main.js';
 import { newSeed, RNG, fmtDur } from '../util.js';
 import { confirmBox } from '../ui.js';
@@ -56,7 +56,7 @@ const hasSelf = (t) => t.fields.some((f) => f.type === 'self');
 
 export function renderEndless(page) {
   const p = state.profile; const sel = initialScope(p);
-  let adaptive = p.settings.adaptive !== false, examOnly = p.settings.examOnly !== false, mode = p.settings.mode;
+  let adaptive = p.settings.adaptive !== false, examOnly = p.settings.examOnly !== false;
   const L = levelOf(p.xp);
   page.append(h('div', { class: 'page-head' }, h('h1', null, 'Endlos-Training'), h('p', null, 'Unendlich viele Aufgaben auf Prüfungsniveau. Jeder Punkt gibt 10 Erfahrungspunkte.')));
   const setup = h('div', { class: 'card' });
@@ -75,7 +75,7 @@ export function renderEndless(page) {
   const picker = scopePicker(sel, setCount); setCount();
   setup.append(picker.el);
   const cbA = h('input', { type: 'checkbox', checked: adaptive || null, onchange: () => { adaptive = cbA.checked; } }), cbE = h('input', { type: 'checkbox', checked: examOnly || null, onchange: () => { examOnly = cbE.checked; } });
-  setup.append(h('div', { class: 'stack', style: { marginTop: '0.9rem' } }, h('label', { class: 'choice' }, cbA, h('span', null, h('b', null, 'Schwache Themen häufiger'), h('br'), h('span', { class: 'muted small' }, 'Die App wählt öfter, was du noch nicht sicher kannst und was an der Prüfung viele Punkte gibt.'))), h('label', { class: 'choice' }, cbE, h('span', null, h('b', null, 'Nur Prüfungsniveau'), h('br'), h('span', { class: 'muted small' }, 'Lässt Einstiegsaufgaben weg.'))), modePicker((m) => { mode = m; })));
+  setup.append(h('div', { class: 'stack', style: { marginTop: '0.9rem' } }, h('label', { class: 'choice' }, cbA, h('span', null, h('b', null, 'Schwache Themen häufiger'), h('br'), h('span', { class: 'muted small' }, 'Die App wählt öfter, was du noch nicht sicher kannst und was an der Prüfung viele Punkte gibt.'))), h('label', { class: 'choice' }, cbE, h('span', null, h('b', null, 'Nur Prüfungsniveau'), h('br'), h('span', { class: 'muted small' }, 'Lässt Einstiegsaufgaben weg.'))), sourceRow({ skills: () => [...sel].filter(eligible), onChange: (r) => { if (r.packsChanged) { picker.redraw(); setCount(); } } })));
   const host = h('div');
   const start = () => {
     const skills = [...sel].filter(eligible); if (!skills.length) { toast('Wähle mindestens ein Thema.', 'bad'); return; }
@@ -83,10 +83,12 @@ export function renderEndless(page) {
     setup.hidden = true; page.querySelector('.page-head').hidden = true;
     const sess = runSession(host, { title: 'Endlos-Training', mode: 'endlos', backHref: '#/training',
       next: async () => {
-        if (mode === 'web' && p.settings.web) { const ws = skills.filter((s) => WEB_SKILLS.includes(s)); if (ws.length) { try { const t = await webTask(ws[Math.floor(Math.random() * ws.length)], newSeed()); if (t) return t; } catch (e) { console.warn(e); } } }
+        const ws = skills.filter((s) => WEB_SKILLS.includes(s));
+        if (ws.length) { const wsk = ws[Math.floor(Math.random() * ws.length)]; if (useWeb(wsk)) { try { const t = await webTask(wsk, newSeed()); if (t) return t; } catch (e) { console.warn(e); } } }
         const weights = adaptive ? adaptiveWeights(p, skills) : null;
-        for (let k = 0; k < 6; k++) { const t = randomTask(skills, newSeed(), { weights, mode: mode === 'web' ? 'mix' : mode, minDiff: examOnly ? 3 : 0 }); if (!hasSelf(t)) return t; }
-        return randomTask(skills, newSeed(), { weights, mode: 'mix' });
+        const fix = (t) => { if (webOnly()) t.fallback = false; return t; };
+        for (let k = 0; k < 6; k++) { const t = randomTask(skills, newSeed(), { weights, mode: srcAllow(), minDiff: examOnly ? 3 : 0 }); if (!hasSelf(t)) return fix(t); }
+        return fix(randomTask(skills, newSeed(), { weights, mode: srcAllow() }));
       },
       onDone: (sum, root) => { root.append(summaryCard(sum, { again: () => go('#/training'), backHref: '#/start' })); const L2 = levelOf(p.xp); if (L2.lvl > L.lvl) root.prepend(h('p', { class: 'note ok' }, h('b', null, 'Trainingslevel ' + L2.lvl + ' erreicht. '), 'Weiter so.')); } });
     setLeave(() => sess.stop());

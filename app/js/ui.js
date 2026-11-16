@@ -36,6 +36,7 @@ export const mhtml = (tag, html, cls) => h(tag, { class: cls || null, html: math
 
 const ICONS = {
   home: 'M3 11l9-8 9 8v10h-6v-6H9v6H3z',
+  filter: 'M3 4h18l-7 8.5V18l-4 2v-7.5z',
   book: 'M4 4h7a3 3 0 013 3v13a2 2 0 00-2-2H4zM20 4h-6a3 3 0 00-3 3v13a2 2 0 012-2h7z',
   loop: 'M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3',
   bolt: 'M13 2L4 14h6l-1 8 9-12h-6z',

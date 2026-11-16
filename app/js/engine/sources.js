@@ -98,11 +98,12 @@ refreshSources();
 
 export const genInfo = (key) => GEN[key];
 // Schlüssel für einen Skill. mode: gen | db | shuffle | mix. opts: { quick }
+// mode: 'mix', eine Quelle ('gen', 'db', 'shuffle') oder eine Liste von Quellen
 export function keysFor(skill, mode = 'mix', opts = {}) {
   let keys = (SKILL_SOURCES[skill] || []).slice();
   if (opts.quick) { const q = keys.filter((k) => GEN[k].quick); if (q.length) keys = q; }
   if (opts.minDiff) { const d = keys.filter((k) => GEN[k].diff >= opts.minDiff); if (d.length) keys = d; }
-  if (mode !== 'mix') { const m = keys.filter((k) => GEN[k].src === mode); if (m.length) return { keys: m, fallback: false }; return { keys, fallback: true }; }
+  if (mode !== 'mix') { const allow = Array.isArray(mode) ? mode : [mode]; const m = keys.filter((k) => allow.includes(GEN[k].src)); if (m.length) return { keys: m, fallback: false }; return { keys, fallback: true }; }
   return { keys, fallback: false };
 }
 export const hasSources = (skill) => (SKILL_SOURCES[skill] || []).length > 0;

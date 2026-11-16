@@ -6,22 +6,11 @@ import { refreshSources, templateTask, GEN, hasSources } from '../engine/sources
 import { refresh } from '../main.js';
 import { SKILL, SKILLS } from '../skills.js';
 import { fmtDate, RNG } from '../util.js';
+import { BUILTIN, offList, setOff, lostTopics, allOrigins as originsAll, latestPack, sourceRow } from '../quellen.js';
 
 const api = window.gymi || null;
 const MINE = 'Eigene Einträge';
-const BUILTIN = 'eingebaut';
 let lastReport = null; // Importbericht bleibt nach dem Neuzeichnen stehen
-
-// Welche Pakete verwendet werden: Liste der ausgeschalteten Herkünfte in state.meta.dbOff
-const offList = () => state.meta.dbOff || [];
-async function setOff(list) { state.meta.dbOff = [...new Set(list)]; setInactive(state.meta.dbOff); refreshSources(); await saveMeta(); }
-// Themen, die mit der aktuellen Auswahl keine Aufgaben mehr haben
-function lostTopics() {
-  const cur = offList(); if (!cur.length) return [];
-  setInactive([]); refreshSources(); const all = SKILLS.filter((x) => hasSources(x.id)).map((x) => x.id);
-  setInactive(cur); refreshSources();
-  return all.filter((id) => !hasSources(id));
-}
 
 function testPack(pack, name) {
   // In einen Testbereich laden, Fehler sammeln, dann wieder entfernen
@@ -118,15 +107,16 @@ export function render(page) {
 
   // Pakete: welche verwendet werden
   const off = new Set(offList()); const oc = originCounts();
-  const allOrigins = [BUILTIN, ...state.packs.map((x) => 'eigen:' + x.name)];
+  const allOrigins = originsAll();
   const only = async (keep) => { await setOff(allOrigins.filter((o) => !keep.includes(o))); refresh(); };
   const toggle = async (o, on) => { const next = new Set(offList()); if (on) next.delete(o); else next.add(o); await setOff([...next]); refresh(); };
-  const latest = state.packs.slice().sort((a, b) => (b.added || 0) - (a.added || 0))[0];
+  const latest = latestPack();
   const useBox = (o, label) => { const cb = h('input', { type: 'checkbox', checked: !off.has(o) || null, 'aria-label': label + ' verwenden', onchange: () => toggle(o, cb.checked) }); return cb; };
   const summary = (pack) => Object.entries(pack.items || {}).map(([k, v]) => (Array.isArray(v) ? v.length : 0) + ' ' + k).join(', ');
   const used = allOrigins.filter((o) => !off.has(o)).length;
   const pk = h('div', { class: 'card' }, h('div', { class: 'row between' }, h('h3', null, 'Pakete'), h('span', { class: 'muted small' }, used + ' von ' + allOrigins.length + ' verwendet')),
-    h('p', { class: 'hint' }, 'Aufgaben aus der Datenbank kommen nur aus angekreuzten Paketen. Berechnete Aufgaben (Generatoren) gibt es immer. Prüfungssimulationen brauchen alle Aufgabenarten: Was in den angekreuzten Paketen fehlt, nehmen sie aus den übrigen. Die Auswahl gilt für alle Profile auf diesem Computer.'),
+    h('p', { class: 'hint' }, 'Aufgaben aus der Datenbank kommen nur aus angekreuzten Paketen. Prüfungssimulationen brauchen alle Aufgabenarten: Was in den angekreuzten Paketen fehlt, nehmen sie aus den übrigen. Die Auswahl gilt für alle Profile auf diesem Computer. Du kannst sie auch direkt in «Lernen» und im Endlos-Training mit «Quellen wählen» ändern.'),
+    sourceRow({ onChange: () => refresh() }),
     h('div', { class: 'row', style: { marginBottom: '0.6rem' } },
       btn('Alle verwenden', () => only(allOrigins), { kind: 'small' }),
       latest ? btn('Nur das neueste Paket: «' + latest.name + '»', () => only(['eigen:' + latest.name]), { kind: 'small' }) : null,
