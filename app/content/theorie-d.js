@@ -372,10 +372,50 @@ D8: R`<table><tr><th>Art</th><th>Konjunktionen</th><th>Stellung der Personalform
 <tr><td>Hauptsatz + Hauptsatz</td><td>und, oder, aber, denn, sondern</td><td>bleibt an 2. Stelle</td></tr>
 <tr><td>Hauptsatz + Nebensatz</td><td>weil, da, dass, obwohl, wenn, als, während, nachdem, bevor, damit, sodass, ob, bis</td><td>steht am Ende des Nebensatzes</td></tr></table>
 <div class="bsp"><b>Beispiel:</b> «Wir bleiben zu Hause. Es regnet.»<br>→ «Wir bleiben zu Hause, <b>denn</b> es regnet.» (Hauptsatz)<br>→ «Wir bleiben zu Hause, <b>weil</b> es regnet.» (Nebensatz)<br>→ «<b>Obwohl</b> es regnet, gehen wir hinaus.» (Gegengrund)</div>
-<ul><li>weil, da: Grund. obwohl: Gegengrund. damit: Zweck. dass: Inhalt.</li>
-<li>als: einmal in der Vergangenheit. wenn: Bedingung oder wiederholt. während: gleichzeitig oder Gegensatz.</li>
-<li>nachdem: zuerst geschieht der Nebensatz, darum Plusquamperfekt: «Nachdem wir gegessen hatten, gingen wir hinaus.»</li></ul>
-<div class="falle"><b>Falle:</b> Jede Konjunktion nur 1-mal brauchen. Inhalt, Zeitform, Fall und Komma müssen stimmen. Vor einem Nebensatz steht immer ein Komma.</div>`,
+
+<h3>Welche Konjunktion passt?</h3>
+<table><tr><th>Beziehung</th><th>Konjunktionen</th></tr>
+<tr><td>Grund</td><td>weil, da, denn</td></tr>
+<tr><td>Gegengrund</td><td>obwohl</td></tr>
+<tr><td>Gegensatz</td><td>aber, sondern (nach «nicht»), während</td></tr>
+<tr><td>Zweck</td><td>damit</td></tr>
+<tr><td>Folge</td><td>sodass</td></tr>
+<tr><td>Bedingung</td><td>wenn, falls</td></tr>
+<tr><td>Zeit</td><td>als, wenn, während, nachdem, bevor, bis</td></tr>
+<tr><td>Inhalt</td><td>dass, ob</td></tr></table>
+<ul><li>als: einmal in der Vergangenheit. wenn: Bedingung oder wiederholt. während: gleichzeitig oder Gegensatz.</li>
+<li>nachdem: zuerst geschieht der Nebensatz, darum Plusquamperfekt: «Nachdem wir gegessen hatten, gingen wir hinaus.»</li>
+<li>sondern nur nach einer Verneinung: «Er kommt nicht heute, sondern morgen.»</li></ul>
+
+<h3>So verbindest du zwei Sätze</h3>
+<ol><li>Klären, wie die Sätze zusammenhängen: Grund, Gegengrund, Zeit …</li>
+<li>Passende Konjunktion wählen.</li>
+<li>Wortstellung anpassen: Im Nebensatz wandert die Personalform ans Ende. Ein Verbzusatz verbindet sich wieder mit dem Verb: «Frische Luft kommt herein.» → «…, damit frische Luft <b>hereinkommt</b>.»</li>
+<li>Komma setzen.</li></ol>
+<div class="merke"><b>Nebensatz zuerst:</b> Dann beginnt der Hauptsatz mit der Personalform: «Weil es regnet, <b>bleiben</b> wir zu Hause.»</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Mehrere Satzpaare und eine Liste mit Konjunktionen. Jede Konjunktion darf nur 1-mal vorkommen. Bewertet werden Inhalt, Wortstellung, Zeitform, Fall und Komma.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Jede Konjunktion nur 1-mal brauchen.</li>
+<li>Inhalt, Zeitform, Fall und Komma müssen stimmen. Vor einem Nebensatz steht immer ein Komma.</li>
+<li>Nach «weil» steht die Personalform am Ende: «…, weil es stark <b>regnet</b>», nicht «weil es regnet stark».</li>
+<li>Nach «denn» bleibt sie an 2. Stelle: «…, denn es <b>regnet</b> stark.»</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Verbinde mit «obwohl»: «Sie ist müde. Sie lernt weiter.»</li>
+<li>Verbinde mit «nachdem»: «Das Spiel war zu Ende. Wir gingen nach Hause.»</li>
+<li>Verbinde mit «damit»: «Ich öffne das Fenster. Frische Luft kommt herein.»</li>
+<li>Welche Konjunktion? «Ich weiss nicht, ___ er kommt.»</li>
+<li>als oder wenn? «___ ich gestern nach Hause kam, war niemand da.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>«Sie lernt weiter, obwohl sie müde ist.» (oder «Obwohl sie müde ist, lernt sie weiter.»)</li>
+<li>«Nachdem das Spiel zu Ende gewesen war, gingen wir nach Hause.»</li>
+<li>«Ich öffne das Fenster, damit frische Luft hereinkommt.»</li>
+<li>ob</li>
+<li>Als (einmal in der Vergangenheit)</li></ol></details>`,
 
 D9: R`<p>Beim Umformen bleibt der Inhalt gleich. Zeitform und Fall müssen stimmen.</p>
 <table><tr><th>Ausgangssatz</th><th>umgeformt</th></tr>
