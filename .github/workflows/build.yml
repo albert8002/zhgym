@@ -12,6 +12,11 @@ on:
 permissions:
   contents: read
 
+# Ein neuer Push auf denselben Zweig bricht den laufenden Bau ab (spart Zeit, verhindert doppelte Entwürfe)
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest

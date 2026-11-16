@@ -109,7 +109,7 @@ Jeden Tag mit Lernzeit entsteht eine Kopie des Profils im Ordner `sicherungen` (
 - `app/vendor/`: KaTeX und Schriften, mit Lizenztexten in `app/vendor/licenses/`.
 - `build/`: Programmsymbole.
 - `tools/`: Skripte zum Fertigstellen der macOS- und pacman-Pakete.
-- `tests/`: Massentest der Aufgaben-Generatoren (`npm test`).
+- `tests/`: Massentest der Aufgaben-Generatoren und Prüfung der Theorie (Formeln, HTML), beides mit `npm test`.
 - `.github/workflows/`: automatisches Bauen auf GitHub.
 
 ## Inhalte erweitern
