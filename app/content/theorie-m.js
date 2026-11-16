@@ -260,15 +260,63 @@ Kontrolle: \((-2x + 6) + (3x - 4) = x + 2\). Stimmt.</div>
 <li>\(T = 2x + 5 + 4x - 1 = 6x + 4\)</li>
 <li>\(2n + 7\)</li></ol></details>`,
 
-M5: R`<p>Bruchterme rechnet man wie Brüche mit Zahlen.</p>
-<ul><li><b>Kürzen</b> nur durch Faktoren: \(\frac{6x^2}{9x} = \frac{2x}{3}\) (für \(x \neq 0\))</li>
-<li><b>Multiplizieren:</b> \(\frac{2a}{3} \cdot \frac{9}{4a^2} = \frac{18a}{12a^2} = \frac{3}{2a}\)</li>
-<li><b>Dividieren:</b> mit dem Kehrwert multiplizieren.</li>
-<li><b>Addieren:</b> gleichnamig machen, dann Zähler addieren: \(\frac{x}{2} + \frac{x}{3} = \frac{3x}{6} + \frac{2x}{6} = \frac{5x}{6}\)</li></ul>
-<h3>Wurzelterme</h3><ul>
-<li>Teilweise Wurzel ziehen: \(\sqrt{18} = \sqrt{9 \cdot 2} = 3\sqrt{2}\); \(\sqrt{12a^2} = 2a\sqrt{3}\) (für \(a \geq 0\))</li>
-<li>Gleiche Wurzeln addieren: \(\sqrt{8} + \sqrt{18} = 2\sqrt{2} + 3\sqrt{2} = 5\sqrt{2}\)</li></ul>
-<div class="falle"><b>Falle:</b> Aus Summen darf man nicht kürzen: \(\frac{x + 2}{2}\) ist nicht \(x + 1\), sondern \(\frac{x}{2} + 1\).</div>`,
+M5: R`<div class="merke"><b>Kurz:</b> Bruchterme rechnest du wie Brüche mit Zahlen. Kürzen nur durch Faktoren, nie aus Summen. Bei Wurzeln: \(\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}\) und \(\sqrt{a^2} = a\) für \(a \geq 0\).</div>
+
+<h3>Bruchterme kürzen</h3>
+<p>Zahlen mit dem ggT kürzen, gleiche Variablen mit den Potenzregeln (Hochzahlen subtrahieren). Alle Variablen sind ≠ 0.</p>
+<div class="bsp">\(\frac{12x^3y}{18xy^2}\): Zahlen \(\frac{12}{18} = \frac{2}{3}\); \(\frac{x^3}{x} = x^2\); \(\frac{y}{y^2} = \frac{1}{y}\) → \(\frac{2x^2}{3y}\)</div>
+
+<h3>Multiplizieren und dividieren</h3>
+<ul><li><b>Multiplizieren:</b> Zähler mal Zähler, Nenner mal Nenner, dann kürzen: \(\frac{2a}{3} \cdot \frac{9}{4a^2} = \frac{18a}{12a^2} = \frac{3}{2a}\)</li>
+<li><b>Dividieren:</b> mit dem Kehrwert des zweiten Bruchs multiplizieren:<br>\(\frac{6x^2}{5y} : \frac{3x}{10y^2} = \frac{6x^2}{5y} \cdot \frac{10y^2}{3x} = \frac{60x^2y^2}{15xy} = 4xy\)</li></ul>
+
+<h3>Addieren und subtrahieren</h3>
+<p>Hauptnenner suchen (kgV der Nenner), jeden Bruch erweitern, dann die Zähler zusammenfassen. <b>Steht im Zähler eine Summe, setze sie beim Erweitern in Klammern.</b></p>
+<div class="bsp">\(\frac{x}{2} + \frac{x}{3} = \frac{3x}{6} + \frac{2x}{6} = \frac{5x}{6}\)</div>
+<div class="bsp">\(\frac{x + 1}{2} - \frac{x - 3}{3} = \frac{3(x + 1) - 2(x - 3)}{6} = \frac{3x + 3 - 2x + 6}{6} = \frac{x + 9}{6}\)<br>
+Das Minus vor dem zweiten Bruch gilt für den ganzen Zähler: \(-2(x - 3) = -2x + 6\).</div>
+
+<h3>Punkt vor Strich mit Bruchtermen</h3>
+<div class="bsp">\(\frac{x}{4} + \frac{5xy}{6} : \frac{5y}{3}\)<br>
+1. Zuerst teilen: \(\frac{5xy}{6} \cdot \frac{3}{5y} = \frac{15xy}{30y} = \frac{x}{2}\)<br>
+2. Dann addieren: \(\frac{x}{4} + \frac{2x}{4} = \frac{3x}{4}\)</div>
+
+<h3>Wurzelterme</h3>
+<ul><li><b>Wurzel aus einem Quadrat:</b> \(\sqrt{9a^2} = 3a\) (für \(a \geq 0\))</li>
+<li><b>Teilweise Wurzel ziehen:</b> \(\sqrt{18} = \sqrt{9 \cdot 2} = 3\sqrt{2}\); \(\sqrt{12a^2} = 2a\sqrt{3}\)</li>
+<li><b>Wurzeln multiplizieren:</b> \(\sqrt{2a} \cdot \sqrt{8a} = \sqrt{16a^2} = 4a\); \(2\sqrt{3} \cdot 3\sqrt{3} = 6 \cdot 3 = 18\)</li>
+<li><b>Gleiche Wurzeln zusammenfassen:</b> \(\sqrt{8} + \sqrt{18} = 2\sqrt{2} + 3\sqrt{2} = 5\sqrt{2}\); \(\sqrt{50} - \sqrt{8} = 5\sqrt{2} - 2\sqrt{2} = 3\sqrt{2}\)</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Vereinfache so weit wie möglich (\(a > 0\)): \(\sqrt{25a^2} + (-2a)^2 - \sqrt{3a} \cdot \sqrt{27a}\)<br>
+\(\sqrt{25a^2} = 5a\); \((-2a)^2 = 4a^2\); \(\sqrt{3a} \cdot \sqrt{27a} = \sqrt{81a^2} = 9a\)<br>
+Zusammen: \(5a + 4a^2 - 9a = 4a^2 - 4a\)</div>
+<p>Schreibe jeden Teil einzeln um und fasse erst am Schluss zusammen. So siehst du Vorzeichenfehler sofort.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Aus Summen darf man nicht kürzen: \(\frac{x + 2}{2}\) ist nicht \(x + 1\), sondern \(\frac{x}{2} + 1\).</li>
+<li>Minus vor einem Bruch mit Summe im Zähler: Klammer setzen, sonst stimmt nur das erste Vorzeichen.</li>
+<li>Beim Dividieren nur den <b>zweiten</b> Bruch umdrehen.</li>
+<li>\(\sqrt{a^2 + b^2}\) ist nicht \(a + b\).</li>
+<li>\((-2a)^2 = 4a^2\), aber \(-2a^2\) bleibt \(-2a^2\).</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Kürze: \(\frac{15a^2b}{25ab^3}\)</li>
+<li>\(\frac{4x}{9} \cdot \frac{3}{2x^2}\)</li>
+<li>\(\frac{2x}{5} : \frac{4x^2}{15}\)</li>
+<li>\(\frac{x + 2}{3} + \frac{x - 1}{4}\)</li>
+<li>\(\frac{x - 1}{2} - \frac{x - 5}{4}\)</li>
+<li>\(\sqrt{48} + \sqrt{75}\)</li>
+<li>\(\sqrt{16a^2} - \sqrt{2a} \cdot \sqrt{18a}\) für \(a > 0\)</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(\frac{3a}{5b^2}\)</li>
+<li>\(\frac{12x}{18x^2} = \frac{2}{3x}\)</li>
+<li>\(\frac{2x}{5} \cdot \frac{15}{4x^2} = \frac{30x}{20x^2} = \frac{3}{2x}\)</li>
+<li>\(\frac{4(x + 2) + 3(x - 1)}{12} = \frac{7x + 5}{12}\)</li>
+<li>\(\frac{2(x - 1) - (x - 5)}{4} = \frac{x + 3}{4}\)</li>
+<li>\(4\sqrt{3} + 5\sqrt{3} = 9\sqrt{3}\)</li>
+<li>\(4a - \sqrt{36a^2} = 4a - 6a = -2a\)</li></ol></details>`,
 
 M6: R`<p>Eine Gleichung bleibt richtig, wenn du auf <b>beiden Seiten dasselbe</b> tust (addieren, subtrahieren, multiplizieren, durch eine Zahl ≠ 0 teilen).</p>
 <div class="merke"><b>Vorgehen:</b> 1. Klammern auflösen. 2. Brüche wegschaffen (mit dem kgV der Nenner multiplizieren). 3. Glieder mit \(x\) auf eine Seite, Zahlen auf die andere. 4. Durch die Zahl vor \(x\) teilen. 5. Probe.</div>
