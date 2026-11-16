@@ -373,10 +373,60 @@ Probe: links \(\frac{-22}{4} - \frac{-6}{3} = -5.5 + 2 = -3.5\), rechts \(\frac{
 <li>\(3x + 9 = 4x - 2\) → \(x = 11\)</li>
 <li>\(6 = 5\) ist falsch: keine Lösung</li></ol></details>`,
 
-M7: R`<p>Eine Formel löst du nach einer Variablen auf wie eine Gleichung.</p>
-<div class="bsp">Trapez: \(A = \frac{a + c}{2} \cdot h\)<br>nach \(h\): \(h = \frac{2A}{a + c}\)<br>nach \(a\): \(\frac{2A}{h} = a + c\) → \(a = \frac{2A}{h} - c\)</div>
-<div class="bsp">Pyramide: \(V = \frac{G \cdot h}{3}\) → \(h = \frac{3V}{G}\)</div>
-<div class="merke"><b>Merke:</b> Rückwärts denken: Was wurde mit der gesuchten Variablen zuletzt gemacht? Das zuerst rückgängig machen.</div>`,
+M7: R`<div class="merke"><b>Kurz:</b> Eine Formel ist eine Gleichung mit mehreren Variablen. Die gesuchte Variable soll allein auf einer Seite stehen. Alle anderen Variablen behandelst du wie Zahlen.</div>
+
+<h3>Vorgehen</h3>
+<ol><li>Brüche wegschaffen: beide Seiten mit dem Nenner multiplizieren.</li>
+<li>Alles, was die gesuchte Variable nicht enthält, auf die andere Seite bringen.</li>
+<li>Durch den Faktor vor der gesuchten Variablen teilen.</li></ol>
+<p><b>Rückwärts denken:</b> Was wurde mit der gesuchten Variablen zuletzt gemacht? Das machst du zuerst rückgängig.</p>
+<p><b>Tipp:</b> Wenn du unsicher bist, denke an Zahlen. Aus \(12 = 3 \cdot x\) folgt \(x = \frac{12}{3}\). Genauso folgt aus \(A = g \cdot h\) die Formel \(h = \frac{A}{g}\).</p>
+
+<h3>Beispiele</h3>
+<div class="bsp"><b>Dreieck:</b> \(A = \frac{g \cdot h}{2} \quad | \cdot 2\) → \(2A = g \cdot h \quad | :g\) → \(h = \frac{2A}{g}\)</div>
+<div class="bsp"><b>Trapez:</b> \(A = \frac{a + c}{2} \cdot h\)<br>
+nach \(h\): \(2A = (a + c) \cdot h\) → \(h = \frac{2A}{a + c}\)<br>
+nach \(a\): \(\frac{2A}{h} = a + c\) → \(a = \frac{2A}{h} - c\)</div>
+<div class="bsp"><b>Rechteckumfang:</b> \(U = 2(a + b) \quad | :2\) → \(\frac{U}{2} = a + b \quad | -b\) → \(a = \frac{U}{2} - b\)</div>
+<div class="bsp"><b>Prozentwert:</b> \(W = \frac{p \cdot G}{100}\) → \(100W = p \cdot G\) → \(G = \frac{100W}{p}\)</div>
+<div class="bsp"><b>Pyramide:</b> \(V = \frac{G \cdot h}{3}\) → \(h = \frac{3V}{G}\)</div>
+
+<h3>Gesuchte Variable kommt mehrmals vor</h3>
+<p>Dann alle Glieder mit der Variablen auf eine Seite bringen und die Variable <b>ausklammern</b>.</p>
+<div class="bsp"><b>Quaderoberfläche nach a:</b> \(O = 2(ab + ac + bc) \quad | :2\)<br>
+\(\frac{O}{2} = ab + ac + bc \quad | -bc\)<br>
+\(\frac{O}{2} - bc = a(b + c) \quad | :(b + c)\)<br>
+\(a = \frac{O - 2bc}{2(b + c)}\)</div>
+
+<h3>Kontrolle mit Zahlen</h3>
+<p>Wähle einfache Zahlen und rechne vorwärts und rückwärts. Trapez mit \(a = 5\), \(c = 3\), \(h = 4\): \(A = \frac{5 + 3}{2} \cdot 4 = 16\). Umgestellte Formel: \(h = \frac{2 \cdot 16}{5 + 3} = 4\). Stimmt.</p>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Löse nach \(x\) auf: \(3y = \frac{ax - 5}{4}\)<br>
+\(| \cdot 4\): \(12y = ax - 5\)<br>
+\(| +5\): \(12y + 5 = ax\)<br>
+\(| :a\): \(x = \frac{12y + 5}{a}\)</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Teilt man durch eine Summe, gehört sie in Klammern oder ganz unter den Bruchstrich: \(h = \frac{2A}{a + c}\), nicht \(\frac{2A}{a} + c\).</li>
+<li>Immer die ganze Seite teilen: Aus \(12y + 5 = ax\) folgt \(x = \frac{12y + 5}{a}\), nicht \(12y + \frac{5}{a}\).</li>
+<li>Ein Minus vor der gesuchten Variablen nicht vergessen: \(y = 5 - x\) → \(x = 5 - y\).</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>\(V = a \cdot b \cdot c\) nach \(c\)</li>
+<li>\(A = \frac{e \cdot f}{2}\) nach \(f\)</li>
+<li>\(U = 2(a + b)\) nach \(b\)</li>
+<li>\(2y = \frac{ax + 3}{5}\) nach \(x\)</li>
+<li>\(y = mx + q\) nach \(m\)</li>
+<li>\(F = \frac{9}{5}C + 32\) nach \(C\) (Grad Fahrenheit in Grad Celsius)</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(c = \frac{V}{ab}\)</li>
+<li>\(f = \frac{2A}{e}\)</li>
+<li>\(b = \frac{U}{2} - a\)</li>
+<li>\(10y = ax + 3\) → \(x = \frac{10y - 3}{a}\)</li>
+<li>\(m = \frac{y - q}{x}\)</li>
+<li>\(F - 32 = \frac{9}{5}C\) → \(C = \frac{5(F - 32)}{9}\)</li></ol></details>`,
 
 M8: R`<div class="merke"><b>Vorgehen:</b> 1. Variable genau so wählen, wie sie vorgegeben ist. 2. Alle anderen Grössen mit dieser Variablen ausdrücken. 3. Die Gleichung aus dem Satz übersetzen, der zwei gleiche Dinge nennt.</div>
 <table><tr><th>Text</th><th>Term</th></tr><tr><td>um 5 grösser</td><td>\(x + 5\)</td></tr><tr><td>das Doppelte</td><td>\(2x\)</td></tr><tr><td>ein Drittel</td><td>\(\frac{x}{3}\)</td></tr><tr><td>vermindert um 7</td><td>\(x - 7\)</td></tr><tr><td>zusammen</td><td>Summe</td></tr></table>
