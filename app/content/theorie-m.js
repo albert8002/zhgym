@@ -1309,13 +1309,54 @@ M23: R`<div class="merke"><b>Erlaubt ist genau 1 dieser 4 Modelle:</b> TI-30 ECO
 <li>\(1.2155\)</li>
 <li>etwa 200; genau \(206.44\)</li></ol></details>`,
 
-M24: R`<ul><li>Lösungsweg klar zeigen: Zwischenresultate und Skizzen ins Heft. So gibt es Teilpunkte, auch wenn das Resultat falsch ist.</li>
+M24: R`<div class="merke"><b>Kurz:</b> Zwischenresultate und Skizzen gehören ins Prüfungsheft, so gibt es Teilpunkte. Das Schlussresultat deutlich markieren. Nur 1 Lösung stehen lassen, alles andere durchstreichen.</div>
+
+<h3>Die Regeln</h3>
+<ul><li>Lösungsweg klar zeigen: Zwischenresultate und Skizzen ins Heft. So gibt es Teilpunkte, auch wenn das Resultat falsch ist.</li>
 <li>Schlussresultat deutlich markieren (zum Beispiel doppelt unterstreichen).</li>
 <li>Nur 1 Lösung stehen lassen. Mehrere Lösungen, darunter eine falsche, kosten mindestens 1 Punkt. Was nicht zählen soll: durchstreichen.</li>
 <li>Kein Notizpapier: Alles kommt ins Prüfungsheft.</li>
 <li>Aufgabe 1: Der Punkt gilt auch ohne Lösungsweg.</li>
 <li>Aufgabe 4 (Textgleichungen): nur die Gleichung aufstellen, Variable genau wie vorgegeben.</li></ul>
-<div class="merke"><b>Kein Abzug</b> für eine vergessene Einheit, Rundungsfehler oder einen fehlenden Antwortsatz, ausser es ist vermerkt (2026: fehlendes Prozentzeichen gab nur 1 von 2 Punkten). Es gibt nur ganze Punkte.</div>`,
+<div class="merke"><b>Kein Abzug</b> für eine vergessene Einheit, Rundungsfehler oder einen fehlenden Antwortsatz, ausser es ist vermerkt (2026: fehlendes Prozentzeichen gab nur 1 von 2 Punkten). Es gibt nur ganze Punkte.</div>
+
+<h3>So sieht ein guter Lösungsweg aus</h3>
+<ol><li><b>Gegeben und gesucht</b> kurz notieren, bei Geometrie mit Skizze.</li>
+<li><b>Jeder Schritt auf eine Zeile</b>, mit einem Stichwort, was er berechnet.</li>
+<li><b>Zwischenresultate</b> mit Einheit hinschreiben.</li>
+<li><b>Resultat</b> doppelt unterstreichen.</li></ol>
+<div class="bsp"><b>Nur das Resultat:</b> «72» – ist es falsch, gibt es keinen Punkt.<br>
+<b>Mit Weg:</b><br>
+Preis nach der Erhöhung: \(80 \cdot 1.2 = 96\) Fr.<br>
+Preis nach dem Rabatt: \(96 \cdot 0.75 = 72\) Fr.<br>
+Veränderung: \(\frac{72 - 80}{80} = -0.1\) → 10 % billiger<br>
+Ist ein Schritt falsch, zählen die richtigen trotzdem.</div>
+
+<h3>Tipps nach Aufgabentyp</h3>
+<ul><li><b>Gleichungen:</b> eine Umformung pro Zeile, die Gleichheitszeichen untereinander. Die Umformung rechts notieren (\(| -3x\)).</li>
+<li><b>Geometrie:</b> Skizze mit Beschriftung, rechte Winkel markieren, gegebene Längen eintragen. Beim Pythagoras das verwendete Dreieck zeigen.</li>
+<li><b>Sachaufgaben:</b> zu jeder Zahl schreiben, wofür sie steht («Grundfläche», «Volumen in cm³»).</li>
+<li><b>Konstruktionen:</b> Zirkelbögen und Hilfslinien stehen lassen, Punkte beschriften.</li></ul>
+
+<h3>Korrigieren</h3>
+<p>Hast du dich verrechnet, streiche den falschen Teil sauber durch und schreibe den neuen Weg daneben. Radieren oder Tipp-Ex kosten Zeit. Wichtig ist nur: Am Ende ist klar, welche Lösung gilt.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Zwei Resultate stehen lassen, «damit eines stimmt»: Das kostet Punkte.</li>
+<li>Rechnungen nur im Kopf oder auf dem Rechner machen: Dann fehlen die Teilpunkte.</li>
+<li>Zu ausführlich schreiben: Stichworte genügen. Ganze Sätze kosten Zeit.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Gibt es in Aufgabe 1 Punkte ohne Lösungsweg?</li>
+<li>Was passiert, wenn zwei Lösungen stehen und eine falsch ist?</li>
+<li>Darfst du in Aufgabe 4 eine andere Variable verwenden?</li>
+<li>Wohin kommen Notizen und Nebenrechnungen?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Ja, dort zählt das Resultat.</li>
+<li>Es kostet mindestens 1 Punkt.</li>
+<li>Nein, die Variable muss genau wie vorgegeben sein.</li>
+<li>Ins Prüfungsheft. Es gibt kein Notizpapier.</li></ol></details>`,
 
 M25: R`<p>Aufgabe 1 besteht aus 9 Kurzaufgaben (2026: 10 Punkte). Plane höchstens <b>24 Minuten</b> ein: 90 Minuten für 37 Punkte sind rund 2.4 Minuten pro Punkt.</p>
 <div class="merke"><b>Strategie:</b> Zuerst alle Kurzaufgaben lesen. Die schnellen zuerst lösen. Bei einer Aufgabe nicht festbeissen: nach 3 Minuten weiter und später zurückkommen.</div>
