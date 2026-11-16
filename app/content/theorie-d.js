@@ -937,8 +937,41 @@ D20: R`<p>Jeder Aufsatzauftrag hat mehrere Teilaufträge. Markiere jedes Verb un
 <li>Argumente dafür und dagegen und am Schluss eine begründete Meinung</li></ol></details>`,
 
 D21: R`<p>Nimm dir 10 Minuten für einen Stichwortplan. Pro Absatz 1 Zeile.</p>
-<div class="bsp"><b>Beispiel Erörterung «Handy in der Schule»:</b><br>1 Einleitung: Begriff klären, Frage stellen<br>2 Contra: Ablenkung (Beispiel: Nachrichten im Unterricht)<br>3 Contra: Streit in Klassenchats<br>4 Pro: Notfälle, Eltern erreichen<br>5 Pro: Lernen mit Apps (stärkstes Argument)<br>6 Schluss: Meinung mit Begründung, Bezug zum Hauptteil</div>
-<div class="merke"><b>Merke:</b> Ein Plan verhindert, dass du den Faden verlierst oder einen Teilauftrag vergisst.</div>`,
+<div class="merke"><b>Merke:</b> Ein Plan verhindert, dass du den Faden verlierst oder einen Teilauftrag vergisst.</div>
+
+<h3>Die 10 Minuten</h3>
+<table><tr><th>Minute</th><th>Was du tust</th></tr>
+<tr><td>0–2</td><td>Auftrag zerlegen: Verben markieren, Teile nummerieren, Vorgaben unterstreichen.</td></tr>
+<tr><td>2–6</td><td>Ideen sammeln: nur Stichwörter, keine Sätze. Alles aufschreiben, was dir einfällt.</td></tr>
+<tr><td>6–9</td><td>Ordnen: Die besten Ideen auswählen und in eine Reihenfolge bringen. 1 Zeile pro Absatz.</td></tr>
+<tr><td>9–10</td><td>Ersten Satz und Schlussgedanken notieren. Plan mit dem Auftrag vergleichen.</td></tr></table>
+
+<h3>Beispiel Erörterung</h3>
+<div class="bsp"><b>«Handy in der Schule»:</b><br>1 Einleitung: Begriff klären, Frage stellen<br>2 Contra: Ablenkung (Beispiel: Nachrichten im Unterricht)<br>3 Contra: Streit in Klassenchats<br>4 Pro: Notfälle, Eltern erreichen<br>5 Pro: Lernen mit Apps (stärkstes Argument)<br>6 Schluss: Meinung mit Begründung, Bezug zum Hauptteil</div>
+
+<h3>Beispiel Erzählung</h3>
+<div class="bsp"><b>«Der verlorene Schlüssel»:</b><br>1 Einleitung: ich, nach dem Training, Regen, Eltern weg<br>2 Problem: Schlüssel nicht in der Tasche<br>3 Suche, Spannung steigt (Gedanken, Kälte, Dunkelheit)<br>4 Höhepunkt: Geräusch im Garten, jemand kommt<br>5 Wendung: Nachbarin hat den Schlüssel gefunden<br>6 Schluss: was ich mir vornehme</div>
+
+<h3>Tipps</h3>
+<ul><li>Stichwörter statt Sätze: Der Plan ist für dich, nicht für die Korrektur.</li>
+<li>Vorgaben aus dem Auftrag (Titel, Gegenstände, Perspektive) im Plan markieren, damit sie eine zentrale Rolle bekommen.</li>
+<li>Bei der Erörterung das stärkste Argument zuletzt, bei der Erzählung den Höhepunkt gegen Ende.</li></ul>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Ohne Plan losschreiben: Der Text wird lang, aber ein Teilauftrag fehlt.</li>
+<li>Zu lange planen: Nach 10 Minuten beginnst du zu schreiben, auch wenn der Plan nicht perfekt ist.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Mache in 10 Minuten einen Plan für die Erörterung «Sollen Hausaufgaben abgeschafft werden?».</li>
+<li>Kontrolliere: Hat jeder Absatz eine Zeile? Kommen beide Seiten vor? Steht am Schluss deine Meinung?</li></ol>
+<details class="lsg"><summary>Beispiel-Lösung</summary><ol>
+<li>Einleitung: Was sind Hausaufgaben, wer gibt sie, Frage stellen</li>
+<li>Pro Abschaffen: mehr Freizeit, Hobbys, Erholung</li>
+<li>Pro Abschaffen: nicht alle bekommen zu Hause Hilfe</li>
+<li>Contra: Stoff wiederholen, besser merken (Beispiel Wörter lernen)</li>
+<li>Contra: selbständig arbeiten lernen (stärkstes Argument)</li>
+<li>Schluss: Meinung (weniger, aber sinnvolle Hausaufgaben), Begründung</li></ol></details>`,
 
 D22: R`<ul><li><b>Einleitung:</b> genau das, was der Auftrag verlangt (Begriff erklären, Bild beschreiben, allgemeine Rolle zeigen). Dann zur Frage führen.</li>
 <li><b>Hauptteil:</b> beide Seiten. 2–3 Argumente pro Seite, 1 Absatz pro Argument. Zuerst die Gegenseite, dann deine Seite, das stärkste Argument zuletzt.</li>
