@@ -925,16 +925,60 @@ Kontrolle mit dem Aussenwinkel: \(48° + 67° = 115°\). Stimmt.</div>
 <li>\(540° : 5 = 108°\)</li>
 <li>\(90° - 34° = 56°\)</li></ol></details>`,
 
-M17: R`<table><tr><th>Figur</th><th>Fläche</th><th>Umfang</th></tr>
+M17: R`<div class="merke"><b>Kurz:</b> Fläche = wie viel Fläche bedeckt ist (cm², m²). Umfang = Länge des Randes (cm, m). Die Höhe steht immer senkrecht auf der Grundseite. Zusammengesetzte Figuren zerlegen oder ergänzen.</div>
+
+<h3>Formeln</h3>
+<table><tr><th>Figur</th><th>Fläche</th><th>Umfang</th></tr>
 <tr><td>Rechteck</td><td>\(A = a \cdot b\)</td><td>\(u = 2(a + b)\)</td></tr>
 <tr><td>Quadrat</td><td>\(A = a^2\)</td><td>\(u = 4a\)</td></tr>
 <tr><td>Dreieck</td><td>\(A = \frac{g \cdot h}{2}\)</td><td>Summe der Seiten</td></tr>
 <tr><td>Parallelogramm</td><td>\(A = g \cdot h\)</td><td>\(u = 2(a + b)\)</td></tr>
 <tr><td>Trapez</td><td>\(A = \frac{a + c}{2} \cdot h\)</td><td>Summe der Seiten</td></tr>
 <tr><td>Raute, Drachenviereck</td><td>\(A = \frac{e \cdot f}{2}\) (Diagonalen)</td><td>Summe der Seiten</td></tr></table>
-<div class="merke"><b>Zusammengesetzte Figuren:</b> in bekannte Figuren zerlegen oder zu einer grösseren ergänzen und den Rest abziehen.</div>
-<div class="bsp">Trapez mit \(a = 8\) cm, \(c = 4\) cm, \(h = 5\) cm: \(A = \frac{8 + 4}{2} \cdot 5 = 30\) cm².<br>Rechteck mit \(A = 48\) cm² und \(a = 8\) cm: \(8 \cdot b = 48\) → \(b = 6\) cm.</div>
-<div class="falle"><b>Falle:</b> Die Höhe steht immer senkrecht auf der Grundseite. Kreisfläche und Kreisumfang sind an der ZAP2 nicht verlangt.</div>`,
+
+<h3>Woher die Formeln kommen</h3>
+<ul><li><b>Parallelogramm:</b> Schneidet man auf einer Seite ein Dreieck ab und setzt es auf der anderen Seite an, entsteht ein Rechteck mit den Seiten g und h.</li>
+<li><b>Dreieck:</b> Zwei gleiche Dreiecke ergeben ein Parallelogramm. Darum die Hälfte: \(\frac{g \cdot h}{2}\).</li>
+<li><b>Trapez:</b> \(\frac{a + c}{2}\) ist die mittlere Breite. Mittlere Breite mal Höhe.</li>
+<li><b>Raute und Drachen:</b> Die Figur ist halb so gross wie das Rechteck aus den beiden Diagonalen.</li></ul>
+<p>Beim Dreieck darf jede Seite die Grundseite sein, aber dann mit der zugehörigen Höhe. Beim stumpfwinkligen Dreieck kann die Höhe ausserhalb liegen.</p>
+
+<h3>Zusammengesetzte Figuren</h3>
+<div class="bsp"><b>L-Form:</b> Aus einem Rechteck 10 cm × 8 cm ist an einer Ecke ein Rechteck 4 cm × 3 cm ausgeschnitten.<br>
+Fläche: \(10 \cdot 8 - 4 \cdot 3 = 80 - 12 = 68\) cm²<br>
+Umfang: so gross wie beim ganzen Rechteck, weil die ausgeschnittenen Kanten nur verschoben sind: \(2(10 + 8) = 36\) cm</div>
+
+<h3>Längen über eine Gleichung</h3>
+<div class="bsp">Ein Trapez hat die parallelen Seiten \(a = 2x\) und \(c = x\), die Höhe 6 cm und die Fläche 54 cm².<br>
+\(\frac{2x + x}{2} \cdot 6 = 54\) → \(9x = 54\) → \(x = 6\) cm</div>
+<div class="bsp">Ein Rechteck ist \(2x + 1\) lang und \(x\) breit. Der Umfang ist 32 cm.<br>
+\(2(2x + 1 + x) = 32\) → \(6x + 2 = 32\) → \(x = 5\) cm</div>
+<div class="bsp">Rechteck mit \(A = 48\) cm² und \(a = 8\) cm: \(8 \cdot b = 48\) → \(b = 6\) cm.</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Oft ist eine Figur mit Variablen gegeben. Zuerst die Figur in Teile zerlegen, für jeden Teil die Fläche als Term aufschreiben, dann zusammenzählen und die Gleichung lösen. Am Schluss die Einheit nicht vergessen.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Beim Parallelogramm ist die schräge Seite nicht die Höhe.</li>
+<li>Beim Dreieck die Hälfte nicht vergessen.</li>
+<li>Fläche in cm², Umfang in cm. Nicht verwechseln.</li>
+<li>Kreisfläche und Kreisumfang sind an der ZAP für das Kurzgymnasium nicht verlangt.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Dreieck mit \(g = 9\) cm und \(h = 6\) cm: Fläche?</li>
+<li>Parallelogramm mit \(g = 12\) cm, \(h = 5\) cm und der anderen Seite 7 cm: Fläche und Umfang?</li>
+<li>Raute mit den Diagonalen 10 cm und 8 cm: Fläche?</li>
+<li>Trapez mit \(a = 11\) cm, \(c = 5\) cm, \(h = 4\) cm: Fläche?</li>
+<li>Ein Rechteck hat den Umfang 30 cm und ist 9 cm lang. Wie gross ist die Fläche?</li>
+<li>Ein Dreieck hat 42 cm² Fläche und die Grundseite 12 cm. Wie hoch ist es?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>27 cm²</li>
+<li>\(A = 60\) cm², \(u = 2(12 + 7) = 38\) cm</li>
+<li>40 cm²</li>
+<li>\(\frac{11 + 5}{2} \cdot 4 = 32\) cm²</li>
+<li>Breite \(15 - 9 = 6\) cm, Fläche 54 cm²</li>
+<li>\(\frac{12 \cdot h}{2} = 42\) → \(h = 7\) cm</li></ol></details>`,
 
 M18: R`<div class="merke"><b>Satz des Pythagoras:</b> Im rechtwinkligen Dreieck gilt \(a^2 + b^2 = c^2\). \(c\) ist die Hypotenuse: Sie liegt gegenüber dem rechten Winkel und ist die längste Seite.</div>
 <ul><li>Hypotenuse gesucht: \(c = \sqrt{a^2 + b^2}\); Beispiel \(\sqrt{6^2 + 8^2} = \sqrt{100} = 10\)</li>
