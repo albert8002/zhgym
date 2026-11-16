@@ -109,17 +109,62 @@ D2: R`<p>Ein Verb kann aus mehreren Teilen bestehen. Jeder Satz hat genau eine <
 <li>war (Personalform), aufgestanden (Partizip II)</li>
 <li>besucht, telefoniert, mitgebracht</li></ol></details>`,
 
-D3: R`<table><tr><th>Zeitform</th><th>schwaches Verb</th><th>starkes Verb</th></tr>
-<tr><td>Präsens</td><td>ich spiele</td><td>ich gehe</td></tr>
-<tr><td>Präteritum</td><td>ich spielte</td><td>ich ging</td></tr>
-<tr><td>Perfekt</td><td>ich habe gespielt</td><td>ich bin gegangen</td></tr>
-<tr><td>Plusquamperfekt</td><td>ich hatte gespielt</td><td>ich war gegangen</td></tr>
-<tr><td>Futur I</td><td>ich werde spielen</td><td>ich werde gehen</td></tr></table>
+D3: R`<table><tr><th>Zeitform</th><th>Bildung</th><th>schwaches Verb</th><th>starkes Verb</th></tr>
+<tr><td>Präsens</td><td>1 Wort</td><td>ich spiele</td><td>ich gehe</td></tr>
+<tr><td>Präteritum</td><td>1 Wort</td><td>ich spielte</td><td>ich ging</td></tr>
+<tr><td>Perfekt</td><td>haben/sein im Präsens + Partizip II</td><td>ich habe gespielt</td><td>ich bin gegangen</td></tr>
+<tr><td>Plusquamperfekt</td><td>haben/sein im Präteritum + Partizip II</td><td>ich hatte gespielt</td><td>ich war gegangen</td></tr>
+<tr><td>Futur I</td><td>werden + Infinitiv</td><td>ich werde spielen</td><td>ich werde gehen</td></tr></table>
+
+<h3>Wann brauche ich welche Zeitform?</h3>
+<ul><li><b>Präsens:</b> was jetzt geschieht oder immer gilt; mit Zeitangabe auch Zukunft («Morgen fahre ich»).</li>
+<li><b>Präteritum:</b> Erzählzeit in geschriebenen Texten, auch im Aufsatz.</li>
+<li><b>Perfekt:</b> Vergangenes, vor allem beim Sprechen und in Briefen.</li>
+<li><b>Plusquamperfekt:</b> was noch früher geschah als die erzählte Vergangenheit: «Als wir ankamen, <b>war</b> der Zug schon <b>abgefahren</b>.»</li>
+<li><b>Futur I:</b> Zukunft oder Vermutung («Er wird wohl krank sein»).</li></ul>
+
 <div class="merke"><b>Merke:</b> Perfekt und Plusquamperfekt bildet man mit <b>haben</b> oder <b>sein</b> + Partizip II. Mit «sein» stehen Verben der Bewegung oder Veränderung (gehen, fahren, kommen, einschlafen) sowie sein, bleiben, werden.</div>
+
+<h3>Schwache, starke und gemischte Verben</h3>
+<ul><li><b>Schwach:</b> Präteritum mit -te, Partizip mit -t: spielen – spielte – gespielt.</li>
+<li><b>Stark:</b> Der Vokal wechselt, Partizip meist mit -en: singen – sang – gesungen.</li>
+<li><b>Gemischt:</b> Vokalwechsel und -te/-t: bringen – brachte – gebracht; denken – dachte – gedacht; kennen – kannte – gekannt.</li></ul>
 <h3>Wichtige starke und unregelmässige Verben</h3>
-<p>beginnen – begann – begonnen; bringen – brachte – gebracht; denken – dachte – gedacht; fallen – fiel – gefallen; finden – fand – gefunden; helfen – half – geholfen; lesen – las – gelesen; liegen – lag – gelegen; nehmen – nahm – genommen; rennen – rannte – gerannt; schliessen – schloss – geschlossen; schreiben – schrieb – geschrieben; schwimmen – schwamm – geschwommen; sitzen – sass – gesessen; stehen – stand – gestanden; treffen – traf – getroffen; tun – tat – getan; werfen – warf – geworfen; wissen – wusste – gewusst; ziehen – zog – gezogen.</p>
+<p>beginnen – begann – begonnen; bringen – brachte – gebracht; denken – dachte – gedacht; essen – ass – gegessen; fahren – fuhr – gefahren; fallen – fiel – gefallen; finden – fand – gefunden; geben – gab – gegeben; helfen – half – geholfen; laufen – lief – gelaufen; lesen – las – gelesen; liegen – lag – gelegen; nehmen – nahm – genommen; rennen – rannte – gerannt; schliessen – schloss – geschlossen; schreiben – schrieb – geschrieben; schwimmen – schwamm – geschwommen; sehen – sah – gesehen; sitzen – sass – gesessen; sprechen – sprach – gesprochen; stehen – stand – gestanden; tragen – trug – getragen; treffen – traf – getroffen; tun – tat – getan; vergessen – vergass – vergessen; werfen – warf – geworfen; wissen – wusste – gewusst; ziehen – zog – gezogen.</p>
+
+<h3>Einen Satz umformen</h3>
+<ol><li>Personalform suchen und Person bestimmen (sie = 3. Person Einzahl).</li>
+<li>Neue Form bilden, bei Perfekt und Plusquamperfekt haben oder sein wählen.</li>
+<li>Alles andere bleibt: gleiche Person, gleiche Wörter, gleiche Reihenfolge. Nur die Verbteile wandern an ihren Platz.</li></ol>
+<div class="bsp">«Sie steht früh auf.»<br>
+Präteritum: «Sie stand früh auf.»<br>
+Perfekt: «Sie ist früh aufgestanden.»<br>
+Plusquamperfekt: «Sie war früh aufgestanden.»<br>
+Futur I: «Sie wird früh aufstehen.»</div>
+<ul><li><b>Im Nebensatz</b> steht die Personalform am Ende: «…, weil sie früh aufgestanden ist.»</li>
+<li><b>Mit Modalverb:</b> «Er kann schwimmen.» → Präteritum «Er konnte schwimmen.» → Perfekt «Er hat schwimmen können.» (nicht «gekonnt»)</li></ul>
+
 <div class="bsp"><b>Beispiel:</b> «Wir fahren nach Bern.» → Präteritum: «Wir fuhren nach Bern.» → Plusquamperfekt: «Wir waren nach Bern gefahren.»</div>
-<div class="falle"><b>Falle:</b> Eine falsch geschriebene Verbform gibt 0 Punkte. Nur die Zeitform ändern: Person, Fall und Wortstellung bleiben. Bei sitzen, stehen, liegen ist in der Schweiz «ist gesessen» üblich, «hat gesessen» ist auch richtig.</div>`,
+<div class="falle"><b>Fallen:</b><ul>
+<li>Eine falsch geschriebene Verbform gibt 0 Punkte.</li>
+<li>Nur die Zeitform ändern: Person, Fall und Wortstellung bleiben.</li>
+<li>Bei sitzen, stehen, liegen ist in der Schweiz «ist gesessen» üblich, «hat gesessen» ist auch richtig.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Welche Zeitform? «Sie hatte den Bus verpasst.»</li>
+<li>Welche Zeitform? «Wir werden morgen abreisen.»</li>
+<li>Ins Präteritum: «Er bringt mir das Buch.»</li>
+<li>Ins Perfekt: «Die Kinder laufen nach Hause.»</li>
+<li>Ins Plusquamperfekt: «Ich lese den Brief.»</li>
+<li>Stammformen von schliessen und denken?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Plusquamperfekt</li>
+<li>Futur I</li>
+<li>«Er brachte mir das Buch.»</li>
+<li>«Die Kinder sind nach Hause gelaufen.»</li>
+<li>«Ich hatte den Brief gelesen.»</li>
+<li>schliessen – schloss – geschlossen; denken – dachte – gedacht</li></ol></details>`,
 
 D4: R`<table><tr><th>Modus</th><th>Bildung</th><th>Funktion</th><th>Beispiel</th></tr>
 <tr><td>Indikativ</td><td>normale Form</td><td>Wirklichkeit, Vorsatz, Vermutung</td><td>Er kommt. Ab morgen lerne ich mehr. Er wird wohl krank sein.</td></tr>
