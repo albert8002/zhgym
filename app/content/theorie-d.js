@@ -422,9 +422,49 @@ D9: R`<p>Beim Umformen bleibt der Inhalt gleich. Zeitform und Fall müssen stimm
 <tr><td>Wegen des Regens blieben wir zu Hause.</td><td>Weil es regnete, blieben wir zu Hause.</td></tr>
 <tr><td>Trotz der Kälte gingen wir baden.</td><td>Obwohl es kalt war, gingen wir baden.</td></tr>
 <tr><td>Während des Essens klingelte das Telefon.</td><td>Während wir assen, klingelte das Telefon.</td></tr>
+<tr><td>Bei schönem Wetter gehen wir baden.</td><td>Wenn das Wetter schön ist, gehen wir baden.</td></tr>
+<tr><td>Nach dem Essen machten wir einen Spaziergang.</td><td>Nachdem wir gegessen hatten, machten wir einen Spaziergang.</td></tr>
+<tr><td>Vor der Abfahrt kaufte sie eine Zeitung.</td><td>Bevor sie abfuhr, kaufte sie eine Zeitung.</td></tr>
 <tr><td>Ich lese ein Buch. Das Buch ist spannend.</td><td>Ich lese ein Buch, das spannend ist.</td></tr></table>
+
+<h3>So formst du um</h3>
+<ol><li>Was ist der Kern der Wortgruppe? «wegen des Regens» → es regnet.</li>
+<li>Passende Konjunktion: wegen → weil, trotz → obwohl, während → während, bei → wenn, nach → nachdem, vor → bevor.</li>
+<li>Einen ganzen Nebensatz mit Subjekt und Personalform bilden. Die Personalform steht am Ende.</li>
+<li>Zeitform des Hauptsatzes beachten. Nach «nachdem» steht die frühere Handlung im Plusquamperfekt.</li>
+<li>Komma setzen.</li></ol>
+
+<h3>Relativsätze bilden</h3>
 <div class="merke"><b>Merke:</b> Relativsatz: Das Relativpronomen richtet sich in Geschlecht und Zahl nach dem Bezugswort, im Fall nach seiner Rolle im Relativsatz: «der Freund, <b>dem</b> ich schreibe» (Wem schreibe ich?).</div>
-<div class="falle"><b>Falle:</b> Die Zeitform des Ausgangssatzes beibehalten (Präteritum bleibt Präteritum). Komma vor und nach dem Nebensatz.</div>`,
+<table><tr><th>Fall</th><th>männlich</th><th>weiblich</th><th>sächlich</th><th>Mehrzahl</th></tr>
+<tr><td>Nominativ</td><td>der</td><td>die</td><td>das</td><td>die</td></tr>
+<tr><td>Akkusativ</td><td>den</td><td>die</td><td>das</td><td>die</td></tr>
+<tr><td>Dativ</td><td>dem</td><td>der</td><td>dem</td><td>denen</td></tr>
+<tr><td>Genitiv</td><td>dessen</td><td>deren</td><td>dessen</td><td>deren</td></tr></table>
+<ul><li>Akkusativ: «Der Film, <b>den</b> wir gestern sahen, war spannend.»</li>
+<li>Dativ Mehrzahl: «die Kinder, <b>denen</b> ich helfe»</li>
+<li>Genitiv: «der Nachbar, <b>dessen</b> Hund bellt»</li>
+<li>mit Präposition: «das Haus, <b>in dem</b> ich wohne»</li></ul>
+<p>Steht der Relativsatz mitten im Satz, braucht er Kommas auf beiden Seiten.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Die Zeitform des Ausgangssatzes beibehalten (Präteritum bleibt Präteritum).</li>
+<li>Komma vor und nach dem Nebensatz.</li>
+<li>Relativpronomen «das» mit einem s, die Konjunktion «dass» mit zwei.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>«Wegen der Hitze blieben wir im Schatten.» (mit weil)</li>
+<li>«Trotz seiner Verletzung spielte er weiter.» (mit obwohl)</li>
+<li>«Ich habe einen Freund. Ich vertraue ihm.» (Relativsatz)</li>
+<li>«Das ist die Lehrerin. Ihr Unterricht gefällt mir.» (Relativsatz)</li>
+<li>«Nach dem Training duschten wir.» (mit nachdem)</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>«Weil es heiss war, blieben wir im Schatten.»</li>
+<li>«Obwohl er verletzt war, spielte er weiter.»</li>
+<li>«Ich habe einen Freund, dem ich vertraue.»</li>
+<li>«Das ist die Lehrerin, deren Unterricht mir gefällt.»</li>
+<li>«Nachdem wir trainiert hatten, duschten wir.»</li></ol></details>`,
 
 D10: R`<p>Wörter mit dem gleichen Stamm bilden eine Wortfamilie: <b>der Mut – ermutigen – mutig</b>.</p>
 <ul><li>Nomen mit Artikel: oft mit -ung, -heit, -keit, -schaft, -nis (die Hoffnung, die Freiheit)</li>
