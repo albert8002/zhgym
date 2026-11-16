@@ -428,10 +428,60 @@ nach \(a\): \(\frac{2A}{h} = a + c\) → \(a = \frac{2A}{h} - c\)</div>
 <li>\(m = \frac{y - q}{x}\)</li>
 <li>\(F - 32 = \frac{9}{5}C\) → \(C = \frac{5(F - 32)}{9}\)</li></ol></details>`,
 
-M8: R`<div class="merke"><b>Vorgehen:</b> 1. Variable genau so wählen, wie sie vorgegeben ist. 2. Alle anderen Grössen mit dieser Variablen ausdrücken. 3. Die Gleichung aus dem Satz übersetzen, der zwei gleiche Dinge nennt.</div>
-<table><tr><th>Text</th><th>Term</th></tr><tr><td>um 5 grösser</td><td>\(x + 5\)</td></tr><tr><td>das Doppelte</td><td>\(2x\)</td></tr><tr><td>ein Drittel</td><td>\(\frac{x}{3}\)</td></tr><tr><td>vermindert um 7</td><td>\(x - 7\)</td></tr><tr><td>zusammen</td><td>Summe</td></tr></table>
-<div class="bsp"><b>Tiere und Beine:</b> 20 Köpfe, 56 Beine, Hühner und Kaninchen. \(x\) = Anzahl Hühner.<br>Kaninchen: \(20 - x\). Gleichung: \(2x + 4(20 - x) = 56\).<br>(Gelöst: \(x = 12\) Hühner, 8 Kaninchen. Kontrolle: \(24 + 32 = 56\).)</div>
-<div class="falle"><b>Falle:</b> In Aufgabe 4 der Prüfung nur die Gleichung aufstellen. Eine andere Variable als vorgegeben gibt 0 Punkte. Gleichwertige Gleichungen zählen.</div>`,
+M8: R`<div class="merke"><b>Vorgehen:</b> 1. Variable genau so wählen, wie sie vorgegeben ist. 2. Alle anderen Grössen mit dieser Variablen ausdrücken. 3. Die Gleichung aus dem Satz übersetzen, der zwei gleiche Dinge nennt. 4. Kontrolle: Lösung in den Text einsetzen, nicht nur in die Gleichung.</div>
+
+<h3>Vom Text zum Term</h3>
+<table><tr><th>Text</th><th>Term</th></tr>
+<tr><td>um 5 grösser als x</td><td>\(x + 5\)</td></tr>
+<tr><td>um 5 kleiner als x</td><td>\(x - 5\)</td></tr>
+<tr><td>das Doppelte, das Dreifache</td><td>\(2x\), \(3x\)</td></tr>
+<tr><td>ein Drittel, die Hälfte</td><td>\(\frac{x}{3}\), \(\frac{x}{2}\)</td></tr>
+<tr><td>3 mehr als das Doppelte</td><td>\(2x + 3\)</td></tr>
+<tr><td>das Doppelte von x vermindert um 3</td><td>\(2x - 3\)</td></tr>
+<tr><td>das Doppelte von (x vermindert um 3)</td><td>\(2(x - 3)\)</td></tr>
+<tr><td>Summe, Differenz, Produkt, Quotient</td><td>\(+\), \(-\), \(\cdot\), \(:\)</td></tr>
+<tr><td>drei aufeinanderfolgende Zahlen</td><td>\(x\), \(x + 1\), \(x + 2\)</td></tr>
+<tr><td>«ist», «ergibt», «beträgt»</td><td>\(=\)</td></tr></table>
+
+<h3>Typische Aufgaben</h3>
+<div class="bsp"><b>Tiere und Beine:</b> 20 Köpfe, 56 Beine, Hühner und Kaninchen. \(x\) = Anzahl Hühner.<br>
+Kaninchen: \(20 - x\). Gleichung: \(2x + 4(20 - x) = 56\)<br>
+Gelöst: \(2x + 80 - 4x = 56\) → \(x = 12\) Hühner, 8 Kaninchen. Kontrolle: \(24 + 32 = 56\).</div>
+<div class="bsp"><b>Eintritt:</b> Erwachsene zahlen CHF 24, Kinder CHF 12. 30 Personen zahlen zusammen CHF 504. \(x\) = Anzahl Erwachsene.<br>
+Kinder: \(30 - x\). Gleichung: \(24x + 12(30 - x) = 504\) → \(12x = 144\) → \(x = 12\)</div>
+<div class="bsp"><b>Alter:</b> Die Mutter ist heute 4-mal so alt wie Tim. In 5 Jahren sind beide zusammen 60. \(x\) = Tims Alter heute.<br>
+In 5 Jahren: Tim \(x + 5\), Mutter \(4x + 5\). Gleichung: \((4x + 5) + (x + 5) = 60\) → \(x = 10\)</div>
+<div class="bsp"><b>Rechteck:</b> 6 cm länger als breit, Umfang 52 cm. \(x\) = Breite in cm.<br>
+Länge: \(x + 6\). Gleichung: \(2(x + x + 6) = 52\) → \(4x + 12 = 52\) → \(x = 10\)</div>
+<div class="bsp"><b>Zahlenrätsel:</b> Vermindert man das 5-Fache einer Zahl um 12, erhält man 6 mehr als das Doppelte der Zahl.<br>
+Gleichung: \(5x - 12 = 2x + 6\) → \(x = 6\)</div>
+<div class="bsp"><b>Geld:</b> Lea hat 3-mal so viel Geld wie Ben. Lea gibt CHF 40 aus, Ben bekommt CHF 20. Jetzt haben beide gleich viel. \(x\) = Bens Geld am Anfang.<br>
+Gleichung: \(3x - 40 = x + 20\) → \(x = 30\)</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>In Aufgabe 4 steht meist: «Stelle eine Gleichung auf. Löse sie nicht.» Dann zählt nur die Gleichung. Die Variable ist vorgegeben, zum Beispiel «\(x\) ist die Anzahl Erwachsene».</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Eine andere Variable als vorgegeben gibt 0 Punkte. Gleichwertige Gleichungen zählen.</li>
+<li>«um 5 kleiner als x» ist \(x - 5\), nicht \(5 - x\).</li>
+<li>Bei Altersaufgaben bekommen <b>alle</b> Personen die Jahre dazu.</li>
+<li>Gleiche Einheiten verwenden: nicht Franken und Rappen oder Minuten und Stunden mischen.</li>
+<li>Die Variable beschreibt genau eine Grösse. «x = Erwachsene» ist ungenau, «x = Anzahl Erwachsene» ist klar.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Stelle jeweils eine Gleichung auf.</p>
+<ol class="check">
+<li>Die Summe einer Zahl und ihres Dreifachen ist 48.</li>
+<li>Auf einem Hof leben Hühner und Schafe: 35 Tiere mit 100 Beinen. \(x\) = Anzahl Schafe.</li>
+<li>Ein Rechteck ist doppelt so lang wie breit. Sein Umfang ist 54 cm. \(x\) = Breite in cm.</li>
+<li>Ein Vater ist 28 Jahre älter als sein Sohn. In 4 Jahren ist er 3-mal so alt wie der Sohn. \(x\) = Alter des Sohnes heute.</li>
+<li>Vermindert man eine Zahl um 7 und verdoppelt das Resultat, erhält man 30.</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(x + 3x = 48\) (\(x = 12\))</li>
+<li>\(4x + 2(35 - x) = 100\) (\(x = 15\))</li>
+<li>\(2(x + 2x) = 54\) (\(x = 9\))</li>
+<li>\(x + 28 + 4 = 3(x + 4)\) (\(x = 10\))</li>
+<li>\(2(x - 7) = 30\) (\(x = 22\))</li></ol></details>`,
 
 M9: R`<div class="merke"><b>Vorgehen:</b> Tabelle machen: Figur \(n\) und Anzahl. Wächst die Anzahl jedes Mal um gleich viel (\(d\)), dann gilt: Anzahl \(= d \cdot n + (\text{erste Anzahl} - d)\).</div>
 <div class="bsp">4, 7, 10, 13 … → \(d = 3\) → Anzahl \(= 3n + 1\). Probe: \(n = 1\): \(3 + 1 = 4\). Stimmt.</div>
