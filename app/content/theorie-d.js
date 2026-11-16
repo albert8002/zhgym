@@ -853,14 +853,49 @@ D18: R`<div class="merke"><b>Vorgehen:</b> 1. Frage genau lesen: Was ist gefragt
 <li>Er will vermutlich nicht, dass seine Eltern die Noten sehen. Hinweise: Er versteckt das Zeugnis und weicht der Frage der Mutter aus.</li>
 <li>b: Sie nimmt die Frage auf und gibt einen klaren Grund.</li></ol></details>`,
 
-D19: R`<ul><li><b>Absicht:</b> Will der Text informieren, unterhalten, überzeugen oder Gefühle ausdrücken?</li>
-<li><b>Kernaussage:</b> der wichtigste Gedanke. Frage: Was soll ich nach dem Lesen verstanden haben?</li>
-<li><b>Pointe:</b> die überraschende Wendung, meist am Schluss.</li>
-<li><b>Titel:</b> Oft hat er 2 Bedeutungen: eine wörtliche und eine übertragene.</li>
-<li><b>Realität und Fiktion:</b> Was gibt es wirklich, was ist erfunden?</li>
-<li><b>Ironie:</b> Jemand sagt das Gegenteil von dem, was er meint.</li>
-<li><b>Wortneuschöpfung:</b> ein neu erfundenes Wort. Erkläre es aus seinen Teilen und aus dem Zusammenhang.</li></ul>
-<div class="merke"><b>Merke:</b> Jede Deutung braucht einen Beleg aus dem Text.</div>`,
+D19: R`<div class="merke"><b>Merke:</b> Jede Deutung braucht einen Beleg aus dem Text.</div>
+
+<h3>Absicht</h3>
+<table><tr><th>Absicht</th><th>typische Texte</th><th>Hinweise</th></tr>
+<tr><td>informieren</td><td>Bericht, Sachtext, Nachricht</td><td>Fakten, Zahlen, sachliche Sprache</td></tr>
+<tr><td>unterhalten</td><td>Geschichte, Anekdote, Witz</td><td>Figuren, Spannung, Pointe</td></tr>
+<tr><td>überzeugen</td><td>Kommentar, Leserbrief, Werbung</td><td>Meinung, Argumente, Aufforderungen</td></tr>
+<tr><td>Gefühle ausdrücken</td><td>Gedicht, Tagebuch, Brief</td><td>ich-Form, Gefühlswörter, Bilder</td></tr></table>
+
+<h3>Kernaussage</h3>
+<p>Der wichtigste Gedanke in einem Satz. Frage: Was soll ich nach dem Lesen verstanden haben? Die Kernaussage ist allgemeiner als der Inhalt.</p>
+<div class="bsp">Ein Junge prahlt, er springe locker über den Bach, und fällt hinein. Die anderen lachen.<br>
+Inhalt: «Ein Junge fällt in den Bach.»<br>
+Kernaussage: «Wer angibt, blamiert sich leicht.»</div>
+
+<h3>Pointe und Titel</h3>
+<ul><li><b>Pointe:</b> die überraschende Wendung, meist am Schluss. Sie zeigt oft die Kernaussage.</li>
+<li><b>Titel:</b> Oft hat er 2 Bedeutungen: eine wörtliche und eine übertragene. «Eiszeit» über zwei Freunde, die nicht mehr miteinander reden: wörtlich Kälte, übertragen eine kühle Freundschaft.</li></ul>
+
+<h3>Weitere Begriffe</h3>
+<ul><li><b>Realität und Fiktion:</b> Was gibt es wirklich, was ist erfunden? Eine Geschichte kann an einem echten Ort spielen und trotzdem erfunden sein.</li>
+<li><b>Ironie:</b> Jemand sagt das Gegenteil von dem, was er meint: «Na super, schon wieder Regen!»</li>
+<li><b>Wortneuschöpfung:</b> ein neu erfundenes Wort. Erkläre es aus seinen Teilen und aus dem Zusammenhang: «Bildschirmschnecke» = jemand, der vor dem Bildschirm langsam und träge wird.</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Oft als Auswahl («Welche Absicht hat der Text?») oder als kurze Frage («Erkläre den Titel»). Bei Auswahlaufgaben jede Möglichkeit am Text prüfen. Bei kurzen Fragen: Deutung + Beleg.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Inhalt und Kernaussage nicht verwechseln: Die Kernaussage gilt über die Geschichte hinaus.</li>
+<li>Beim Titel beide Bedeutungen nennen, wenn nach der Bedeutung gefragt ist.</li>
+<li>Eine Deutung ohne Textstelle ist nur eine Vermutung.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Welche Absicht hat eine Werbung?</li>
+<li>Ein Mädchen übt wochenlang für ein Klavierkonzert. Am Abend zittern ihre Hände, aber sie spielt fehlerfrei. Wie lautet die Kernaussage?</li>
+<li>Das Glas zerbricht, und die Mutter sagt: «Das hast du ja toll gemacht.» Wie nennt man das?</li>
+<li>Eine Geschichte über zwei Nachbarn, die sich versöhnen, heisst «Brücken bauen». Erkläre den Titel.</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>überzeugen</li>
+<li>zum Beispiel: Wer gut übt, besteht auch unter Druck.</li>
+<li>Ironie</li>
+<li>wörtlich: eine Brücke bauen; übertragen: wieder eine Verbindung schaffen, sich versöhnen</li></ol></details>`,
 
 D20: R`<p>Jeder Aufsatzauftrag hat mehrere Teilaufträge. Markiere jedes Verb und nummeriere die Teile.</p>
 <table><tr><th>Verb</th><th>Was du tust</th></tr>
