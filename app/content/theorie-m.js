@@ -126,13 +126,65 @@ Zähler: \(2^{5+3} = 2^8\). Bruch: \(2^{8-6} = 2^2 = 4\).</div>
 <li>zwischen 9 und 10, weil \(81 < 90 < 100\)</li>
 <li>\(\frac{8}{27}\)</li></ol></details>`,
 
-M3: R`<ul><li><b>Primzahl:</b> hat genau 2 Teiler (1 und sich selbst): 2, 3, 5, 7, 11, 13 … Die 1 ist keine Primzahl.</li>
-<li><b>Primfaktorzerlegung:</b> \(60 = 2^2 \cdot 3 \cdot 5\)</li>
-<li><b>ggT</b> (grösster gemeinsamer Teiler): gemeinsame Primfaktoren, je mit dem kleinsten Exponenten.</li>
-<li><b>kgV</b> (kleinstes gemeinsames Vielfaches): alle Primfaktoren, je mit dem grössten Exponenten.</li></ul>
-<div class="bsp">\(12 = 2^2 \cdot 3\) und \(18 = 2 \cdot 3^2\) → \(\text{ggT} = 2 \cdot 3 = 6\), \(\text{kgV} = 2^2 \cdot 3^2 = 36\).<br>Kontrolle: \(\text{ggT} \cdot \text{kgV} = 6 \cdot 36 = 216 = 12 \cdot 18\).</div>
-<div class="merke"><b>Sachaufgaben:</b> «Wann treffen sie sich wieder?» oder «Wann sind beide wieder in der Startstellung?» → <b>kgV</b>. «In möglichst grosse gleiche Stücke ohne Rest teilen» → <b>ggT</b>.</div>
-<div class="bsp"><b>Zahnräder:</b> A hat 12 Zähne, B hat 18. Nach \(\text{kgV}(12, 18) = 36\) Zähnen stehen beide wieder am Start: A hat sich \(36 : 12 = 3\)-mal gedreht, B \(36 : 18 = 2\)-mal.</div>`,
+M3: R`<div class="merke"><b>Kurz:</b> ggT = grösster gemeinsamer Teiler (gemeinsame Primfaktoren, kleinste Hochzahl). kgV = kleinstes gemeinsames Vielfaches (alle Primfaktoren, grösste Hochzahl). «Wieder gleichzeitig» → kgV. «In möglichst grosse gleiche Teile» → ggT.</div>
+
+<h3>Teiler und Vielfache</h3>
+<ul><li><b>Teiler</b> von 24 (immer in Paaren suchen: \(1 \cdot 24\), \(2 \cdot 12\), \(3 \cdot 8\), \(4 \cdot 6\)): 1, 2, 3, 4, 6, 8, 12, 24.</li>
+<li><b>Vielfache</b> von 6: 6, 12, 18, 24, 30 … (die Sechserreihe).</li></ul>
+
+<h3>Teilbarkeitsregeln</h3>
+<table><tr><th>durch</th><th>wenn</th><th>Beispiel</th></tr>
+<tr><td>2</td><td>letzte Ziffer gerade</td><td>3 578</td></tr>
+<tr><td>3</td><td>Quersumme durch 3 teilbar</td><td>7 452: \(7 + 4 + 5 + 2 = 18\)</td></tr>
+<tr><td>4</td><td>letzte zwei Ziffern durch 4 teilbar</td><td>7 452: 52 ist durch 4 teilbar</td></tr>
+<tr><td>5</td><td>letzte Ziffer 0 oder 5</td><td>935</td></tr>
+<tr><td>6</td><td>durch 2 und durch 3 teilbar</td><td>7 452</td></tr>
+<tr><td>9</td><td>Quersumme durch 9 teilbar</td><td>7 452: Quersumme 18</td></tr>
+<tr><td>10</td><td>letzte Ziffer 0</td><td>1 230</td></tr></table>
+
+<h3>Primzahlen und Primfaktorzerlegung</h3>
+<ul><li><b>Primzahl:</b> hat genau 2 Teiler (1 und sich selbst). Bis 50: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47. Die 1 ist keine Primzahl.</li>
+<li><b>Primfaktorzerlegung:</b> immer wieder durch die kleinste passende Primzahl teilen.</li></ul>
+<div class="bsp">\(360 : 2 = 180\), \(180 : 2 = 90\), \(90 : 2 = 45\), \(45 : 3 = 15\), \(15 : 3 = 5\), \(5 : 5 = 1\)<br>
+→ \(360 = 2^3 \cdot 3^2 \cdot 5\)</div>
+
+<h3>ggT und kgV berechnen</h3>
+<div class="bsp">\(12 = 2^2 \cdot 3\) und \(18 = 2 \cdot 3^2\)<br>
+ggT: gemeinsame Primfaktoren mit der kleinsten Hochzahl: \(2 \cdot 3 = 6\)<br>
+kgV: alle Primfaktoren mit der grössten Hochzahl: \(2^2 \cdot 3^2 = 36\)<br>
+Kontrolle: \(\text{ggT} \cdot \text{kgV} = 6 \cdot 36 = 216 = 12 \cdot 18\).</div>
+<ul><li><b>Drei Zahlen:</b> \(12 = 2^2 \cdot 3\), \(18 = 2 \cdot 3^2\), \(30 = 2 \cdot 3 \cdot 5\) → ggT \(= 2 \cdot 3 = 6\), kgV \(= 2^2 \cdot 3^2 \cdot 5 = 180\).</li>
+<li><b>Kleine Zahlen im Kopf:</b> Vielfache der grösseren Zahl aufzählen, bis die kleinere aufgeht. kgV(8, 12): 12 nein, 24 ja → 24.</li>
+<li><b>Teilerfremd:</b> Ist der ggT 1, dann ist das kgV das Produkt: kgV(8, 15) = 120.</li></ul>
+
+<h3>Sachaufgaben</h3>
+<div class="bsp"><b>kgV:</b> Bus A fährt alle 12 Minuten, Bus B alle 18 Minuten. Um 8.00 Uhr fahren beide. Nach kgV(12, 18) = 36 Minuten fahren sie wieder gleichzeitig: um 8.36 Uhr.</div>
+<div class="bsp"><b>kgV, Zahnräder:</b> A hat 12 Zähne, B hat 18. Nach 36 Zähnen stehen beide wieder am Start: A hat sich \(36 : 12 = 3\)-mal gedreht, B \(36 : 18 = 2\)-mal.</div>
+<div class="bsp"><b>ggT:</b> Ein Brett von 84 cm × 60 cm soll ohne Rest in möglichst grosse gleiche Quadrate zerschnitten werden. ggT(84, 60) = 12 → Quadrate mit 12 cm Seite, \(7 \cdot 5 = 35\) Stück.</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Bestimme ggT und kgV von 84 und 120.<br>
+\(84 = 2^2 \cdot 3 \cdot 7\), \(120 = 2^3 \cdot 3 \cdot 5\)<br>
+ggT \(= 2^2 \cdot 3 = 12\); kgV \(= 2^3 \cdot 3 \cdot 5 \cdot 7 = 840\). Kontrolle: \(12 \cdot 840 = 10\,080 = 84 \cdot 120\).</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>\(60 = 4 \cdot 15\) ist keine Primfaktorzerlegung: 4 und 15 sind keine Primzahlen. Richtig: \(2^2 \cdot 3 \cdot 5\).</li>
+<li>ggT und kgV verwechselt? Der ggT ist nie grösser als die kleinste Zahl, das kgV nie kleiner als die grösste.</li>
+<li>Bei Sachaufgaben die Frage genau lesen: Wird nach der Zeit gefragt (kgV) oder nach der Anzahl Umdrehungen (kgV geteilt durch die Zähne)?</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Ist 2 316 durch 3, durch 4 und durch 9 teilbar?</li>
+<li>Zerlege 252 in Primfaktoren.</li>
+<li>ggT und kgV von 36 und 60.</li>
+<li>Zwei Läuferinnen brauchen für eine Runde 4 und 6 Minuten. Sie starten gemeinsam. Wann sind sie wieder gleichzeitig am Start?</li>
+<li>Zwei Bänder (48 cm und 72 cm) werden in gleich lange, möglichst lange Stücke ohne Rest geschnitten. Wie lang ist ein Stück, wie viele Stücke gibt es?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Quersumme \(2 + 3 + 1 + 6 = 12\): durch 3 ja, durch 9 nein. Letzte zwei Ziffern 16: durch 4 ja.</li>
+<li>\(252 = 2^2 \cdot 3^2 \cdot 7\)</li>
+<li>\(36 = 2^2 \cdot 3^2\), \(60 = 2^2 \cdot 3 \cdot 5\) → ggT 12, kgV \(2^2 \cdot 3^2 \cdot 5 = 180\)</li>
+<li>nach kgV(4, 6) = 12 Minuten</li>
+<li>ggT(48, 72) = 24 cm; \(2 + 3 = 5\) Stücke</li></ol></details>`,
 
 M4: R`<ul><li><b>Zusammenfassen:</b> nur gleichartige Glieder: \(3x + 5y - x + 2y = 2x + 7y\)</li>
 <li><b>Multiplizieren:</b> Zahlen mal Zahlen, Variablen mal Variablen: \(3x \cdot 4x = 12x^2\)</li>
