@@ -519,7 +519,47 @@ D10: R`<p>Wörter mit dem gleichen Stamm bilden eine Wortfamilie: <b>der Mut –
 
 D11: R`<p><b>Synonym:</b> Wort mit gleicher oder ähnlicher Bedeutung (schnell – rasch). <b>Antonym:</b> Wort mit gegenteiliger Bedeutung (schnell – langsam).</p>
 <div class="merke"><b>Merke:</b> Das Wort muss in den Satz passen und die gleiche Wortart haben. Der Satz entscheidet: «ein <b>alter</b> Mann» ↔ jung, aber «<b>altes</b> Brot» ↔ frisch.</div>
-<div class="falle"><b>Falle:</b> Ein Antonym nie mit «un-» bilden: glücklich ↔ traurig, nicht «unglücklich». Bei Synonym-Gruppen das Wort streichen, das eine andere Bedeutung hat.</div>`,
+
+<h3>Der Satz entscheidet</h3>
+<table><tr><th>Wort im Satz</th><th>Antonym</th></tr>
+<tr><td>eine <b>leichte</b> Tasche</td><td>schwer</td></tr>
+<tr><td>eine <b>leichte</b> Aufgabe</td><td>schwierig</td></tr>
+<tr><td>ein <b>helles</b> Zimmer</td><td>dunkel</td></tr>
+<tr><td>eine <b>helle</b> Stimme</td><td>tief</td></tr>
+<tr><td>ein <b>scharfes</b> Messer</td><td>stumpf</td></tr>
+<tr><td>ein <b>scharfes</b> Essen</td><td>mild</td></tr></table>
+<p>Auch Verben und Nomen haben Antonyme: gewinnen ↔ verlieren, ankommen ↔ abfahren, der Anfang ↔ das Ende, der Freund ↔ der Feind.</p>
+
+<h3>So gehst du vor</h3>
+<ol><li>Den ganzen Satz lesen. Was bedeutet das Wort genau hier?</li>
+<li>Wortart bestimmen: Ein Adjektiv braucht ein Adjektiv.</li>
+<li><b>Ersatzprobe:</b> Dein Wort in den Satz einsetzen. Stimmt der Sinn (Synonym) oder das Gegenteil (Antonym)?</li>
+<li>Die Form anpassen: «eine leichte Aufgabe» → «eine schwierig<b>e</b> Aufgabe».</li></ol>
+
+<h3>Synonyme sind selten genau gleich</h3>
+<p>«sagen», «behaupten», «erklären» und «flüstern» sind ähnlich, aber nicht gleich. Wähle das Wort, das im Satz die gleiche Bedeutung hat: «Sie sagte leise etwas» → «Sie flüsterte».</p>
+<div class="bsp"><b>Welches Wort passt nicht?</b> mutig, tapfer, kühn, feige → «feige» ist ein Antonym, die anderen sind Synonyme.</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Ein Antonym nie mit «un-» bilden: glücklich ↔ traurig, nicht «unglücklich».</li>
+<li>Auch «nicht» ist kein Antonym: «nicht schnell» ist nicht dasselbe wie «langsam».</li>
+<li>Bei Synonym-Gruppen das Wort streichen, das eine andere Bedeutung hat.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Antonym: «Die Suppe ist heiss.»</li>
+<li>Antonym: «Das ist eine leichte Aufgabe.»</li>
+<li>Antonym: «ein stumpfes Messer»</li>
+<li>Synonym: «Sie war nach dem Lauf sehr müde.»</li>
+<li>Welches Wort passt nicht? schnell, rasch, flink, gemütlich</li>
+<li>Antonym zu «ehrlich», ohne «un-»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>kalt</li>
+<li>schwierig (eine schwierige Aufgabe)</li>
+<li>scharf</li>
+<li>erschöpft</li>
+<li>gemütlich</li>
+<li>verlogen</li></ol></details>`,
 
 D12: R`<p><b>Oberbegriff:</b> fasst mehrere Wörter zusammen. <b>Unterbegriffe:</b> gehören zum Oberbegriff. Werkzeug → Hammer, Zange, Säge.</p>
 <p><b>Wortfeld:</b> Wörter mit ähnlicher Bedeutung aus einem Bereich. Wortfeld «gehen»: schlendern (gemütlich), rennen (sehr schnell), schleichen (leise), humpeln (mit Schmerzen), stapfen (mit schweren Schritten).</p>
