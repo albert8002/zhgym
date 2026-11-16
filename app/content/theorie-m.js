@@ -867,12 +867,63 @@ Mindestens eine rote: \(1 - \frac{1}{3} = \frac{2}{3}\)</div>
 <li>\(1 - \left(\frac{1}{2}\right)^4 = \frac{15}{16}\)</li>
 <li>\(\frac{18}{50} = 0.36\) → etwa \(300 \cdot 0.36 = 108\)</li></ol></details>`,
 
-M16: R`<ul><li><b>Nebenwinkel</b> ergeben zusammen 180°. <b>Scheitelwinkel</b> sind gleich gross.</li>
-<li>An Parallelen: <b>Stufenwinkel</b> (F-Form) und <b>Wechselwinkel</b> (Z-Form) sind gleich gross.</li>
-<li>Winkelsumme: Dreieck 180°, Viereck 360°.</li>
-<li>Gleichschenkliges Dreieck: Die beiden Basiswinkel sind gleich gross. Gleichseitiges Dreieck: alle Winkel 60°.</li></ul>
-<div class="bsp">Dreieck mit \(\alpha = 50°\) und \(\beta = 65°\): \(\gamma = 180° - 50° - 65° = 65°\).</div>
-<div class="falle"><b>Falle:</b> Winkel in einer Skizze nicht messen, sondern berechnen. Die Zeichnung ist oft nicht massstäblich.</div>`,
+M16: R`<div class="merke"><b>Kurz:</b> Nebenwinkel ergeben 180°, Scheitelwinkel sind gleich. An Parallelen sind Stufenwinkel (F) und Wechselwinkel (Z) gleich. Winkelsumme: Dreieck 180°, Viereck 360°.</div>
+
+<h3>Winkelarten</h3>
+<p>spitz (kleiner als 90°), recht (90°), stumpf (zwischen 90° und 180°), gestreckt (180°), überstumpf (grösser als 180°), voll (360°).</p>
+
+<h3>Winkel an Geraden</h3>
+<ul><li><b>Nebenwinkel</b> liegen nebeneinander an einer Geraden: zusammen 180°. Zu 37° gehört der Nebenwinkel 143°.</li>
+<li><b>Scheitelwinkel</b> liegen sich an einem Schnittpunkt gegenüber: gleich gross.</li></ul>
+
+<h3>Winkel an Parallelen</h3>
+<p>Eine Gerade schneidet zwei parallele Geraden.</p>
+<ul><li><b>Stufenwinkel</b> (F-Form): gleich gross.</li>
+<li><b>Wechselwinkel</b> (Z-Form): gleich gross.</li>
+<li><b>Nachbarwinkel</b> (C- oder U-Form, zwischen den Parallelen auf derselben Seite): zusammen 180°.</li></ul>
+<div class="bsp">Ein Winkel an der oberen Parallelen misst 62°. Dann misst der Stufenwinkel unten auch 62°, sein Nebenwinkel \(180° - 62° = 118°\).</div>
+
+<h3>Dreieck</h3>
+<ul><li>Winkelsumme: \(\alpha + \beta + \gamma = 180°\). Mit \(\alpha = 50°\) und \(\beta = 65°\): \(\gamma = 180° - 50° - 65° = 65°\).</li>
+<li><b>Gleichschenklig:</b> Die beiden Basiswinkel sind gleich. Spitze 40° → Basiswinkel je \((180° - 40°) : 2 = 70°\).</li>
+<li><b>Gleichseitig:</b> alle Winkel 60°.</li>
+<li><b>Rechtwinklig:</b> Die beiden anderen Winkel ergeben zusammen 90°.</li>
+<li><b>Aussenwinkel:</b> Nebenwinkel eines Innenwinkels. Er ist so gross wie die beiden anderen Innenwinkel zusammen.</li></ul>
+
+<h3>Viereck und Vieleck</h3>
+<ul><li>Winkelsumme Viereck: 360°.</li>
+<li><b>Parallelogramm</b> (auch Rechteck, Raute): Gegenüberliegende Winkel sind gleich, benachbarte ergeben 180°.</li>
+<li><b>Trapez:</b> Die beiden Winkel an einem Schenkel ergeben zusammen 180°.</li>
+<li><b>n-Eck:</b> Winkelsumme \((n - 2) \cdot 180°\). Fünfeck 540°, Sechseck 720°. Im regelmässigen Sechseck ist jeder Winkel \(720° : 6 = 120°\).</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Im Dreieck ABC ist \(\alpha = 48°\). Der Aussenwinkel bei B misst 115°. Berechne \(\gamma\).<br>
+Innenwinkel \(\beta = 180° - 115° = 65°\)<br>
+\(\gamma = 180° - 48° - 65° = 67°\)<br>
+Kontrolle mit dem Aussenwinkel: \(48° + 67° = 115°\). Stimmt.</div>
+<p>Schreibe zu jedem Schritt den Grund: «Nebenwinkel», «Wechselwinkel», «Winkelsumme im Dreieck». Das gibt Punkte.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Winkel in einer Skizze nicht messen, sondern berechnen. Die Zeichnung ist oft nicht massstäblich.</li>
+<li>Stufen- und Wechselwinkel sind nur gleich, wenn die Geraden parallel sind.</li>
+<li>Die Basiswinkel liegen an der Basis, nicht an der Spitze.</li>
+<li>Innenwinkel und Aussenwinkel nicht verwechseln.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Wie gross ist der Nebenwinkel von 128°?</li>
+<li>Gleichschenkliges Dreieck mit Basiswinkeln von je 52°. Wie gross ist der Winkel an der Spitze?</li>
+<li>Ein Viereck hat die Winkel 85°, 95° und 110°. Wie gross ist der vierte?</li>
+<li>Ein Parallelogramm hat einen Winkel von 64°. Wie gross sind die anderen?</li>
+<li>Wie gross ist ein Winkel im regelmässigen Fünfeck?</li>
+<li>Rechtwinkliges Dreieck mit \(\alpha = 34°\). Wie gross ist der dritte Winkel?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>52°</li>
+<li>\(180° - 2 \cdot 52° = 76°\)</li>
+<li>\(360° - 85° - 95° - 110° = 70°\)</li>
+<li>116°, 64°, 116°</li>
+<li>\(540° : 5 = 108°\)</li>
+<li>\(90° - 34° = 56°\)</li></ol></details>`,
 
 M17: R`<table><tr><th>Figur</th><th>Fläche</th><th>Umfang</th></tr>
 <tr><td>Rechteck</td><td>\(A = a \cdot b\)</td><td>\(u = 2(a + b)\)</td></tr>
