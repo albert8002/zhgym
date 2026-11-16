@@ -91,6 +91,7 @@ function createWindow() {
       busy = null;
     }
   });
+  if (process.env.GYMI_SMOKE) smokeTest();
   win.loadURL('app://lokal/index.html');
   win.webContents.setWindowOpenHandler(({ url }) => {
     if (/^https?:/i.test(url)) shell.openExternal(url);
@@ -300,6 +301,45 @@ function registerIpc() {
     await fsp.writeFile(r.filePath, data);
     shell.openPath(r.filePath);
     return { ok: true, path: r.filePath };
+  });
+}
+
+// Starttest für das automatische Bauen (GYMI_SMOKE=1): wartet, bis die erste Seite gezeichnet ist,
+// meldet Fehler aus der Seite und beendet die App. Exit-Code 0 = Start in Ordnung.
+function smokeTest() {
+  const fehler = [];
+  let fertig = false;
+  const ende = (ok, info) => {
+    if (fertig) return;
+    fertig = true;
+    console.log('GYMI_SMOKE ' + (ok ? 'OK' : 'FEHLER') + ': ' + info);
+    app.exit(ok ? 0 : 1);
+  };
+  const limit = setTimeout(() => ende(false, 'Zeitlimit. ' + fehler.join(' | ')), 45000);
+  const wc = win.webContents;
+  wc.on('console-message', (e, lvl, msg) => {
+    const level = e.level ?? lvl;
+    if (level === 'error' || level === 3) fehler.push(e.message ?? msg);
+  });
+  wc.on('preload-error', (_e, p, err) => { clearTimeout(limit); ende(false, 'Preload: ' + err); });
+  wc.on('did-fail-load', (_e, code, desc) => { clearTimeout(limit); ende(false, 'Laden: ' + code + ' ' + desc); });
+  wc.on('render-process-gone', (_e, d) => { clearTimeout(limit); ende(false, 'Seite abgestürzt: ' + d.reason); });
+  wc.once('did-finish-load', () => {
+    const pruefen = async () => {
+      const r = await wc.executeJavaScript("({ text: (document.getElementById('app') || {}).innerText || '', katex: typeof katex === 'object' })")
+        .catch((err) => ({ text: '', katex: false, err: String(err) }));
+      const text = r.text.trim();
+      const gezeichnet = text.length > 40 && !text.includes('wird geladen');
+      if (!gezeichnet) { if (!fertig) setTimeout(pruefen, 500); return; }
+      clearTimeout(limit);
+      // kurz warten, damit Fehler beim Zeichnen noch ankommen
+      setTimeout(() => {
+        if (!r.katex) return ende(false, 'KaTeX nicht geladen');
+        if (fehler.length) return ende(false, fehler.join(' | '));
+        ende(true, text.split('\n')[0].slice(0, 80));
+      }, 1500);
+    };
+    pruefen();
   });
 }
 

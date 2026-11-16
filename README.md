@@ -63,7 +63,7 @@ Hinweise:
 - **Windows:** Ohne eigenes Zertifikat bleibt das Programm unsigniert (Hinweis «Windows geschützt», siehe oben).
 
 ### Automatisch bauen (GitHub Actions)
-- Jeder Push auf `main` prüft die Generatoren und baut alle Pakete auf echten Windows-, macOS- und Linux-Rechnern. Die Dateien liegen danach unter «Actions» beim jeweiligen Lauf.
+- Jeder Push auf `main` prüft die Generatoren, baut alle Pakete auf echten Windows-, macOS- und Linux-Rechnern und startet die gebaute App einmal zur Probe. Die Dateien liegen danach unter «Actions» beim jeweiligen Lauf.
 - Ein Versions-Tag erzeugt zusätzlich einen Release-Entwurf mit allen Paketen und Prüfsummen. Ablauf für eine neue Version:
   ```
   # Version in package.json erhöhen, z. B. auf 1.3.1

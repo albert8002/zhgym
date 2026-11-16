@@ -48,11 +48,33 @@ jobs:
           cache: npm
       - name: Werkzeuge für das pacman-Paket
         if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install -y libarchive-tools zstd
+        run: sudo apt-get update && sudo apt-get install -y libarchive-tools zstd xvfb
       - run: npm ci
       - run: npm run ${{ matrix.script }}
         env:
           CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      # Starttest: die gebaute App öffnen, warten bis die erste Seite gezeichnet ist, wieder schliessen
+      - name: Starttest (Linux)
+        if: runner.os == 'Linux'
+        timeout-minutes: 3
+        run: xvfb-run -a env GYMI_SMOKE=1 dist/linux-unpacked/gymi-trainer-zh --no-sandbox
+      - name: Starttest (macOS, aus dem ZIP)
+        if: runner.os == 'macOS'
+        timeout-minutes: 3
+        run: |
+          rm -rf "$RUNNER_TEMP/zip" && mkdir "$RUNNER_TEMP/zip"
+          unzip -q dist/Gymi-Trainer-ZH-*-mac-arm64.zip -d "$RUNNER_TEMP/zip"
+          codesign --verify --deep --strict "$RUNNER_TEMP/zip/Gymi-Trainer ZH.app"
+          GYMI_SMOKE=1 "$RUNNER_TEMP/zip/Gymi-Trainer ZH.app/Contents/MacOS/Gymi-Trainer ZH"
+      - name: Starttest (Windows)
+        if: runner.os == 'Windows'
+        timeout-minutes: 3
+        shell: pwsh
+        run: |
+          $env:GYMI_SMOKE = '1'
+          $p = Start-Process -FilePath 'dist\win-unpacked\Gymi-Trainer ZH.exe' -Wait -PassThru -RedirectStandardOutput smoke-out.txt -RedirectStandardError smoke-err.txt
+          Get-Content smoke-out.txt -ErrorAction SilentlyContinue
+          if ($p.ExitCode -ne 0) { Get-Content smoke-err.txt -ErrorAction SilentlyContinue; throw "Starttest fehlgeschlagen (Exit-Code $($p.ExitCode))" }
       - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.name }}
