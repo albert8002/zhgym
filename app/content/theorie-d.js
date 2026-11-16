@@ -171,9 +171,48 @@ D4: R`<table><tr><th>Modus</th><th>Bildung</th><th>Funktion</th><th>Beispiel</th
 <tr><td>Imperativ</td><td>Befehlsform</td><td>Befehl, Bitte, Verbot</td><td>Komm her! Hilf mir bitte! Lauf nicht weg!</td></tr>
 <tr><td>Konjunktiv I</td><td>vom Präsens-Stamm: er komme, sie habe, er sei</td><td>indirekte Rede</td><td>Sie sagt, sie habe keine Zeit.</td></tr>
 <tr><td>Konjunktiv II</td><td>vom Präteritum-Stamm: er käme, sie hätte, er wäre; oder würde + Infinitiv</td><td>Wunsch, Unwirkliches, höfliche Bitte, Vermutung</td><td>Wäre ich doch zu Hause! Könntest du mir helfen? Das könnte sie sein.</td></tr></table>
+
+<h3>Imperativ bilden</h3>
+<ul><li>du-Form: Komm! Warte! Bei starken Verben mit e oft i: lesen → Lies! helfen → Hilf! geben → Gib!</li>
+<li>ihr-Form: Kommt! Lest!</li>
+<li>Höflichkeitsform: Kommen Sie! Lesen Sie!</li></ul>
+
+<h3>Konjunktiv I bilden</h3>
+<p>Stamm des Infinitivs + Endung mit e: komm-en → er komm<b>e</b>; hab-en → sie hab<b>e</b>. Am besten erkennst du ihn in der 3. Person Einzahl. Besonders: sein → ich sei, er sei, wir seien.</p>
+<div class="bsp"><b>Indirekte Rede:</b> Lena sagt: «Ich bin müde.» → Lena sagt, sie <b>sei</b> müde.<br>
+Die Pronomen passen sich an: «ich» wird zu «sie».</div>
+<p>Ist der Konjunktiv I gleich wie der Indikativ, nimmt man den Konjunktiv II: «Sie sagen, sie <b>hätten</b> keine Zeit» (statt «sie haben»).</p>
+
+<h3>Konjunktiv II bilden</h3>
+<p>Präteritum-Stamm, wenn möglich mit Umlaut, + e: er kam → er k<b>ä</b>m<b>e</b>; er hatte → er h<b>ä</b>tte; er war → er w<b>ä</b>re; er ging → er ginge. Klingt die Form wie das Präteritum (ich spielte), nimmt man <b>würde + Infinitiv</b>: ich würde spielen.</p>
+<div class="bsp"><b>Unwirkliche Bedingung:</b> «Wenn ich Zeit <b>hätte</b>, <b>käme</b> ich mit.» (Ich habe keine Zeit.)</div>
+
 <div class="merke"><b>Merke:</b> In der Prüfung gibt es den Punkt nur, wenn <b>Modus und Funktion</b> beide stimmen. Zuerst die Form bestimmen, dann fragen: Was will der Satz? (berichten, sich etwas vornehmen, vermuten, bitten, befehlen, verbieten, wiedergeben)</div>
 <div class="bsp"><b>Probe:</b> Vergleiche mit dem Indikativ. «er habe» ist nicht «er hat» (Präsens) → Konjunktiv I. «er hätte» kommt von «er hatte» (Präteritum) mit Umlaut → Konjunktiv II.</div>
-<div class="falle"><b>Falle:</b> «Er wird morgen kommen» ist Indikativ (Futur I). Auch eine Bitte kann im Konjunktiv II stehen: «Würdest du das Fenster schliessen?»</div>`,
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>«Er wird morgen kommen» ist Indikativ (Futur I). Erst «er würde kommen» ist Konjunktiv II.</li>
+<li>Auch eine Bitte kann im Konjunktiv II stehen: «Würdest du das Fenster schliessen?»</li>
+<li>Eine Vermutung kann im Indikativ («Er wird wohl krank sein») oder im Konjunktiv II («Das könnte sie sein») stehen. Entscheidend ist die Form.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Bestimme Modus und Funktion.</p>
+<ol class="check">
+<li>«Sie sagt, er sei krank.»</li>
+<li>«Hättest du doch angerufen!»</li>
+<li>«Schliess bitte die Tür!»</li>
+<li>«Ab morgen esse ich weniger Süsses.»</li>
+<li>Bilde den Konjunktiv II von «er geht».</li>
+<li>Setze in die indirekte Rede: Tim sagt: «Ich habe Hunger.»</li>
+<li>Bilde den Imperativ (du) von «lesen».</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Konjunktiv I, indirekte Rede</li>
+<li>Konjunktiv II, Wunsch</li>
+<li>Imperativ, Bitte</li>
+<li>Indikativ, Vorsatz</li>
+<li>er ginge (oder: er würde gehen)</li>
+<li>Tim sagt, er habe Hunger.</li>
+<li>Lies!</li></ol></details>`,
 
 D5: R`<p><b>Aktiv:</b> Wer handelt, steht im Vordergrund: «Der Hund beisst den Briefträger.»<br><b>Passiv:</b> Was geschieht, steht im Vordergrund: «Der Briefträger wird (vom Hund) gebissen.»</p>
 <div class="merke"><b>Merke:</b> Passiv = Form von <b>werden + Partizip II</b>. Perfekt Passiv: «ist gebissen worden».</div>
