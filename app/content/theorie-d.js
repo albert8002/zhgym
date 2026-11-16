@@ -736,7 +736,46 @@ D15: R`<h3>das oder dass?</h3>
 
 D16: R`<p>Du entscheidest für jede Aussage: <b>richtig</b>, <b>falsch</b> oder <b>keine Angabe möglich</b>.</p>
 <div class="merke"><b>Merke:</b> Es zählt nur, was im Text steht, nicht dein Wissen und nicht, was wahrscheinlich ist. Falsch heisst: Der Text sagt das Gegenteil. Keine Angabe heisst: Der Text sagt dazu nichts.</div>
-<div class="falle"><b>Falle:</b> Achte auf kleine Wörter: immer, nie, alle, nur, schon, noch nicht. Sie machen eine Aussage oft falsch. Pro Zeile genau 1 Kreuz.</div>`,
+
+<h3>Die drei Möglichkeiten</h3>
+<table><tr><th>Entscheid</th><th>Wann?</th></tr>
+<tr><td>richtig</td><td>Der Text sagt dasselbe, vielleicht mit anderen Wörtern.</td></tr>
+<tr><td>falsch</td><td>Der Text sagt etwas, das der Aussage widerspricht.</td></tr>
+<tr><td>keine Angabe</td><td>Der Text sagt dazu nichts. Man kann es weder bestätigen noch widerlegen.</td></tr></table>
+
+<h3>So gehst du vor</h3>
+<ol><li>Aussage genau lesen und die wichtigen Wörter markieren (wer, was, wann, wie oft).</li>
+<li>Die passende Stelle im Text suchen.</li>
+<li>Wort für Wort vergleichen.</li>
+<li>Entscheiden: gleich → richtig; Widerspruch → falsch; nichts gefunden → keine Angabe.</li></ol>
+
+<div class="bsp"><b>Text:</b> «Mia wohnt seit drei Jahren in Winterthur. Jeden Morgen fährt sie mit dem Velo zur Schule. Nur bei Schnee nimmt sie den Bus.»<br>
+«Bei Schnee fährt Mia mit dem Bus.» → <b>richtig</b><br>
+«Mia fährt immer mit dem Velo zur Schule.» → <b>falsch</b> (bei Schnee nimmt sie den Bus)<br>
+«Mias Schule liegt in Winterthur.» → <b>keine Angabe</b> (der Text sagt nicht, wo die Schule ist)</div>
+
+<h3>Auf kleine Wörter achten</h3>
+<p>immer, nie, alle, nur, schon, noch nicht, mehr als, zuerst: Diese Wörter verändern eine Aussage stark. «Mia fährt <b>oft</b> mit dem Velo» wäre richtig, «Mia fährt <b>immer</b> mit dem Velo» ist falsch.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Achte auf kleine Wörter: immer, nie, alle, nur, schon, noch nicht. Sie machen eine Aussage oft falsch.</li>
+<li>Pro Zeile genau 1 Kreuz.</li>
+<li>Was «sicher stimmt» oder «logisch wäre», ist keine Angabe, wenn es nicht im Text steht.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Text: «Das Dorf liegt auf 1200 Metern. Im Winter ist die Strasse oft gesperrt. Dann bringt ein Helikopter die Post. Die Schule hat nur zwei Klassen.»</p>
+<ol class="check">
+<li>Das Dorf liegt höher als 1000 Meter.</li>
+<li>Die Strasse ist im Winter immer gesperrt.</li>
+<li>Im Dorf gibt es einen Laden.</li>
+<li>Die Post kommt manchmal mit dem Helikopter.</li>
+<li>Die Schule hat drei Klassen.</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>richtig (1200 Meter)</li>
+<li>falsch (oft, nicht immer)</li>
+<li>keine Angabe</li>
+<li>richtig (wenn die Strasse gesperrt ist)</li>
+<li>falsch (nur zwei Klassen)</li></ol></details>`,
 
 D17: R`<p>Du wählst Adjektive, die zum Charakter einer Figur passen.</p>
 <div class="merke"><b>Vorgehen:</b> Was tut, sagt und denkt die Figur? Wie reagieren andere auf sie? Für jedes Adjektiv brauchst du eine Textstelle als Beleg.</div>
