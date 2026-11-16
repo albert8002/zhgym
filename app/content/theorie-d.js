@@ -216,7 +216,48 @@ Die Pronomen passen sich an: «ich» wird zu «sie».</div>
 
 D5: R`<p><b>Aktiv:</b> Wer handelt, steht im Vordergrund: «Der Hund beisst den Briefträger.»<br><b>Passiv:</b> Was geschieht, steht im Vordergrund: «Der Briefträger wird (vom Hund) gebissen.»</p>
 <div class="merke"><b>Merke:</b> Passiv = Form von <b>werden + Partizip II</b>. Perfekt Passiv: «ist gebissen worden».</div>
-<div class="falle"><b>Falle:</b> Nicht jedes «werden» ist Passiv. «Es wird regnen» = werden + Infinitiv (Futur I). «Sie wird Ärztin» = werden als Vollverb. In der Prüfung musst du Passiv nur erkennen, nicht bilden.</div>`,
+
+<h3>Passiv in allen Zeitformen</h3>
+<table><tr><th>Zeitform</th><th>Passiv</th></tr>
+<tr><td>Präsens</td><td>Das Haus <b>wird gebaut</b>.</td></tr>
+<tr><td>Präteritum</td><td>Das Haus <b>wurde gebaut</b>.</td></tr>
+<tr><td>Perfekt</td><td>Das Haus <b>ist gebaut worden</b>.</td></tr>
+<tr><td>Plusquamperfekt</td><td>Das Haus <b>war gebaut worden</b>.</td></tr>
+<tr><td>Futur I</td><td>Das Haus <b>wird gebaut werden</b>.</td></tr></table>
+
+<h3>Vom Aktiv ins Passiv</h3>
+<ol><li>Das Akkusativobjekt des Aktivsatzes wird zum Subjekt: «Die Klasse besucht <b>das Museum</b>.» → «<b>Das Museum</b> wird besucht.»</li>
+<li>Wer handelt, steht mit «von» dabei oder fällt weg: «Das Museum wird (von der Klasse) besucht.»</li>
+<li>Die Zeitform bleibt gleich.</li></ol>
+
+<h3>Wozu das Passiv?</h3>
+<p>Das Passiv braucht man, wenn unwichtig oder unbekannt ist, wer etwas tut: «Das Fahrrad wurde gestohlen.» «Die Eier werden fünf Minuten gekocht.» Du findest es oft in Zeitungsberichten und Anleitungen.</p>
+
+<h3>So erkennst du es</h3>
+<p>Suche eine Form von <b>werden</b> (wird, wurde, ist … worden) und ein <b>Partizip II</b> (gebaut, gebissen). Nur wenn beides zusammengehört, ist der Satz im Passiv.</p>
+
+<div class="falle"><b>Fallen:</b> Nicht jedes «werden» ist Passiv.<ul>
+<li>«Es wird regnen» = werden + Infinitiv (Futur I).</li>
+<li>«Sie wird Ärztin» = werden als Vollverb.</li>
+<li>«Würdest du mir helfen?» = Konjunktiv II mit würde + Infinitiv.</li></ul>
+In der Prüfung musst du Passiv nur erkennen, nicht bilden.</div>
+
+<h3>Selbst prüfen</h3>
+<p>Aktiv oder Passiv?</p>
+<ol class="check">
+<li>«Das Paket wurde gestern geliefert.»</li>
+<li>«Morgen wird es schneien.»</li>
+<li>«Der Dieb ist gefasst worden.»</li>
+<li>«Mein Bruder wird Koch.»</li>
+<li>«Würdest du mir helfen?»</li>
+<li>Setze ins Passiv: «Die Klasse besucht das Museum.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Passiv (Präteritum)</li>
+<li>Aktiv (Futur I)</li>
+<li>Passiv (Perfekt)</li>
+<li>Aktiv (werden als Vollverb)</li>
+<li>Aktiv (Konjunktiv II)</li>
+<li>«Das Museum wird (von der Klasse) besucht.»</li></ol></details>`,
 
 D6: R`<p>Es gibt 4 Fälle. Die Frage zeigt den Fall.</p>
 <table><tr><th>Fall</th><th>Frage</th><th>männlich</th><th>weiblich</th><th>sächlich</th><th>Mehrzahl</th></tr>
