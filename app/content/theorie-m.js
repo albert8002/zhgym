@@ -1093,15 +1093,66 @@ P liegt in den Schnittpunkten. Es kann 0, 1 oder 2 Lösungen geben. Alle einzeic
 <li>in der Mitte der Hypotenuse</li>
 <li>Nein, denn \(3 + 4 = 7\) ist kleiner als 8.</li></ol></details>`,
 
-M20: R`<ul><li><b>Achsensymmetrie:</b> Die Figur passt nach dem Spiegeln an einer Geraden auf sich selbst.</li>
-<li><b>Punktsymmetrie:</b> Die Figur passt nach einer Drehung um 180° auf sich selbst.</li>
-<li><b>Drehsymmetrie:</b> Die Figur passt schon nach einer Drehung um einen Winkel kleiner als 360° auf sich selbst.</li></ul>
-<div class="merke"><b>Spiegeln an einer Geraden:</b> Die Strecke von P zu P' steht senkrecht auf der Achse und wird von ihr halbiert.<br><b>Spiegeln an einem Punkt Z:</b> Z ist die Mitte der Strecke von P zu P'.</div>
-<table><tr><th>Spiegelung im Koordinatensystem</th><th>P(x | y) wird zu</th></tr>
-<tr><td>an der x-Achse</td><td>P'(x | −y)</td></tr><tr><td>an der y-Achse</td><td>P'(−x | y)</td></tr>
-<tr><td>am Nullpunkt</td><td>P'(−x | −y)</td></tr><tr><td>am Punkt Z(a | b)</td><td>P'(2a − x | 2b − y)</td></tr></table>
-<div class="bsp">P(3 | 1) an Z(1 | 2) gespiegelt: P'(2 − 3 | 4 − 1) = P'(−1 | 3).</div>
-<p>Symmetrieachsen: Quadrat 4, Rechteck 2, Raute 2, gleichseitiges Dreieck 3, gleichschenkliges Trapez 1, Drachenviereck 1, Parallelogramm 0 (aber punktsymmetrisch).</p>`,
+M20: R`<div class="merke"><b>Kurz:</b> Achsensymmetrisch: Die Figur passt nach dem Spiegeln an einer Geraden auf sich selbst. Punktsymmetrisch: Sie passt nach einer Drehung um 180°. Beim Spiegeln an einem Punkt Z ist Z die Mitte zwischen P und P'.</div>
+
+<h3>Symmetrien</h3>
+<ul><li><b>Achsensymmetrie:</b> Die Figur passt nach dem Spiegeln an einer Geraden (der Symmetrieachse) auf sich selbst.</li>
+<li><b>Punktsymmetrie:</b> Die Figur passt nach einer Drehung um 180° um einen Punkt auf sich selbst.</li>
+<li><b>Drehsymmetrie:</b> Die Figur passt schon nach einer Drehung um einen Winkel kleiner als 360° auf sich selbst. Ein regelmässiges n-Eck passt nach \(360° : n\), das Sechseck also nach 60°.</li></ul>
+<table><tr><th>Figur</th><th>Symmetrieachsen</th><th>punktsymmetrisch</th></tr>
+<tr><td>Quadrat</td><td>4</td><td>ja</td></tr>
+<tr><td>Rechteck, Raute</td><td>2</td><td>ja</td></tr>
+<tr><td>Parallelogramm</td><td>0</td><td>ja</td></tr>
+<tr><td>gleichschenkliges Trapez, Drachenviereck</td><td>1</td><td>nein</td></tr>
+<tr><td>gleichseitiges Dreieck</td><td>3</td><td>nein</td></tr>
+<tr><td>gleichschenkliges Dreieck</td><td>1</td><td>nein</td></tr>
+<tr><td>regelmässiges Sechseck</td><td>6</td><td>ja</td></tr>
+<tr><td>Kreis</td><td>unendlich viele</td><td>ja</td></tr></table>
+<p>Buchstaben: A hat 1 Achse, H hat 2 Achsen und ist punktsymmetrisch, N, S und Z sind nur punktsymmetrisch.</p>
+
+<h3>Spiegeln</h3>
+<div class="merke"><b>An einer Geraden:</b> Die Strecke von P zu P' steht senkrecht auf der Achse und wird von ihr halbiert.<br>
+<b>An einem Punkt Z:</b> Z ist die Mitte der Strecke von P zu P'. Das ist dasselbe wie eine Drehung um 180°.</div>
+<ul><li>Beim Spiegeln bleiben Längen und Winkel gleich.</li>
+<li>Bei der Achsenspiegelung kehrt sich der Umlaufsinn um (ABC gegen den Uhrzeigersinn wird zu A'B'C' im Uhrzeigersinn). Bei der Punktspiegelung bleibt er gleich.</li></ul>
+
+<h3>Im Koordinatensystem</h3>
+<table><tr><th>Spiegelung</th><th>P(x | y) wird zu</th></tr>
+<tr><td>an der x-Achse</td><td>P'(x | −y)</td></tr>
+<tr><td>an der y-Achse</td><td>P'(−x | y)</td></tr>
+<tr><td>am Nullpunkt</td><td>P'(−x | −y)</td></tr>
+<tr><td>an der Geraden x = a (senkrecht)</td><td>P'(2a − x | y)</td></tr>
+<tr><td>an der Geraden y = b (waagrecht)</td><td>P'(x | 2b − y)</td></tr>
+<tr><td>am Punkt Z(a | b)</td><td>P'(2a − x | 2b − y)</td></tr></table>
+<div class="bsp">P(3 | 1) an Z(1 | 2) gespiegelt: P'(2 − 3 | 4 − 1) = P'(−1 | 3).<br>
+Anders gedacht: Von P nach Z sind es 2 nach links und 1 nach oben. Von Z aus noch einmal 2 nach links und 1 nach oben: P'(−1 | 3).</div>
+
+<h3>Zentrum oder Achse finden</h3>
+<ul><li><b>Spiegelzentrum:</b> die Mitte von P und P': \(Z\left(\frac{x + x'}{2} \,\middle|\, \frac{y + y'}{2}\right)\). Beispiel: P(2 | 5), P'(6 | −1) → Z(4 | 2).</li>
+<li><b>Spiegelachse:</b> die Mittelsenkrechte von PP'.</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Spiegle das Dreieck A(1 | 1), B(4 | 1), C(2 | 3) am Punkt Z(3 | 0).<br>
+A'(6 − 1 | 0 − 1) = A'(5 | −1); B'(6 − 4 | −1) = B'(2 | −1); C'(6 − 2 | 0 − 3) = C'(4 | −3)</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Beim Spiegeln an einer Geraden senkrecht zur Achse messen, nicht waagrecht oder senkrecht zum Blatt.</li>
+<li>Das Parallelogramm hat keine Symmetrieachse, aber ein Symmetriezentrum.</li>
+<li>Vorzeichen in den Koordinaten kontrollieren: Liegt der Bildpunkt auf der richtigen Seite?</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Wie viele Symmetrieachsen hat ein regelmässiges Fünfeck? Ist es punktsymmetrisch?</li>
+<li>Spiegle P(−2 | 4) an der x-Achse und an der y-Achse.</li>
+<li>Spiegle P(5 | 1) am Punkt Z(2 | 3).</li>
+<li>P(1 | −2) wird auf P'(7 | 4) gespiegelt. Wo liegt das Zentrum?</li>
+<li>Spiegle P(3 | 2) an der Geraden x = 5.</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>5 Achsen; nicht punktsymmetrisch</li>
+<li>an der x-Achse (−2 | −4); an der y-Achse (2 | 4)</li>
+<li>P'(4 − 5 | 6 − 1) = P'(−1 | 5)</li>
+<li>Z(4 | 1)</li>
+<li>P'(7 | 2)</li></ol></details>`,
 
 M21: R`<table><tr><th>Körper</th><th>Ecken</th><th>Kanten</th><th>Flächen</th></tr>
 <tr><td>Würfel, Quader</td><td>8</td><td>12</td><td>6</td></tr>
