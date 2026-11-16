@@ -1073,7 +1073,39 @@ D23: R`<div class="merke"><b>Kurz:</b> Kurze Einleitung, steigende Spannung, aus
 
 D24: R`<div class="merke"><b>Merke:</b> Übernimm aus dem Anfang: Erzählperspektive (Ich- oder Er-Form), Zeitform, Figuren, Ort und alle wichtigen Gegenstände.</div>
 <p>Mach klar: Was passiert? Warum? Wie endet es? Wenn verlangt (2021), schreibst du den Anfang zuerst wörtlich ab.</p>
-<div class="falle"><b>Falle:</b> Ein Wechsel von «ich» zu «er» oder vom Präteritum ins Präsens kostet Punkte. Neue Hauptfiguren ohne Grund vermeiden.</div>`,
+
+<h3>So gehst du vor</h3>
+<ol><li>Den Anfang zweimal lesen.</li>
+<li>Eine Liste machen: Perspektive, Zeitform, Figuren (Namen, Eigenschaften), Ort, Gegenstände.</li>
+<li><b>Offene Fragen</b> suchen: Was wurde angedeutet, aber nicht erklärt? Genau das muss deine Fortsetzung auflösen.</li>
+<li>Plan: Wie spitzt sich die Lage zu? Was ist der Höhepunkt? Wie endet es?</li>
+<li>Nahtlos anschliessen: Der erste Satz geht direkt dort weiter, wo der Anfang aufhört.</li></ol>
+
+<div class="bsp"><b>Anfang:</b> «Als Nora den Dachboden betrat, fiel ihr Blick sofort auf die alte Kiste. Ein Zettel klebte darauf: ‹Nicht öffnen!›»<br>
+Liste: Er-Form (sie), Präteritum, Figur Nora, Ort Dachboden, Gegenstände Kiste und Zettel.<br>
+Offene Fragen: Was ist in der Kiste? Wer hat den Zettel geschrieben?<br>
+Anschluss: «Nora zögerte. Wer klebt schon einen Zettel auf eine Kiste, die niemand mehr braucht?»</div>
+
+<h3>Den Stil übernehmen</h3>
+<ul><li>Ton: Ist der Anfang lustig, unheimlich oder ernst? Bleib dabei.</li>
+<li>Satzlänge und Wortwahl ähnlich wie im Anfang.</li>
+<li>Figuren sprechen und handeln so, wie der Anfang sie zeigt.</li></ul>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Ein Wechsel von «ich» zu «er» oder vom Präteritum ins Präsens kostet Punkte.</li>
+<li>Neue Hauptfiguren ohne Grund vermeiden.</li>
+<li>Wichtige Gegenstände oder Hinweise aus dem Anfang vergessen.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Anfang: «Ich hatte nur kurz weggeschaut. Als ich mich umdrehte, war der Hund verschwunden, und mit ihm mein Rucksack.»</p>
+<ol class="check">
+<li>Welche Perspektive und welche Zeitform übernimmst du?</li>
+<li>Welche Dinge müssen in der Fortsetzung vorkommen?</li>
+<li>Was ist falsch an diesem ersten Satz? «Lisa sucht den Hund überall.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Ich-Form, Präteritum</li>
+<li>der Hund und der Rucksack; offen ist, wo beide sind</li>
+<li>Er wechselt in die Er-Form (Lisa) und ins Präsens.</li></ol></details>`,
 
 D25: R`<ol><li><b>Beschreiben</b> (Präsens): zuerst ein Überblick, dann Einzelheiten in fester Reihenfolge (vorne/hinten, links/rechts).</li>
 <li><b>Deuten:</b> Was sagt das Bild zum Thema? Signalwörter: vermutlich, könnte, wirkt, steht für.</li>
