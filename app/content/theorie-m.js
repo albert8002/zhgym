@@ -707,11 +707,55 @@ Umgekehrt proportional (weniger Personen → mehr Tage). \(24 \cdot 5 = 120\) Ta
 <li>350 000 cm = \(3.5\) km</li>
 <li>\(4 \cdot 9 = 36\) → \(36 : 6 = 6\) Tage</li></ol></details>`,
 
-M13: R`<ul><li><b>Säulendiagramm:</b> vergleicht Mengen. Achse beschriften, gleichmässige Einteilung.</li>
-<li><b>Liniendiagramm:</b> zeigt eine Entwicklung über die Zeit.</li>
-<li><b>Kreisdiagramm:</b> zeigt Anteile am Ganzen. Winkel = Anteil · 360°. 1 % entspricht 3.6°, 25 % entsprechen 90°.</li></ul>
-<div class="merke"><b>Mittelwert</b> = Summe aller Werte : Anzahl der Werte. Beispiel: \((4 + 7 + 9 + 12) : 4 = 32 : 4 = 8\).</div>
-<div class="falle"><b>Falle:</b> Beim Ablesen auf die Einteilung der Achse achten (1 Häuschen = 5, 10 oder 50?).</div>`,
+M13: R`<div class="merke"><b>Kurz:</b> Mittelwert = Summe aller Werte : Anzahl der Werte. Relative Häufigkeit = Anzahl : Gesamtzahl. Im Kreisdiagramm: Winkel = Anteil · 360°, also entspricht 1 % genau \(3.6°\).</div>
+
+<h3>Absolute und relative Häufigkeit</h3>
+<ul><li><b>Absolute Häufigkeit:</b> wie oft etwas vorkommt. 10 von 25 Lernenden kommen mit dem Velo.</li>
+<li><b>Relative Häufigkeit:</b> Anteil am Ganzen: \(\frac{10}{25} = 0.4 = 40\) %.</li></ul>
+
+<h3>Diagramme lesen</h3>
+<ul><li><b>Säulen- und Balkendiagramm:</b> vergleicht Mengen. Zuerst die Einteilung der Achse bestimmen: Wie viel ist ein Häuschen wert?</li>
+<li><b>Liniendiagramm:</b> zeigt eine Entwicklung über die Zeit. Je steiler die Linie, desto schneller die Veränderung.</li>
+<li><b>Kreisdiagramm:</b> zeigt Anteile an einem Ganzen. Alle Anteile zusammen ergeben 100 % oder 360°.</li></ul>
+
+<h3>Kreisdiagramm berechnen</h3>
+<table><tr><th>Anteil</th><td>10 %</td><td>20 %</td><td>25 %</td><td>50 %</td></tr>
+<tr><th>Winkel</th><td>36°</td><td>72°</td><td>90°</td><td>180°</td></tr></table>
+<ul><li>Anteil → Winkel: 40 % → \(0.4 \cdot 360° = 144°\). 25 von 200 → \(\frac{25}{200} = 12.5\) % → \(45°\)</li>
+<li>Winkel → Anteil: \(72°\) → \(\frac{72}{360} = \frac{1}{5} = 20\) %</li></ul>
+
+<h3>Mittelwert</h3>
+<div class="bsp">\((4 + 7 + 9 + 12) : 4 = 32 : 4 = 8\)</div>
+<div class="bsp"><b>Mit Häufigkeiten:</b> 3 Lernende haben die Note 4, 5 Lernende die Note 5, 2 Lernende die Note 6.<br>
+\(\frac{3 \cdot 4 + 5 \cdot 5 + 2 \cdot 6}{3 + 5 + 2} = \frac{12 + 25 + 12}{10} = \frac{49}{10} = 4.9\)</div>
+<div class="bsp"><b>Fehlender Wert:</b> Nach 5 Prüfungen ist der Schnitt \(4.6\). Welche Note braucht es in der 6. Prüfung für einen Schnitt von \(4.75\)?<br>
+Summe bisher: \(5 \cdot 4.6 = 23\). Summe nötig: \(6 \cdot 4.75 = 28.5\). Note: \(28.5 - 23 = 5.5\).</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">300 Personen wurden gefragt, wie sie zur Arbeit kommen: 120 mit dem Velo, 90 mit dem Bus, 60 zu Fuss, 30 mit dem Auto. Wie gross sind die Winkel im Kreisdiagramm?<br>
+Anteile: 40 %, 30 %, 20 %, 10 % → Winkel \(144°\), \(108°\), \(72°\), \(36°\). Kontrolle: zusammen \(360°\).</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Beim Ablesen auf die Einteilung der Achse achten: Ist ein Häuschen 1, 5, 10 oder 50 wert? Beginnt die Achse bei 0?</li>
+<li>Kommt ein neuer Wert dazu, nicht den Mittelwert der Mittelwerte rechnen, sondern mit den Summen.</li>
+<li>Relative Häufigkeit: Immer durch die Gesamtzahl teilen, nicht durch eine Teilgruppe.</li>
+<li>Der Mittelwert muss nicht in der Liste vorkommen und muss keine ganze Zahl sein.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Mittelwert von 12, 15, 9, 18, 21</li>
+<li>Wie gross ist der Winkel für 30 % im Kreisdiagramm?</li>
+<li>Ein Kreissektor hat \(54°\). Wie viele Prozent sind das?</li>
+<li>80 Personen wurden befragt, 28 sagen «Ja». Relative Häufigkeit in Prozent?</li>
+<li>Nach 4 Prüfungen ist der Schnitt \(4.5\). Welche Note braucht es in der 5. Prüfung für einen Schnitt von \(4.6\)?</li>
+<li>4-mal die Note 4 und 6-mal die Note 5. Mittelwert?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(75 : 5 = 15\)</li>
+<li>\(0.3 \cdot 360° = 108°\)</li>
+<li>\(\frac{54}{360} = 0.15 = 15\) %</li>
+<li>\(\frac{28}{80} = 0.35 = 35\) %</li>
+<li>\(5 \cdot 4.6 - 4 \cdot 4.5 = 23 - 18 = 5\)</li>
+<li>\(\frac{16 + 30}{10} = 4.6\)</li></ol></details>`,
 
 M14: R`<h3>Weg-Zeit-Graph</h3><ul><li>Je steiler die Linie, desto schneller.</li><li>Waagrechte Linie: Die Person steht still.</li><li>Linie fällt: Die Person bewegt sich zurück zum Start.</li></ul>
 <h3>Füllgraph</h3><p>Ein Gefäss wird gleichmässig gefüllt. Der Graph zeigt die Füllhöhe über der Zeit.</p>
