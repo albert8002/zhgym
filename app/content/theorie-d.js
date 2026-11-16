@@ -973,13 +973,51 @@ D21: R`<p>Nimm dir 10 Minuten für einen Stichwortplan. Pro Absatz 1 Zeile.</p>
 <li>Contra: selbständig arbeiten lernen (stärkstes Argument)</li>
 <li>Schluss: Meinung (weniger, aber sinnvolle Hausaufgaben), Begründung</li></ol></details>`,
 
-D22: R`<ul><li><b>Einleitung:</b> genau das, was der Auftrag verlangt (Begriff erklären, Bild beschreiben, allgemeine Rolle zeigen). Dann zur Frage führen.</li>
+D22: R`<div class="merke"><b>Kurz:</b> Einleitung → Gegenseite → deine Seite (stärkstes Argument zuletzt) → Schluss mit begründeter Meinung. Jedes Argument: Behauptung → Begründung → Beispiel.</div>
+
+<h3>Aufbau</h3>
+<ul><li><b>Einleitung:</b> genau das, was der Auftrag verlangt (Begriff erklären, Bild beschreiben, allgemeine Rolle zeigen). Dann zur Frage führen.</li>
 <li><b>Hauptteil:</b> beide Seiten. 2–3 Argumente pro Seite, 1 Absatz pro Argument. Zuerst die Gegenseite, dann deine Seite, das stärkste Argument zuletzt.</li>
 <li><b>Schluss:</b> eigene Meinung klar und kurz begründet, Bezug zum Hauptteil, kein neues Argument.</li></ul>
+
+<h3>Einleitung: Beispiel</h3>
+<div class="bsp">«Fast alle Jugendlichen in meiner Klasse haben ein Smartphone. Es weckt uns am Morgen, zeigt den Fahrplan und verbindet uns mit Freunden. Trotzdem gibt es an vielen Schulen Streit darüber, ob das Handy im Unterricht erlaubt sein soll.»</div>
+
+<h3>Argumente bauen</h3>
 <div class="merke"><b>Jedes Argument:</b> Behauptung → Begründung → Beispiel.</div>
 <div class="bsp">Hausaufgaben sind sinnvoll (Behauptung). Denn beim Wiederholen prägt sich der Stoff besser ein (Begründung). So konnte ich die Französischwörter erst nach dem dritten Üben (Beispiel).</div>
+<p>Gute Begründungen und Beispiele kommen aus Fakten, eigenen Erfahrungen, Beobachtungen oder Folgen («Wenn …, dann …»).</p>
+
+<h3>Überleitungen</h3>
+<ul><li>Zur zweiten Seite: «Es gibt jedoch auch gute Gründe dafür, dass …»</li>
+<li>Zum nächsten Argument: «Ein weiterer Vorteil ist …», «Noch wichtiger ist …»</li>
+<li>Zum Schluss: «Wenn ich alles abwäge, …»</li></ul>
 <p>Verbindungswörter: einerseits – andererseits, zudem, ausserdem, jedoch, trotzdem, deshalb, folglich, zum Beispiel. Zeitform: Präsens. Ton: sachlich.</p>
-<div class="falle"><b>Falle:</b> Nur 1 Seite (nur Pro oder nur Contra) macht den Text einseitig: Abzug. Ebenso: Meinung fehlt oder ist nicht begründet.</div>`,
+
+<h3>Schluss: Beispiel</h3>
+<div class="bsp">«Wenn ich alles abwäge, bin ich für ein Handyverbot im Unterricht, aber nicht in den Pausen. Die Ablenkung im Unterricht wiegt für mich schwerer als der Nutzen. In den Pausen und für Notfälle soll das Handy aber erlaubt bleiben.»</div>
+
+<h3>Sprache</h3>
+<ul><li>Sachlich bleiben: keine Übertreibungen wie «total», «mega», «alle wissen doch».</li>
+<li>Die eigene Meinung («Ich finde …») gehört in den Schluss.</li></ul>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nur 1 Seite (nur Pro oder nur Contra) macht den Text einseitig: Abzug.</li>
+<li>Meinung fehlt oder ist nicht begründet: Abzug.</li>
+<li>Behauptung ohne Begründung und Beispiel ist kein Argument.</li>
+<li>Im Schluss kein neues Argument bringen.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Was fehlt? «Schuluniformen sind gut. Zum Beispiel in England tragen alle eine.»</li>
+<li>Ergänze eine Begründung zu: «Ein Haustier macht Kinder verantwortungsbewusster.»</li>
+<li>Schreibe eine Überleitung von der Contra- zur Pro-Seite zum Thema «Ganztagesschule».</li>
+<li>Wohin gehört das stärkste Argument deiner Seite?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>die Begründung (warum sie gut sind, zum Beispiel: Niemand wird wegen Kleidung ausgelacht)</li>
+<li>zum Beispiel: «Denn es muss jeden Tag gefüttert werden, auch wenn man keine Lust hat.»</li>
+<li>zum Beispiel: «Es gibt jedoch auch gute Gründe für eine Ganztagesschule.»</li>
+<li>ans Ende des Hauptteils, direkt vor den Schluss</li></ol></details>`,
 
 D23: R`<ul><li><b>Aufbau:</b> kurze Einleitung (wer, wo, wann) → Spannung steigt → Höhepunkt → passender Schluss (Wendung oder Pointe).</li>
 <li><b>Innere Handlung:</b> Gedanken, Gefühle, Sinne. Zeigen statt nur sagen: «Meine Knie zitterten» statt «Ich hatte Angst».</li>
