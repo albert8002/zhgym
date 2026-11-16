@@ -980,13 +980,59 @@ Umfang: so gross wie beim ganzen Rechteck, weil die ausgeschnittenen Kanten nur 
 <li>Breite \(15 - 9 = 6\) cm, Fläche 54 cm²</li>
 <li>\(\frac{12 \cdot h}{2} = 42\) → \(h = 7\) cm</li></ol></details>`,
 
-M18: R`<div class="merke"><b>Satz des Pythagoras:</b> Im rechtwinkligen Dreieck gilt \(a^2 + b^2 = c^2\). \(c\) ist die Hypotenuse: Sie liegt gegenüber dem rechten Winkel und ist die längste Seite.</div>
-<ul><li>Hypotenuse gesucht: \(c = \sqrt{a^2 + b^2}\); Beispiel \(\sqrt{6^2 + 8^2} = \sqrt{100} = 10\)</li>
-<li>Kathete gesucht: \(a = \sqrt{c^2 - b^2}\)</li>
-<li>Raumdiagonale im Quader: \(d = \sqrt{a^2 + b^2 + c^2}\)</li>
-<li>Höhe einer quadratischen Pyramide aus Seitenhöhe \(h_s\) und Grundkante \(a\): \(h = \sqrt{h_s^2 - \left(\frac{a}{2}\right)^2}\); Beispiel \(a = 6\), \(h_s = 5\): \(h = \sqrt{25 - 9} = 4\)</li></ul>
-<div class="merke"><b>Satz des Thales:</b> Liegt der Punkt C auf dem Kreis mit dem Durchmesser AB, dann ist der Winkel bei C ein rechter Winkel (90°).</div>
-<div class="falle"><b>Falle:</b> Zuerst das rechtwinklige Dreieck finden und die Hypotenuse markieren. Nicht \(a + b = c\) rechnen.</div>`,
+M18: R`<div class="merke"><b>Satz des Pythagoras:</b> Im rechtwinkligen Dreieck gilt \(a^2 + b^2 = c^2\). \(c\) ist die Hypotenuse: Sie liegt gegenüber dem rechten Winkel und ist die längste Seite. \(a\) und \(b\) heissen Katheten.</div>
+
+<h3>Rechnen</h3>
+<ul><li><b>Hypotenuse gesucht:</b> \(c = \sqrt{a^2 + b^2}\). Beispiel: \(\sqrt{6^2 + 8^2} = \sqrt{100} = 10\)</li>
+<li><b>Kathete gesucht:</b> \(a = \sqrt{c^2 - b^2}\). Beispiel: \(c = 13\), \(b = 5\): \(a = \sqrt{169 - 25} = \sqrt{144} = 12\)</li>
+<li><b>Gut zu kennen</b> (ganzzahlige Dreiecke): 3, 4, 5; 6, 8, 10; 5, 12, 13; 8, 15, 17</li>
+<li><b>Umkehrung:</b> Gilt \(a^2 + b^2 = c^2\), dann ist das Dreieck rechtwinklig. 9, 12, 15: \(81 + 144 = 225 = 15^2\). Rechtwinklig.</li></ul>
+
+<h3>Typische Anwendungen in der Ebene</h3>
+<ul><li><b>Diagonale im Rechteck</b> 8 cm × 6 cm: \(\sqrt{64 + 36} = 10\) cm</li>
+<li><b>Diagonale im Quadrat</b> mit Seite \(a\): \(a\sqrt{2}\). Für \(a = 5\) cm: \(5\sqrt{2} \approx 7.07\) cm</li>
+<li><b>Höhe im gleichschenkligen Dreieck</b> (Basis 10, Schenkel 13): Die Höhe halbiert die Basis. \(h = \sqrt{13^2 - 5^2} = \sqrt{144} = 12\)</li>
+<li><b>Höhe im gleichseitigen Dreieck</b> mit Seite 6: \(h = \sqrt{6^2 - 3^2} = \sqrt{27} = 3\sqrt{3} \approx 5.20\)</li>
+<li><b>Leiter:</b> 5 m lang, unten \(1.4\) m von der Wand entfernt: Höhe \(\sqrt{25 - 1.96} = \sqrt{23.04} = 4.8\) m</li></ul>
+
+<h3>Im Raum</h3>
+<p>Suche ein rechtwinkliges Dreieck im Körper. Oft braucht es zwei Schritte.</p>
+<ul><li><b>Raumdiagonale im Quader:</b> \(d = \sqrt{a^2 + b^2 + c^2}\). Quader 3 × 4 × 12: \(\sqrt{9 + 16 + 144} = \sqrt{169} = 13\)</li>
+<li><b>Höhe einer quadratischen Pyramide</b> aus Seitenhöhe \(h_s\) und Grundkante \(a\): \(h = \sqrt{h_s^2 - \left(\frac{a}{2}\right)^2}\). Mit \(a = 6\) und \(h_s = 5\): \(h = \sqrt{25 - 9} = 4\)</li></ul>
+
+<h3>Satz des Thales</h3>
+<div class="merke"><b>Thales:</b> Liegt der Punkt C auf dem Kreis mit dem Durchmesser AB, dann ist der Winkel bei C ein rechter Winkel (90°).</div>
+<ul><li><b>Rechnen:</b> AB = 10 cm ist Durchmesser, AC = 6 cm. Dann ist BC = \(\sqrt{100 - 36} = 8\) cm.</li>
+<li><b>Konstruieren:</b> Ein rechtwinkliges Dreieck mit gegebener Hypotenuse AB: Halbkreis über AB zeichnen, C liegt auf dem Halbkreis.</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Berechne die Raumdiagonale eines Quaders mit 8 cm, 6 cm und 5 cm.<br>
+\(d = \sqrt{64 + 36 + 25} = \sqrt{125} = 5\sqrt{5} \approx 11.18\) cm</div>
+<p>Zeichne das rechtwinklige Dreieck heraus, markiere den rechten Winkel und die Hypotenuse. Runde erst am Schluss.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Zuerst die Hypotenuse finden. Sie liegt gegenüber dem rechten Winkel, nicht immer unten.</li>
+<li>Nicht \(a + b = c\) rechnen. Und \(\sqrt{a^2 + b^2}\) ist nicht \(a + b\).</li>
+<li>Bei Pyramiden die halbe Grundkante verwenden.</li>
+<li>Zwischenresultate nicht runden, sonst stimmt das Endresultat nicht.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Katheten 9 cm und 12 cm: Hypotenuse?</li>
+<li>Hypotenuse 17 cm, eine Kathete 8 cm: andere Kathete?</li>
+<li>Diagonale eines Quadrats mit Seite 4 cm?</li>
+<li>Ist ein Dreieck mit den Seiten 7, 24, 25 rechtwinklig?</li>
+<li>Raumdiagonale eines Quaders 2 × 3 × 6?</li>
+<li>Quadratische Pyramide mit Grundkante 10 cm und Höhe 12 cm: Seitenhöhe?</li>
+<li>C liegt auf dem Thaleskreis über AB = 26 cm, AC = 10 cm. Wie lang ist BC?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(\sqrt{81 + 144} = 15\) cm</li>
+<li>\(\sqrt{289 - 64} = 15\) cm</li>
+<li>\(4\sqrt{2} \approx 5.66\) cm</li>
+<li>Ja: \(49 + 576 = 625 = 25^2\)</li>
+<li>\(\sqrt{4 + 9 + 36} = 7\)</li>
+<li>\(\sqrt{12^2 + 5^2} = 13\) cm</li>
+<li>\(\sqrt{676 - 100} = 24\) cm</li></ol></details>`,
 
 M19: R`<ul><li><b>Mittelsenkrechte</b> von AB: alle Punkte, die von A und B gleich weit entfernt sind. Kreisbögen mit gleichem Radius (grösser als die halbe Strecke) um A und B, Schnittpunkte verbinden.</li>
 <li><b>Winkelhalbierende:</b> alle Punkte, die von beiden Schenkeln gleich weit entfernt sind.</li>
