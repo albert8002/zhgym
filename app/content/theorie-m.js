@@ -757,10 +757,53 @@ Anteile: 40 %, 30 %, 20 %, 10 % → Winkel \(144°\), \(108°\), \(72°\), \(36�
 <li>\(5 \cdot 4.6 - 4 \cdot 4.5 = 23 - 18 = 5\)</li>
 <li>\(\frac{16 + 30}{10} = 4.6\)</li></ol></details>`,
 
-M14: R`<h3>Weg-Zeit-Graph</h3><ul><li>Je steiler die Linie, desto schneller.</li><li>Waagrechte Linie: Die Person steht still.</li><li>Linie fällt: Die Person bewegt sich zurück zum Start.</li></ul>
-<h3>Füllgraph</h3><p>Ein Gefäss wird gleichmässig gefüllt. Der Graph zeigt die Füllhöhe über der Zeit.</p>
-<ul><li>Schmaler Teil → Höhe steigt schnell → steile Linie.</li><li>Breiter Teil → Höhe steigt langsam → flache Linie.</li><li>Gerade Wände (Quader, Prisma) → gerade Linie.</li><li>Gefäss wird nach oben breiter → Linie wird flacher (Kurve). Gefäss wird schmaler → Linie wird steiler.</li></ul>
-<div class="falle"><b>Falle:</b> Ein Knick im Graphen gehört zu einer Stelle, an der sich die Breite des Gefässes sprunghaft ändert.</div>`,
+M14: R`<div class="merke"><b>Kurz:</b> Im Weg-Zeit-Graph gilt: je steiler, desto schneller; waagrecht heisst Stillstand. Im Füllgraphen gilt: schmale Stelle → Höhe steigt schnell (steil), breite Stelle → Höhe steigt langsam (flach).</div>
+
+<h3>Weg-Zeit-Graph</h3>
+<p>Nach rechts läuft die Zeit, nach oben steht die Entfernung vom Start.</p>
+<ul><li><b>Steigende Linie:</b> Die Person entfernt sich vom Start. Je steiler, desto schneller.</li>
+<li><b>Waagrechte Linie:</b> Die Person steht still (Pause).</li>
+<li><b>Fallende Linie:</b> Die Person bewegt sich zurück zum Start.</li>
+<li><b>Zwei Linien schneiden sich:</b> Beide sind zur selben Zeit am selben Ort (treffen oder überholen).</li></ul>
+<div class="merke"><b>Geschwindigkeit:</b> \(v = \frac{s}{t}\) (Weg durch Zeit), also auch \(s = v \cdot t\) und \(t = \frac{s}{v}\). Für km/h die Zeit in Stunden einsetzen: 20 min = \(\frac{1}{3}\) h.</div>
+<div class="bsp">Lena fährt Velo. Der Graph zeigt: 0 bis 20 min von 0 auf 6 km, 20 bis 30 min waagrecht, 30 bis 50 min von 6 auf 12 km.<br>
+1. Teil: 6 km in \(\frac{1}{3}\) h → \(6 : \frac{1}{3} = 18\) km/h<br>
+Pause: 10 Minuten<br>
+Ganze Fahrt: 12 km in 50 min = \(\frac{5}{6}\) h → Durchschnitt \(12 : \frac{5}{6} = 14.4\) km/h</div>
+
+<h3>Füllgraph</h3>
+<p>Ein Gefäss wird gleichmässig mit Wasser gefüllt (gleich viel Wasser pro Sekunde). Der Graph zeigt die Füllhöhe über der Zeit.</p>
+<table><tr><th>Gefäss</th><th>Graph</th></tr>
+<tr><td>gerade Wände (Zylinder, Quader, Prisma)</td><td>gerade Linie</td></tr>
+<tr><td>unten breit, oben schmal (zwei Stufen)</td><td>zuerst flach, Knick, dann steil</td></tr>
+<tr><td>unten schmal, oben breit (zwei Stufen)</td><td>zuerst steil, Knick, dann flach</td></tr>
+<tr><td>wird nach oben immer breiter (Trichter, Spitze unten)</td><td>Kurve, die immer flacher wird</td></tr>
+<tr><td>wird nach oben immer schmaler (Spitze oben)</td><td>Kurve, die immer steiler wird</td></tr>
+<tr><td>Kugel</td><td>steil, in der Mitte flach, oben wieder steil</td></tr></table>
+<div class="merke"><b>Merke:</b> Ein Knick im Graphen gehört zu einer Stelle, an der sich die Breite sprunghaft ändert. Eine Kurve gehört zu schrägen oder runden Wänden.</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Typisch ist «Ordne jedem Gefäss den passenden Graphen zu». Gehe von unten nach oben durch das Gefäss: Ist es hier breit oder schmal? Ändert sich die Breite sprunghaft oder langsam? Vergleiche dann mit den Graphen von links nach rechts.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Der Graph ist kein Bild des Weges. Ein «Berg» im Weg-Zeit-Graph heisst hin und zurück, nicht bergauf und bergab.</li>
+<li>Waagrecht heisst Stillstand, nicht «gleichmässig schnell».</li>
+<li>Im Füllgraphen gehört eine steile Linie zu einer <b>schmalen</b> Stelle.</li>
+<li>Minuten in Stunden umrechnen, bevor du km/h ausrechnest.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Ein Wanderer geht 3 km in 45 Minuten. Wie schnell ist er in km/h?</li>
+<li>Was bedeutet eine waagrechte Linie im Weg-Zeit-Graph?</li>
+<li>Wie lange braucht ein Velo mit 25 km/h für 10 km?</li>
+<li>Ein Gefäss ist unten ein schmaler Zylinder, oben ein breiter. Wie sieht der Füllgraph aus?</li>
+<li>Ein Trichter (Spitze unten) wird gefüllt. Wie sieht der Füllgraph aus?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(3 : 0.75 = 4\) km/h</li>
+<li>Die Person steht still.</li>
+<li>\(10 : 25 = 0.4\) h = 24 min</li>
+<li>zuerst steil, dann Knick, dann flach</li>
+<li>Kurve: zuerst steil, dann immer flacher</li></ol></details>`,
 
 M15: R`<div class="merke">\(P(\text{Ereignis}) = \frac{\text{Anzahl günstige Ergebnisse}}{\text{Anzahl mögliche Ergebnisse}}\) (wenn alle Ergebnisse gleich wahrscheinlich sind). Es gilt \(0 \leq P \leq 1\).</div>
 <ul><li>Würfel, gerade Zahl: \(P = \frac{3}{6} = \frac{1}{2}\)</li>
