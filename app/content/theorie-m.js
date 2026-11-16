@@ -805,14 +805,67 @@ Ganze Fahrt: 12 km in 50 min = \(\frac{5}{6}\) h → Durchschnitt \(12 : \frac{5
 <li>zuerst steil, dann Knick, dann flach</li>
 <li>Kurve: zuerst steil, dann immer flacher</li></ol></details>`,
 
-M15: R`<div class="merke">\(P(\text{Ereignis}) = \frac{\text{Anzahl günstige Ergebnisse}}{\text{Anzahl mögliche Ergebnisse}}\) (wenn alle Ergebnisse gleich wahrscheinlich sind). Es gilt \(0 \leq P \leq 1\).</div>
-<ul><li>Würfel, gerade Zahl: \(P = \frac{3}{6} = \frac{1}{2}\)</li>
+M15: R`<div class="merke"><b>Kurz:</b> \(P(\text{Ereignis}) = \frac{\text{Anzahl günstige Ergebnisse}}{\text{Anzahl mögliche Ergebnisse}}\), wenn alle Ergebnisse gleich wahrscheinlich sind. Es gilt \(0 \leq P \leq 1\). Im Baum: entlang eines Pfades multiplizieren, Pfade addieren. «Mindestens 1» über das Gegenereignis «keiner».</div>
+
+<h3>Begriffe</h3>
+<ul><li>\(P = 0\): unmöglich. \(P = 1\): sicher. Schreibweise als Bruch, Dezimalzahl oder in Prozent: \(\frac{1}{4} = 0.25 = 25\) %.</li>
 <li><b>Gegenereignis:</b> \(P(\text{nicht } A) = 1 - P(A)\)</li>
-<li><b>2-stufig (Baum):</b> Wahrscheinlichkeiten entlang eines Pfades multiplizieren, Pfade addieren.</li>
-<li><b>Relative Häufigkeit</b> = Anzahl Treffer : Anzahl Versuche.</li></ul>
-<div class="bsp"><b>Mindestens 1 Sechs bei 2 Würfen:</b> \(1 - \left(\frac{5}{6}\right)^2 = 1 - \frac{25}{36} = \frac{11}{36}\)</div>
-<div class="bsp"><b>Ohne Zurücklegen:</b> 3 rote und 2 blaue Kugeln. 2 ziehen, beide rot: \(\frac{3}{5} \cdot \frac{2}{4} = \frac{6}{20} = \frac{3}{10}\)</div>
-<div class="falle"><b>Falle:</b> Ohne Zurücklegen ändert sich beim 2. Zug die Anzahl Kugeln. «Mindestens 1» fast immer über das Gegenereignis «keine» rechnen.</div>`,
+<li>Alle Wahrscheinlichkeiten eines Versuchs zusammen ergeben 1.</li></ul>
+
+<h3>Ein Zug</h3>
+<div class="bsp">Im Beutel sind 5 rote, 3 blaue und 2 grüne Kugeln. Eine Kugel wird gezogen.<br>
+\(P(\text{blau}) = \frac{3}{10}\); \(P(\text{nicht rot}) = 1 - \frac{5}{10} = \frac{1}{2}\)</div>
+<div class="bsp"><b>Fehlende Wahrscheinlichkeit:</b> Ein Glücksrad zeigt rot mit \(0.25\), blau mit \(0.4\), sonst gelb.<br>
+\(P(\text{gelb}) = 1 - 0.25 - 0.4 = 0.35\)</div>
+
+<h3>Zwei Würfel</h3>
+<p>Es gibt \(6 \cdot 6 = 36\) gleich wahrscheinliche Ergebnisse (erster Würfel, zweiter Würfel).</p>
+<ul><li>Augensumme 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) → \(\frac{6}{36} = \frac{1}{6}\)</li>
+<li>Augensumme 10: (4,6), (5,5), (6,4) → \(\frac{3}{36} = \frac{1}{12}\)</li>
+<li>Pasch (zwei gleiche Zahlen): \(\frac{6}{36} = \frac{1}{6}\)</li></ul>
+
+<h3>Zwei Züge: Baumdiagramm</h3>
+<p>Beutel mit 3 roten und 2 blauen Kugeln, 2 Kugeln werden gezogen.</p>
+<ul><li><b>Mit Zurücklegen</b> (die Anzahl bleibt gleich): beide rot \(\frac{3}{5} \cdot \frac{3}{5} = \frac{9}{25}\)</li>
+<li><b>Ohne Zurücklegen</b> (beim 2. Zug ist eine Kugel weniger drin): beide rot \(\frac{3}{5} \cdot \frac{2}{4} = \frac{6}{20} = \frac{3}{10}\)</li>
+<li><b>Verschiedene Farben, ohne Zurücklegen:</b> zwei Pfade (rot-blau und blau-rot) addieren: \(\frac{3}{5} \cdot \frac{2}{4} + \frac{2}{5} \cdot \frac{3}{4} = \frac{6}{20} + \frac{6}{20} = \frac{3}{5}\)</li></ul>
+
+<h3>Mindestens 1</h3>
+<p>«Mindestens 1» hat viele Fälle. Das Gegenereignis «keiner» hat nur einen Fall. Darum: \(P(\text{mindestens 1}) = 1 - P(\text{keiner})\).</p>
+<ul><li>Mindestens eine Sechs bei 2 Würfen: \(1 - \left(\frac{5}{6}\right)^2 = 1 - \frac{25}{36} = \frac{11}{36}\)</li>
+<li>Mindestens einmal Kopf bei 3 Münzwürfen: \(1 - \left(\frac{1}{2}\right)^3 = 1 - \frac{1}{8} = \frac{7}{8}\)</li></ul>
+
+<h3>Relative Häufigkeit und Schätzen</h3>
+<p>Bei vielen Versuchen liegt die relative Häufigkeit nahe bei der Wahrscheinlichkeit.</p>
+<ul><li>Ein Reissnagel landet bei 200 Würfen 130-mal mit der Spitze nach oben: \(\frac{130}{200} = 0.65\). Bei 1000 Würfen erwartet man etwa \(1000 \cdot 0.65 = 650\)-mal Spitze oben.</li>
+<li><b>Erwartete Anzahl</b> = Anzahl Versuche · Wahrscheinlichkeit: Bei 600 Würfen erwartet man etwa \(600 \cdot \frac{1}{6} = 100\) Sechsen.</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Ein Beutel enthält 4 rote und 6 weisse Kugeln. Zwei Kugeln werden ohne Zurücklegen gezogen. Wie gross ist die Wahrscheinlichkeit, mindestens eine rote zu ziehen?<br>
+Keine rote: \(\frac{6}{10} \cdot \frac{5}{9} = \frac{30}{90} = \frac{1}{3}\)<br>
+Mindestens eine rote: \(1 - \frac{1}{3} = \frac{2}{3}\)</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Ohne Zurücklegen ändern sich beim 2. Zug Zähler <b>und</b> Nenner.</li>
+<li>Bei zwei Würfeln sind die Augensummen 2 bis 12 nicht gleich wahrscheinlich. Mit den 36 Paaren rechnen.</li>
+<li>Entlang eines Pfades wird multipliziert, verschiedene Pfade werden addiert.</li>
+<li>Eine Wahrscheinlichkeit grösser als 1 ist immer falsch.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Würfel: Wahrscheinlichkeit für eine Zahl grösser als 4?</li>
+<li>Glücksrad: rot \(0.3\), blau \(0.45\), Rest gelb. \(P(\text{gelb})\)?</li>
+<li>Zwei Würfel: Wahrscheinlichkeit für die Augensumme 8?</li>
+<li>2 rote und 3 blaue Kugeln, 2 ohne Zurücklegen: beide blau?</li>
+<li>Eine Münze wird 4-mal geworfen. Mindestens einmal Zahl?</li>
+<li>Bei 50 Versuchen gab es 18 Treffer. Wie viele Treffer erwartest du etwa bei 300 Versuchen?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(\frac{2}{6} = \frac{1}{3}\)</li>
+<li>\(1 - 0.3 - 0.45 = 0.25\)</li>
+<li>(2,6), (3,5), (4,4), (5,3), (6,2) → \(\frac{5}{36}\)</li>
+<li>\(\frac{3}{5} \cdot \frac{2}{4} = \frac{3}{10}\)</li>
+<li>\(1 - \left(\frac{1}{2}\right)^4 = \frac{15}{16}\)</li>
+<li>\(\frac{18}{50} = 0.36\) → etwa \(300 \cdot 0.36 = 108\)</li></ol></details>`,
 
 M16: R`<ul><li><b>Nebenwinkel</b> ergeben zusammen 180°. <b>Scheitelwinkel</b> sind gleich gross.</li>
 <li>An Parallelen: <b>Stufenwinkel</b> (F-Form) und <b>Wechselwinkel</b> (Z-Form) sind gleich gross.</li>
