@@ -779,7 +779,41 @@ D16: R`<p>Du entscheidest für jede Aussage: <b>richtig</b>, <b>falsch</b> oder 
 
 D17: R`<p>Du wählst Adjektive, die zum Charakter einer Figur passen.</p>
 <div class="merke"><b>Vorgehen:</b> Was tut, sagt und denkt die Figur? Wie reagieren andere auf sie? Für jedes Adjektiv brauchst du eine Textstelle als Beleg.</div>
-<div class="falle"><b>Falle:</b> Genau so viele Kreuze wie verlangt. Jedes Kreuz zu viel kostet 1 Punkt. Adjektive zum Aussehen beschreiben nicht den Charakter.</div>`,
+
+<h3>Woran du den Charakter erkennst</h3>
+<ul><li><b>Handlungen:</b> Was tut die Figur, besonders in schwierigen Momenten?</li>
+<li><b>Rede:</b> Wie spricht sie mit anderen: freundlich, frech, leise?</li>
+<li><b>Gedanken und Gefühle:</b> Was geht in ihr vor?</li>
+<li><b>Andere Figuren:</b> Wie reagieren sie auf die Figur, was sagen sie über sie?</li></ul>
+
+<h3>Charakter, Stimmung, Aussehen</h3>
+<table><tr><th>Art</th><th>Beispiele</th><th>Charakter?</th></tr>
+<tr><td>Charakter (bleibt)</td><td>hilfsbereit, ehrlich, mutig, ängstlich, neugierig, stur, geduldig, schüchtern, selbstbewusst, grosszügig, geizig, zuverlässig</td><td>ja</td></tr>
+<tr><td>Stimmung (im Moment)</td><td>wütend, traurig, müde, nervös</td><td>nur, wenn sie immer wieder so ist</td></tr>
+<tr><td>Aussehen</td><td>gross, blond, schlank</td><td>nein</td></tr></table>
+
+<div class="bsp"><b>Text:</b> «Obwohl er selbst kaum Zeit hatte, trug Ben der alten Nachbarin jeden Samstag die Einkäufe in den dritten Stock.»<br>
+→ <b>hilfsbereit</b>. Beleg: Er trägt jeden Samstag die Einkäufe, obwohl er kaum Zeit hat.<br>
+→ Nicht «stark»: Das wäre der Körper, nicht der Charakter.</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Eine Liste mit Adjektiven. Du kreuzt genau so viele an, wie verlangt sind, manchmal mit Zeilenangabe als Beleg. Geh jedes Adjektiv einzeln durch und suche eine Stelle im Text. Findest du keine, lässt du es weg.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Genau so viele Kreuze wie verlangt. Jedes Kreuz zu viel kostet 1 Punkt.</li>
+<li>Adjektive zum Aussehen beschreiben nicht den Charakter.</li>
+<li>Nicht raten, was die Figur «vielleicht» ist. Ohne Beleg im Text kein Kreuz.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Text: «Lena sah, wie ein Junge auf dem Pausenplatz ausgelacht wurde. Sie ging hin und sagte laut: ‹Hört auf damit!› Später teilte sie ihr Znüni mit ihm.»</p>
+<ol class="check">
+<li>Welche 2 Adjektive passen? mutig, ängstlich, grosszügig, gleichgültig, gross</li>
+<li>Gib für beide einen Beleg an.</li>
+<li>Warum passt «gross» nicht?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>mutig und grosszügig</li>
+<li>mutig: Sie geht hin und sagt laut «Hört auf damit!». grosszügig: Sie teilt ihr Znüni mit dem Jungen.</li>
+<li>Es beschreibt das Aussehen, nicht den Charakter (und steht nicht im Text).</li></ol></details>`,
 
 D18: R`<div class="merke"><b>Vorgehen:</b> 1. Frage genau lesen: Was ist gefragt (warum → Grund, wie → Art und Weise)? 2. Stelle im Text suchen und Zeile angeben. 3. Mit eigenen Worten antworten, in ganzen Sätzen.</div>
 <div class="bsp"><b>Beispiel:</b> «Warum lügt Tom?» → «Tom lügt, weil er Angst vor der Strafe hat (Zeile 12).»</div>
