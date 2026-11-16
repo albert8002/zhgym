@@ -1034,14 +1034,64 @@ M18: R`<div class="merke"><b>Satz des Pythagoras:</b> Im rechtwinkligen Dreieck 
 <li>\(\sqrt{12^2 + 5^2} = 13\) cm</li>
 <li>\(\sqrt{676 - 100} = 24\) cm</li></ol></details>`,
 
-M19: R`<ul><li><b>Mittelsenkrechte</b> von AB: alle Punkte, die von A und B gleich weit entfernt sind. Kreisbögen mit gleichem Radius (grösser als die halbe Strecke) um A und B, Schnittpunkte verbinden.</li>
-<li><b>Winkelhalbierende:</b> alle Punkte, die von beiden Schenkeln gleich weit entfernt sind.</li>
-<li><b>Mittelparallele:</b> alle Punkte, die von 2 Parallelen gleich weit entfernt sind.</li>
-<li><b>Höhe:</b> Senkrechte von einer Ecke auf die gegenüberliegende Seite.</li>
+M19: R`<div class="merke"><b>Kurz:</b> Zuerst eine Planfigur (Skizze) mit allen gegebenen Stücken. Gesuchte Punkte liegen auf Ortslinien: Kreis, Parallele, Mittelsenkrechte, Winkelhalbierende, Thaleskreis. Wo sich zwei Ortslinien schneiden, liegt der Punkt. Alle Konstruktionslinien stehen lassen.</div>
+
+<h3>Ortslinien</h3>
+<table><tr><th>Alle Punkte, die …</th><th>liegen auf</th></tr>
+<tr><td>von einem Punkt M den Abstand r haben</td><td>dem Kreis um M mit Radius r</td></tr>
+<tr><td>von einer Geraden g den Abstand d haben</td><td>zwei Parallelen zu g im Abstand d</td></tr>
+<tr><td>von A und B gleich weit entfernt sind</td><td>der Mittelsenkrechten von AB</td></tr>
+<tr><td>von den beiden Schenkeln eines Winkels gleich weit entfernt sind</td><td>der Winkelhalbierenden</td></tr>
+<tr><td>von zwei Parallelen gleich weit entfernt sind</td><td>der Mittelparallelen</td></tr>
+<tr><td>mit A und B einen rechten Winkel bilden</td><td>dem Thaleskreis über AB</td></tr></table>
+
+<h3>Grundkonstruktionen</h3>
+<ul><li><b>Mittelsenkrechte von AB:</b> Kreisbögen mit gleichem Radius (grösser als die halbe Strecke) um A und um B. Die beiden Schnittpunkte verbinden.</li>
+<li><b>Winkelhalbierende:</b> Kreisbogen um den Scheitel, der beide Schenkel schneidet. Um beide Schnittpunkte gleich grosse Bögen. Deren Schnittpunkt mit dem Scheitel verbinden.</li>
+<li><b>Senkrechte von P auf g (Lot):</b> Kreis um P schneidet g in zwei Punkten. Davon die Mittelsenkrechte zeichnen. Oder mit dem Geodreieck.</li>
+<li><b>Parallele im Abstand d:</b> Mit dem Geodreieck an zwei Stellen d senkrecht abtragen und verbinden.</li></ul>
+
+<h3>Besondere Linien und Punkte im Dreieck</h3>
+<ul><li><b>Höhe:</b> Senkrechte von einer Ecke auf die gegenüberliegende Seite (oder ihre Verlängerung).</li>
 <li><b>Schwerlinie:</b> verbindet eine Ecke mit der Mitte der Gegenseite. Die 3 Schwerlinien schneiden sich im Schwerpunkt.</li>
-<li><b>Umkreis:</b> Mittelpunkt = Schnittpunkt der Mittelsenkrechten. <b>Inkreis:</b> Mittelpunkt = Schnittpunkt der Winkelhalbierenden.</li></ul>
-<div class="merke"><b>Vorgehen:</b> Zuerst eine Planfigur (Skizze) mit den gegebenen Stücken. Dann sauber konstruieren und die Punkte beschriften.</div>
-<div class="falle"><b>Falle:</b> Die Zirkelbögen müssen sichtbar bleiben, sonst gibt es den Punkt nicht. Spitzen Bleistift verwenden.</div>`,
+<li><b>Umkreis:</b> Mittelpunkt = Schnittpunkt der Mittelsenkrechten. Er ist von allen drei <b>Ecken</b> gleich weit entfernt. Im rechtwinkligen Dreieck liegt er in der Mitte der Hypotenuse (Thales).</li>
+<li><b>Inkreis:</b> Mittelpunkt = Schnittpunkt der Winkelhalbierenden. Er ist von allen drei <b>Seiten</b> gleich weit entfernt.</li></ul>
+
+<h3>Dreiecke konstruieren</h3>
+<p><b>Beschriftung:</b> Ecken A, B, C gegen den Uhrzeigersinn. Seite a liegt gegenüber von A (also BC), b gegenüber von B (CA), c gegenüber von C (AB). Winkel \(\alpha\) bei A, \(\beta\) bei B, \(\gamma\) bei C.</p>
+<div class="bsp"><b>Drei Seiten</b> \(a = 6\) cm, \(b = 5\) cm, \(c = 7\) cm:<br>
+1. Strecke AB = 7 cm zeichnen.<br>
+2. Kreis um A mit Radius \(b = 5\) cm.<br>
+3. Kreis um B mit Radius \(a = 6\) cm.<br>
+4. Der Schnittpunkt ist C.</div>
+<ul><li>Eindeutig konstruierbar sind Dreiecke aus: drei Seiten; zwei Seiten und dem Winkel dazwischen; einer Seite und den zwei anliegenden Winkeln.</li>
+<li>Drei Seiten passen nur, wenn zwei zusammen länger sind als die dritte.</li></ul>
+<p><b>Vierecke:</b> Mit einer Diagonalen in zwei Dreiecke zerlegen und nacheinander konstruieren. Eigenschaften nutzen: Im Parallelogramm halbieren sich die Diagonalen, in der Raute stehen sie senkrecht aufeinander.</p>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Gesucht sind alle Punkte P, die von A und B gleich weit entfernt sind und von C den Abstand 3 cm haben.<br>
+1. Ortslinie: Mittelsenkrechte von AB. 2. Ortslinie: Kreis um C mit Radius 3 cm.<br>
+P liegt in den Schnittpunkten. Es kann 0, 1 oder 2 Lösungen geben. Alle einzeichnen und beschriften.</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Die Zirkelbögen müssen sichtbar bleiben, sonst gibt es den Punkt nicht. Spitzen Bleistift verwenden.</li>
+<li>Seiten und Ecken richtig beschriften: a liegt gegenüber von A.</li>
+<li>Nicht nur eine Lösung zeichnen, wenn es zwei gibt.</li>
+<li>Genau arbeiten: Längen auf den Millimeter, Winkel auf das Grad genau.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Wo liegen alle Punkte, die 2 cm von M entfernt sind?</li>
+<li>Wo liegen alle Punkte, die von A und B gleich weit entfernt sind?</li>
+<li>Welcher Punkt ist von allen drei Ecken eines Dreiecks gleich weit entfernt?</li>
+<li>Wo liegt der Umkreismittelpunkt eines rechtwinkligen Dreiecks?</li>
+<li>Lässt sich ein Dreieck mit den Seiten 3 cm, 4 cm und 8 cm konstruieren?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>auf dem Kreis um M mit Radius 2 cm</li>
+<li>auf der Mittelsenkrechten von AB</li>
+<li>der Umkreismittelpunkt (Schnittpunkt der Mittelsenkrechten)</li>
+<li>in der Mitte der Hypotenuse</li>
+<li>Nein, denn \(3 + 4 = 7\) ist kleiner als 8.</li></ol></details>`,
 
 M20: R`<ul><li><b>Achsensymmetrie:</b> Die Figur passt nach dem Spiegeln an einer Geraden auf sich selbst.</li>
 <li><b>Punktsymmetrie:</b> Die Figur passt nach einer Drehung um 180° auf sich selbst.</li>
