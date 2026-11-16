@@ -653,11 +653,59 @@ Zunahme um \(p\) %: mal \(\left(1 + \frac{p}{100}\right)\). Abnahme um \(p\) %: 
 <li>\(\frac{6}{40} \cdot 100 = 15\) %</li>
 <li>\(1.1 \cdot 1.1 = 1.21\) → 21 %</li></ol></details>`,
 
-M12: R`<ul><li><b>Proportional:</b> doppelt so viel → doppelt so teuer. Der Quotient \(\frac{y}{x}\) bleibt gleich. Der Graph ist eine Gerade durch den Nullpunkt.</li>
-<li><b>Umgekehrt proportional:</b> doppelt so viele Personen → halb so viel Zeit. Das Produkt \(x \cdot y\) bleibt gleich.</li></ul>
-<div class="bsp"><b>Dreisatz proportional:</b> 3 kg kosten 12 Fr. → 1 kg kostet 4 Fr. → 5 kg kosten 20 Fr.</div>
-<div class="bsp"><b>Dreisatz umgekehrt proportional:</b> 4 Personen brauchen 6 Tage → 1 Person braucht 24 Tage → 3 Personen brauchen 8 Tage.</div>
-<div class="falle"><b>Falle:</b> Nicht alles ist proportional. Zuerst fragen: Wenn das eine doppelt so gross wird, was passiert mit dem anderen?</div>`,
+M12: R`<div class="merke"><b>Kurz:</b> <b>Proportional:</b> doppelt so viel → doppelt so viel. Der Quotient \(\frac{y}{x}\) bleibt gleich. <b>Umgekehrt proportional:</b> doppelt so viel → halb so viel. Das Produkt \(x \cdot y\) bleibt gleich. Rechnen mit dem Dreisatz: über 1.</div>
+
+<h3>Proportional</h3>
+<table><tr><th>Äpfel in kg</th><td>1</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><th>Preis in CHF</th><td>4</td><td>8</td><td>12</td><td>20</td></tr></table>
+<ul><li>Der Quotient ist immer gleich: \(\frac{8}{2} = \frac{12}{3} = 4\). Formel: \(y = 4x\).</li>
+<li>Der Graph ist eine Gerade durch den Nullpunkt.</li></ul>
+<div class="bsp"><b>Dreisatz:</b> 7 m Stoff kosten CHF 84 → 1 m kostet \(84 : 7 = 12\) → \(2.5\) m kosten \(12 \cdot 2.5 = 30\) Franken.</div>
+
+<h3>Umgekehrt proportional</h3>
+<table><tr><th>Personen</th><td>1</td><td>2</td><td>4</td><td>6</td></tr>
+<tr><th>Tage</th><td>24</td><td>12</td><td>6</td><td>4</td></tr></table>
+<ul><li>Das Produkt ist immer gleich: \(2 \cdot 12 = 4 \cdot 6 = 24\). Formel: \(y = \frac{24}{x}\).</li>
+<li>Der Graph ist eine Kurve (Hyperbel). Sie geht nicht durch den Nullpunkt.</li></ul>
+<div class="bsp"><b>Dreisatz:</b> 4 Personen brauchen 6 Tage → 1 Person braucht \(4 \cdot 6 = 24\) Tage → 3 Personen brauchen \(24 : 3 = 8\) Tage.</div>
+
+<h3>Erkennen</h3>
+<ol><li>Frage dich: Wenn das eine doppelt so gross wird, was passiert mit dem anderen?</li>
+<li>Prüfe in der Tabelle: Ist der Quotient gleich (proportional)? Ist das Produkt gleich (umgekehrt proportional)?</li>
+<li>Ist keines gleich, passt kein Dreisatz. Beispiel: Taxi mit Grundtaxe CHF 6 und CHF 3 pro km: 10 km kosten 36, 20 km kosten 66, nicht 72.</li></ol>
+
+<h3>Zwei Schritte nacheinander</h3>
+<div class="bsp">3 Maschinen stellen in 4 Stunden 600 Teile her. Wie viele Teile stellen 5 Maschinen in 6 Stunden her?<br>
+1 Maschine in 1 Stunde: \(600 : 3 : 4 = 50\) Teile<br>
+5 Maschinen in 6 Stunden: \(50 \cdot 5 \cdot 6 = 1500\) Teile</div>
+
+<h3>Massstab</h3>
+<p>Ein Massstab ist eine proportionale Zuordnung. 1 : 25 000 heisst: 1 cm auf der Karte sind 25 000 cm in Wirklichkeit. 4 cm → 100 000 cm = 1 km.</p>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Der Proviant reicht für 24 Lernende 5 Tage. Wie lange reicht er für 20 Lernende?<br>
+Umgekehrt proportional (weniger Personen → mehr Tage). \(24 \cdot 5 = 120\) Tagesrationen → \(120 : 20 = 6\) Tage.</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nicht alles ist proportional: Alter und Körpergrösse, Taxi mit Grundtaxe, Handyabo mit Grundgebühr.</li>
+<li>Proportional und umgekehrt proportional nicht verwechseln. Kontrollfrage: Muss das Resultat grösser oder kleiner werden?</li>
+<li>Einheiten gleich lassen: Wer mit Minuten beginnt, rechnet mit Minuten weiter.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>5 Hefte kosten CHF 7.50. Was kosten 8 Hefte?</li>
+<li>3 Pumpen leeren ein Becken in 8 Stunden. Wie lange brauchen 4 Pumpen?</li>
+<li>Proportional? \(x\): 2, 3, 5 und \(y\): 7, \(10.5\), \(17.5\)</li>
+<li>Umgekehrt proportional? \(x\): 2, 4, 5 und \(y\): 30, 15, 12</li>
+<li>Eine Karte hat den Massstab 1 : 50 000. Eine Strecke misst 7 cm. Wie lang ist sie in Wirklichkeit?</li>
+<li>4 Maler brauchen für ein Haus 9 Tage. Wie lange brauchen 6 Maler?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>1 Heft: \(1.50\) → 8 Hefte: CHF 12</li>
+<li>\(3 \cdot 8 = 24\) → \(24 : 4 = 6\) Stunden</li>
+<li>Ja, der Quotient ist immer \(3.5\).</li>
+<li>Ja, das Produkt ist immer 60.</li>
+<li>350 000 cm = \(3.5\) km</li>
+<li>\(4 \cdot 9 = 36\) → \(36 : 6 = 6\) Tage</li></ol></details>`,
 
 M13: R`<ul><li><b>Säulendiagramm:</b> vergleicht Mengen. Achse beschriften, gleichmässige Einteilung.</li>
 <li><b>Liniendiagramm:</b> zeigt eine Entwicklung über die Zeit.</li>
