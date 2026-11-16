@@ -483,10 +483,63 @@ Gleichung: \(3x - 40 = x + 20\) → \(x = 30\)</div>
 <li>\(x + 28 + 4 = 3(x + 4)\) (\(x = 10\))</li>
 <li>\(2(x - 7) = 30\) (\(x = 22\))</li></ol></details>`,
 
-M9: R`<div class="merke"><b>Vorgehen:</b> Tabelle machen: Figur \(n\) und Anzahl. Wächst die Anzahl jedes Mal um gleich viel (\(d\)), dann gilt: Anzahl \(= d \cdot n + (\text{erste Anzahl} - d)\).</div>
-<div class="bsp">4, 7, 10, 13 … → \(d = 3\) → Anzahl \(= 3n + 1\). Probe: \(n = 1\): \(3 + 1 = 4\). Stimmt.</div>
-<ul><li>Quadratzahlen 1, 4, 9, 16 … → \(n^2\)</li><li>2, 6, 12, 20 … → \(n(n + 1)\)</li></ul>
-<div class="falle"><b>Falle:</b> Den Term immer mit 2 bis 3 Figuren prüfen. Bei der Frage «Welche Figur hat 100 Plättchen?» eine Gleichung lösen.</div>`,
+M9: R`<div class="merke"><b>Kurz:</b> Tabelle machen: Figur \(n\) und Anzahl. Wächst die Anzahl jedes Mal um gleich viel (\(d\)), dann gilt: Anzahl \(= d \cdot n + (\text{erste Anzahl} - d)\). Den Term immer mit 2 bis 3 Figuren prüfen.</div>
+
+<h3>Gleichmässig wachsende Folgen</h3>
+<table><tr><th>Figur \(n\)</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+<tr><th>Anzahl</th><td>4</td><td>7</td><td>10</td><td>13</td></tr></table>
+<ol><li>Unterschied von Figur zu Figur: \(d = 3\). Der Term beginnt mit \(3n\).</li>
+<li>\(3n\) ergibt für \(n = 1\) nur 3, gezählt sind 4. Es fehlt 1.</li>
+<li>Term: \(3n + 1\). Probe: \(n = 2\): \(3 \cdot 2 + 1 = 7\). Stimmt.</li></ol>
+<p><b>Trick «Figur 0»:</b> Rechne von der ersten Anzahl einmal \(d\) zurück: \(4 - 3 = 1\). Das ist die Zahl hinter \(3n\).</p>
+<div class="bsp">1, 6, 11, 16 … → \(d = 5\), Figur 0: \(1 - 5 = -4\) → Term \(5n - 4\)</div>
+
+<h3>Das Muster in der Figur sehen</h3>
+<p>Oft siehst du den Term direkt in der Zeichnung. So kannst du ihn auch begründen.</p>
+<ul><li><b>Hölzchen-Quadrate in einer Reihe:</b> Das erste Quadrat braucht 4 Hölzchen, jedes weitere 3: \(4 + 3(n - 1) = 3n + 1\).</li>
+<li><b>Punkte-Kreuz:</b> 1 Punkt in der Mitte und 4 Arme mit je \(n\) Punkten: \(4n + 1\).</li>
+<li><b>Quadratrahmen</b> mit \(n + 1\) Punkten pro Seite: 4 Seiten mit je \(n\) Punkten, jede Ecke nur einmal gezählt: \(4n\).</li>
+<li><b>Rechteck aus Punkten</b> mit \(n\) Reihen zu je \(n + 2\) Punkten: \(n(n + 2) = n^2 + 2n\).</li></ul>
+
+<h3>Folgen mit Quadraten</h3>
+<p>Werden die Unterschiede selbst immer grösser (zum Beispiel um 2), steckt \(n^2\) im Term.</p>
+<table><tr><th>Folge</th><th>Term</th></tr>
+<tr><td>1, 4, 9, 16 …</td><td>\(n^2\)</td></tr>
+<tr><td>2, 5, 10, 17 …</td><td>\(n^2 + 1\)</td></tr>
+<tr><td>2, 6, 12, 20 …</td><td>\(n(n + 1)\)</td></tr>
+<tr><td>3, 8, 15, 24 …</td><td>\(n^2 + 2n\)</td></tr></table>
+<p><b>Vorgehen:</b> Ziehe \(n^2\) ab. Bei 3, 8, 15, 24 bleibt 2, 4, 6, 8, also \(2n\). Term: \(n^2 + 2n\).</p>
+
+<h3>Rückwärts: Welche Figur hat 100?</h3>
+<div class="bsp">Term \(3n + 1\): \(3n + 1 = 100\) → \(3n = 99\) → \(n = 33\). Figur 33 hat 100 Hölzchen.<br>
+\(3n + 1 = 50\) → \(n = \frac{49}{3}\): keine ganze Zahl, also gibt es keine Figur mit genau 50 Hölzchen.</div>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Die ersten Figuren sind gezeichnet. Gefragt sind die Anzahl in einer späteren Figur (zum Beispiel Figur 20) und ein Term für Figur \(n\).</p>
+<div class="bsp">Hölzchen-Dreiecke in einer Reihe: 3, 5, 7 … Hölzchen.<br>
+Das erste Dreieck braucht 3, jedes weitere 2: Term \(2n + 1\). Figur 20: \(2 \cdot 20 + 1 = 41\) Hölzchen.</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>\(3n\) allein reicht nicht: Es ergibt 3, 6, 9 statt 4, 7, 10.</li>
+<li>Figur 20 nicht durch Weiterzählen bestimmen, das dauert und gibt Fehler. Den Term einsetzen.</li>
+<li>Ecken nicht doppelt zählen.</li>
+<li>Bei «Welche Figur hat …?» eine Gleichung lösen. Ist \(n\) keine ganze Zahl, gibt es diese Figur nicht.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>5, 9, 13, 17 … Term? Wie viele bei Figur 10?</li>
+<li>2, 8, 14, 20 … Term?</li>
+<li>1, 4, 9, 16 … Wie viele bei Figur 12?</li>
+<li>2, 5, 10, 17 … Term?</li>
+<li>Term \(3n + 2\). Welche Figur hat 62?</li>
+<li>2, 6, 12, 20 … Wie viele bei Figur 9?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(4n + 1\); Figur 10: 41</li>
+<li>\(6n - 4\)</li>
+<li>\(12^2 = 144\)</li>
+<li>\(n^2 + 1\)</li>
+<li>\(3n + 2 = 62\) → \(n = 20\)</li>
+<li>\(9 \cdot 10 = 90\)</li></ol></details>`,
 
 M10: R`<table><tr><th>Grösse</th><th>Umrechnung</th></tr>
 <tr><td>Länge</td><td>1 km = 1000 m; 1 m = 10 dm = 100 cm = 1000 mm</td></tr>
