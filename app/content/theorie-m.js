@@ -600,12 +600,58 @@ M10: R`<div class="merke"><b>Kurz:</b> Von einer grossen in eine kleine Einheit:
 <li>25 m/s</li>
 <li>120 + 35 + \(0.8\) = \(155.8\) cm</li></ol></details>`,
 
-M11: R`<p>\(G\) = Grundwert (das Ganze, 100 %), \(W\) = Prozentwert (der Teil), \(p\) = Prozentsatz.</p>
-<div class="merke">\(W = G \cdot \frac{p}{100}\) \(\quad G = \frac{W \cdot 100}{p}\) \(\quad p = \frac{W}{G} \cdot 100\)</div>
-<ul><li>Zunahme um \(p\) %: neuer Wert \(= G \cdot (1 + \frac{p}{100})\). Beispiel: 80 + 15 % → \(80 \cdot 1.15 = 92\)</li>
-<li>Abnahme um \(p\) %: neuer Wert \(= G \cdot (1 - \frac{p}{100})\)</li>
-<li>Rückwärts: Nach einer Abnahme um 20 % kostet etwas 64 Franken → \(G = 64 : 0.8 = 80\)</li></ul>
-<div class="falle"><b>Falle:</b> 10 % mehr und danach 10 % weniger ergibt nicht den alten Wert: \(1.1 \cdot 0.9 = 0.99\), also 1 % weniger. Immer fragen: Wovon sind es Prozent?</div>`,
+M11: R`<div class="merke"><b>Kurz:</b> \(G\) = Grundwert (das Ganze, 100 %), \(W\) = Prozentwert (der Teil), \(p\) = Prozentsatz.<br>
+\(W = G \cdot \frac{p}{100}\) \(\quad G = \frac{W \cdot 100}{p}\) \(\quad p = \frac{W}{G} \cdot 100\)<br>
+Zunahme um \(p\) %: mal \(\left(1 + \frac{p}{100}\right)\). Abnahme um \(p\) %: mal \(\left(1 - \frac{p}{100}\right)\).</div>
+
+<h3>Die drei Grundaufgaben</h3>
+<div class="bsp"><b>Prozentwert gesucht:</b> 15 % von 240 → \(240 \cdot 0.15 = 36\)</div>
+<div class="bsp"><b>Grundwert gesucht:</b> 18 Lernende sind 24 % aller Lernenden. → \(G = \frac{18 \cdot 100}{24} = 75\)</div>
+<div class="bsp"><b>Prozentsatz gesucht:</b> 27 von 45 → \(p = \frac{27}{45} \cdot 100 = 60\) %</div>
+<p><b>Mit dem Dreisatz:</b> 100 % entsprechen G, 1 % entspricht \(\frac{G}{100}\). Für 24 % → 18 rechnest du: 1 % → \(18 : 24 = 0.75\), 100 % → 75.</p>
+
+<h3>Brüche und Prozente</h3>
+<p>\(\frac{1}{2} = 50\) %, \(\frac{1}{4} = 25\) %, \(\frac{3}{4} = 75\) %, \(\frac{1}{5} = 20\) %, \(\frac{1}{8} = 12.5\) %, \(\frac{1}{10} = 10\) %, \(\frac{1}{3} \approx 33.3\) %</p>
+
+<h3>Zunahme und Abnahme</h3>
+<ul><li><b>Zunahme</b> um 15 %: \(80 \cdot 1.15 = 92\)</li>
+<li><b>Abnahme</b> um 20 %: \(80 \cdot 0.8 = 64\)</li>
+<li><b>Rückwärts:</b> Nach einer Abnahme um 20 % kostet etwas CHF 64 → alter Preis \(64 : 0.8 = 80\). Nach einer Erhöhung um 25 % kostet ein Velo CHF 600 → alter Preis \(600 : 1.25 = 480\).</li>
+<li><b>Veränderung in Prozent:</b> \(\frac{\text{neu} - \text{alt}}{\text{alt}} \cdot 100\). Von 80 auf 92: \(\frac{12}{80} \cdot 100 = 15\) % mehr. Von 50 auf 40: \(\frac{-10}{50} \cdot 100 = -20\) %, also 20 % weniger.</li></ul>
+
+<h3>Mehrere Veränderungen nacheinander</h3>
+<p>Die Faktoren werden multipliziert, nicht die Prozente addiert.</p>
+<ul><li>2-mal 20 % mehr: \(1.2 \cdot 1.2 = 1.44\) → 44 % mehr (nicht 40 %)</li>
+<li>10 % mehr und danach 10 % weniger: \(1.1 \cdot 0.9 = 0.99\) → 1 % weniger</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Ein Pullover kostet CHF 80. Er wird um 20 % teurer, im Ausverkauf dann um 25 % billiger. Was kostet er jetzt? Um wie viel Prozent ist er billiger als am Anfang?<br>
+\(80 \cdot 1.2 = 96\); \(96 \cdot 0.75 = 72\) → CHF 72<br>
+\(\frac{72 - 80}{80} \cdot 100 = -10\) % → 10 % billiger</div>
+<p>Schreibe zu jeder Zahl, wofür sie steht (zum Beispiel «Preis nach der Erhöhung»). Das gibt Punkte für den Weg.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Immer fragen: Wovon sind es Prozent? Der Grundwert ist der Wert <b>vor</b> der Veränderung.</li>
+<li>Rückwärts nicht die Prozente dazuzählen: 64 + 20 % von 64 ist \(76.8\), nicht 80. Richtig: \(64 : 0.8\).</li>
+<li>Von 20 % auf 25 % sind 5 Prozentpunkte, aber 25 % mehr (\(25 : 20 = 1.25\)).</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>35 % von 260</li>
+<li>42 sind 12 % von welcher Zahl?</li>
+<li>Wie viele Prozent sind 18 von 72?</li>
+<li>250 wird um 12 % erhöht.</li>
+<li>Nach 15 % Rabatt kostet ein Spiel CHF 51. Wie viel kostete es vorher?</li>
+<li>Ein Preis steigt von CHF 40 auf CHF 46. Um wie viel Prozent?</li>
+<li>Zuerst 10 % mehr, dann noch einmal 10 % mehr. Wie viel Prozent mehr insgesamt?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(260 \cdot 0.35 = 91\)</li>
+<li>\(42 : 0.12 = 350\)</li>
+<li>\(\frac{18}{72} \cdot 100 = 25\) %</li>
+<li>\(250 \cdot 1.12 = 280\)</li>
+<li>\(51 : 0.85 = 60\) → CHF 60</li>
+<li>\(\frac{6}{40} \cdot 100 = 15\) %</li>
+<li>\(1.1 \cdot 1.1 = 1.21\) → 21 %</li></ol></details>`,
 
 M12: R`<ul><li><b>Proportional:</b> doppelt so viel → doppelt so teuer. Der Quotient \(\frac{y}{x}\) bleibt gleich. Der Graph ist eine Gerade durch den Nullpunkt.</li>
 <li><b>Umgekehrt proportional:</b> doppelt so viele Personen → halb so viel Zeit. Das Produkt \(x \cdot y\) bleibt gleich.</li></ul>
