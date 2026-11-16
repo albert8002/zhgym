@@ -19,10 +19,11 @@ export function textPanel(textId) {
   return box;
 }
 
-// opts: { title, mode, next(i) → Aufgabe | null, limit, blitz, onDone(summary), backHref, showSkill, review(task, ok) }
+// opts: { title, mode, next(i) → Aufgabe | null, limit, blitz, onDone(summary), backHref, showSkill, review(task, ok), keepLog }
+// keepLog: sum.log hält jede Aufgabe mit Antwort und Bewertung fest (auch übersprungene), für eine Auswertung am Schluss.
 export function runSession(root, opts) {
   let i = 0, task = null, ctl = null, t0 = 0, tick = null, phase = 'answer', result = null, cause = '', left = 0;
-  const sum = { n: 0, points: 0, max: 0, sec: 0, target: 0, streak: 0, best: 0, perSkill: {}, gains: [] };
+  const sum = { n: 0, points: 0, max: 0, sec: 0, target: 0, streak: 0, best: 0, perSkill: {}, gains: [], log: [] };
   const before = {}; const results = [];
   root.innerHTML = '';
   const head = h('div', { class: 'session-head' });
@@ -90,7 +91,7 @@ export function runSession(root, opts) {
     foot.innerHTML = '';
     if (phase === 'answer') {
       foot.append(btn(ctl.hasSelf() ? 'Lösung zeigen' : opts.noFeedback ? 'Antwort abgeben' : 'Prüfen', () => check(false), { kind: 'primary big', icon: 'check' }));
-      if (!opts.blitz) foot.append(btn('Überspringen', () => { results[i] = -1; i++; if (opts.limit && i >= opts.limit) return finish(); load(); }, { kind: 'quiet' }));
+      if (!opts.blitz) foot.append(btn('Überspringen', () => { results[i] = -1; if (opts.keepLog) sum.log.push({ task, values: ctl.values(), skipped: true }); i++; if (opts.limit && i >= opts.limit) return finish(); load(); }, { kind: 'quiet' }));
       if (state.profile.settings.tts) foot.append(btn('Vorlesen', () => speak(document.querySelector('.task-prompt') ? document.querySelector('.task-prompt').textContent : ''), { kind: 'quiet', icon: 'sound' }));
     } else {
       foot.append(btn(opts.limit && i + 1 >= opts.limit ? 'Abschliessen' : 'Weiter', next, { kind: 'primary big' }));
@@ -129,8 +130,10 @@ export function runSession(root, opts) {
   }
   function commit() {
     if (!result) return;
-    result = gradeTask(task, ctl.values(), opts.noFeedback ? {} : ctl.overrides()); // Häkchen «gleichwertig» können sich geändert haben
-    addAttempt({ key: task.key, skill: task.skill, points: result.points, max: result.max, sec: task._sec, mode: opts.mode || 'lernen', src: task.src, seed: task.seed });
+    const values = ctl.values();
+    result = gradeTask(task, values, opts.noFeedback ? {} : ctl.overrides()); // Häkchen «gleichwertig» können sich geändert haben
+    const rec = addAttempt({ key: task.key, skill: task.skill, points: result.points, max: result.max, sec: task._sec, mode: opts.mode || 'lernen', src: task.src, seed: task.seed });
+    if (opts.keepLog) sum.log.push({ task, values, result, rec });
     sum.n++; sum.points += result.points; sum.max += result.max; sum.sec += task._sec; sum.target += task.targetSec; results[i] = result.max ? result.points / result.max : 0;
     const ps = (sum.perSkill[task.skill] = sum.perSkill[task.skill] || { n: 0, points: 0, max: 0 }); ps.n++; ps.points += result.points; ps.max += result.max;
     if (result.points < result.max && task.src !== 'web' && !opts.noErrors) addError(task, cause);

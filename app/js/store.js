@@ -92,10 +92,20 @@ export async function saveMeta() { await backend.write('meta', state.meta); emit
 // a = { key, skill, points, max, sec, mode, src, seed }
 export function addAttempt(a) {
   const p = state.profile; if (!p) return;
-  p.attempts.push({ k: a.key, s: a.skill, t: Date.now(), p: a.points, m: a.max, sec: Math.round(a.sec), mode: a.mode, src: a.src || 'gen', seed: a.seed || 0 });
+  const rec = { k: a.key, s: a.skill, t: Date.now(), p: a.points, m: a.max, sec: Math.round(a.sec), mode: a.mode, src: a.src || 'gen', seed: a.seed || 0 };
+  p.attempts.push(rec);
   if (p.attempts.length > 8000) p.attempts.splice(0, p.attempts.length - 8000);
-  p.xp += Math.round(a.points * 10 + (a.points >= a.max && a.max > 0 ? 2 : 0));
+  p.xp += attemptXp(a.points, a.max);
   addMinutes(a.sec / 60);
+  save();
+  return rec;
+}
+const attemptXp = (pts, max) => Math.round(pts * 10 + (pts >= max && max > 0 ? 2 : 0));
+// Punkte eines gespeicherten Versuchs nachträglich ändern (z. B. «Als richtig werten»). own: selbst gewertet (o: 1)
+export function rescoreAttempt(rec, points, own) {
+  const p = state.profile; if (!p || !rec) return;
+  p.xp += attemptXp(points, rec.m) - attemptXp(rec.p, rec.m);
+  rec.p = points; if (own) rec.o = 1; else delete rec.o;
   save();
 }
 export function addMinutes(min) { const p = state.profile; if (!p) return; const k = dayKey(); p.days[k] = Math.round(((p.days[k] || 0) + min) * 100) / 100; }

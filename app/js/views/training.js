@@ -1,11 +1,12 @@
 // Endlos-Training, Blitz und Einstufungstest.
-import { h, btn, bar, icon, toast } from '../ui.js';
-import { state, save } from '../store.js';
+import { h, btn, bar, icon, toast, mathify } from '../ui.js';
+import { state, save, rescoreAttempt } from '../store.js';
+import { mountTask, gradeTask } from '../engine/task.js';
 import { SKILLS, SKILL, AREAS, PARTS } from '../skills.js';
 import { adaptiveWeights, readiness, skillStats, strengths } from '../stats.js';
 import { stagePips } from '../progress.js';
 import { randomTask, makeTask, keysFor, hasSources, genInfo } from '../engine/sources.js';
-import { runSession, summaryCard } from '../runner.js';
+import { runSession, summaryCard, textPanel } from '../runner.js';
 import { sourceRow, srcAllow, useWeb, webOnly } from '../quellen.js';
 import { setLeave, setGuard, go } from '../main.js';
 import { newSeed, RNG, fmtDur } from '../util.js';
@@ -126,40 +127,107 @@ const ASSESS = ['M1.bruchsumme', 'M2.regel', 'M4.vereinfachen', 'M5.kuerzen', 'M
 const assessMin = (keys) => Math.max(5, Math.round(keys.reduce((a, k) => { try { return a + makeTask(k, 7).targetSec; } catch (e) { return a + 90; } }, 0) / 300) * 5);
 export const ASSESS_PARTS = { mathe: ASSESS.filter((k) => k[0] === 'M'), sprache: ASSESS.filter((k) => k[0] === 'D') };
 export function assessInfo(p) { const done = (p.setup && p.setup.assessedParts) || {}; const all = !!(p.setup && p.setup.assessed); return { mathe: all || !!done.mathe, sprache: all || !!done.sprache, all }; }
+// Punkte je Thema: selbst als richtig gewertet = volle Punkte, übersprungen = 0 von den möglichen Punkten.
+const entryPts = (e) => (e.skipped ? 0 : e.own ? e.result.max : e.result.points);
+const entryMax = (e) => (e.skipped ? e.task.points : e.result.max);
+function entryState(e) { if (e.skipped) return 'skip'; if (e.own) return 'own'; if (e.result.points >= e.result.max) return 'ok'; return e.result.points > 0 ? 'part' : 'bad'; }
+function assessPerSkill(log) {
+  const m = {};
+  for (const e of log) { const v = (m[e.task.skill] = m[e.task.skill] || { points: 0, max: 0, n: 0, skipped: 0 }); v.points += entryPts(e); v.max += entryMax(e); v.n++; if (e.skipped) v.skipped++; }
+  return m;
+}
+const ST = { ok: ['Richtig', 'ok', '✓'], part: ['Teilweise', 'warn', '◐'], bad: ['Falsch', 'bad', '✗'], skip: ['Übersprungen', '', '–'], own: ['Selbst als richtig gewertet', 'ink', '✓'] };
+// Auswertung am Schluss: jede Aufgabe mit Antwort, Markierung und Lösung. Falsche Antworten lassen sich selbst als richtig werten.
+function reviewCard(log, onChange) {
+  const card = h('div', { class: 'card review', id: 'rev-list', tabindex: '-1' }, h('h2', null, 'Deine Antworten'),
+    h('p', { class: 'muted' }, 'Jede Aufgabe mit deiner Antwort und der Lösung. Aufgaben mit Fehlern sind aufgeklappt. Stimmt eine Antwort trotzdem, zum Beispiel anders formuliert, kannst du sie als richtig werten. Entscheide ehrlich: Der Lernplan richtet sich danach.'));
+  const nav = h('div', { class: 'rev-nav', role: 'list', 'aria-label': 'Übersicht der Aufgaben' }); const list = h('div', { class: 'rev-list' });
+  card.append(nav, list);
+  log.forEach((e, k) => {
+    const sid = e.task.skill; const s = SKILL[sid]; const n = k + 1;
+    const det = h('details', { class: 'rev-item', id: 'rev-' + n });
+    const tagEl = h('span', { class: 'tag' }); const ptsEl = h('span', { class: 'rev-p small nowrap' });
+    const chip = h('button', { type: 'button', class: 'rev-chip', onclick: () => { det.open = true; det.scrollIntoView({ behavior: 'smooth', block: 'start' }); det.querySelector('summary').focus({ preventScroll: true }); } });
+    nav.append(h('span', { role: 'listitem' }, chip));
+    const head = () => {
+      const st = entryState(e); const [label, cls, sym] = ST[st];
+      const slip = !e.skipped && !e.own && e.result.fields.some((r) => r.slip);
+      tagEl.className = 'tag' + (cls ? ' ' + cls : ''); tagEl.textContent = st === 'part' ? 'Teilweise' : label + (slip ? ', kleiner Fehler' : '');
+      ptsEl.textContent = entryPts(e) + ' / ' + entryMax(e) + ' P';
+      det.className = 'rev-item st-' + st;
+      chip.className = 'rev-chip st-' + st; chip.textContent = n + ' ' + sym; chip.setAttribute('aria-label', 'Aufgabe ' + n + ': ' + label);
+    };
+    det.append(h('summary', null, h('span', { class: 'rev-n' }, String(n)), h('span', { class: 'rev-t' }, h('b', null, s.id + ' ' + s.name), h('small', { class: 'muted' }, e.task.title || '')), tagEl, ptsEl));
+    const body = h('div', { class: 'rev-body' }); det.append(body);
+    let mounted = false;
+    const mountBody = () => {
+      if (mounted) return; mounted = true;
+      if (e.task.textId) { const tp = textPanel(e.task.textId); if (tp) body.append(h('details', { class: 'rev-text' }, h('summary', null, 'Text zur Aufgabe anzeigen'), tp)); }
+      const tEl = h('div'); body.append(tEl);
+      const c = mountTask(e.task, tEl, { h, mathify }, {});
+      if (!e.skipped) c.setValues(e.values);
+      c.lock(); if (c.hasSelf()) c.revealSelf();
+      tEl.querySelectorAll('input,textarea').forEach((x) => { x.disabled = true; });
+      c.show(e.skipped ? gradeTask(e.task, {}, {}) : e.result, undefined, { noOverride: true });
+      body.append(h('div', { class: 'solution' }, h('h4', null, 'Lösungsweg'), h('div', { html: mathify(e.task.solution || '') })));
+      if (e.skipped) body.append(h('p', { class: 'note' }, 'Übersprungen. Die Aufgabe zählt mit 0 Punkten.'));
+      else if (e.result.points < e.result.max) {
+        const sw = h('input', { type: 'checkbox', role: 'switch', class: 'switch', checked: e.own || null, onchange: () => { e.own = sw.checked; rescoreAttempt(e.rec, e.own ? e.result.max : e.result.points, e.own); head(); onChange(); toast(e.own ? 'Aufgabe ' + n + ' zählt jetzt als richtig.' : 'Aufgabe ' + n + ' zählt wieder wie bewertet.', 'ok'); } });
+        body.append(h('label', { class: 'switch-row rev-own' }, h('span', null, h('b', null, 'Als richtig werten'), h('small', { class: 'muted', style: { display: 'block' } }, 'Nur wenn deine Antwort stimmt, auch wenn sie anders aussieht als die Lösung. ' + (e.result.max === 1 ? 'Gibt dann 1 P.' : 'Gibt dann alle ' + e.result.max + ' P.'))), sw));
+      }
+    };
+    det.addEventListener('toggle', () => { if (det.open) mountBody(); });
+    head(); list.append(det);
+    if (entryState(e) !== 'ok') { det.open = true; mountBody(); }
+  });
+  return card;
+}
+
 export function renderAssessment(page) {
   const p = state.profile; const info = assessInfo(p);
   const minM = assessMin(ASSESS_PARTS.mathe), minD = assessMin(ASSESS_PARTS.sprache);
-  page.append(h('div', { class: 'page-head' }, h('h1', null, 'Einstufungstest'), h('p', null, ASSESS.length + ' Aufgaben aus allen Bereichen, höchstens etwa ' + (minM + minD) + ' Minuten. Du kannst ihn in 2 Teilen machen. Die Lösungen siehst du am Schluss.')));
-  const intro = h('div', { class: 'card' }, h('ul', { style: { paddingLeft: '1.2rem' } }, h('li', null, 'Arbeite konzentriert und ohne Hilfe. Für Mathematik brauchst du Papier, Stift und deinen Taschenrechner.'), h('li', null, 'Was du noch nicht hattest, überspringst du. Das ist normal und geht schneller.'), h('li', null, 'Jeder Teil zählt für sich. Du kannst also heute Mathematik und morgen Deutsch machen.'), h('li', null, 'Das Resultat sieht nur du. Es dient dazu, den Lernplan auf dich einzustellen.')),
+  page.append(h('div', { class: 'page-head' }, h('h1', null, 'Einstufungstest'), h('p', null, ASSESS.length + ' Aufgaben aus allen Bereichen, höchstens etwa ' + (minM + minD) + ' Minuten. Du kannst ihn in 2 Teilen machen. Am Schluss siehst du jede Aufgabe mit deiner Antwort und der Lösung.')));
+  const intro = h('div', { class: 'card' }, h('ul', { style: { paddingLeft: '1.2rem' } }, h('li', null, 'Arbeite konzentriert und ohne Hilfe. Für Mathematik brauchst du Papier, Stift und deinen Taschenrechner.'), h('li', null, 'Was du noch nicht hattest, überspringst du. Das ist normal und geht schneller.'), h('li', null, 'Jeder Teil zählt für sich. Du kannst also heute Mathematik und morgen Deutsch machen.'), h('li', null, 'Am Schluss siehst du, wo du Fehler gemacht hast. Stimmt eine Antwort trotzdem (zum Beispiel anders formuliert), wertest du sie selbst als richtig.'), h('li', null, 'Das Resultat sieht nur du. Es dient dazu, den Lernplan auf dich einzustellen.')),
     info.all ? h('p', { class: 'note warn' }, 'Du hast den Test schon gemacht. Eine Wiederholung zählt zusätzlich in die Auswertung.') : null);
   const host = h('div');
   const start = (keys, label) => {
     intro.hidden = true; const seeds = keys.map(() => newSeed()); const need = Math.ceil(keys.length / 2);
-    const sess = runSession(host, { title: label, mode: 'einstufung', limit: keys.length, noFeedback: true, noErrors: true,
+    const sess = runSession(host, { title: label, mode: 'einstufung', limit: keys.length, noFeedback: true, noErrors: true, keepLog: true,
       next: (i) => (i < keys.length ? makeTask(keys[i], seeds[i]) : null),
       onDone: (sum, root) => {
         setGuard(null);
-        const counts = sum.n >= need;
+        const log = sum.log; const counts = log.filter((e) => !e.skipped).length >= need;
+        const saveBase = () => { if (!counts) return; for (const [sid, v] of Object.entries(assessPerSkill(log))) p.baseline[sid] = { acc: v.max ? v.points / v.max : 0, t: Date.now() }; save(); };
         if (counts) {
           p.setup.assessedParts = p.setup.assessedParts || {};
           if (keys.some((k) => k[0] === 'M')) p.setup.assessedParts.mathe = true;
           if (keys.some((k) => k[0] === 'D')) p.setup.assessedParts.sprache = true;
           if (p.setup.assessedParts.mathe && p.setup.assessedParts.sprache) p.setup.assessed = true;
-          for (const [sid, v] of Object.entries(sum.perSkill)) p.baseline[sid] = { acc: v.max ? v.points / v.max : 0, t: Date.now() }; save();
+          saveBase();
         }
-        const byPart = { sprache: [0, 0], mathe: [0, 0] };
-        for (const [sid, v] of Object.entries(sum.perSkill)) { const part = SKILL[sid].part === 'mathe' ? 'mathe' : 'sprache'; byPart[part][0] += v.points; byPart[part][1] += v.max; }
-        const card = h('div', { class: 'card' }, h('h2', null, 'Dein Standort'));
-        if (!counts) card.append(h('p', { class: 'note warn' }, 'Du hast weniger als ' + need + ' Aufgaben bearbeitet. Der Test zählt so noch nicht als Einstufung.'));
-        card.append(h('div', { class: 'kpi' }, byPart.sprache[1] ? h('div', null, h('b', null, Math.round(byPart.sprache[0] / byPart.sprache[1] * 100) + ' %'), h('span', null, 'Deutsch: Punkte erreicht')) : null, byPart.mathe[1] ? h('div', null, h('b', null, Math.round(byPart.mathe[0] / byPart.mathe[1] * 100) + ' %'), h('span', null, 'Mathematik: Punkte erreicht')) : null, h('div', null, h('b', null, fmtDur(sum.sec)), h('span', null, 'Zeit insgesamt'))));
-        const weak = Object.entries(sum.perSkill).filter(([, v]) => v.points < v.max).map(([sid]) => SKILL[sid]);
-        if (weak.length) { card.append(h('h3', { style: { marginTop: '1rem' } }, 'Damit fängst du an'), h('p', { class: 'muted' }, 'Bei diesen Themen hast du Punkte verloren oder die Aufgabe übersprungen:'));
-          const list = h('div'); weak.slice(0, 12).forEach((s) => list.append(h('a', { class: 'skill-row', href: '#/lernen/' + s.id, style: { gridTemplateColumns: '3.2rem 1fr' } }, h('span', { class: 'skill-id' }, s.id), h('span', null, h('b', null, s.name), h('small', null, s.desc))))); card.append(list); }
-        else card.append(h('p', { class: 'note ok' }, 'Alles richtig. Übe im Endlos-Training auf Prüfungsniveau und achte auf das Tempo.'));
-        const now = assessInfo(p); const open = !now.all && counts ? (now.mathe ? 'sprache' : 'mathe') : null;
-        if (open) card.append(h('p', { class: 'note', style: { marginTop: '1rem' } }, h('b', null, 'Teil ' + (open === 'mathe' ? 'Mathematik' : 'Deutsch') + ' fehlt noch. '), 'Mach ihn heute oder morgen, dann ist der Lernplan ganz auf dich eingestellt.'));
-        card.append(h('div', { class: 'row', style: { marginTop: '1rem' } }, open ? btn('Teil ' + (open === 'mathe' ? 'Mathematik' : 'Deutsch') + ' jetzt machen', () => { host.innerHTML = ''; start(ASSESS_PARTS[open], 'Einstufung ' + (open === 'mathe' ? 'Mathematik' : 'Deutsch')); }, { kind: 'primary' }) : null, h('a', { class: 'btn' + (open ? '' : ' primary'), href: '#/start' }, 'Zur Startseite'), h('a', { class: 'btn', href: '#/plan' }, 'Lernplan ansehen')));
-        root.append(card);
+        const box = h('div');
+        const draw = () => {
+          const per = assessPerSkill(log); const byPart = { sprache: [0, 0], mathe: [0, 0] };
+          for (const [sid, v] of Object.entries(per)) { const part = SKILL[sid].part === 'mathe' ? 'mathe' : 'sprache'; byPart[part][0] += v.points; byPart[part][1] += v.max; }
+          const cnt = { ok: 0, part: 0, bad: 0, skip: 0, own: 0 }; log.forEach((e) => cnt[entryState(e)]++);
+          const card = h('div', { class: 'card' }, h('h2', null, 'Dein Standort'));
+          if (!counts) card.append(h('p', { class: 'note warn' }, 'Du hast weniger als ' + need + ' Aufgaben bearbeitet. Der Test zählt so noch nicht als Einstufung.'));
+          const pct = (x) => Math.round(x[0] / x[1] * 100) + ' %';
+          card.append(h('div', { class: 'kpi' }, byPart.sprache[1] ? h('div', null, h('b', null, pct(byPart.sprache)), h('span', null, 'Deutsch: Punkte erreicht')) : null, byPart.mathe[1] ? h('div', null, h('b', null, pct(byPart.mathe)), h('span', null, 'Mathematik: Punkte erreicht')) : null, h('div', null, h('b', null, fmtDur(sum.sec)), h('span', null, 'Zeit insgesamt'))));
+          const bits = [cnt.ok + ' richtig', cnt.part + ' teilweise', cnt.bad + ' falsch', cnt.skip + ' übersprungen'];
+          card.append(h('p', { class: 'muted', style: { marginTop: '0.6rem' } }, log.length + ' Aufgaben: ' + bits.join(', ') + '.' + (cnt.own ? ' ' + cnt.own + (cnt.own === 1 ? ' Antwort hast' : ' Antworten hast') + ' du selbst als richtig gewertet.' : '') + (cnt.skip ? ' Übersprungene Aufgaben zählen mit 0 Punkten.' : '')));
+          const weak = Object.entries(per).filter(([, v]) => v.points < v.max).sort((a, b) => a[1].points / a[1].max - b[1].points / b[1].max);
+          if (weak.length) {
+            card.append(h('h3', { style: { marginTop: '1rem' } }, 'Damit fängst du an'), h('p', { class: 'muted' }, 'Bei diesen Themen hast du Punkte verloren oder die Aufgabe übersprungen. Das schwächste Thema steht zuoberst.'));
+            const list = h('div'); weak.slice(0, 12).forEach(([sid, v]) => { const s = SKILL[sid]; list.append(h('a', { class: 'skill-row', href: '#/lernen/' + s.id, style: { gridTemplateColumns: '3.2rem 1fr auto' } }, h('span', { class: 'skill-id' }, s.id), h('span', null, h('b', null, s.name), h('small', null, s.desc)), h('span', { class: 'small muted nowrap' }, v.skipped === v.n ? 'übersprungen' : v.points + ' von ' + v.max + ' P'))); }); card.append(list);
+          } else card.append(h('p', { class: 'note ok' }, 'Alles richtig. Übe im Endlos-Training auf Prüfungsniveau und achte auf das Tempo.'));
+          const now = assessInfo(p); const open = !now.all && counts ? (now.mathe ? 'sprache' : 'mathe') : null;
+          if (open) card.append(h('p', { class: 'note', style: { marginTop: '1rem' } }, h('b', null, 'Teil ' + (open === 'mathe' ? 'Mathematik' : 'Deutsch') + ' fehlt noch. '), 'Mach ihn heute oder morgen, dann ist der Lernplan ganz auf dich eingestellt.'));
+          card.append(h('div', { class: 'row', style: { marginTop: '1rem' } }, open ? btn('Teil ' + (open === 'mathe' ? 'Mathematik' : 'Deutsch') + ' jetzt machen', () => { host.innerHTML = ''; start(ASSESS_PARTS[open], 'Einstufung ' + (open === 'mathe' ? 'Mathematik' : 'Deutsch')); }, { kind: 'primary' }) : null, btn('Antworten ansehen', () => { const r = document.getElementById('rev-list'); if (r) { r.scrollIntoView({ behavior: 'smooth', block: 'start' }); r.focus({ preventScroll: true }); } }), h('a', { class: 'btn' + (open ? '' : ' primary'), href: '#/start' }, 'Zur Startseite'), h('a', { class: 'btn', href: '#/plan' }, 'Lernplan ansehen')));
+          box.replaceChildren(card);
+        };
+        draw();
+        root.append(box, reviewCard(log, () => { saveBase(); draw(); }));
       } });
     setLeave(() => sess.stop());
     setGuard(() => confirmBox('Test abbrechen?', 'Dieser Teil ist noch nicht fertig. Wenn du die Seite verlässt, zählt er nicht.', 'Abbrechen und verlassen', 'Weitermachen', true));

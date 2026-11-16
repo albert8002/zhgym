@@ -14,7 +14,7 @@ export function fieldMax(f) {
   return 1;
 }
 
-export function gradeField(f, v) {
+export function gradeField(f, v, ctx = {}) {
   const max = fieldMax(f);
   const empty = v == null || v === '' || (Array.isArray(v) && !v.length && f.type !== 'gaps' && f.type !== 'tokens');
   switch (f.type) {
@@ -67,7 +67,12 @@ export function gradeField(f, v) {
       if (empty) return res(0, max, { empty: true });
       const o = { ci: !!f.ci, noPunct: !!f.noPunct, noComma: !!f.noComma };
       const mine = normText(v, o);
-      const good = f.answers.some((a) => normText(a, o) === mine);
+      let good = f.answers.some((a) => normText(a, o) === mine);
+      if (!good && ctx.de) {
+        const k = deKey(v, o);
+        good = f.answers.some((a) => deKey(a, o) === k);
+        if (!good) { const sl = deSlip(f, v, o, ctx); if (sl) return res(max, max, { slip: sl }); }
+      }
       if (!good && !f.ci) {
         const lo = { ci: true, noPunct: !!f.noPunct, noComma: !!f.noComma };
         if (f.answers.some((a) => normText(a, lo) === normText(v, lo))) return res(0, max, { note: 'Gross- und Kleinschreibung prüfen.' });
@@ -107,14 +112,11 @@ export function gradeField(f, v) {
     }
     case 'edit': {
       const wrong = f.text.trim().split(/\s+/), right = f.correct.trim().split(/\s+/), mine = String(v == null ? f.text : v).trim().split(/\s+/);
-      if (mine.length !== wrong.length) return res(0, max, { note: 'Wörter nicht hinzufügen oder löschen. Nur Fehler verbessern.' });
-      let fixed = 0, changes = 0;
-      for (let i = 0; i < wrong.length; i++) {
-        if (mine[i] !== wrong[i]) changes++;
-        if (wrong[i] !== right[i] && mine[i] === right[i]) fixed++;
-      }
+      const { fixed, changes, moved } = editCount(wrong, right, mine);
       const pts = Math.max(0, fixed - Math.max(0, changes - f.errors));
-      return res(Math.floor(pts * max / f.errors), max, { note: changes > f.errors ? 'Mehr als ' + f.errors + ' Änderungen: Abzug.' : fixed + ' von ' + f.errors + ' Fehlern verbessert.' });
+      const notes = [changes > f.errors ? 'Mehr als ' + f.errors + (f.errors === 1 ? ' Änderung' : ' Änderungen') + ': Abzug.' : fixed + ' von ' + f.errors + ' Fehlern verbessert.'];
+      if (moved) notes.push(moved === 1 ? '1 Wort hinzugefügt oder gelöscht: zählt als 1 Änderung.' : moved + ' Wörter hinzugefügt oder gelöscht: zählt als ' + moved + ' Änderungen.');
+      return res(Math.floor(pts * max / f.errors), max, { note: notes.join(' ') });
     }
     case 'coords': {
       if (!v || v[0] === '' || v[1] === '' || v[0] == null || v[1] == null) return res(0, max, { empty: true });
@@ -133,11 +135,105 @@ export function gradeField(f, v) {
 
 function hasGroup(n) { if (!n) return false; if (n.t === 'grp') return true; return hasGroup(n.a) || hasGroup(n.b); }
 
+// Fehlertext: verbesserte Fehler und Änderungen zählen. Gleich viele Wörter: Wort für Wort.
+// Sonst wird die Antwort dem Text zugeordnet; jedes hinzugefügte oder gelöschte Wort ist 1 Änderung.
+function editCount(wrong, right, mine) {
+  let fixed = 0, changes = 0, moved = 0;
+  if (mine.length === wrong.length) {
+    for (let i = 0; i < wrong.length; i++) { if (mine[i] !== wrong[i]) changes++; if (wrong[i] !== right[i] && mine[i] === right[i]) fixed++; }
+    return { fixed, changes, moved };
+  }
+  const n = wrong.length, m = mine.length; const cost = (i, j) => (mine[j] === wrong[i] || mine[j] === right[i] ? 0 : 1);
+  const D = Array.from({ length: n + 1 }, (_, i) => Array.from({ length: m + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0)));
+  for (let i = 1; i <= n; i++) for (let j = 1; j <= m; j++) D[i][j] = Math.min(D[i - 1][j - 1] + cost(i - 1, j - 1), D[i - 1][j] + 1, D[i][j - 1] + 1);
+  let i = n, j = m;
+  while (i > 0 || j > 0) {
+    if (i > 0 && j > 0 && D[i][j] === D[i - 1][j - 1] + cost(i - 1, j - 1)) { i--; j--; if (mine[j] !== wrong[i]) changes++; if (wrong[i] !== right[i] && mine[j] === right[i]) fixed++; }
+    else if (i > 0 && D[i][j] === D[i - 1][j] + 1) { i--; changes++; moved++; }
+    else { j--; changes++; moved++; }
+  }
+  return { fixed, changes, moved };
+}
+
+// ---------- Deutsch: kleine Abweichungen ----------
+// Was die Aufgabe prüft, bleibt streng. Daneben zählt höchstens 1 kleiner Fehler pro Antwort als richtig (mit Hinweis).
+//   word: das Wort ist gefragt (Gegenwort, Oberbegriff, Wortfamilie, Wort im Text): Gross/klein oder 1 Tippfehler ab 5 Buchstaben.
+//   form: die Wortform ist gefragt (Steigerung, Verbform, Fall): nur Gross/klein.
+//   satz: ein ganzer Satz (umformen, verbinden, Relativsatz): Gross/klein oder 1 Tippfehler in einem Wort, das aus dem
+//         Aufgabensatz abgeschrieben ist. Endungen (-e, -en, -em, -er, -es), Wortstellung und Kommas bleiben streng.
+// Immer gleichwertig: ae/oe/ue statt ä/ö/ü, ss statt ß, Abstände bei Satzzeichen, Anführungszeichen aussen.
+export const DE_TOL = { 'D10.familie': 'word', 'D11.antonym': 'word', 'D12.oberbegriff': 'word', 'D13.zuordnen': 'word', 'D3.umformen': 'satz', 'D8.verbinden': 'satz', 'D9.relativ': 'satz', 'D9.umformen': 'satz' };
+const UML = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue', 'Ä': 'Ae', 'Ö': 'Oe', 'Ü': 'Ue' };
+const umlOut = (t) => t.replace(/[äöüÄÖÜ]/g, (c) => UML[c]);
+function deNorm(s, o) {
+  return normText(s, o).replace(/^["']+|["']+$/g, '').replace(/\s+([,.;:!?])/g, '$1').replace(/([,;:])(?=[\p{L}\p{N}])/gu, '$1 ').replace(/\s+/g, ' ').trim();
+}
+const deKey = (s, o) => umlOut(deNorm(s, o));
+const TOK = /[\p{L}\p{N}]+(?:[-'][\p{L}\p{N}]+)*|[^\s\p{L}\p{N}]/gu;
+const isWord = (t) => /[\p{L}\p{N}]/u.test(t);
+// Damerau-Levenshtein-Abstand (eingeschränkt)
+function dl(a, b) {
+  const n = a.length, m = b.length; if (Math.abs(n - m) > 1) return 2;
+  const D = Array.from({ length: n + 1 }, (_, i) => Array.from({ length: m + 1 }, (_, j) => (i === 0 ? j : j === 0 ? i : 0)));
+  for (let i = 1; i <= n; i++) for (let j = 1; j <= m; j++) {
+    D[i][j] = Math.min(D[i - 1][j] + 1, D[i][j - 1] + 1, D[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) D[i][j] = Math.min(D[i][j], D[i - 2][j - 2] + 1);
+  }
+  return D[n][m];
+}
+// Liegt der Unterschied in einer Endung wie -e/-en/-em/-er/-es? (Abstand 1 vorausgesetzt)
+function endingChange(a, b) {
+  const L = a.length >= b.length ? a : b, S = L === a ? b : a; let p = 0;
+  while (p < S.length && L[p] === S[p]) p++;
+  if (p < L.length - 2) return false;
+  const set = 'emnrs';
+  if (L.length === S.length) return set.includes(L[p]) && set.includes(S[p]) && (p + 1 >= L.length || L[p + 1] === S[p + 1] || (set.includes(L[p + 1]) && set.includes(S[p + 1])));
+  return set.includes(L[p]);
+}
+function promptWords(task) {
+  const html = String(task.html || ''); const parts = [...html.matchAll(/<span class="satz">([\s\S]*?)<\/span>/g)].map((m) => m[1]);
+  const txt = (parts.length ? parts.join(' ') : html).replace(/<[^>]+>/g, ' ').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+  return new Set((normText(txt).match(TOK) || []).filter(isWord).map((w) => umlOut(w.toLowerCase())));
+}
+function deSlip(f, v, o, ctx) {
+  const kind = ctx.kind || 'form';
+  const mine = deNorm(v, o).match(TOK) || [];
+  for (const ans of f.answers) {
+    const ref = deNorm(ans, o).match(TOK) || [];
+    if (ref.length !== mine.length) continue;
+    const slips = []; let fail = false;
+    for (let i = 0; i < ref.length && !fail; i++) {
+      const x = mine[i], y = ref[i];
+      if (umlOut(x) === umlOut(y)) continue;
+      if (!isWord(x) || !isWord(y)) { fail = true; break; }
+      const xl = umlOut(x.toLowerCase()), yl = umlOut(y.toLowerCase());
+      if (xl === yl) { slips.push('«' + x + '» schreibt man «' + y + '» (gross/klein).'); continue; }
+      if (kind === 'form') { fail = true; break; }
+      const d = Math.min(dl(x.toLowerCase(), y.toLowerCase()), dl(xl, yl));
+      const caseToo = x[0] !== y[0] && x[0].toLowerCase() === y[0].toLowerCase();
+      let ok = d === 1 && !caseToo;
+      if (ok && kind === 'word') ok = y.length >= 5;
+      if (ok && kind === 'satz') { const pw = ctx.words || new Set(); ok = y.length >= 4 && pw.has(yl) && !pw.has(xl) && !endingChange(x.toLowerCase(), y.toLowerCase()); }
+      if (!ok) { fail = true; break; }
+      slips.push('Tippfehler: «' + x + '» statt «' + y + '».');
+    }
+    if (!fail && slips.length === 1) return slips[0];
+  }
+  return null;
+}
+
+function gradeCtx(task) {
+  const de = !!(task.skill && task.skill[0] === 'D'); if (!de) return {};
+  const kind = DE_TOL[task.key] || 'form';
+  return { de, kind, words: kind === 'satz' && task.fields.some((f) => f.type === 'text') ? promptWords(task) : null };
+}
+
 export function taskMax(task) { return task.fields.reduce((a, f) => a + fieldMax(f), 0); }
 
 export function gradeTask(task, values = {}, overrides = {}) {
+  const ctx = gradeCtx(task);
   const fields = task.fields.map((f) => {
-    const r = gradeField(f, values[f.id]);
+    const r = gradeField(f, values[f.id], ctx);
     if (overrides && overrides[f.id] && f.selfOk) { r.points = r.max; r.ok = true; r.selfRated = true; r.note = null; }
     return r;
   });
@@ -145,7 +241,7 @@ export function gradeTask(task, values = {}, overrides = {}) {
   const groups = {};
   task.fields.forEach((f, i) => { if (f.group) (groups[f.group] = groups[f.group] || []).push(i); });
   for (const idxs of Object.values(groups)) {
-    const raw = idxs.map((i) => { const f = task.fields[i]; return gradeField(Object.assign({}, f, { points: 1 }), values[f.id]).ok; });
+    const raw = idxs.map((i) => { const f = task.fields[i]; return gradeField(Object.assign({}, f, { points: 1 }), values[f.id], ctx).ok; });
     const all = raw.every(Boolean);
     idxs.forEach((i, k) => { fields[i].ok = raw[k]; fields[i].grouped = true; fields[i].groupOk = all; if (!all) fields[i].points = 0; });
   }
@@ -175,6 +271,60 @@ export function answerText(f) {
 }
 
 // ---------- Anzeige ----------
+// Zeigt in der Aufgabe selbst, was richtig, falsch oder vergessen ist (nicht nur mit Farbe: Zeichen und Text).
+function markField(f, e, v) {
+  const setMk = (el, kind, label) => {
+    el.classList.remove('mk-ok', 'mk-bad', 'mk-miss'); const old = el.querySelector(':scope > .mk'); if (old) old.remove();
+    if (!kind) return; el.classList.add('mk-' + kind);
+    const t = document.createElement('span'); t.className = 'mk'; t.textContent = label; el.append(t);
+  };
+  if (f.type === 'mc' && e.list) {
+    const mine = v == null || v === '' ? null : Number(v);
+    e.list.querySelectorAll('label.choice').forEach((lab, i) => setMk(lab, i === f.answer ? 'ok' : (mine === i ? 'bad' : null), i === f.answer ? (mine === i ? '✓ richtig' : '✓ Lösung') : '✗ deine Wahl'));
+  } else if (f.type === 'multi' && e.list) {
+    const sel = new Set((v || []).map(Number));
+    e.list.querySelectorAll('label.choice').forEach((lab, i) => { const a = f.answers.includes(i); const kind = sel.has(i) ? (a ? 'ok' : 'bad') : (a ? 'miss' : null); setMk(lab, kind, kind === 'ok' ? '✓ richtig' : kind === 'bad' ? '✗ falsch' : 'fehlt'); });
+  } else if (f.type === 'classify' && e.tbl) {
+    e.tbl.querySelectorAll('tbody tr').forEach((tr, i) => tr.querySelectorAll('td').forEach((td, j) => {
+      const mine = v && v[i] != null ? Number(v[i]) : null;
+      setMk(td, j === f.answers[i] ? 'ok' : (mine === j ? 'bad' : null), j === f.answers[i] ? (mine === j ? '✓' : '✓ Lösung') : '✗');
+    }));
+  } else if ((f.type === 'tokens' || f.type === 'gaps') && e.line) {
+    const sel = new Set((v || []).map(Number)); const ans = new Set(f.answer);
+    e.line.querySelectorAll(f.type === 'tokens' ? '.tok' : '.gap').forEach((b, i) => {
+      const kind = sel.has(i) ? (ans.has(i) ? 'ok' : 'bad') : (ans.has(i) ? 'miss' : null);
+      const word = kind === 'ok' ? 'richtig' : kind === 'bad' ? 'falsch' : 'fehlt';
+      b.classList.remove('mk-ok', 'mk-bad', 'mk-miss'); if (kind) b.classList.add('mk-' + kind);
+      b.setAttribute('aria-label', (f.type === 'tokens' ? f.tokens[i] : 'Komma nach «' + f.tokens[i] + '»') + (kind ? ', ' + word : ''));
+      b.title = kind ? word : '';
+      if (f.type === 'gaps') b.textContent = kind ? ',' : '';
+    });
+  }
+}
+// Getippte Antworten mit mehreren Wörtern: abweichende Wörter in beiden Fassungen markieren.
+const DTOK = /[\p{L}\p{N}]+(?:[-'][\p{L}\p{N}]+)*|[^\s\p{L}\p{N}]/gu;
+function lcsMarks(a, b, eq) {
+  const n = a.length, m = b.length; const L = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
+  for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) L[i][j] = eq(a[i], b[j]) ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+  const ma = new Array(n).fill(false), mb = new Array(m).fill(false); let i = 0, j = 0;
+  while (i < n && j < m) { if (eq(a[i], b[j])) { ma[i] = mb[j] = true; i++; j++; } else if (L[i + 1][j] >= L[i][j + 1]) i++; else j++; }
+  return { ma, mb, len: L[0][0] };
+}
+function textDiff(f, v) {
+  const o = { ci: !!f.ci, noPunct: !!f.noPunct, noComma: !!f.noComma };
+  const mine = (normText(v, o).match(DTOK) || []);
+  let best = null;
+  for (const ans of f.answers) {
+    const ref = normText(ans, o).match(DTOK) || []; if (ref.filter((t) => /[\p{L}\p{N}]/u.test(t)).length < 2) continue;
+    const r = lcsMarks(mine, ref, (x, y) => x === y);
+    if (!best || r.len > best.r.len) best = { ref, r, ans };
+  }
+  if (!best || !mine.length || !best.r.len) return null; // nichts gemeinsam: einfach die Lösung zeigen
+  const join = (toks, marks, tag) => toks.map((t, k) => (k && !/^[,.;:!?)]$/.test(t) ? ' ' : '') + (marks[k] ? esc(t) : '<' + tag + ' class="dw">' + esc(t) + '</' + tag + '>')).join('');
+  const rest = f.answers.length > 1 ? ' <span class="muted">(auch richtig: ' + f.answers.filter((a) => a !== best.ans).slice(0, 2).map(esc).join(' / ') + ')</span>' : '';
+  return '<div class="tdiff"><div><span class="muted">Deine Antwort:</span> ' + join(mine, best.r.ma, 'mark') + '</div><div><span class="muted">Lösung:</span> ' + join(best.ref, best.r.mb, 'b') + rest + '</div></div>';
+}
+
 // mountTask baut die Aufgabe in ein Element und gibt Steuerfunktionen zurück.
 export function mountTask(task, root, ui, opts = {}) {
   const { h, mathify } = ui;
@@ -314,22 +464,28 @@ export function mountTask(task, root, ui, opts = {}) {
     focusFirst() { const first = root.querySelector('input,textarea,button.tok,button.gap'); if (first) first.focus(); },
     lock() { locked = true; root.querySelectorAll('input,textarea').forEach((x) => { if (!x.closest('.selfcheck') && !x.closest('.override')) x.disabled = true; }); },
     overrides: () => Object.assign({}, over),
-    // Rückmeldung je Feld anzeigen
-    show(result, answerHtml) {
+    // Rückmeldung je Feld anzeigen. o.noOverride: kein Häkchen «gleichwertig» (z. B. in der Auswertung des Einstufungstests)
+    show(result, answerHtml, o = {}) {
       task.fields.forEach((f, i) => {
         const r = result.fields[i]; const e = els[f.id];
         e.wrap.classList.remove('ok', 'bad', 'part');
         e.wrap.classList.add(r.ok ? 'ok' : (r.points > 0 ? 'part' : 'bad'));
-        const parts = [];
+        const parts = []; let diff = null;
         if (f.type !== 'self') {
           if (r.selfRated) parts.push('<b>Als gleichwertig gewertet</b> (selbst bewertet).');
+          else if (r.slip) parts.push('<b>Richtig, mit 1 kleinen Fehler.</b> Zählt als richtig.');
           else parts.push(r.ok ? '<b>Richtig.</b>' : (r.points > 0 ? '<b>Teilweise richtig</b> (' + r.points + ' von ' + r.max + ' P).' : (r.empty ? '<b>Keine Antwort.</b>' : '<b>Nicht richtig.</b>')));
           if (r.grouped && r.ok && !r.groupOk) parts.push('Der Punkt zählt nur, wenn alle Teile stimmen.');
+          if (r.slip) parts.push(esc(r.slip));
           if (r.note) parts.push(esc(r.note));
-          if (!r.ok && answerHtml !== false) parts.push('Lösung: ' + answerText(f));
+          if (!r.ok && answerHtml !== false) {
+            diff = f.type === 'text' && !r.empty ? textDiff(f, state[f.id]) : null;
+            if (!diff) parts.push('Lösung: ' + answerText(f));
+          }
         } else parts.push('<b>' + r.points + ' von ' + r.max + ' P</b> (selbst bewertet)');
-        e.fb.innerHTML = mathify(parts.join(' '));
-        if (f.selfOk && !r.ok && !r.empty && answerHtml !== false && !e.over) {
+        e.fb.innerHTML = mathify(parts.join(' ')) + (diff || '');
+        if (answerHtml !== false) markField(f, e, state[f.id]);
+        if (f.selfOk && !r.ok && !r.empty && answerHtml !== false && !e.over && !o.noOverride) {
           const cb = h('input', { type: 'checkbox', onchange: () => { over[f.id] = cb.checked; changed(); } });
           e.over = h('label', { class: 'choice override' }, cb, h('span', null, 'Meine Antwort ist gleichwertig (Inhalt, Form und Kommas stimmen). Als richtig werten.'));
           e.wrap.append(e.over);
