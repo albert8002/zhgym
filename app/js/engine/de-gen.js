@@ -1,12 +1,12 @@
 // Deutsch-Generatoren: Grammatik (aus dem Satzgenerator, unendlich), Wortschatz, Komma, Rechtschreibung (aus der Datenbank).
 import { reg } from './gen-core.js';
-import { DB } from './db.js';
+import { DB, poolOf } from './db.js';
 import { esc, cap } from '../util.js';
 import { NOUN, nounsOf, np, words, VERBS, VERB, verbsOf, finite, konj1, auxForm, CASE_NAME, TENSE_NAME, DEF, ADJ_P, ADJ_T } from './de-lex.js';
 import { randClause, linearize, sentence, plain, npToks, personOf, toPassive, canPassive, parseTagged, parseBracket, verbParts, advFor } from './de-nlg.js';
 
 const steps = (arr) => '<ol class="steps">' + arr.filter(Boolean).map((s) => '<li>' + s + '</li>').join('') + '</ol>';
-const pickDB = (r, type, pred) => { const pool = pred ? DB[type].filter(pred) : DB[type]; if (!pool.length) throw new Error('Datenbank «' + type + '» ist leer'); return pool[r.int(0, pool.length - 1)]; };
+const pickDB = (r, type, pred) => { const pool = poolOf(type, pred); if (!pool.length) throw new Error('Datenbank «' + type + '» ist leer'); return pool[r.int(0, pool.length - 1)]; };
 const mark = (w) => '<b class="mark">' + esc(w) + '</b>';
 const q = (s) => '<span class="satz">' + s + '</span>';
 // Tokens zu Text, Satzzeichen ohne Leerschlag davor; markierte Indizes hervorgehoben
@@ -207,7 +207,7 @@ reg('D8.verbinden', { skill: 'D8', title: 'Sätze mit Konjunktion verbinden', di
   return { html: `Verbinde die beiden Sätze mit <b>${esc(it.c)}</b> zu einem Satz. Achte auf Wortstellung und Komma.<br>${q(esc(cap(mainOrder(A)) + '.'))}<br>${q(esc(cap(mainOrder(B)) + '.'))}`, fields: [{ id: 'a', type: 'text', long: true, answers: ans, selfOk: true, aria: 'Verbundener Satz' }],
     solution: steps([KOORD.includes(it.c) ? `«${it.c}» verbindet zwei Hauptsätze: Die Wortstellung bleibt.` : `«${it.c}» leitet einen Nebensatz ein: Die Personalform steht am Ende.`, ...ans.map(esc), 'Zwischen Hauptsatz und Nebensatz steht ein Komma.']) }; });
 reg('D8.wahl', { skill: 'D8', title: 'Konjunktion nach Wortstellung wählen', diff: 2, quick: true }, (r) => {
-  const pool = DB.verbinden.filter((x) => ['weil', 'obwohl'].includes(x.c) && (clauseOf(x.sub).m || clauseOf(x.sub).e)); if (!pool.length) throw new Error('Datenbank «verbinden» ist leer');
+  const pool = poolOf('verbinden', (x) => ['weil', 'obwohl'].includes(x.c) && (clauseOf(x.sub).m || clauseOf(x.sub).e)); if (!pool.length) throw new Error('Datenbank «verbinden» ist leer');
   const it = pool[r.int(0, pool.length - 1)]; const A = clauseOf(it.main), B = clauseOf(it.sub); const pair = it.c === 'weil' ? ['weil', 'denn'] : ['obwohl', 'aber']; const useSub = r.bool();
   const s = cap(mainOrder(A)) + ', ___ ' + (useSub ? subOrder(B) : mainOrder(B)) + '.';
   return { html: `Welche Konjunktion passt zur Wortstellung?<br>${q(esc(s))}`, fields: [{ id: 'a', type: 'mc', options: pair, answer: useSub ? 0 : 1 }], solution: steps([useSub ? `Die Personalform steht am Ende: Nebensatz. Es passt «${pair[0]}».` : `Die Personalform steht an 2. Stelle: Hauptsatz. Es passt «${pair[1]}».`]) };
@@ -235,7 +235,7 @@ reg('D10.familie', { skill: 'D10', title: 'Wortfamilie', diff: 3 }, (r) => { con
 // ---------- D11 Synonyme und Antonyme ----------
 reg('D11.streichen', { skill: 'D11', title: 'Welches Wort passt nicht?', diff: 2, quick: true }, (r) => { const it = pickDB(r, 'synonym'); const sh = r.shuffle(it.g); const base = sh[0]; const syn = sh.slice(1, 4); const odd = r.pick(it.x); const opts = r.shuffle([...syn, odd]);
   return { html: `${syn.length === 3 ? 'Drei' : 'Zwei'} dieser Wörter bedeuten etwa dasselbe wie <b>${esc(base)}</b>, eines nicht. Welches passt <b>nicht</b>?`, fields: [{ id: 'a', type: 'mc', options: opts.map(esc), answer: opts.indexOf(odd) }], solution: steps([`Synonyme: ${it.g.map(esc).join(', ')}`, `«${esc(odd)}» bedeutet etwas anderes.`]) }; });
-reg('D11.synonym', { skill: 'D11', title: 'Synonym wählen', diff: 2, quick: true }, (r) => { const it = pickDB(r, 'synonym'); const [w, syn] = r.sample(it.g, 2); const others = DB.synonym.filter((x) => x !== it); const dis = [r.pick(it.x), ...r.sample(others, 2).map((x) => r.pick(x.g))]; const opts = r.shuffle([syn, ...dis]);
+reg('D11.synonym', { skill: 'D11', title: 'Synonym wählen', diff: 2, quick: true }, (r) => { const it = pickDB(r, 'synonym'); const [w, syn] = r.sample(it.g, 2); const others = poolOf('synonym', (x) => x !== it, 2); const dis = [r.pick(it.x), ...r.sample(others, 2).map((x) => r.pick(x.g))]; const opts = r.shuffle([syn, ...dis]);
   return { html: `Welches Wort hat die gleiche Bedeutung wie <b>${esc(w)}</b>?`, fields: [{ id: 'a', type: 'mc', options: opts.map(esc), answer: opts.indexOf(syn) }], solution: steps([`${esc(w)} = ${esc(syn)}`, `Weitere Synonyme: ${it.g.filter((x) => x !== w && x !== syn).map(esc).join(', ') || '–'}`]) }; });
 reg('D11.antonym', { skill: 'D11', title: 'Antonym finden', diff: 3 }, (r) => { const it = pickDB(r, 'antonym');
   return { html: `Schreibe ein Antonym (Gegenwort) zum hervorgehobenen Wort. Es muss in den Zusammenhang passen. Nicht mit «un-» bilden.<br>${q(esc(it.s).replace(new RegExp((it.m || it.w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\p{L}*', 'u'), (x) => mark(x)))}`, fields: [{ id: 'a', type: 'text', answers: it.a, ci: true, selfOk: true, aria: 'Antonym' }], solution: steps([`${esc(it.w)} ↔ ${it.a.map(esc).join(' / ')}`, 'Gleiche Wortart wie das Ausgangswort. «un-» + Wort zählt nicht.']) }; });
@@ -245,7 +245,7 @@ reg('D12.oberbegriff', { skill: 'D12', title: 'Oberbegriff finden', diff: 2, qui
   if (r.bool()) { const other = pickDB(r, 'oberbegriff', (x) => x !== it); const odd = r.pick(other.u); const opts = r.shuffle([...u.slice(0, 3), odd]);
     return { html: 'Drei Wörter haben einen gemeinsamen Oberbegriff. Welches Wort gehört <b>nicht</b> dazu?', fields: [{ id: 'a', type: 'mc', options: opts.map(esc), answer: opts.indexOf(odd) }], solution: steps([`Oberbegriff: ${esc(it.o[0])}`, `«${esc(odd)}» gehört zu: ${esc(other.o[0])}`]) }; }
   return { html: `Nenne den Oberbegriff: ${u.map(esc).join(', ')}`, fields: [{ id: 'a', type: 'text', answers: it.o, selfOk: true, aria: 'Oberbegriff' }], solution: steps([`Oberbegriff: ${it.o.map(esc).join(' / ')}`, 'Der Oberbegriff fasst alle Wörter zusammen und ist nicht zu weit (nicht einfach «Dinge»).']) }; });
-reg('D12.wortfeld', { skill: 'D12', title: 'Wortfeld: treffendes Wort', diff: 2, quick: true }, (r) => { const it = pickDB(r, 'wortfeld'); const same = DB.wortfeld.filter((x) => x.feld === it.feld && x !== it); const dis = r.sample(same.length >= 3 ? same : DB.wortfeld.filter((x) => x !== it), 3).map((x) => x.w); const opts = r.shuffle([it.w, ...dis]);
+reg('D12.wortfeld', { skill: 'D12', title: 'Wortfeld: treffendes Wort', diff: 2, quick: true }, (r) => { const it = pickDB(r, 'wortfeld'); const same = poolOf('wortfeld', (x) => x.feld === it.feld && x !== it, 3); const dis = r.sample(same.length >= 3 ? same : poolOf('wortfeld', (x) => x !== it, 3), 3).map((x) => x.w); const opts = r.shuffle([it.w, ...dis]);
   return { html: `Wortfeld «${esc(it.feld)}»: Welches Wort bedeutet <b>${esc(it.d)}</b>?`, fields: [{ id: 'a', type: 'mc', options: opts.map(esc), answer: opts.indexOf(it.w) }], solution: steps([`${esc(it.w)}: ${esc(it.d)}`]) }; });
 
 // ---------- D14 Komma ----------

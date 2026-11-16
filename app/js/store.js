@@ -85,6 +85,8 @@ export async function restoreProfile(data) {
   await flush(); emit();
 }
 export async function savePacks() { await backend.write('pakete', state.packs); emit(); }
+// Ausgeschaltete Pakete (gelten für alle Profile auf diesem Computer, wie die Pakete selbst)
+export async function saveMeta() { await backend.write('meta', state.meta); emit(); }
 
 // ---------- Versuche ----------
 // a = { key, skill, points, max, sec, mode, src, seed }

@@ -38,7 +38,7 @@ export function render(page, args) {
   // Stärken und Schwächen
   const sw = strengths(p, 5);
   const listOf = (xs, good) => (xs.length ? h('ol', { style: { paddingLeft: '1.2rem' } }, xs.map((x) => h('li', null, h('a', { href: '#/lernen/' + x.id }, x.id + ' ' + x.skill.name), ' ', h('span', { class: 'muted small' }, STAGES[x.stage].name + ', ' + pct(x.acc) + ' der Punkte')))) : h('p', { class: 'muted' }, good ? 'Noch zu wenig Daten (mindestens 3 Aufgaben pro Thema).' : 'Noch zu wenig Daten.'));
-  page.append(h('div', { class: 'cols two', style: { marginTop: '1rem' } }, h('div', { class: 'card' }, h('h3', null, 'Stärken'), listOf(sw.strong, true)), h('div', { class: 'card' }, h('h3', null, 'Hier holst du am meisten Punkte'), listOf(sw.weak, false), sw.weak.length ? h('a', { class: 'btn small', href: '#/training' }, 'Gezielt im Endlos-Training üben') : null)));
+  page.append(h('div', { class: 'cols two', style: { marginTop: '1rem' } }, h('div', { class: 'card' }, h('h3', null, 'Stärken'), listOf(sw.strong, true)), h('div', { class: 'card' }, h('h3', null, 'Hier holst du am meisten Punkte'), listOf(sw.weak, false), sw.weak.length ? btn('Genau diese Themen im Endlos-Training üben', () => { p.settings.scopeSkills = sw.weak.map((x) => x.id); save(); location.hash = '#/training'; }, { kind: 'small' }) : null)));
 
   // Tempo-Gewinn
   const gains = speedGains(p);

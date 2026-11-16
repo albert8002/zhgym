@@ -3,6 +3,7 @@ import { h, btn, mathify, toast, confirmBox, lineChart } from '../ui.js';
 import { afterProgress } from '../progress.js';
 import { state, save, addAttempt, addError } from '../store.js';
 import { makeTask, DB } from '../engine/sources.js';
+import { allItems } from '../engine/db.js';
 import { mountTask, gradeTask, taskMax } from '../engine/task.js';
 import { aussagenTask, figurTask, zuordnenTask, frageTask, deutenTask } from '../engine/de-gen.js';
 import { textPanel } from '../runner.js';
@@ -17,7 +18,8 @@ const fin = (t, skill, title) => { t.skill = skill; t.title = title; t.key = t.k
 
 // Bauplan Sprachprüfung (wie 2024–2026): 14 Aufgaben, 75 Punkte, 45 Minuten
 function buildSprache() {
-  const r = new RNG(newSeed()); const texts = DB.text.filter((t) => t.figur && t.zuordnen && t.zuordnen.length >= 5 && t.aussagen.length >= 7 && t.fragen && t.mc);
+  const r = new RNG(newSeed()); const fit = (t) => t.figur && t.zuordnen && t.zuordnen.length >= 5 && t.aussagen.length >= 7 && t.fragen && t.mc;
+  let texts = DB.text.filter(fit); if (!texts.length) texts = allItems('text').filter(fit); // kein passender Text in den verwendeten Paketen
   const last = (state.profile.mocks.filter((m) => m.type === 'sprache').slice(-2).map((m) => m.textId));
   const pool = texts.filter((t) => !last.includes(t._id)); const text = r.pick(pool.length ? pool : texts);
   const d18 = text.fragen.filter((f) => (f.skill || 'D18') === 'D18').slice(0, 2), d19 = text.mc.slice(0, 3);

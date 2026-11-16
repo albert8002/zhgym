@@ -2,7 +2,7 @@
 import { MOD } from './util.js';
 import { h, icon, btn, modal, toast, confirmBox } from './ui.js';
 import { state, init, flush, onChange, createProfile, switchProfile, dueErrors } from './store.js';
-import { addPack } from './engine/db.js';
+import { addPack, setInactive } from './engine/db.js';
 import { refreshSources } from './engine/sources.js';
 import { officialGate, buildPlan, readiness, minutesInfo } from './stats.js';
 import { SKILL, SKILLS } from './skills.js';
@@ -73,7 +73,7 @@ function openSearch() {
   if (searchEl) { searchEl.querySelector('input').focus(); return; }
   const items = [...NAV.filter(Boolean).map(([id, label]) => ({ label, sub: 'Seite', href: '#/' + id })), ...SKILLS.map((sk) => ({ label: sk.id + ' ' + sk.name, sub: sk.desc, href: '#/lernen/' + sk.id })),
     { label: 'Sprachprüfung simulieren', sub: '45 Minuten', href: '#/simulation/sprache' }, { label: 'Mathematik simulieren', sub: '90 Minuten', href: '#/simulation/mathe' }, { label: 'Aufsatz simulieren', sub: '4 Themen, 90 Minuten', href: '#/aufsatz/sim' },
-    { label: 'Einstufungstest', sub: 'Standort bestimmen', href: '#/einstufung' }, { label: 'Prüfungstag', sub: 'Ablauf und Checkliste', href: '#/hilfe' }, { label: 'Prüfungsstrategie', sub: 'Zeit einteilen, festgefahren, Kopf leer', href: '#/hilfe' }, { label: 'Wochenbericht', sub: 'Drucken für Eltern oder Lehrperson', href: '#/bericht' }, { label: 'Meilensteine', sub: 'Erreichtes und nächste Ziele', href: '#/auswertung' }, { label: 'Stoffkarte', sub: 'Alle Themen mit ihrer Stufe', href: '#/start' }, { label: 'Beispielprofil', sub: 'Mia mit 3 Wochen Lerndaten anlegen', href: '#/einstellungen' }];
+    { label: 'Einstufungstest', sub: 'Standort bestimmen', href: '#/einstufung' }, { label: 'Prüfungstag', sub: 'Ablauf und Checkliste', href: '#/hilfe' }, { label: 'Prüfungsstrategie', sub: 'Zeit einteilen, festgefahren, Kopf leer', href: '#/hilfe' }, { label: 'Wochenbericht', sub: 'Drucken für Eltern oder Lehrperson', href: '#/bericht' }, { label: 'Meilensteine', sub: 'Erreichtes und nächste Ziele', href: '#/auswertung' }, { label: 'Stoffkarte', sub: 'Alle Themen mit ihrer Stufe', href: '#/start' }, { label: 'Pakete verwenden', sub: 'Datenbank-Pakete ein- und ausschalten', href: '#/inhalte' }, { label: 'Beispielprofil', sub: 'Mia mit 3 Wochen Lerndaten anlegen', href: '#/einstellungen' }];
   const inp = h('input', { type: 'search', placeholder: 'Thema oder Seite suchen, zum Beispiel «Komma» oder «Pythagoras»', 'aria-label': 'Suchen', autocomplete: 'off' });
   const list = h('div', { class: 'search-list', role: 'listbox' }); let sel = 0; let hits = [];
   const norm = (t) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -136,6 +136,7 @@ async function boot() {
   // Eigene Inhaltspakete laden
   let bad = 0;
   for (const pk of state.packs) { const r = addPack(pk.pack, 'eigen:' + pk.name); if (r.errors.length) bad += r.errors.length; }
+  setInactive(state.meta.dbOff);
   refreshSources();
   applySettings();
   window.addEventListener('hashchange', () => route(false));

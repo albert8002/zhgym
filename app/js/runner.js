@@ -90,7 +90,7 @@ export function runSession(root, opts) {
     foot.innerHTML = '';
     if (phase === 'answer') {
       foot.append(btn(ctl.hasSelf() ? 'Lösung zeigen' : opts.noFeedback ? 'Antwort abgeben' : 'Prüfen', () => check(false), { kind: 'primary big', icon: 'check' }));
-      if (!opts.blitz) foot.append(btn('Überspringen', () => { results[i] = -1; i++; load(); }, { kind: 'quiet' }));
+      if (!opts.blitz) foot.append(btn('Überspringen', () => { results[i] = -1; i++; if (opts.limit && i >= opts.limit) return finish(); load(); }, { kind: 'quiet' }));
       if (state.profile.settings.tts) foot.append(btn('Vorlesen', () => speak(document.querySelector('.task-prompt') ? document.querySelector('.task-prompt').textContent : ''), { kind: 'quiet', icon: 'sound' }));
     } else {
       foot.append(btn(opts.limit && i + 1 >= opts.limit ? 'Abschliessen' : 'Weiter', next, { kind: 'primary big' }));

@@ -2,6 +2,7 @@
 import { h, btn, toast, confirmBox, icon, tabs, saveText, field } from '../ui.js';
 import { state, save, addAttempt } from '../store.js';
 import { DB } from '../engine/sources.js';
+import { allItems, isActive } from '../engine/db.js';
 import { BILDER } from '../../content/de-aufsatz.js';
 import { analyse, fromLanguageTool, LEITFRAGEN, PRESET, MASSSTAB, suggest, gradeRubric, CHECKLIST, PLAN_TEMPLATE, TYP_NAME, TYP_SKILL, CATS } from '../engine/essay-check.js';
 import { segmented } from './onboarding.js';
@@ -63,7 +64,7 @@ function overview(page) {
   page.append(h('div', { class: 'page-head' }, h('h1', null, 'Aufsatz-Werkstatt'), h('p', null, 'Schreibe Aufsätze wie an der Prüfung. Die App prüft Rechtschreibung, Zeichensetzung, Stil und Aufbau und schlägt Punkte im Bewertungsraster vor. Den Inhalt beurteilst du selbst oder eine erwachsene Person.')));
   page.append(h('div', { class: 'cols three' },
     h('div', { class: 'card' }, h('h3', null, 'Prüfung simulieren'), h('p', null, '4 Themen zur Wahl, 90 Minuten, keine Hilfe während dem Schreiben.'), h('a', { class: 'btn primary', href: '#/aufsatz/sim' }, 'Simulation starten')),
-    h('div', { class: 'card' }, h('h3', null, 'Thema wählen'), h('p', null, (DB.aufsatz || []).length + ' Themen: alle Prüfungsthemen 2015–2026 und eigene Themen.'), h('a', { class: 'btn', href: '#/aufsatz/neu/' }, 'Themen ansehen')),
+    h('div', { class: 'card' }, h('h3', null, 'Thema wählen'), h('p', null, (DB.aufsatz || []).length + ' Themen aus den verwendeten Paketen' + (isActive('eingebaut') ? ', darunter alle Prüfungsthemen 2015–2026.' : '. Die eingebauten Prüfungsthemen sind unter «Inhalte» ausgeschaltet.')), h('a', { class: 'btn', href: '#/aufsatz/neu/' }, 'Themen ansehen')),
     h('div', { class: 'card' }, h('h3', null, 'Eigenes Thema'), h('p', null, 'Zum Beispiel ein Thema aus der Schule oder aus einer offiziellen Prüfung.'), h('a', { class: 'btn', href: '#/aufsatz/neu/frei' }, 'Thema eingeben'))));
   const list = p.essays.slice().sort((a, b) => b.updated - a.updated);
   const card = h('div', { class: 'card' }, h('h2', null, 'Meine Aufsätze'));
@@ -95,7 +96,7 @@ function picker(page, typ) {
   let cur = TYPES.includes(typ) ? typ : 'alle';
   const box = h('div');
   const draw = () => { box.innerHTML = ''; const list = (DB.aufsatz || []).filter((t) => cur === 'alle' || t.typ === cur).slice().sort((a, b) => (b.jahr || 0) - (a.jahr || 0));
-    if (!list.length) box.append(h('p', { class: 'muted' }, 'Keine Themen dieser Art.'));
+    if (!list.length) box.append(h('p', { class: 'muted' }, 'Keine Themen dieser Art in den verwendeten Paketen. Unter «Inhalte» kannst du weitere Pakete einschalten.'));
     list.forEach((t) => box.append(topicCard(t, () => { const e = newEssay(topicOf(t), false); location.hash = '#/aufsatz/e/' + e.id; }))); };
   page.append(tabs([{ id: 'alle', label: 'Alle' }, ...TYPES.map((t) => ({ id: t, label: TYP_NAME[t] }))], cur, (id) => { cur = id; page.querySelectorAll('.tab').forEach((b) => { const on = b.textContent === (id === 'alle' ? 'Alle' : TYP_NAME[id]); b.classList.toggle('on', on); b.setAttribute('aria-selected', String(on)); }); draw(); }), box);
   draw();
@@ -104,7 +105,9 @@ function picker(page, typ) {
 function simStart(page) {
   page.append(h('a', { class: 'back', href: '#/aufsatz' }, '‹ Werkstatt'));
   const r = new RNG(newSeed()); const ok = (t) => !t.pdf || (t.bild && BILDER[t.bild]);
-  const pool = (DB.aufsatz || []).filter(ok);
+  // aus den verwendeten Paketen; fehlt eine Art, dann aus allen Themen
+  const pool0 = (DB.aufsatz || []).filter(ok), full = allItems('aufsatz').filter(ok);
+  const pool = { filter: (f) => { const a = pool0.filter(f); return a.length ? a : full.filter(f); } };
   const story = r.pick(pool.filter((t) => t.typ === 'erzaehlung' || t.typ === 'fortsetzung'));
   const erort = r.sample(pool.filter((t) => t.typ === 'eroerterung'), 2);
   const other = r.pick(pool.filter((t) => ['bild', 'erlebnis', 'beschreibung'].includes(t.typ)));

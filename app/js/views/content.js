@@ -1,14 +1,27 @@
 // Inhalte: Datenbank ansehen, eigene Pakete (JSON) importieren, Einträge ergänzen, Anleitung für eine KI herunterladen.
 import { h, btn, toast, confirmBox, saveText, field, modal } from '../ui.js';
-import { state, savePacks } from '../store.js';
-import { DB, TYPES, counts, addPack, removeOrigin, validateItem } from '../engine/db.js';
-import { refreshSources, templateTask, GEN } from '../engine/sources.js';
+import { state, savePacks, saveMeta } from '../store.js';
+import { DB, TYPES, counts, addPack, removeOrigin, validateItem, setInactive, originCounts } from '../engine/db.js';
+import { refreshSources, templateTask, GEN, hasSources } from '../engine/sources.js';
 import { refresh } from '../main.js';
-import { SKILL } from '../skills.js';
+import { SKILL, SKILLS } from '../skills.js';
 import { fmtDate, RNG } from '../util.js';
 
 const api = window.gymi || null;
 const MINE = 'Eigene Einträge';
+const BUILTIN = 'eingebaut';
+let lastReport = null; // Importbericht bleibt nach dem Neuzeichnen stehen
+
+// Welche Pakete verwendet werden: Liste der ausgeschalteten Herkünfte in state.meta.dbOff
+const offList = () => state.meta.dbOff || [];
+async function setOff(list) { state.meta.dbOff = [...new Set(list)]; setInactive(state.meta.dbOff); refreshSources(); await saveMeta(); }
+// Themen, die mit der aktuellen Auswahl keine Aufgaben mehr haben
+function lostTopics() {
+  const cur = offList(); if (!cur.length) return [];
+  setInactive([]); refreshSources(); const all = SKILLS.filter((x) => hasSources(x.id)).map((x) => x.id);
+  setInactive(cur); refreshSources();
+  return all.filter((id) => !hasSources(id));
+}
 
 function testPack(pack, name) {
   // In einen Testbereich laden, Fehler sammeln, dann wieder entfernen
@@ -23,6 +36,7 @@ function installPack(pack, name) {
   const t = testPack(pack, name);
   if (!t.added) return t;
   const old = state.packs.findIndex((x) => x.name === name); if (old >= 0) { removeOrigin('eigen:' + name); state.packs.splice(old, 1); }
+  if (offList().includes('eigen:' + name)) { state.meta.dbOff = offList().filter((o) => o !== 'eigen:' + name); setInactive(state.meta.dbOff); saveMeta(); } // neu importiert = verwendet
   addPack(pack, 'eigen:' + name); state.packs.push({ name, pack, added: Date.now() }); savePacks(); refreshSources();
   return t;
 }
@@ -83,7 +97,8 @@ export function render(page) {
 
   // Import
   const name = h('input', { type: 'text', placeholder: 'Name des Pakets' }); const ta = h('textarea', { rows: 6, placeholder: '{ "name": "…", "items": { … } }', 'aria-label': 'Paket als JSON' }); const out = h('div');
-  const doImport = (text, fallbackName) => { try { const pack = parsePack(text); const nm = (name.value.trim() || pack.name || fallbackName || 'Paket ' + (state.packs.length + 1)).slice(0, 60); const t = installPack(pack, nm); out.innerHTML = ''; out.append(report(t)); if (t.added) { toast('Paket «' + nm + '» importiert.', 'ok'); setTimeout(refresh, 1200); } } catch (e) { out.innerHTML = ''; out.append(h('p', { class: 'note bad' }, e.message)); } };
+  if (lastReport) { out.append(report(lastReport)); lastReport = null; }
+  const doImport = (text, fallbackName) => { try { const pack = parsePack(text); const nm = (name.value.trim() || pack.name || fallbackName || 'Paket ' + (state.packs.length + 1)).slice(0, 60); const t = installPack(pack, nm); out.innerHTML = ''; out.append(report(t)); if (t.added) { toast('Paket «' + nm + '» importiert.', 'ok'); lastReport = t; setTimeout(refresh, 1200); } } catch (e) { out.innerHTML = ''; out.append(h('p', { class: 'note bad' }, e.message)); } };
   const file = h('input', { type: 'file', accept: '.json,application/json', hidden: true, onchange: async () => { const f = file.files[0]; if (!f) return; if (f.size > 20 * 1024 * 1024) { toast('Datei ist grösser als 20 MB.', 'bad'); return; } doImport(await f.text(), f.name.replace(/\.json$/i, '')); file.value = ''; } });
   page.append(h('div', { class: 'card' }, h('h3', null, 'Paket importieren'), field('Name (freiwillig)', name, 'Gleicher Name ersetzt das alte Paket.'),
     h('div', { class: 'row' }, btn('Datei wählen', async () => { if (api && api.fileOpen) { const r = await api.fileOpen({ filters: [{ name: 'JSON', extensions: ['json'] }] }); if (r && r.ok) doImport(r.content, r.name.replace(/\.json$/i, '')); else if (r && r.error) toast(r.error, 'bad'); } else file.click(); }, { icon: 'up' }), file),
@@ -101,16 +116,34 @@ export function render(page) {
       (pack.items[typeSel.value] = pack.items[typeSel.value] || []).push(it);
       const t = installPack(pack, MINE); oneOut.innerHTML = ''; oneOut.append(report(t)); if (!t.errors.length) toast('Eintrag gespeichert (Paket «' + MINE + '»).', 'ok'); }, { kind: 'primary' }), oneOut));
 
-  // Pakete
-  const pk = h('div', { class: 'card' }, h('h3', null, 'Eigene Pakete (' + state.packs.length + ')'));
-  if (!state.packs.length) pk.append(h('p', { class: 'muted' }, 'Noch keine eigenen Pakete.'));
-  else pk.append(h('table', { class: 'list' }, h('thead', null, h('tr', null, h('th', null, 'Name'), h('th', null, 'Inhalt'), h('th', null, 'importiert'), h('th', null, ''))), h('tbody', null, state.packs.map((x) => h('tr', null, h('td', null, x.name), h('td', { class: 'small' }, Object.entries(x.pack.items || {}).map(([k, v]) => (Array.isArray(v) ? v.length : 0) + ' ' + k).join(', ')), h('td', null, x.added ? fmtDate(new Date(x.added)) : ''),
-    h('td', null, btn('Exportieren', () => saveText(x.name.replace(/[^\wäöüÄÖÜ -]/g, '') + '.json', JSON.stringify(Object.assign({ name: x.name }, x.pack), null, 2), 'application/json'), { kind: 'small quiet', icon: 'down' }),
-      btn('Entfernen', async () => { if (await confirmBox('Paket entfernen?', '«' + x.name + '» wird aus der Datenbank entfernt. Bereits gelöste Aufgaben bleiben in der Auswertung.', 'Entfernen', 'Behalten', true)) { removeOrigin('eigen:' + x.name); state.packs = state.packs.filter((y) => y !== x); await savePacks(); refreshSources(); refresh(); } }, { kind: 'small quiet', icon: 'trash' })))))));
+  // Pakete: welche verwendet werden
+  const off = new Set(offList()); const oc = originCounts();
+  const allOrigins = [BUILTIN, ...state.packs.map((x) => 'eigen:' + x.name)];
+  const only = async (keep) => { await setOff(allOrigins.filter((o) => !keep.includes(o))); refresh(); };
+  const toggle = async (o, on) => { const next = new Set(offList()); if (on) next.delete(o); else next.add(o); await setOff([...next]); refresh(); };
+  const latest = state.packs.slice().sort((a, b) => (b.added || 0) - (a.added || 0))[0];
+  const useBox = (o, label) => { const cb = h('input', { type: 'checkbox', checked: !off.has(o) || null, 'aria-label': label + ' verwenden', onchange: () => toggle(o, cb.checked) }); return cb; };
+  const summary = (pack) => Object.entries(pack.items || {}).map(([k, v]) => (Array.isArray(v) ? v.length : 0) + ' ' + k).join(', ');
+  const used = allOrigins.filter((o) => !off.has(o)).length;
+  const pk = h('div', { class: 'card' }, h('div', { class: 'row between' }, h('h3', null, 'Pakete'), h('span', { class: 'muted small' }, used + ' von ' + allOrigins.length + ' verwendet')),
+    h('p', { class: 'hint' }, 'Aufgaben aus der Datenbank kommen nur aus angekreuzten Paketen. Berechnete Aufgaben (Generatoren) gibt es immer. Prüfungssimulationen brauchen alle Aufgabenarten: Was in den angekreuzten Paketen fehlt, nehmen sie aus den übrigen. Die Auswahl gilt für alle Profile auf diesem Computer.'),
+    h('div', { class: 'row', style: { marginBottom: '0.6rem' } },
+      btn('Alle verwenden', () => only(allOrigins), { kind: 'small' }),
+      latest ? btn('Nur das neueste Paket: «' + latest.name + '»', () => only(['eigen:' + latest.name]), { kind: 'small' }) : null,
+      state.packs.length > 1 ? btn('Nur eigene Pakete', () => only(state.packs.map((x) => 'eigen:' + x.name)), { kind: 'small' }) : null));
+  pk.append(h('table', { class: 'list packs' }, h('thead', null, h('tr', null, h('th', null, 'Verwenden'), h('th', null, 'Name'), h('th', null, 'Inhalt'), h('th', null, 'importiert'), h('th', null, h('span', { class: 'sr' }, 'Aktionen')))),
+    h('tbody', null,
+      h('tr', { class: off.has(BUILTIN) ? 'off' : null }, h('td', null, useBox(BUILTIN, 'Eingebaute Datenbank')), h('td', null, h('b', null, 'Eingebaute Datenbank'), h('div', { class: 'muted small' }, 'Texte, Sätze, Aufsatzthemen und Textaufgaben der App')), h('td', { class: 'small nowrap' }, (oc[BUILTIN] || 0) + ' Einträge'), h('td', null, 'mit der App'), h('td', null)),
+      state.packs.map((x) => h('tr', { class: off.has('eigen:' + x.name) ? 'off' : null }, h('td', null, useBox('eigen:' + x.name, 'Paket «' + x.name + '»')), h('td', null, x.name), h('td', { class: 'small' }, summary(x.pack)), h('td', null, x.added ? fmtDate(new Date(x.added)) : ''),
+        h('td', null, btn('Exportieren', () => saveText(x.name.replace(/[^\wäöüÄÖÜ -]/g, '') + '.json', JSON.stringify(Object.assign({ name: x.name }, x.pack), null, 2), 'application/json'), { kind: 'small quiet', icon: 'down' }),
+          btn('Entfernen', async () => { if (await confirmBox('Paket entfernen?', '«' + x.name + '» wird aus der Datenbank entfernt. Bereits gelöste Aufgaben bleiben in der Auswertung.', 'Entfernen', 'Behalten', true)) { removeOrigin('eigen:' + x.name); state.packs = state.packs.filter((y) => y !== x); await savePacks(); await setOff(offList().filter((o) => o !== 'eigen:' + x.name)); refresh(); } }, { kind: 'small quiet', icon: 'trash' })))))));
+  if (!state.packs.length) pk.append(h('p', { class: 'muted small' }, 'Noch keine eigenen Pakete. Importiere eines oben.'));
+  const lost = lostTopics();
+  if (lost.length) pk.append(h('p', { class: 'note warn' }, h('b', null, 'Ohne Aufgaben mit dieser Auswahl: '), lost.map((id) => id + ' ' + SKILL[id].name).join(', ') + '. Diese Themen fehlen jetzt in «Lernen», im Endlos-Training und im Blitz. Schalte ein Paket mit passenden Einträgen ein.'));
   page.append(pk);
 
   // Datenbank-Übersicht
-  page.append(h('div', { class: 'card' }, h('h3', null, 'Datenbank'), h('table', { class: 'list' }, h('thead', null, h('tr', null, h('th', null, 'Typ'), h('th', null, 'Thema'), h('th', { class: 'num' }, 'Einträge'), h('th', { class: 'num' }, 'davon eigene'))),
+  page.append(h('div', { class: 'card' }, h('h3', null, 'Datenbank'), h('table', { class: 'list' }, h('thead', null, h('tr', null, h('th', null, 'Typ'), h('th', null, 'Thema'), h('th', { class: 'num' }, 'Einträge (verwendet)'), h('th', { class: 'num' }, 'davon eigene'))),
     h('tbody', null, Object.entries(TYPES).map(([k, T]) => h('tr', null, h('td', null, T.name, h('div', { class: 'muted small' }, k)), h('td', null, T.skill + ' ' + (SKILL[T.skill] ? SKILL[T.skill].name : '')), h('td', { class: 'num' }, String((c[k] || {}).total || 0)), h('td', { class: 'num' }, String((c[k] || {}).own || 0)))))),
     h('p', { class: 'hint' }, 'Dazu kommen ' + Object.values(GEN).filter((g) => (g.src || 'gen') === 'gen').length + ' Generatoren, die unendlich viele Aufgaben berechnen.')));
 }

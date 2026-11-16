@@ -1,5 +1,5 @@
 # Prüft die Aufgaben-Generatoren und baut alle Pakete auf Windows, macOS und Linux.
-# Ein Tag v* (z. B. v1.3.1) erstellt zusätzlich einen Release-Entwurf mit allen Dateien.
+# Ein Tag v* (z. B. v1.4.1) erstellt zusätzlich einen Release-Entwurf mit allen Dateien.
 name: Bauen
 
 on:

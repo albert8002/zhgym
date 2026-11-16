@@ -100,8 +100,20 @@ function skillPage(page, id, tab) {
     setLeave(() => sess.stop()); };
   start.append(h('div', { class: 'row', style: { marginTop: '0.8rem' } }, btn('Runde starten', run, { kind: 'primary big', icon: 'play' }), essayType !== undefined ? h('a', { class: 'btn', href: '#/aufsatz/neu/' + essayType }, icon('pen', 18), 'Ganzen Aufsatz schreiben') : null, !['D13', 'D16', 'D17', 'D18', 'D19'].includes(id) ? h('a', { class: 'btn quiet', href: '#/blatt/' + id }, icon('print', 18), 'Arbeitsblatt für Papier') : null));
   box.append(start);
-  const kinds = keysFor(id, 'mix').keys.map((k) => genInfo(k));
-  box.append(h('div', { class: 'card' }, h('h3', null, 'Aufgabenarten zu diesem Thema'), h('table', { class: 'list' }, h('tbody', null, kinds.map((g) => h('tr', null, h('td', null, g.title), h('td', null, h('span', { class: 'tag' }, g.src === 'gen' ? 'Generator' : g.src === 'db' ? 'Datenbank' : 'Shuffle')), h('td', null, g.diff >= 3 ? h('span', { class: 'tag ink' }, 'Prüfungsniveau') : g.diff === 1 ? 'Einstieg' : 'mittel')))))));
+  // Aufgabenarten einzeln üben (zählt nicht für das Abhaken: dafür braucht es die gemischte Runde)
+  const kinds = keysFor(id, 'mix').keys.map((k) => ({ k, g: genInfo(k) })).sort((a, b) => a.g.diff - b.g.diff);
+  const DIFF = (d) => (d >= 3 ? h('span', { class: 'tag ink' }, 'Prüfungsniveau') : d === 1 ? h('span', { class: 'tag' }, 'Einstieg') : h('span', { class: 'tag' }, 'mittel'));
+  const SRC = { gen: 'Generator', db: 'Datenbank', shuffle: 'Shuffle' };
+  const runKind = (k, g) => { box.innerHTML = ''; const host = h('div'); box.append(host);
+    const sess = runSession(host, { title: s.name + ': ' + g.title, mode: 'art', limit: N, backHref: '#/lernen/' + id + '/ueben', next: () => makeTask(k, newSeed()),
+      onDone: (sum, root) => { root.append(summaryCard(sum, { again: () => runKind(k, g), backHref: '#/lernen/' + id + '/ueben', backLabel: 'Zurück zum Thema' })); } });
+    setLeave(() => sess.stop()); };
+  box.append(h('div', { class: 'card' }, h('h3', null, 'Aufgabenarten einzeln üben'),
+    h('p', { class: 'hint' }, 'Die Übungsrunde oben mischt alle Arten und wird schwieriger. Hier übst du eine Art gezielt, ' + N + ' Aufgaben lang. Fürs Abhaken im Lernplan zählen nur die gemischten Runden.'),
+    h('table', { class: 'list kinds' }, h('thead', null, h('tr', null, h('th', null, 'Aufgabenart'), h('th', null, 'Quelle'), h('th', null, 'Schwierigkeit'), h('th', null, h('span', { class: 'sr' }, 'Aktion')))),
+      h('tbody', null, kinds.map(({ k, g }) => h('tr', null, h('td', null, g.title), h('td', null, h('span', { class: 'tag', title: MODE_HELP[g.src] || '' }, SRC[g.src] || g.src)), h('td', null, DIFF(g.diff)),
+        h('td', { class: 'num' }, btn('Üben', () => runKind(k, g), { kind: 'small', icon: 'play', iconSize: 14, aria: g.title + ' üben' })))))),
+    h('p', { class: 'hint' }, 'Generator: vom Computer berechnet, unendlich viele. Datenbank: geprüfte Aufgaben, erweiterbar unter «Inhalte». Shuffle: Datenbank-Aufgaben mit neuen Zahlen und anderer Formulierung.')));
 }
 
 export function render(page, args) {

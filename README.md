@@ -66,12 +66,19 @@ Hinweise:
 - Jeder Push auf `main` prüft die Generatoren, baut alle Pakete auf echten Windows-, macOS- und Linux-Rechnern und startet die gebaute App einmal zur Probe. Die Dateien liegen danach unter «Actions» beim jeweiligen Lauf.
 - Ein Versions-Tag erzeugt zusätzlich einen Release-Entwurf mit allen Paketen und Prüfsummen. Ablauf für eine neue Version:
   ```
-  # Version in package.json erhöhen, z. B. auf 1.3.1
-  git commit -am "Version 1.3.1"
-  git tag v1.3.1
-  git push origin main v1.3.1
+  # Version in package.json erhöhen, z. B. auf 1.4.1
+  git commit -am "Version 1.4.1"
+  git tag v1.4.1
+  git push origin main v1.4.1
   ```
   Danach auf GitHub unter «Releases» den Entwurf prüfen und veröffentlichen.
+
+## Neu in 1.4.0
+- Endlos-Training: einzelne Themen wählen, nicht nur ganze Bereiche. Dazu «Meine 5 schwächsten Themen» und «Keine». In der Auswertung übernimmt «Genau diese Themen im Endlos-Training üben» die schwächsten Themen.
+- Lernen → Üben: Jede Aufgabenart lässt sich einzeln üben (Knopf «Üben»), mit Erklärung zu Quelle und Schwierigkeit.
+- Inhalte → Pakete: ankreuzen, welche Pakete verwendet werden, auch die eingebaute Datenbank. «Nur das neueste Paket» mit einem Klick. Die App zeigt, welche Themen mit der Auswahl keine Aufgaben mehr haben. Simulationen funktionieren immer.
+- Farben: alle Texte in den Themen hell, dunkel und Kontrast mindestens 4.5:1 (WCAG AA), Rahmen von Eingabefeldern mindestens 3:1. Wochenbericht und Arbeitsblätter immer auf hellem Papier.
+- Korrekturen: «ab hier: offizielle Prüfungen» überlappt den Balken nicht mehr; Überspringen der letzten Aufgabe beendet die Runde (vorher kam eine 9. Aufgabe); der Importbericht bleibt nach dem Import stehen.
 
 ## Neu in 1.3.0
 - Neu auch für macOS (Apple Silicon), mit ⌘-Tastenkürzeln und macOS-App-Menü.

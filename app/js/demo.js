@@ -1,7 +1,8 @@
 // Beispielprofil «Mia (Beispiel)»: 3½ Wochen realistische Lerndaten zum Ausprobieren und für Vorführungen.
 // Alle Werte werden mit festen Zufallszahlen erzeugt; Aufgaben-Schlüssel und Startzahlen sind echte Aufgaben.
 import { SKILL, secPerPoint } from './skills.js';
-import { SKILL_SOURCES, DB, makeTask } from './engine/sources.js';
+import { SKILL_SOURCES, makeTask } from './engine/sources.js';
+import { allItems } from './engine/db.js';
 import { RNG, dayKey, addDays, uid, clamp } from './util.js';
 import { newProfile } from './store.js';
 
@@ -35,7 +36,7 @@ Ich wollte schon weglaufen, da hörte ich eine bekannte Stimme. «Mia? Bist du d
 
 Auf dem Heimweg lachten wir über meine nassen Schuhe. Seit diesem Abend packe ich immer eine Powerbank ein. Und ich verlasse das Training fünf Minuten früher.`;
 
-const topicByTitle = (title) => { const t = DB.aufsatz.find((x) => x.title === title); return t ? { title: t.title, typ: t.typ, auftrag: t.auftrag || [], keys: t.keys || [], min: t.min || 1, anfang: t.anfang || '', bild: t.bild || '', jahr: t.jahr || null, np: !!t.np, pdf: !!t.pdf, hinweis: t.hinweis || '', id: t._id } : { title, typ: 'eroerterung', auftrag: [] }; };
+const topicByTitle = (title) => { const t = allItems('aufsatz').find((x) => x.title === title); return t ? { title: t.title, typ: t.typ, auftrag: t.auftrag || [], keys: t.keys || [], min: t.min || 1, anfang: t.anfang || '', bild: t.bild || '', jahr: t.jahr || null, np: !!t.np, pdf: !!t.pdf, hinweis: t.hinweis || '', id: t._id } : { title, typ: 'eroerterung', auftrag: [] }; };
 const genKey = (sid) => { const ks = (SKILL_SOURCES[sid] || []).filter((k) => !/\.(shuffle|vorlage)$/.test(k)); return ks[0] || (SKILL_SOURCES[sid] || [])[0]; };
 
 export function makeDemoProfile(now = new Date()) {

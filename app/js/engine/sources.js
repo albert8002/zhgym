@@ -5,7 +5,7 @@ import './math-a.js';
 import './math-b.js';
 import './math-c.js';
 import './de-gen.js';
-import { DB } from './db.js';
+import { DB, poolOf, allItems } from './db.js';
 import { RNG, hashStr, gcd, lcm, esc } from '../util.js';
 import { parse, evaluate } from './expr.js';
 import { taskMax } from './task.js';
@@ -51,10 +51,11 @@ export function templateTask(it, r, jitter) {
   }
   return { html: esc(tplFill(text, env, names)), fields: [field], solution: '<ol class="steps">' + (it.solution || []).map((s) => '<li>' + esc(tplFill(s, env, names)) + '</li>').join('') + '</ol>' };
 }
-const tplPool = (skill) => DB.mathe.filter((x) => x.skill === skill);
+const tplPool = (skill) => DB.mathe.filter((x) => x.skill === skill); // nur verwendete Pakete: entscheidet, ob es die Aufgabenart gibt
+const tplPick = (skill) => poolOf('mathe', (x) => x.skill === skill); // beim Erzeugen notfalls aus allen Paketen (Fehlerheft, Simulation)
 SKILLS.filter((s) => s.subj === 'M').forEach((s) => {
-  reg(s.id + '.vorlage', { skill: s.id, title: 'Textaufgabe aus der Datenbank', src: 'db', diff: 2, needs: () => tplPool(s.id).length > 0 }, (r) => { const p = tplPool(s.id); return templateTask(p[r.int(0, p.length - 1)], r, false); });
-  reg(s.id + '.shuffle', { skill: s.id, title: 'Textaufgabe mit neuen Zahlen', src: 'shuffle', diff: 2, needs: () => tplPool(s.id).length > 0 }, (r) => { const p = tplPool(s.id); return templateTask(p[r.int(0, p.length - 1)], r, true); });
+  reg(s.id + '.vorlage', { skill: s.id, title: 'Textaufgabe aus der Datenbank', src: 'db', diff: 2, needs: () => tplPool(s.id).length > 0 }, (r) => { const p = tplPick(s.id); return templateTask(p[r.int(0, p.length - 1)], r, false); });
+  reg(s.id + '.shuffle', { skill: s.id, title: 'Textaufgabe mit neuen Zahlen', src: 'shuffle', diff: 2, needs: () => tplPool(s.id).length > 0 }, (r) => { const p = tplPick(s.id); return templateTask(p[r.int(0, p.length - 1)], r, true); });
 });
 
 // ---------- M25: Kurzaufgaben im Tempo ----------
@@ -130,5 +131,5 @@ export function randomTask(skills, seed, opts = {}) {
   t.fallback = fallback;
   return t;
 }
-export const textById = (id) => DB.text.find((t) => t._id === id);
+export const textById = (id) => allItems('text').find((t) => t._id === id); // auch aus ausgeschalteten Paketen (Fehlerheft, alte Simulationen)
 export { DB, GEN, SKILL };

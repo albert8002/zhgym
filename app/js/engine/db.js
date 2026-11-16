@@ -25,7 +25,17 @@ export const TYPES = {
   quiz: { name: 'Quizfragen', skill: 'D31', req: ['skill', 'q', 'o', 'a'], help: 'o[a] ist richtig. why = Erklärung.', example: { skill: 'D31', q: 'Wie viele Kreuze setzt du, wenn 4 Adjektive verlangt sind?', o: ['Genau 4', 'So viele wie möglich', 'Mindestens 5'], a: 0, why: 'Jedes Kreuz zu viel kostet 1 Punkt.' } },
   mathe: { name: 'Mathe-Textaufgaben mit Platzhaltern', skill: 'M11', req: ['skill', 'text', 'params', 'answer'], help: 'Platzhalter {a}. params: Bereich {min,max,step} oder {pick:[…]}. answer.expr = Formel aus den Platzhaltern. where = Bedingungen. Siehe LLM-Anleitung.', example: { skill: 'M11', text: ['In einer Klasse mit {n} Lernenden kommen {k} mit dem Velo. Wie viel Prozent sind das?'], params: { n: { pick: [20, 24, 25] }, k: { min: 3, max: 12 } }, where: ['k<n'], answer: { expr: 'k/n*100', unit: '%', round: 1 }, solution: ['Anteil = {k} : {n}', 'mal 100'] } }
 };
-Object.keys(TYPES).forEach((t) => { DB[t] = []; });
+// ALL hält alle Einträge, DB nur die aus verwendeten Paketen (siehe setInactive)
+const ALL = {};
+let OFF = new Set();
+Object.keys(TYPES).forEach((t) => { DB[t] = []; ALL[t] = []; });
+export const allItems = (type) => ALL[type] || [];
+// Herkunft ausschalten: 'eingebaut' oder 'eigen:<Paketname>'. Aufgaben kommen dann nur noch aus den übrigen Paketen.
+export function setInactive(origins) { OFF = new Set(origins || []); for (const t of Object.keys(ALL)) DB[t] = ALL[t].filter((it) => !OFF.has(it._o)); }
+export const isActive = (origin) => !OFF.has(origin);
+// Einträge aus den verwendeten Paketen; sind es weniger als min (z. B. für Ablenker oder in Simulationen), dann aus allen Paketen
+export function poolOf(type, pred, min = 1) { const a = pred ? DB[type].filter(pred) : DB[type]; if (a.length >= min) return a; return pred ? ALL[type].filter(pred) : ALL[type]; }
+export function originCounts() { const out = {}; for (const t of Object.keys(ALL)) for (const it of ALL[t]) out[it._o] = (out[it._o] || 0) + 1; return out; }
 
 export function validateItem(type, it) {
   const T = TYPES[type];
@@ -52,12 +62,13 @@ export function addItems(type, items, origin = 'eingebaut') {
   (items || []).forEach((it, i) => {
     const err = validateItem(type, it);
     if (err) { errors.push(type + ' #' + (i + 1) + ': ' + err); return; }
-    DB[type].push(Object.assign({}, it, { _o: origin, _id: it.id || (origin + ':' + type + ':' + DB[type].length) }));
+    const item = Object.assign({}, it, { _o: origin, _id: it.id || (origin + ':' + type + ':' + ALL[type].length) });
+    ALL[type].push(item); if (!OFF.has(origin)) DB[type].push(item);
     added++;
   });
   return { added, errors };
 }
-export function removeOrigin(origin) { for (const t of Object.keys(DB)) DB[t] = DB[t].filter((it) => it._o !== origin); }
+export function removeOrigin(origin) { for (const t of Object.keys(ALL)) { ALL[t] = ALL[t].filter((it) => it._o !== origin); DB[t] = DB[t].filter((it) => it._o !== origin); } }
 export function counts() { const out = {}; for (const t of Object.keys(DB)) out[t] = { total: DB[t].length, own: DB[t].filter((it) => it._o !== 'eingebaut').length }; return out; }
 
 // Ein Paket ist { name, items: { typ: [einträge] } }

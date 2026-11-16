@@ -86,7 +86,9 @@ export function renderHelp(page) {
     ['Gibt es ein Beispielprofil?', 'Ja. Auf dem Willkommensbildschirm oder unter «Einstellungen» → «Profil» → «Beispielprofil anlegen». Es enthält 3½ Wochen Lerndaten von «Mia», 2 Aufsätze und 2 Simulationen. Gut zum Ausprobieren und für Vorführungen. Löschen geht unter «Einstellungen».'],
     ['Was zeigt der Tempo-Richtwert?', 'In den Simulationen verteilt die App die Punkte gleichmässig auf die Zeit. Beispiel Mathematik: Nach 45 von 90 Minuten solltest du etwa die Hälfte der Punkte bearbeitet haben. Gezählt wird jede Aufgabe mit einer Antwort, egal in welcher Reihenfolge. Du kannst ihn vor dem Start ausschalten.'],
     ['Was ist der Wochenbericht?', 'Eine Seite zum Drucken oder als PDF: Lernzeit, gelöste Aufgaben, Trefferquote im Vergleich zur Vorwoche, Simulationen, Aufsätze, Stärken und Schwächen. Gedacht für ein kurzes Gespräch mit Eltern oder Lehrperson. Zu finden unter «Auswertung».'],
-    ['Wie bekomme ich mehr Aufgaben?', 'Unter «Inhalte» die Anleitung für eine KI herunterladen, Aufgaben erstellen lassen und das Paket importieren.']
+    ['Wie bekomme ich mehr Aufgaben?', 'Unter «Inhalte» die Anleitung für eine KI herunterladen, Aufgaben erstellen lassen und das Paket importieren.'],
+    ['Kann ich nur meine neuesten Pakete verwenden?', 'Ja. Unter «Inhalte» → «Pakete» kreuzt du an, welche Pakete verwendet werden, auch die eingebaute Datenbank. «Nur das neueste Paket» schaltet mit einem Klick alle anderen aus. Berechnete Aufgaben gibt es immer; Simulationen nehmen fehlende Aufgabenarten aus den übrigen Paketen.'],
+    ['Kann ich im Endlos-Training einzelne Themen üben?', 'Ja. Kreuze ganze Bereiche an oder öffne einen Bereich mit «Themen wählen» und wähle einzelne Themen. «Meine 5 schwächsten Themen» wählt sie für dich aus.']
   ];
   page.append(h('div', { class: 'card', style: { marginTop: '1rem' } }, h('h2', null, 'Häufige Fragen'), ...faq.map(([q, a]) => h('details', { class: 'faq' }, h('summary', null, q), h('p', null, a)))));
 }

@@ -2,7 +2,8 @@
 import { h, btn, bar, icon, toast } from '../ui.js';
 import { state, save } from '../store.js';
 import { SKILLS, SKILL, AREAS, PARTS } from '../skills.js';
-import { adaptiveWeights, readiness, skillStats } from '../stats.js';
+import { adaptiveWeights, readiness, skillStats, strengths } from '../stats.js';
+import { stagePips } from '../progress.js';
 import { randomTask, makeTask, keysFor, hasSources, genInfo } from '../engine/sources.js';
 import { runSession, summaryCard } from '../runner.js';
 import { modePicker } from './learn.js';
@@ -14,32 +15,71 @@ import { webTask, WEB_SKILLS } from '../engine/web.js';
 const NO_AUTO = new Set(['D21', 'D18', 'M19', 'D30']); // Planen, offene Fragen, Konstruktionen: nicht im schnellen Zufallstraining
 export const levelOf = (xp) => { const lvl = Math.floor(Math.sqrt(xp / 150)) + 1; const cur = 150 * (lvl - 1) ** 2, nxt = 150 * lvl ** 2; return { lvl, cur, nxt, frac: (xp - cur) / (nxt - cur) }; };
 
-function scopePicker(sel, onChange) {
-  const box = h('div', { class: 'choices grid' });
-  AREAS.filter((a) => a.id !== 'd-tech').forEach((a) => { const cb = h('input', { type: 'checkbox', checked: sel.has(a.id) || null, onchange: () => { cb.checked ? sel.add(a.id) : sel.delete(a.id); onChange(); } }); box.append(h('label', { class: 'choice' }, cb, h('span', null, (a.subj === 'D' ? 'Deutsch: ' : 'Mathe: ') + a.name))); });
-  return box;
+// Auswahl für das Endlos-Training: ganze Bereiche oder einzelne Themen
+const eligible = (id) => SKILL[id] && SKILL[id].area !== 'd-tech' && hasSources(id) && !NO_AUTO.has(id);
+const areaSkills = (aid) => SKILLS.filter((s) => s.area === aid && eligible(s.id)).map((s) => s.id);
+const pickAreas = () => AREAS.filter((a) => areaSkills(a.id).length); // hängt von den verwendeten Paketen ab
+const defaultAreas = () => pickAreas().filter((a) => a.id !== 'd-aufsatz').map((a) => a.id);
+function initialScope(p) {
+  if (Array.isArray(p.settings.scopeSkills)) { const ids = p.settings.scopeSkills.filter(eligible); if (ids.length) return new Set(ids); }
+  return new Set((p.settings.scope || defaultAreas()).flatMap(areaSkills)); // ältere Profile: nur Bereiche gespeichert
 }
-const skillsOfAreas = (sel) => SKILLS.filter((s) => sel.has(s.area) && hasSources(s.id) && !NO_AUTO.has(s.id)).map((s) => s.id);
+function scopePicker(sel, onChange) {
+  const p = state.profile; const box = h('div', { class: 'scope' }); const open = new Set(); const stage = {};
+  const stageOf = (id) => (stage[id] ??= skillStats(p, id).stage);
+  const countIn = (ids) => ids.filter((id) => sel.has(id)).length;
+  const openPartial = () => pickAreas().forEach((a) => { const ids = areaSkills(a.id), n = countIn(ids); if (n > 0 && n < ids.length) open.add(a.id); });
+  openPartial();
+  const draw = () => {
+    const focusKey = document.activeElement && box.contains(document.activeElement) ? document.activeElement.dataset.k : null;
+    box.innerHTML = '';
+    pickAreas().forEach((a) => {
+      const ids = areaSkills(a.id), n = countIn(ids), isOpen = open.has(a.id), tid = 'scope-' + a.id;
+      const cb = h('input', { type: 'checkbox', 'data-k': 'a:' + a.id, checked: n === ids.length || null, onchange: () => { ids.forEach((id) => (cb.checked ? sel.add(id) : sel.delete(id))); changed(); } });
+      cb.indeterminate = n > 0 && n < ids.length;
+      const toggle = h('button', { type: 'button', class: 'btn small quiet', 'data-k': 'x:' + a.id, 'aria-expanded': String(isOpen), 'aria-controls': tid, onclick: () => { if (isOpen) open.delete(a.id); else open.add(a.id); draw(); } }, isOpen ? 'Themen ausblenden' : 'Themen wählen');
+      const item = h('div', { class: 'scope-area' + (n ? ' on' : '') },
+        h('div', { class: 'scope-head' }, h('label', { class: 'scope-name' }, cb, h('span', null, h('b', null, (a.subj === 'D' ? 'Deutsch: ' : 'Mathematik: ') + a.name), h('small', null, n + ' von ' + ids.length + ' Themen'))), toggle));
+      if (isOpen) item.append(h('div', { class: 'scope-topics', id: tid }, ids.map((id) => {
+        const c = h('input', { type: 'checkbox', 'data-k': 't:' + id, checked: sel.has(id) || null, onchange: () => { if (c.checked) sel.add(id); else sel.delete(id); changed(); } });
+        return h('label', { class: 'choice' }, c, h('span', null, id + ' ' + SKILL[id].name), h('span', { class: 'pts' }, stagePips(stageOf(id))));
+      })));
+      box.append(item);
+    });
+    if (focusKey) { const el = box.querySelector('[data-k="' + focusKey + '"]'); if (el) el.focus(); }
+  };
+  const changed = () => { onChange(); draw(); };
+  draw();
+  return { el: box, redraw: () => { openPartial(); draw(); } };
+}
 const hasSelf = (t) => t.fields.some((f) => f.type === 'self');
 
 export function renderEndless(page) {
-  const p = state.profile; const sel = new Set(p.settings.scope || AREAS.filter((a) => a.id !== 'd-tech' && a.id !== 'd-aufsatz').map((a) => a.id));
+  const p = state.profile; const sel = initialScope(p);
   let adaptive = p.settings.adaptive !== false, examOnly = p.settings.examOnly !== false, mode = p.settings.mode;
   const L = levelOf(p.xp);
   page.append(h('div', { class: 'page-head' }, h('h1', null, 'Endlos-Training'), h('p', null, 'Unendlich viele Aufgaben auf Prüfungsniveau. Jeder Punkt gibt 10 Erfahrungspunkte.')));
   const setup = h('div', { class: 'card' });
   setup.append(h('div', { class: 'row between' }, h('h3', null, 'Trainingslevel ' + L.lvl), h('span', { class: 'muted small' }, p.xp + ' Erfahrungspunkte, Level ' + (L.lvl + 1) + ' bei ' + L.nxt)), bar(L.frac, 1, '', 'Fortschritt zum nächsten Trainingslevel'));
-  setup.append(h('h3', { style: { marginTop: '1.1rem' } }, 'Was willst du üben?'), h('div', { class: 'row', style: { marginBottom: '0.5rem' } },
-    btn('Alles', () => { AREAS.forEach((a) => { if (a.id !== 'd-tech') sel.add(a.id); }); redraw(); }, { kind: 'small' }), btn('Nur Deutsch', () => { sel.clear(); AREAS.filter((a) => a.subj === 'D' && a.id !== 'd-tech').forEach((a) => sel.add(a.id)); redraw(); }, { kind: 'small' }), btn('Nur Mathematik', () => { sel.clear(); AREAS.filter((a) => a.subj === 'M').forEach((a) => sel.add(a.id)); redraw(); }, { kind: 'small' })));
-  const pickHost = h('div'); setup.append(pickHost);
-  const redraw = () => { pickHost.innerHTML = ''; pickHost.append(scopePicker(sel, () => {})); };
-  redraw();
+  const weak = strengths(p, 5).weak.map((x) => x.id).filter(eligible);
+  const count = h('span', { class: 'muted small', 'aria-live': 'polite' });
+  const setCount = () => { count.textContent = sel.size === 1 ? '1 Thema gewählt' : sel.size + ' Themen gewählt'; };
+  const preset = (ids) => { sel.clear(); ids.forEach((id) => sel.add(id)); setCount(); picker.redraw(); };
+  const allOf = (subj) => pickAreas().filter((a) => !subj || a.subj === subj).flatMap((a) => areaSkills(a.id));
+  setup.append(h('h3', { style: { marginTop: '1.1rem' } }, 'Was willst du üben?'),
+    h('p', { class: 'hint' }, 'Kreuze ganze Bereiche an. Mit «Themen wählen» wählst du einzelne Themen.'),
+    h('div', { class: 'row', style: { marginBottom: '0.6rem' } },
+      btn('Alles', () => preset(allOf()), { kind: 'small' }), btn('Nur Deutsch', () => preset(allOf('D')), { kind: 'small' }), btn('Nur Mathematik', () => preset(allOf('M')), { kind: 'small' }),
+      weak.length ? btn('Meine 5 schwächsten Themen', () => preset(weak), { kind: 'small' }) : null,
+      btn('Keine', () => preset([]), { kind: 'small quiet' }), count));
+  const picker = scopePicker(sel, setCount); setCount();
+  setup.append(picker.el);
   const cbA = h('input', { type: 'checkbox', checked: adaptive || null, onchange: () => { adaptive = cbA.checked; } }), cbE = h('input', { type: 'checkbox', checked: examOnly || null, onchange: () => { examOnly = cbE.checked; } });
   setup.append(h('div', { class: 'stack', style: { marginTop: '0.9rem' } }, h('label', { class: 'choice' }, cbA, h('span', null, h('b', null, 'Schwache Themen häufiger'), h('br'), h('span', { class: 'muted small' }, 'Die App wählt öfter, was du noch nicht sicher kannst und was an der Prüfung viele Punkte gibt.'))), h('label', { class: 'choice' }, cbE, h('span', null, h('b', null, 'Nur Prüfungsniveau'), h('br'), h('span', { class: 'muted small' }, 'Lässt Einstiegsaufgaben weg.'))), modePicker((m) => { mode = m; })));
   const host = h('div');
   const start = () => {
-    const skills = skillsOfAreas(sel); if (!skills.length) { toast('Wähle mindestens einen Bereich.', 'bad'); return; }
-    p.settings.scope = [...sel]; p.settings.adaptive = adaptive; p.settings.examOnly = examOnly; save();
+    const skills = [...sel].filter(eligible); if (!skills.length) { toast('Wähle mindestens ein Thema.', 'bad'); return; }
+    p.settings.scopeSkills = skills; p.settings.adaptive = adaptive; p.settings.examOnly = examOnly; save();
     setup.hidden = true; page.querySelector('.page-head').hidden = true;
     const sess = runSession(host, { title: 'Endlos-Training', mode: 'endlos', backHref: '#/training',
       next: async () => {
