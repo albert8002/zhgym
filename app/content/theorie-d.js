@@ -632,16 +632,57 @@ Gesucht: ein Wort für «ohne ein Geräusch zu machen». → lautlos</div>
 <li>Donnerschlag</li>
 <li>Es sind 2 Wörter. Verlangt ist genau 1 Wort.</li></ol></details>`,
 
-D14: R`<h3>Komma</h3><ul>
-<li><b>Aufzählung:</b> «Ich kaufe Brot, Milch, Käse und Äpfel.» Kein Komma vor «und» oder «oder».</li>
+D14: R`<div class="merke"><b>Merke:</b> Personalformen zählen: 2 Personalformen = 2 Teilsätze = meist 1 Komma dazwischen. Zwischen 2 Hauptsätzen mit «und» oder «oder» darf ein Komma stehen, muss aber nicht.</div>
+
+<h3>Komma</h3><ul>
+<li><b>Aufzählung:</b> «Ich kaufe Brot, Milch, Käse und Äpfel.» Kein Komma vor «und» oder «oder». Auch bei gleichrangigen Adjektiven: «ein langer, heisser Sommer» (= lang und heiss).</li>
 <li><b>Nebensatz:</b> «Ich bleibe zu Hause, weil ich krank bin.» Auch vorne: «Weil ich krank bin, bleibe ich zu Hause.»</li>
 <li><b>Relativsatz:</b> vorne und hinten: «Der Hund, der dort bellt, gehört uns.»</li>
 <li><b>Vor aber, sondern, denn:</b> «Er ist klein, aber stark.»</li>
-<li><b>Infinitiv mit um, ohne, statt, anstatt:</b> «Sie kam, um zu helfen.»</li></ul>
-<div class="merke"><b>Merke:</b> Personalformen zählen: 2 Personalformen = 2 Teilsätze = meist 1 Komma dazwischen. Zwischen 2 Hauptsätzen mit «und» oder «oder» darf ein Komma stehen, muss aber nicht.</div>
+<li><b>Infinitiv mit um, ohne, statt, anstatt:</b> «Sie kam, um zu helfen.»</li>
+<li><b>Einschub:</b> vorne und hinten: «Frau Keller, unsere Nachbarin, hat einen Hund.»</li>
+<li><b>Anrede und Ausruf:</b> «Lea, kommst du?» «Ach, das ist schade.»</li></ul>
+
+<h3>Kein Komma</h3>
+<ul><li>zwischen Subjekt und Personalform: «Der Mann mit dem roten Hut wartet.»</li>
+<li>bei Vergleichen ohne eigenen Satz: «Er ist so gross wie sein Vater.» «Sie ist älter als ich.»</li>
+<li>vor «und» und «oder» in einer Aufzählung</li></ul>
+
+<h3>So gehst du vor</h3>
+<ol><li>Alle Personalformen unterstreichen.</li>
+<li>Konjunktionen (weil, dass, wenn …) und Relativpronomen (der, die, das, welcher) einkreisen. Dort beginnt meist ein Nebensatz.</li>
+<li>Wo endet der Nebensatz? Nach seiner Personalform.</li>
+<li>Aufzählungen und Einschübe suchen.</li></ol>
+<div class="bsp">«Als wir ankamen war der Zug den wir nehmen wollten schon weg.»<br>
+Personalformen: kamen (an), war, wollten → 3 Teilsätze.<br>
+«Als wir ankamen, war der Zug, den wir nehmen wollten, schon weg.»</div>
+
 <h3>Direkte Rede</h3><ul>
 <li>Sie sagte: «Komm mit!»</li><li>«Komm mit», sagte sie.</li><li>«Kommst du?», fragte er.</li><li>«Komm», sagte sie, «wir gehen.»</li></ul>
-<div class="falle"><b>Falle:</b> Nach einem Frage- oder Ausrufezeichen in Anführungszeichen folgt trotzdem ein Komma, wenn der Begleitsatz weitergeht: «Kommst du?», fragte er. In der Prüfung kosten falsche Änderungen erst ab der 6. Änderung Punkte.</div>`,
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nach einem Frage- oder Ausrufezeichen in Anführungszeichen folgt trotzdem ein Komma, wenn der Begleitsatz weitergeht: «Kommst du?», fragte er.</li>
+<li>Beim Relativsatz in der Satzmitte das zweite Komma nicht vergessen.</li>
+<li>In der Prüfung kosten falsche Änderungen erst ab der 6. Änderung Punkte.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Setze die fehlenden Kommas.</p>
+<ol class="check">
+<li>«Als es dunkel wurde gingen wir nach Hause.»</li>
+<li>«Das Velo das im Hof steht gehört meinem Bruder.»</li>
+<li>«Wir brauchen Mehl Zucker Eier und Butter.»</li>
+<li>«Sie ging nach Hause ohne sich zu verabschieden.»</li>
+<li>«Frau Keller unsere Nachbarin hat einen Hund.»</li>
+<li>«Gehst du heute ins Training?» fragte Mia.</li>
+<li>«Er ist so gross wie sein Vater.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>«Als es dunkel wurde, gingen wir nach Hause.»</li>
+<li>«Das Velo, das im Hof steht, gehört meinem Bruder.»</li>
+<li>«Wir brauchen Mehl, Zucker, Eier und Butter.»</li>
+<li>«Sie ging nach Hause, ohne sich zu verabschieden.»</li>
+<li>«Frau Keller, unsere Nachbarin, hat einen Hund.»</li>
+<li>«Gehst du heute ins Training?», fragte Mia.</li>
+<li>kein Komma (Vergleich ohne eigenen Satz)</li></ol></details>`,
 
 D15: R`<h3>das oder dass?</h3>
 <div class="merke"><b>Ersatzprobe:</b> Kannst du «dieses», «jenes» oder «welches» einsetzen, schreibst du <b>das</b> (Artikel oder Pronomen). Sonst <b>dass</b> (Konjunktion, leitet einen Nebensatz ein).</div>
