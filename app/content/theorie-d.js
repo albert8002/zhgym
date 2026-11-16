@@ -1342,5 +1342,39 @@ D31: R`<ul><li>Nie mehr Kreuze als verlangt: Jedes Kreuz zu viel kostet 1 Punkt 
 <li>Fehler korrigieren: Falsche Änderungen kosten erst ab der 6. Änderung Punkte.</li>
 <li>Keine halben Punkte. Gestrichenes zählt nicht. Rechtschreibfehler zählen nur, wo es vermerkt ist.</li>
 <li>Die Reihenfolge ist frei. Keine Hilfsmittel, auch kein Wörterbuch.</li></ul>
-<div class="merke"><b>Tempo:</b> 45 Minuten für 75 Punkte = 36 Sekunden pro Punkt. Für die Aufgaben 1–4 (23 Punkte) also rund 14 Minuten.</div>`
+<div class="merke"><b>Tempo:</b> 45 Minuten für 75 Punkte = 36 Sekunden pro Punkt. Für die Aufgaben 1–4 (23 Punkte) also rund 14 Minuten.</div>
+
+<h3>Zeit einteilen</h3>
+<p>Mit 36 Sekunden pro Punkt darf eine Aufgabe mit 5 Punkten etwa 3 Minuten dauern. Schreibe dir zu Beginn ein paar Kontrollzeiten an den Rand, zum Beispiel: «nach Aufgabe 4: 14 Minuten».</p>
+
+<h3>Vorgehen</h3>
+<ol><li><b>Durchblättern:</b> Alle Aufgaben kurz ansehen (1 Minute).</li>
+<li><b>Sichere Aufgaben zuerst:</b> Die Reihenfolge ist frei. Beginne mit dem, was du gut kannst.</li>
+<li><b>Auftrag genau lesen:</b> Wie viele Kreuze? 1 Wort oder ein ganzer Satz? Jede Konjunktion nur 1-mal?</li>
+<li><b>Unsicheres markieren</b> und weitergehen. Später zurückkommen.</li>
+<li><b>Schlusskontrolle:</b> Ist jede Zeile ausgefüllt? Nirgends zu viele Kreuze?</li></ol>
+
+<h3>Auftrag lesen: Signalwörter</h3>
+<table><tr><th>Im Auftrag steht</th><th>Das heisst</th></tr>
+<tr><td>«Kreuze 3 Adjektive an»</td><td>genau 3 Kreuze, jedes weitere kostet 1 Punkt</td></tr>
+<tr><td>«Schreibe 1 Wort aus dem Text»</td><td>genau 1 Wort, genau abgeschrieben</td></tr>
+<tr><td>«Verwende jede Konjunktion nur einmal»</td><td>nach jedem Satz die verwendete Konjunktion abhaken</td></tr>
+<tr><td>«Korrigiere die Fehler»</td><td>nur ändern, was sicher falsch ist</td></tr></table>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Bei Unsicherheit «zur Sicherheit» ein zusätzliches Kreuz setzen: Das kostet Punkte.</li>
+<li>Bei einer schweren Aufgabe zu lange bleiben, während leichte Punkte warten.</li>
+<li>Leere Zeilen: Lieber eine überlegte Antwort als gar keine. Ausnahme: zusätzliche Kreuze.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Du sollst 2 Adjektive ankreuzen und setzt 3 Kreuze, davon 2 richtige. Was passiert?</li>
+<li>Darfst du im Sprachteil ein Wörterbuch benutzen?</li>
+<li>Wie viel Zeit hast du etwa für eine Aufgabe mit 10 Punkten?</li>
+<li>Musst du die Aufgaben der Reihe nach lösen?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Das Kreuz zu viel kostet 1 Punkt.</li>
+<li>Nein, keine Hilfsmittel.</li>
+<li>etwa 6 Minuten (\(10 \cdot 36\) Sekunden)</li>
+<li>Nein, die Reihenfolge ist frei.</li></ol></details>`
 };
