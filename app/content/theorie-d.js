@@ -1307,7 +1307,33 @@ D29: R`<table><tr><th>Minuten</th><th>Was du tust</th></tr>
 
 D30: R`<p>Lies jeden Tag 20 Minuten: einen Jugendroman, ein Sachbuch oder die Zeitung, auf Papier.</p>
 <ul><li>Du lernst neue Wörter und sicherere Rechtschreibung.</li><li>Du liest schneller und hast an der Prüfung mehr Zeit für die Aufgaben.</li><li>Du sammelst Beispiele für Erörterungen.</li></ul>
-<div class="merke"><b>Tipp:</b> Trage deine Leseminuten unten ein. Notiere 3 neue Wörter pro Woche in deinen Notizen.</div>`,
+<div class="merke"><b>Tipp:</b> Trage deine Leseminuten unten ein. Notiere 3 neue Wörter pro Woche in deinen Notizen.</div>
+
+<h3>Aktiv lesen</h3>
+<table><tr><th>Wann</th><th>Was du tust</th></tr>
+<tr><td>vorher</td><td>Titel und Bilder anschauen: Worum könnte es gehen?</td></tr>
+<tr><td>während</td><td>Unbekannte Wörter aus dem Zusammenhang erschliessen. Fragen an den Text stellen: Warum tut die Figur das?</td></tr>
+<tr><td>nachher</td><td>In 2 Sätzen zusammenfassen: Wer? Was? Warum?</td></tr></table>
+
+<h3>Abwechseln</h3>
+<ul><li><b>Geschichten</b> trainieren das Verständnis für Figuren und Absichten (wichtig für die Textaufgaben).</li>
+<li><b>Sachtexte und Zeitung</b> liefern Wissen und Beispiele für Erörterungen.</li>
+<li><b>Lieblingsbücher</b> halten die Lust am Lesen. Auch das zählt.</li></ul>
+
+<h3>Neue Wörter sammeln</h3>
+<p>Schreibe das Wort mit dem Satz auf, in dem du es gefunden hast, und eine kurze Erklärung. Verwende es in der gleichen Woche selbst einmal, zum Beispiel in einem Aufsatz.</p>
+<div class="bsp">«gemächlich» – «Der Fischer ruderte gemächlich hinaus.» – langsam, ohne Eile</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nur am Bildschirm in kurzen Häppchen lesen: Das trainiert das genaue Lesen längerer Texte zu wenig.</li>
+<li>Nur am Wochenende lange lesen: Täglich wenig wirkt besser als einmal viel.</li></ul></div>
+
+<h3>Selbst prüfen: Wochenziel</h3>
+<ol class="check">
+<li>An mindestens 5 Tagen 20 Minuten gelesen?</li>
+<li>3 neue Wörter mit Satz notiert?</li>
+<li>Ein Kapitel in 2 Sätzen zusammengefasst?</li>
+<li>Ein Beispiel gefunden, das du in einer Erörterung brauchen könntest?</li></ol>`,
 
 D31: R`<ul><li>Nie mehr Kreuze als verlangt: Jedes Kreuz zu viel kostet 1 Punkt (nicht unter 0).</li>
 <li>1 Kreuz pro Zeile.</li>
