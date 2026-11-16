@@ -1268,7 +1268,42 @@ D29: R`<table><tr><th>Minuten</th><th>Was du tust</th></tr>
 <tr><td>15–75</td><td>schreiben</td></tr>
 <tr><td>75–90</td><td>überarbeiten mit der Checkliste</td></tr></table>
 <p>Bewertet wird mit einer Note in 3 gleich wichtigen Bereichen: <b>Inhalt</b> (Auftrag erfüllt, plausibel, eigenständig, sachlich richtig), <b>Aufbau</b> (zusammenhängend, gegliedert, schlüssig, Textsorte wie verlangt), <b>Sprache</b> (anschaulich, korrekt, abwechslungsreich, Standardsprache).</p>
-<div class="merke"><b>Hilfsmittel:</b> das Wörterbuch aus der Sek oder der Duden Band 1 «Die deutsche Rechtschreibung». Keine Notizen im Wörterbuch. Es gibt keine Längenvorgabe.</div>`,
+<div class="merke"><b>Hilfsmittel:</b> das Wörterbuch aus der Sek oder der Duden Band 1 «Die deutsche Rechtschreibung». Keine Notizen im Wörterbuch. Es gibt keine Längenvorgabe.</div>
+
+<h3>Das richtige Thema wählen</h3>
+<ul><li>Kennst du die Textsorte (Erzählung, Erörterung, Bild, Erlebnis und Reflexion)?</li>
+<li>Fallen dir sofort 2 bis 3 konkrete Beispiele oder eine Handlung ein?</li>
+<li>Kannst du <b>jeden</b> Teilauftrag erfüllen?</li></ul>
+<p>Ein Thema, das dir gefällt, aber zu dem dir nichts Konkretes einfällt, ist eine Falle. Entscheide dich nach 5 Minuten und bleib dabei.</p>
+
+<h3>Während des Schreibens</h3>
+<ul><li><b>Zeitcheck nach 45 Minuten:</b> Bist du etwa in der Mitte des Hauptteils? Wenn nicht, die nächsten Absätze kürzer planen.</li>
+<li>Absätze deutlich machen, so sieht man den Aufbau.</li>
+<li>Leserlich schreiben. Eine Leerzeile zwischen den Absätzen lässt Platz für Korrekturen.</li>
+<li><b>Eigenständig</b> heisst: eigene Ideen und Beispiele statt allgemeiner Sätze, die in jedem Aufsatz stehen könnten.</li></ul>
+
+<h3>Wenn die Zeit knapp wird</h3>
+<p>Schreibe auf jeden Fall einen kurzen Schluss (2 bis 3 Sätze). Ein Text ohne Schluss wirkt unfertig und verliert beim Aufbau. Lieber einen Absatz im Hauptteil kürzen.</p>
+
+<h3>So übst du</h3>
+<p>Schreibe mehrere ganze Aufsätze unter echten Bedingungen: 90 Minuten, Wörterbuch, keine Hilfe. Nutze dafür die Simulation in der Aufsatz-Werkstatt und lass die Checkliste danach laufen.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Zu lange beim Wählen: Nach 5 Minuten musst du dich entscheiden.</li>
+<li>Ohne Plan schreiben, dann fehlt ein Teilauftrag.</li>
+<li>Kein Zeit-Puffer: Die 15 Minuten fürs Überarbeiten sind fest.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Wie viele Minuten sind fürs Schreiben eingeplant?</li>
+<li>Welche 3 Bereiche zählen gleich viel?</li>
+<li>Welches Hilfsmittel ist im Aufsatz erlaubt?</li>
+<li>Was tust du, wenn nach 70 Minuten der Schluss fehlt?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>60 Minuten (von Minute 15 bis 75)</li>
+<li>Inhalt, Aufbau, Sprache</li>
+<li>das Wörterbuch aus der Sek oder der Duden Band 1, ohne Notizen</li>
+<li>Einen kurzen Schluss mit 2 bis 3 Sätzen schreiben, dann noch kurz überarbeiten.</li></ol></details>`,
 
 D30: R`<p>Lies jeden Tag 20 Minuten: einen Jugendroman, ein Sachbuch oder die Zeitung, auf Papier.</p>
 <ul><li>Du lernst neue Wörter und sicherere Rechtschreibung.</li><li>Du liest schneller und hast an der Prüfung mehr Zeit für die Aufgaben.</li><li>Du sammelst Beispiele für Erörterungen.</li></ul>
