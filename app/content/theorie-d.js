@@ -1231,7 +1231,36 @@ Klar: «Lea und Mia stritten. Mia war wütend.»</div>
 
 D28: R`<p>Plane 15 Minuten zum Überarbeiten ein. Gehe die Checkliste durch:</p>
 <ul><li>Jeder Teilauftrag erfüllt?</li><li>Einleitung, Hauptteil, Schluss mit Absätzen erkennbar?</li><li>Erörterung: beide Seiten und begründete Meinung am Schluss?</li><li>Erzählung: Vorgabe zentral, Höhepunkt, passender Schluss?</li><li>Zeitform durchgehend gleich?</li><li>Komma vor jedem Nebensatz?</li><li>das/dass, gross/klein, ss geprüft?</li><li>Wiederholungen ersetzt?</li></ul>
-<div class="merke"><b>Merke:</b> Fehler sauber durchstreichen. Die Schrift muss lesbar bleiben.</div>`,
+<div class="merke"><b>Merke:</b> Fehler sauber durchstreichen. Die Schrift muss lesbar bleiben.</div>
+
+<h3>Drei Durchgänge</h3>
+<table><tr><th>Durchgang</th><th>Zeit</th><th>Worauf du achtest</th></tr>
+<tr><td>1. Inhalt und Aufbau</td><td>etwa 5 Minuten</td><td>Teilaufträge, Absätze, roter Faden, Schluss</td></tr>
+<tr><td>2. Stil</td><td>etwa 4 Minuten</td><td>Wiederholungen, Satzanfänge, treffende Verben</td></tr>
+<tr><td>3. Rechtschreibung und Zeichen</td><td>etwa 6 Minuten</td><td>Satz für Satz: Kommas, das/dass, gross/klein, Verbformen</td></tr></table>
+
+<h3>Tricks</h3>
+<ul><li><b>Langsam lesen</b>, mit dem Finger oder Stift unter der Zeile. Beim schnellen Lesen ergänzt der Kopf, was fehlt.</li>
+<li><b>Personalformen</b> in langen Sätzen suchen: 2 Personalformen heisst meist 1 Komma.</li>
+<li><b>Eigene Fehlerwörter</b> gezielt suchen: Jeder hat Wörter, die er immer wieder falsch schreibt.</li>
+<li><b>Wörterbuch</b>: Im Aufsatz ist es erlaubt. Schlage nach, wenn du unsicher bist.</li></ul>
+
+<h3>Sauber korrigieren</h3>
+<p>Falsches einmal durchstreichen und das Richtige darüber schreiben. Fehlt ein Wort, ein Einfügezeichen setzen und das Wort darüber schreiben. Keine Kritzeleien: Was nicht lesbar ist, zählt nicht.</p>
+<div class="bsp">Vorher: «Ich hoffe das du kommst, weil wir haben viel spass.»<br>
+Nachher: «Ich hoffe, dass du kommst, weil wir viel Spass haben.»<br>
+(Komma vor dem Nebensatz, dass statt das, Personalform ans Ende, Spass gross)</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Keine Zeit mehr zum Überarbeiten: Die 15 Minuten von Anfang an einplanen.</li>
+<li>Am Schluss noch ganze Absätze umschreiben: Das bringt neue Fehler. Lieber kleine, sichere Korrekturen.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Finde die 3 Fehler: «Gestern gingen wir in den Zoo. Dort sehen wir einen Löwen der laut brüllte. Das war das beste am ganzen Tag.»</p>
+<details class="lsg"><summary>Lösung</summary><ol>
+<li>«sehen» → «sahen» (Zeitform Präteritum)</li>
+<li>Komma vor dem Relativsatz: «einen Löwen, der laut brüllte»</li>
+<li>«das Beste» gross (nominalisiertes Adjektiv)</li></ol></details>`,
 
 D29: R`<table><tr><th>Minuten</th><th>Was du tust</th></tr>
 <tr><td>0–5</td><td>alle 4 Themen lesen; das Thema wählen, zu dem du am meisten konkrete Beispiele hast</td></tr>
