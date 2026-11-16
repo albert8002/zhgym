@@ -321,13 +321,52 @@ D6: R`<p>Es gibt 4 Fälle. Die Frage zeigt den Fall.</p>
 <li>heissen Tee</li></ol></details>`,
 
 D7: R`<p><b>Umstellprobe:</b> Was du zusammen vor die Personalform schieben kannst, ist ein Satzglied.</p>
+<div class="bsp">«Die Grossmutter | schenkt | ihrem Enkel | ein neues Velo.»<br>
+«Ihrem Enkel | schenkt | die Grossmutter | ein neues Velo.»<br>
+«Ein neues Velo | schenkt | die Grossmutter | ihrem Enkel.»<br>
+→ 4 Satzglieder: die Grossmutter, schenkt, ihrem Enkel, ein neues Velo.</div>
+
 <table><tr><th>Satzglied</th><th>Frage</th><th>Beispiel</th></tr>
 <tr><td>Subjekt (Nominativ)</td><td>Wer oder was?</td><td><b>Die Lehrerin</b> lobt den Schüler.</td></tr>
 <tr><td>Akkusativobjekt</td><td>Wen oder was?</td><td>Die Lehrerin lobt <b>den Schüler</b>.</td></tr>
 <tr><td>Dativobjekt</td><td>Wem?</td><td>Sie hilft <b>ihrem Bruder</b>.</td></tr>
 <tr><td>Genitivobjekt</td><td>Wessen?</td><td>Wir gedenken <b>der Opfer</b>.</td></tr></table>
 <div class="merke"><b>Merke:</b> Frage mit dem Verb: «Wen lobt die Lehrerin?» Das Subjekt passt in der Person zur Personalform. Unterstreiche das ganze Objekt mit allen Wörtern, die dazugehören, und gib den Fall an.</div>
-<div class="falle"><b>Falle:</b> Zeitangaben wie «den ganzen Tag» stehen zwar im Akkusativ, sind aber keine Objekte (Frage: Wie lange?). Wortgruppen mit Präposition («mit dem Velo», «auf den Bus») sind keine Akkusativ-, Dativ- oder Genitivobjekte. «des Vaters» in «das Auto des Vaters» ist eine Beifügung, kein Objekt.</div>`,
+
+<h3>Das Subjekt</h3>
+<ul><li>steht immer im Nominativ und passt in der Zahl zur Personalform: «Die Kinder <b>spielen</b>» (Mehrzahl), «Das Kind <b>spielt</b>» (Einzahl).</li>
+<li>steht nicht immer am Anfang: «Gestern kam <b>mein Onkel</b>.»</li>
+<li>kann aus vielen Wörtern bestehen: «<b>Der alte Mann mit dem Hut</b> wartet.»</li></ul>
+
+<h3>Die Objekte</h3>
+<ul><li>Das ganze Satzglied gehört dazu, auch Beifügungen: «Ich lese <b>das spannende Buch meines Bruders</b>.» (ganzes Akkusativobjekt)</li>
+<li>Viele Verben haben zwei Objekte: «Die Kinder zeigen <b>dem Lehrer</b> (Dativ) <b>ihre Zeichnungen</b> (Akkusativ).»</li>
+<li>Genitivobjekte sind selten: gedenken, bedürfen, beschuldigen («Man beschuldigte den Mann <b>des Diebstahls</b>.»)</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">«Am Morgen schenkt die Grossmutter ihrem Enkel ein neues Velo.»<br>
+Subjekt: die Grossmutter. Dativobjekt: ihrem Enkel. Akkusativobjekt: ein neues Velo.<br>
+«Am Morgen» ist eine Zeitangabe (Wann?), kein Objekt.</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Zeitangaben wie «den ganzen Tag» stehen zwar im Akkusativ, sind aber keine Objekte (Frage: Wie lange?).</li>
+<li>Wortgruppen mit Präposition («mit dem Velo», «auf den Bus») sind keine Akkusativ-, Dativ- oder Genitivobjekte.</li>
+<li>«des Vaters» in «das Auto des Vaters» ist eine Beifügung, kein Objekt.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Bestimme Subjekt und Objekte mit Fall.</p>
+<ol class="check">
+<li>«Gestern besuchte uns unser Onkel.»</li>
+<li>«Der Hund des Nachbarn gehört meiner Tante.»</li>
+<li>«Wir warten seit einer Stunde auf den Bus.»</li>
+<li>«Die Kinder zeigen dem Lehrer ihre Zeichnungen.»</li>
+<li>«Man beschuldigte den Mann des Diebstahls.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Subjekt: unser Onkel; Akkusativobjekt: uns</li>
+<li>Subjekt: der Hund des Nachbarn; Dativobjekt: meiner Tante</li>
+<li>Subjekt: wir; kein Objekt im Akkusativ, Dativ oder Genitiv (beide Gruppen haben eine Präposition)</li>
+<li>Subjekt: die Kinder; Dativobjekt: dem Lehrer; Akkusativobjekt: ihre Zeichnungen</li>
+<li>Subjekt: man; Akkusativobjekt: den Mann; Genitivobjekt: des Diebstahls</li></ol></details>`,
 
 D8: R`<table><tr><th>Art</th><th>Konjunktionen</th><th>Stellung der Personalform</th></tr>
 <tr><td>Hauptsatz + Hauptsatz</td><td>und, oder, aber, denn, sondern</td><td>bleibt an 2. Stelle</td></tr>
