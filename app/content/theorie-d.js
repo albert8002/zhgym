@@ -686,14 +686,53 @@ Personalformen: kamen (an), war, wollten → 3 Teilsätze.<br>
 
 D15: R`<h3>das oder dass?</h3>
 <div class="merke"><b>Ersatzprobe:</b> Kannst du «dieses», «jenes» oder «welches» einsetzen, schreibst du <b>das</b> (Artikel oder Pronomen). Sonst <b>dass</b> (Konjunktion, leitet einen Nebensatz ein).</div>
-<div class="bsp">«Das Buch, das (welches) ich lese, ist spannend.» – «Ich hoffe, dass du kommst.»</div>
+<div class="bsp">«Das Buch, das (welches) ich lese, ist spannend.» – «Ich hoffe, dass du kommst.» – «Das (dieses) stimmt.»</div>
+<p>«dass» steht oft nach Verben wie sagen, glauben, hoffen, wissen, denken: «Ich weiss, dass …»</p>
+
 <h3>Gross oder klein?</h3><ul>
 <li>Nomen und Satzanfänge schreibt man gross.</li>
 <li>Verben und Adjektive werden zu Nomen (Nominalisierung), wenn ein Signal davorsteht: Artikel (das Lesen), Präposition mit Artikel (beim Lesen, zum Schwimmen), Mengenwort (etwas Schönes, nichts Neues, alles Gute, viel Spannendes), Possessivpronomen (mein Lachen).</li>
 <li>Tageszeiten: heute Abend, gestern Morgen, am Montagabend (gross); abends, montags (klein).</li>
-<li>Höflichkeitsform gross: Sie, Ihnen, Ihr.</li></ul>
-<div class="falle"><b>Falle:</b> «am besten», «am schnellsten» (Superlativ) schreibt man klein. In der Schweiz schreibt man <b>ss statt ß</b>: Strasse, gross, Fuss, heiss.</div>
-<h3>Eigene Fehlerwörter</h3><p>Schreibe Wörter, die du oft falsch schreibst, in die Notizen unten. Übe sie jede Woche.</p>`,
+<li>Höflichkeitsform gross: Sie, Ihnen, Ihr.</li>
+<li>Von Orten abgeleitete Wörter auf -er gross: die Zürcher Altstadt, der Schweizer Käse. Auf -isch klein: schweizerische Gerichte.</li></ul>
+
+<h3>Wörter richtig schreiben: Proben</h3>
+<ul><li><b>Verlängern</b> hilft am Wortende: Hund → Hunde (d), Wald → Wälder (d), Berg → Berge (g), Kalb → Kälber (b).</li>
+<li><b>Ableiten</b> hilft bei ä und äu: Bäume (Baum), Häuser (Haus), Kälte (kalt), Gebäude (bauen). Sonst e oder eu.</li>
+<li><b>Kurzer Vokal</b> → oft doppelter Konsonant, ck oder tz: Ball, Kamm, Ecke, Katze. <b>Langer Vokal</b> → einfacher Konsonant, oft mit ie oder h: Tal, Liebe, fahren.</li>
+<li><b>ss statt ß</b> in der Schweiz: Strasse, gross, Fuss, heiss.</li></ul>
+
+<h3>Häufige Fehlerwörter</h3>
+<table><tr><th>Wort</th><th>Bedeutung</th></tr>
+<tr><td>seit / seid</td><td>seit gestern (Zeit) / ihr seid (Verb sein)</td></tr>
+<tr><td>wieder / wider</td><td>nochmals / gegen (widersprechen)</td></tr>
+<tr><td>tot / der Tod</td><td>Adjektiv / Nomen</td></tr>
+<tr><td>nämlich, endlich, vielleicht</td><td>nämlich ohne h, endlich mit d, vielleicht mit ll</td></tr></table>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>«am besten», «am schnellsten» (Superlativ) schreibt man klein.</li>
+<li>In der Schweiz schreibt man <b>ss statt ß</b>: Strasse, gross, Fuss, heiss.</li>
+<li>Nach einem Mengenwort gross: «etwas Neues», «nichts Besonderes». Folgt noch ein Nomen, bleibt das Adjektiv klein: «viel spannender Stoff».</li></ul></div>
+
+<h3>Eigene Fehlerwörter</h3><p>Schreibe Wörter, die du oft falsch schreibst, in die Notizen unten. Übe sie jede Woche.</p>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>das oder dass? «Ich glaube, ___ es morgen regnet.»</li>
+<li>das oder dass? «Das Haus, ___ dort steht, ist alt.»</li>
+<li>Gross oder klein? «Wir wünschen dir alles (g)ute.»</li>
+<li>Gross oder klein? «Wir treffen uns heute (a)bend.»</li>
+<li>Gross oder klein? «Er läuft am (s)chnellsten.»</li>
+<li>seit oder seid? «Ihr ___ zu spät.»</li>
+<li>d oder t? «Wir spazieren durch den Wal_.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>dass</li>
+<li>das (welches)</li>
+<li>alles Gute</li>
+<li>heute Abend</li>
+<li>am schnellsten</li>
+<li>seid</li>
+<li>Wald (Wälder)</li></ol></details>`,
 
 D16: R`<p>Du entscheidest für jede Aussage: <b>richtig</b>, <b>falsch</b> oder <b>keine Angabe möglich</b>.</p>
 <div class="merke"><b>Merke:</b> Es zählt nur, was im Text steht, nicht dein Wissen und nicht, was wahrscheinlich ist. Falsch heisst: Der Text sagt das Gegenteil. Keine Angabe heisst: Der Text sagt dazu nichts.</div>
