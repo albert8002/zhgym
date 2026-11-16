@@ -56,14 +56,58 @@ D1: R`<p>Im Kanton Zürich gibt es <b>5 Wortarten</b>. Die Partikeln teilt man n
 <li>viel – mehr – am meisten; gut – besser – am besten</li>
 <li>Konjunktion (verbindet zwei Sätze)</li></ol></details>`,
 
-D2: R`<p>Ein Verb kann aus mehreren Teilen bestehen.</p>
+D2: R`<p>Ein Verb kann aus mehreren Teilen bestehen. Jeder Satz hat genau eine <b>Personalform</b>.</p>
 <table><tr><th>Teil</th><th>Erkennen</th><th>Beispiel</th></tr>
 <tr><td>Personalform</td><td>ändert sich mit der Person (ich, du, er …)</td><td>Sie <b>hat</b> gelacht.</td></tr>
 <tr><td>Infinitiv</td><td>Grundform, endet auf -en oder -n</td><td>Ich will <b>schwimmen</b>.</td></tr>
 <tr><td>Partizip II</td><td>meist mit ge-, endet auf -t oder -en</td><td>Er ist <b>gegangen</b>.</td></tr>
 <tr><td>Verbzusatz</td><td>abtrennbarer Teil, steht am Satzende</td><td>Sie ruft mich <b>an</b>. (anrufen)</td></tr></table>
+
+<h3>Personalform finden</h3>
+<ul><li><b>Probe:</b> Setze ein anderes Subjekt ein (ich → wir). Das Verbteil, das sich ändert, ist die Personalform: «Ich habe gelacht» → «Wir haben gelacht».</li>
+<li>Im Hauptsatz steht sie an 2. Stelle, in der Frage und im Befehl an 1. Stelle, im Nebensatz am Ende.</li>
+<li>Oft ist sie ein Hilfsverb (haben, sein, werden) oder ein Modalverb (können, müssen, wollen, sollen, dürfen, mögen).</li></ul>
 <div class="merke"><b>Merke:</b> Im Hauptsatz steht die Personalform an 2. Stelle. Die anderen Teile stehen am Ende. Sie bilden eine Klammer: «Ich <b>habe</b> das Buch gestern <b>gelesen</b>.»</div>
-<div class="falle"><b>Falle:</b> Nicht jedes Partizip II hat ge-: «verloren», «besucht», «telefoniert». Im Nebensatz steht die Personalform am Ende: «…, weil sie mich <b>angerufen hat</b>.»</div>`,
+
+<h3>Ein Verb, verschiedene Sätze</h3>
+<table><tr><th>Satz</th><th>Personalform</th><th>andere Teile</th></tr>
+<tr><td>Lea <b>ruft</b> ihre Freundin <b>an</b>.</td><td>ruft</td><td>an (Verbzusatz)</td></tr>
+<tr><td>Lea <b>hat</b> ihre Freundin <b>angerufen</b>.</td><td>hat</td><td>angerufen (Partizip II)</td></tr>
+<tr><td>Lea <b>wird</b> ihre Freundin <b>anrufen</b>.</td><td>wird</td><td>anrufen (Infinitiv)</td></tr>
+<tr><td>…, weil Lea ihre Freundin <b>anrufen wollte</b>.</td><td>wollte</td><td>anrufen (Infinitiv)</td></tr>
+<tr><td>Das Haus <b>ist</b> renoviert <b>worden</b>.</td><td>ist</td><td>renoviert, worden (beide Partizip II)</td></tr></table>
+
+<h3>Verbzusatz erkennen</h3>
+<p>Ein Verbzusatz trennt sich im Präsens und Präteritum vom Verb und wandert ans Satzende: anrufen → «Sie ruft an», aufstehen → «Er stand auf», mitnehmen → «Wir nehmen es mit». Untrennbare Vorsilben bleiben dran: verstehen → «Ich verstehe», besuchen → «Sie besucht».</p>
+
+<h3>Partizip II bilden</h3>
+<ul><li>schwache Verben: ge- … -t (spielen → gespielt)</li>
+<li>starke Verben: ge- … -en (singen → gesungen)</li>
+<li>ohne ge-: Verben mit be-, ver-, er-, ent-, zer- und Verben auf -ieren (besucht, verloren, telefoniert)</li>
+<li>mit Verbzusatz steht ge- in der Mitte: an<b>ge</b>rufen, auf<b>ge</b>standen, mit<b>ge</b>bracht</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Im Text sind Verbteile zu markieren oder in eine Tabelle einzutragen. Suche zuerst die Personalform, dann alle anderen Teile desselben Verbs. Lies dafür den Satz bis zum Ende: Der Verbzusatz steht oft ganz hinten.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Nicht jedes Partizip II hat ge-: «verloren», «besucht», «telefoniert».</li>
+<li>Im Nebensatz steht die Personalform am Ende: «…, weil sie mich <b>angerufen hat</b>.»</li>
+<li>Den Verbzusatz nicht übersehen: «Der Zug fährt um acht Uhr <b>ab</b>.»</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Bestimme die Verbteile.</p>
+<ol class="check">
+<li>«Der Zug fährt um acht Uhr ab.»</li>
+<li>«Wir haben den Film schon gesehen.»</li>
+<li>«Kannst du mir helfen?»</li>
+<li>«…, obwohl sie früh aufgestanden war.»</li>
+<li>Bilde das Partizip II von besuchen, telefonieren und mitbringen.</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>fährt (Personalform), ab (Verbzusatz)</li>
+<li>haben (Personalform), gesehen (Partizip II)</li>
+<li>Kannst (Personalform), helfen (Infinitiv)</li>
+<li>war (Personalform), aufgestanden (Partizip II)</li>
+<li>besucht, telefoniert, mitgebracht</li></ol></details>`,
 
 D3: R`<table><tr><th>Zeitform</th><th>schwaches Verb</th><th>starkes Verb</th></tr>
 <tr><td>Präsens</td><td>ich spiele</td><td>ich gehe</td></tr>
