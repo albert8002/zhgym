@@ -1358,8 +1358,50 @@ Ist ein Schritt falsch, zählen die richtigen trotzdem.</div>
 <li>Nein, die Variable muss genau wie vorgegeben sein.</li>
 <li>Ins Prüfungsheft. Es gibt kein Notizpapier.</li></ol></details>`,
 
-M25: R`<p>Aufgabe 1 besteht aus 9 Kurzaufgaben (2026: 10 Punkte). Plane höchstens <b>24 Minuten</b> ein: 90 Minuten für 37 Punkte sind rund 2.4 Minuten pro Punkt.</p>
+M25: R`<p>Aufgabe 1 besteht aus 9 Kurzaufgaben (2026: 10 Punkte). Plane höchstens <b>24 Minuten</b> ein: 90 Minuten für 37 Punkte sind rund \(2.4\) Minuten pro Punkt.</p>
 <div class="merke"><b>Strategie:</b> Zuerst alle Kurzaufgaben lesen. Die schnellen zuerst lösen. Bei einer Aufgabe nicht festbeissen: nach 3 Minuten weiter und später zurückkommen.</div>
-<p>Typische Kurzaufgaben: Term vereinfachen, Potenz berechnen, Wert einsetzen, Formel umstellen, kgV-Sachaufgabe, Einheit umrechnen, Winkel oder Fläche, Pyramide, kleine Konstruktion.</p>
-<div class="falle"><b>Falle:</b> Hier zählt nur das Resultat. Darum lohnt sich eine kurze Kontrolle (Probe, Überschlag) mehr als ein schöner Lösungsweg.</div>`
+
+<h3>Zeitplan für die ganze Prüfung</h3>
+<p>Mit \(2.4\) Minuten pro Punkt kannst du jede Aufgabe einteilen: Eine Aufgabe mit 4 Punkten darf etwa 10 Minuten dauern. Schreibe dir die Zeiten zu Beginn neben die Aufgaben. So merkst du früh, wenn du zu langsam bist, und hast am Ende Zeit für die Kontrolle.</p>
+
+<h3>Zwei Durchgänge</h3>
+<ol><li><b>Erster Durchgang:</b> alles lösen, was sofort klar ist. Unsichere Aufgaben am Rand markieren.</li>
+<li><b>Zweiter Durchgang:</b> die markierten Aufgaben. Jetzt ohne Druck, weil die sicheren Punkte schon im Heft sind.</li></ol>
+
+<h3>Typische Kurzaufgaben und die schnelle Kontrolle</h3>
+<table><tr><th>Kurzaufgabe</th><th>Kontrolle</th></tr>
+<tr><td>Term vereinfachen (M4)</td><td>Eine Zahl für die Variable einsetzen, vorher und nachher gleich?</td></tr>
+<tr><td>Potenz berechnen (M2)</td><td>Hochzahlen nachrechnen, Vorzeichen prüfen</td></tr>
+<tr><td>Formel umstellen (M7)</td><td>Mit einfachen Zahlen vorwärts und rückwärts rechnen</td></tr>
+<tr><td>kgV-Sachaufgabe (M3)</td><td>Ist das Resultat durch beide Zahlen teilbar?</td></tr>
+<tr><td>Einheit umrechnen (M10)</td><td>Kleinere Einheit → grössere Zahl?</td></tr>
+<tr><td>Winkel oder Fläche (M16, M17)</td><td>Winkelsumme, Einheit cm²</td></tr>
+<tr><td>Pyramide (M22)</td><td>\(\frac{1}{3}\) nicht vergessen</td></tr>
+<tr><td>kleine Konstruktion (M19)</td><td>Bögen sichtbar, Punkte beschriftet</td></tr></table>
+
+<h3>So übst du</h3>
+<ul><li>Stoppe die Zeit. Ziel: 9 Kurzaufgaben in 24 Minuten, später in 20.</li>
+<li>Nutze dafür den Blitz und die Prüfungssimulation in dieser App.</li>
+<li>Notiere nach jedem Durchgang, bei welcher Art du zu lange gebraucht hast, und übe dieses Thema gezielt.</li></ul>
+
+<div class="falle"><b>Falle:</b> Hier zählt nur das Resultat. Darum lohnt sich eine kurze Kontrolle (Probe, Überschlag) mehr als ein schöner Lösungsweg.</div>
+
+<h3>Selbst prüfen: Mini-Aufgabe 1</h3>
+<p>Ziel: höchstens 12 Minuten.</p>
+<ol class="check">
+<li>Vereinfache: \(3(2a - 5) - 4(a - 3)\)</li>
+<li>Berechne: \(2^5 \cdot 2^{-3}\)</li>
+<li>Löse nach \(h\) auf: \(V = \frac{G \cdot h}{3}\)</li>
+<li>Zwei Leuchttürme blinken alle 8 und alle 12 Sekunden, jetzt gerade gleichzeitig. Nach wie vielen Sekunden blinken sie wieder gleichzeitig?</li>
+<li>\(2.5\) m² in cm²</li>
+<li>Gleichschenkliges Dreieck mit 36° an der Spitze: Wie gross sind die Basiswinkel?</li>
+<li>Quadratische Pyramide mit Grundkante 6 cm und Höhe 5 cm: Volumen?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(6a - 15 - 4a + 12 = 2a - 3\)</li>
+<li>\(2^2 = 4\)</li>
+<li>\(h = \frac{3V}{G}\)</li>
+<li>kgV(8, 12) = 24 Sekunden</li>
+<li>25 000 cm²</li>
+<li>je \((180° - 36°) : 2 = 72°\)</li>
+<li>\(\frac{36 \cdot 5}{3} = 60\) cm³</li></ol></details>`
 };
