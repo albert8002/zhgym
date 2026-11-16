@@ -904,8 +904,37 @@ D20: R`<p>Jeder Aufsatzauftrag hat mehrere Teilaufträge. Markiere jedes Verb un
 <tr><td>erörtere</td><td>Vor- und Nachteile abwägen</td></tr>
 <tr><td>begründe</td><td>Gründe nennen (weil, denn, nämlich)</td></tr>
 <tr><td>nimm Stellung</td><td>eigene Meinung sagen und begründen</td></tr>
-<tr><td>erzähle, schildere</td><td>eine Geschichte oder ein Erlebnis anschaulich wiedergeben (Präteritum)</td></tr></table>
-<div class="falle"><b>Falle:</b> Fehlt ein Teilauftrag, gibt es Abzug beim Inhalt. Jeder Teilauftrag bekommt mindestens 1 Absatz.</div>`,
+<tr><td>erzähle, schildere</td><td>eine Geschichte oder ein Erlebnis anschaulich wiedergeben (Präteritum)</td></tr>
+<tr><td>vergleiche</td><td>Gemeinsamkeiten und Unterschiede zeigen</td></tr>
+<tr><td>fasse zusammen</td><td>das Wichtigste kurz und mit eigenen Worten wiedergeben (Präsens)</td></tr></table>
+
+<h3>So zerlegst du den Auftrag</h3>
+<ol><li>Den ganzen Auftrag zweimal lesen.</li>
+<li>Jedes Auftragsverb markieren und die Teile nummerieren.</li>
+<li>Vorgaben unterstreichen: Textsorte, Perspektive (ich oder er/sie), Zeitform, an wen der Text gerichtet ist, Titel, Gegenstände, die vorkommen müssen.</li>
+<li>Für jeden Teil mindestens 1 Absatz einplanen.</li>
+<li>Am Schluss abhaken: Ist jeder Teil erledigt?</li></ol>
+
+<div class="bsp"><b>Auftrag:</b> «Erzähle von einer Situation, in der dir jemand geholfen hat. Erkläre, warum diese Hilfe für dich wichtig war, und nimm Stellung zur Frage, ob man öfter um Hilfe bitten sollte.»<br>
+① erzähle → Erlebnis (Präteritum)<br>
+② erkläre → warum die Hilfe wichtig war<br>
+③ nimm Stellung → eigene Meinung zur Frage, mit Begründung</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Fehlt ein Teilauftrag, gibt es Abzug beim Inhalt.</li>
+<li>Jeder Teilauftrag bekommt mindestens 1 Absatz.</li>
+<li>Vorgaben übersehen (zum Beispiel «aus der Sicht des Hundes» oder «in der Ich-Form») kostet Punkte, auch wenn der Text sonst gut ist.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>«Stell dir vor, deine Klasse darf einen Ausflug planen. Beschreibe dein Wunschziel, begründe deine Wahl und erörtere, ob Klassenausflüge während der Schulzeit stattfinden sollten.»</p>
+<ol class="check">
+<li>Wie viele Teilaufträge sind es? Welche?</li>
+<li>In welcher Zeitform beschreibst du das Wunschziel?</li>
+<li>Was braucht der Teil mit «erörtere»?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>3: Wunschziel beschreiben, Wahl begründen, Frage erörtern</li>
+<li>im Präsens</li>
+<li>Argumente dafür und dagegen und am Schluss eine begründete Meinung</li></ol></details>`,
 
 D21: R`<p>Nimm dir 10 Minuten für einen Stichwortplan. Pro Absatz 1 Zeile.</p>
 <div class="bsp"><b>Beispiel Erörterung «Handy in der Schule»:</b><br>1 Einleitung: Begriff klären, Frage stellen<br>2 Contra: Ablenkung (Beispiel: Nachrichten im Unterricht)<br>3 Contra: Streit in Klassenchats<br>4 Pro: Notfälle, Eltern erreichen<br>5 Pro: Lernen mit Apps (stärkstes Argument)<br>6 Schluss: Meinung mit Begründung, Bezug zum Hauptteil</div>
