@@ -1189,7 +1189,45 @@ D27: R`<ul><li>Satzanfänge wechseln: nicht dreimal «Dann». Besser: Kurz darau
 <li>Treffende Verben statt machen, haben, sein, geben: «Sie <b>öffnete</b> die Tür» statt «Sie machte die Tür auf».</li>
 <li>Keine Wiederholungen: Pronomen oder Synonyme verwenden.</li>
 <li>Standardsprache: keine Umgangssprache (mega, voll), kein Dialekt.</li></ul>
-<div class="merke"><b>Merke:</b> Pronomen müssen eindeutig sein: Es muss klar sein, wer mit «er» oder «sie» gemeint ist.</div>`,
+<div class="merke"><b>Merke:</b> Pronomen müssen eindeutig sein: Es muss klar sein, wer mit «er» oder «sie» gemeint ist.</div>
+
+<h3>Vorher und nachher</h3>
+<table><tr><th>schwach</th><th>besser</th></tr>
+<tr><td>Dann ging ich nach Hause. Dann ass ich. Dann schlief ich ein.</td><td>Nach der Schule ging ich nach Hause. Kaum hatte ich gegessen, fielen mir die Augen zu.</td></tr>
+<tr><td>Wir machten eine Pause.</td><td>Wir legten eine Pause ein.</td></tr>
+<tr><td>Sie machte Fotos.</td><td>Sie fotografierte.</td></tr>
+<tr><td>Es gibt viele Gründe dafür.</td><td>Viele Gründe sprechen dafür.</td></tr>
+<tr><td>Der Ausflug war schön.</td><td>Der Ausflug war sonnig und lustig.</td></tr>
+<tr><td>Das war mega spannend.</td><td>Das war sehr spannend.</td></tr></table>
+
+<h3>Satzbau</h3>
+<ul><li>Kurze und lange Sätze mischen. Ein kurzer Satz nach mehreren langen wirkt stark: «Dann war es still.»</li>
+<li>Bandwurmsätze teilen: «Wir gingen los und es regnete und wir hatten keinen Schirm und wurden nass» → «Wir gingen los. Weil es regnete und wir keinen Schirm hatten, wurden wir nass.»</li></ul>
+
+<h3>Verbindungswörter</h3>
+<ul><li><b>In der Erzählung</b> (Zeit): kurz darauf, im selben Moment, inzwischen, schliesslich, als</li>
+<li><b>In der Erörterung</b> (Gedanken): deshalb, jedoch, ausserdem, zum Beispiel, einerseits – andererseits</li></ul>
+
+<h3>Eindeutige Pronomen</h3>
+<div class="bsp">Unklar: «Lea und Mia stritten. Sie war wütend.» Wer ist wütend?<br>
+Klar: «Lea und Mia stritten. Mia war wütend.»</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Synonyme um jeden Preis: Ein falsches Wort ist schlechter als eine Wiederholung.</li>
+<li>Zu viele Adjektive machen den Text schwer. Lieber ein treffendes Verb.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<p>Verbessere die Sätze.</p>
+<ol class="check">
+<li>«Er machte das Fenster zu.»</li>
+<li>«Dann kam der Bus. Dann stiegen wir ein. Dann fuhren wir los.»</li>
+<li>«Der Film war voll gut.»</li>
+<li>«Tim und Jan spielten Fussball. Er schoss ein Tor.»</li></ol>
+<details class="lsg"><summary>Mögliche Lösungen</summary><ol>
+<li>«Er schloss das Fenster.»</li>
+<li>«Endlich kam der Bus. Wir stiegen ein, und kurz darauf fuhren wir los.»</li>
+<li>«Der Film war sehr gut.» oder «Der Film war spannend.»</li>
+<li>«Tim und Jan spielten Fussball. Jan schoss ein Tor.»</li></ol></details>`,
 
 D28: R`<p>Plane 15 Minuten zum Überarbeiten ein. Gehe die Checkliste durch:</p>
 <ul><li>Jeder Teilauftrag erfüllt?</li><li>Einleitung, Hauptteil, Schluss mit Absätzen erkennbar?</li><li>Erörterung: beide Seiten und begründete Meinung am Schluss?</li><li>Erzählung: Vorgabe zentral, Höhepunkt, passender Schluss?</li><li>Zeitform durchgehend gleich?</li><li>Komma vor jedem Nebensatz?</li><li>das/dass, gross/klein, ss geprüft?</li><li>Wiederholungen ersetzt?</li></ul>
