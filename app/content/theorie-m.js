@@ -1206,15 +1206,62 @@ M21: R`<div class="merke"><b>Kurz:</b> Prisma: zwei gleiche, parallele Grundflä
 <li>\(2 + 3 + 1 + 1 + 2 + 0 = 9\)</li>
 <li>Nein, höchstens 4.</li></ol></details>`,
 
-M22: R`<table><tr><th>Körper</th><th>Volumen</th><th>Oberfläche</th></tr>
+M22: R`<div class="merke"><b>Kurz:</b> Prisma: \(V = G \cdot h\). Pyramide: \(V = \frac{G \cdot h}{3}\). Oberfläche = Summe aller Flächen (im Netz alles zusammenzählen). 1 l = 1 dm³ = 1000 cm³.</div>
+
+<h3>Formeln</h3>
+<table><tr><th>Körper</th><th>Volumen</th><th>Oberfläche</th></tr>
 <tr><td>Würfel</td><td>\(V = a^3\)</td><td>\(O = 6a^2\)</td></tr>
 <tr><td>Quader</td><td>\(V = a \cdot b \cdot c\)</td><td>\(O = 2(ab + ac + bc)\)</td></tr>
 <tr><td>gerades Prisma</td><td>\(V = G \cdot h\)</td><td>\(O = 2G + \text{Umfang der Grundfläche} \cdot h\)</td></tr>
 <tr><td>Pyramide</td><td>\(V = \frac{G \cdot h}{3}\)</td><td>\(O = G + \text{alle Seitenflächen}\)</td></tr></table>
-<div class="bsp">Quader 3 cm × 4 cm × 5 cm: \(V = 60\) cm³, \(O = 2(12 + 15 + 20) = 94\) cm².</div>
-<div class="bsp">Quadratische Pyramide, \(a = 6\) cm, \(h = 4\) cm: \(V = \frac{36 \cdot 4}{3} = 48\) cm³. Seitenhöhe \(h_s = \sqrt{4^2 + 3^2} = 5\) cm. \(O = 36 + 4 \cdot \frac{6 \cdot 5}{2} = 96\) cm².</div>
-<div class="merke"><b>Füllhöhe:</b> \(h = V : G\). Merke: 1 l = 1 dm³.</div>
-<div class="falle"><b>Falle:</b> Bei der Pyramide nicht \(\frac{1}{3}\) vergessen. Die Höhe \(h\) (Spitze senkrecht zur Grundfläche) ist nicht die Seitenhöhe \(h_s\). Zylinder sind an der ZAP2 nicht verlangt.</div>`,
+<p>\(G\) ist die Grundfläche, \(h\) die Höhe des Körpers (senkrecht zur Grundfläche).</p>
+
+<h3>Beispiele</h3>
+<div class="bsp"><b>Quader</b> 3 cm × 4 cm × 5 cm: \(V = 60\) cm³, \(O = 2(12 + 15 + 20) = 94\) cm².</div>
+<div class="bsp"><b>Quadratische Pyramide</b>, \(a = 6\) cm, \(h = 4\) cm: \(V = \frac{36 \cdot 4}{3} = 48\) cm³.<br>
+Seitenhöhe \(h_s = \sqrt{4^2 + 3^2} = 5\) cm. \(O = 36 + 4 \cdot \frac{6 \cdot 5}{2} = 96\) cm².</div>
+<div class="bsp"><b>Zelt als Dreiecksprisma:</b> Das Dreieck vorne hat die Breite \(2.4\) m und die Höhe \(1.6\) m, das Zelt ist 3 m lang.<br>
+\(G = \frac{2.4 \cdot 1.6}{2} = 1.92\) m²; \(V = 1.92 \cdot 3 = 5.76\) m³<br>
+Schräge Seite: \(\sqrt{1.2^2 + 1.6^2} = \sqrt{4} = 2\) m. Stoff ohne Boden: \(2 \cdot 1.92 + 2 \cdot 2 \cdot 3 = 15.84\) m²</div>
+
+<h3>Rückwärts rechnen</h3>
+<ul><li><b>Pyramidenhöhe aus dem Volumen:</b> \(h = \frac{3V}{G}\). \(V = 96\) cm³, Grundkante 6 cm: \(h = \frac{3 \cdot 96}{36} = 8\) cm.</li>
+<li><b>Füllhöhe im Quader:</b> \(h = V : G\). 27 l Wasser in einem Aquarium mit Boden 60 cm × 30 cm: \(27\,000 : 1800 = 15\) cm.</li>
+<li><b>Stein im Wasser:</b> Der Wasserstand steigt um Volumen des Steins : Grundfläche. Stein mit 900 cm³ im selben Aquarium: \(900 : 1800 = 0.5\) cm.</li></ul>
+
+<h3>Vergrössern</h3>
+<p>Werden alle Kanten mit \(k\) multipliziert, wird die Oberfläche \(k^2\)-mal und das Volumen \(k^3\)-mal so gross. Doppelte Kanten: 4-fache Oberfläche, 8-faches Volumen.</p>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Quadratische Pyramide mit Grundkante 8 cm und Seitenkante 9 cm. Berechne Höhe und Volumen.<br>
+Halbe Diagonale der Grundfläche: \(\frac{8\sqrt{2}}{2} = 4\sqrt{2}\), ihr Quadrat ist 32.<br>
+Höhe: \(h = \sqrt{9^2 - 32} = \sqrt{49} = 7\) cm<br>
+Volumen: \(V = \frac{64 \cdot 7}{3} = \frac{448}{3} \approx 149.3\) cm³</div>
+<p>Skizziere das rechtwinklige Dreieck im Körper (Höhe, halbe Diagonale, Seitenkante) oder (Höhe, halbe Grundkante, Seitenhöhe).</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Bei der Pyramide nicht \(\frac{1}{3}\) vergessen.</li>
+<li>Die Höhe \(h\) (Spitze senkrecht zur Grundfläche), die Seitenhöhe \(h_s\) (Höhe eines Seitendreiecks) und die Seitenkante sind drei verschiedene Längen.</li>
+<li>Volumen in cm³, Oberfläche in cm². Liter erst am Schluss umrechnen.</li>
+<li>Zylinder sind an der ZAP für das Kurzgymnasium nicht verlangt.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Würfel mit \(a = 5\) cm: Volumen und Oberfläche?</li>
+<li>Quader 2 cm × 5 cm × 8 cm: Volumen und Oberfläche?</li>
+<li>Prisma mit einem Dreieck (\(g = 6\) cm, \(h = 4\) cm) als Grundfläche, 10 cm lang: Volumen?</li>
+<li>Quadratische Pyramide mit \(a = 10\) cm und \(h = 9\) cm: Volumen?</li>
+<li>Eine Pyramide hat \(V = 50\) cm³ und \(G = 25\) cm². Wie hoch ist sie?</li>
+<li>30 l Wasser in einem Aquarium mit Boden 50 cm × 40 cm. Wie hoch steht das Wasser?</li>
+<li>Alle Kanten eines Würfels werden verdreifacht. Wie ändert sich das Volumen?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(V = 125\) cm³, \(O = 150\) cm²</li>
+<li>\(V = 80\) cm³, \(O = 2(10 + 16 + 40) = 132\) cm²</li>
+<li>\(G = 12\) cm², \(V = 120\) cm³</li>
+<li>\(V = \frac{100 \cdot 9}{3} = 300\) cm³</li>
+<li>\(h = \frac{3 \cdot 50}{25} = 6\) cm</li>
+<li>\(30\,000 : 2000 = 15\) cm</li>
+<li>27-mal so gross</li></ol></details>`,
 
 M23: R`<div class="merke"><b>Erlaubt ist genau 1 dieser 4 Modelle:</b> TI-30 ECO RS, TI-30X IIS, CASIO FX-82 SOLAR II, SHARP EL-501 T. Andere Modelle werden eingezogen, auch ähnliche mit Batterie (zum Beispiel TI-30X IIB).</div>
 <ul><li>Brüche: Zähler und Nenner in Klammern setzen: \((3 + 5) : (2 \cdot 4)\).</li>
