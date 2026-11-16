@@ -1,16 +1,70 @@
 // Theorie Mathematik (M1–M25). Formeln mit \( … \) werden mit KaTeX gesetzt.
 const R = String.raw;
 export const THEORY_M = {
-M1: R`<div class="merke"><b>Reihenfolge:</b> 1. Klammern, 2. Potenzen, 3. Punkt (· und :), 4. Strich (+ und −). Bei gleicher Stufe von links nach rechts.</div>
+M1: R`<div class="merke"><b>Kurz:</b> 1. Klammern, 2. Potenzen, 3. Punkt (· und :), 4. Strich (+ und −). Bei gleicher Stufe rechnest du von links nach rechts. Brüche: plus und minus nur mit gleichem Nenner, mal und geteilt direkt.</div>
+
+<h3>Reihenfolge der Rechenarten</h3>
 <div class="bsp">\(20 - 3 \cdot (2 + 4) = 20 - 3 \cdot 6 = 20 - 18 = 2\)</div>
-<p><b>Vorzeichen:</b> \((-) \cdot (-) = (+)\), \((-) \cdot (+) = (-)\). Ebenso beim Teilen.</p>
-<h3>Brüche</h3><ul>
-<li>Kürzen: Zähler und Nenner durch dieselbe Zahl teilen: \(\frac{12}{18} = \frac{2}{3}\)</li>
-<li>Addieren und subtrahieren: zuerst gleichnamig machen (kgV der Nenner): \(\frac{2}{3} + \frac{3}{4} = \frac{8}{12} + \frac{9}{12} = \frac{17}{12}\)</li>
-<li>Multiplizieren: Zähler mal Zähler, Nenner mal Nenner: \(\frac{2}{3} \cdot \frac{5}{7} = \frac{10}{21}\)</li>
-<li>Dividieren: mit dem Kehrwert multiplizieren: \(\frac{3}{4} : \frac{9}{8} = \frac{3}{4} \cdot \frac{8}{9} = \frac{24}{36} = \frac{2}{3}\)</li>
-<li>Gemischte Zahl: \(2\tfrac{1}{3} = \frac{7}{3}\)</li></ul>
-<div class="falle"><b>Falle:</b> \(-3^2 = -9\), aber \((-3)^2 = 9\). Vor dem Rechnen gemischte Zahlen in Brüche umwandeln.</div>`,
+<ul><li><b>Gleiche Stufe:</b> von links nach rechts. \(24 : 4 \cdot 2 = 6 \cdot 2 = 12\) (nicht \(24 : 8 = 3\)).</li>
+<li><b>Klammern in Klammern:</b> von innen nach aussen. \(2 \cdot [40 - (3 + 2)^2] = 2 \cdot [40 - 25] = 2 \cdot 15 = 30\)</li>
+<li><b>Bruchstrich</b> wirkt wie eine Klammer um Zähler und Nenner: \(\frac{6 + 9}{3} = \frac{15}{3} = 5\)</li></ul>
+
+<h3>Vorzeichen</h3>
+<table><tr><th>Rechnung</th><th>Regel</th><th>Beispiel</th></tr>
+<tr><td>mal, geteilt</td><td>gleiche Vorzeichen → plus, verschiedene → minus</td><td>\(-4 \cdot (-5) = 20\); \(36 : (-4) = -9\)</td></tr>
+<tr><td>minus eine negative Zahl</td><td>wird zu plus</td><td>\(7 - (-3) = 7 + 3 = 10\)</td></tr>
+<tr><td>Potenz einer negativen Zahl</td><td>gerade Hochzahl → plus, ungerade → minus</td><td>\((-2)^4 = 16\); \((-2)^3 = -8\)</td></tr></table>
+<p><b>Minus vor einer Klammer:</b> Beim Weglassen der Klammer drehen alle Vorzeichen in der Klammer: \(10 - (4 - 7) = 10 - 4 + 7 = 13\).</p>
+
+<h3>Brüche: Begriffe</h3>
+<p>Im Bruch \(\frac{3}{4}\) ist 3 der <b>Zähler</b> und 4 der <b>Nenner</b>. Der Bruchstrich bedeutet «geteilt durch»: \(\frac{3}{4} = 3 : 4 = 0.75\).</p>
+<ul><li><b>Erweitern:</b> Zähler und Nenner mit derselben Zahl multiplizieren: \(\frac{2}{3} = \frac{8}{12}\). Der Wert bleibt gleich.</li>
+<li><b>Kürzen:</b> Zähler und Nenner durch dieselbe Zahl teilen. Am schnellsten mit dem ggT: \(\frac{36}{48} = \frac{36 : 12}{48 : 12} = \frac{3}{4}\)</li>
+<li><b>Gemischte Zahl:</b> \(2\tfrac{1}{3} = \frac{2 \cdot 3 + 1}{3} = \frac{7}{3}\) und umgekehrt \(\frac{19}{12} = 1\tfrac{7}{12}\)</li>
+<li><b>Kehrwert:</b> Zähler und Nenner tauschen: Kehrwert von \(\frac{3}{4}\) ist \(\frac{4}{3}\), von 5 ist \(\frac{1}{5}\).</li></ul>
+
+<h3>Mit Brüchen rechnen</h3>
+<ul>
+<li><b>Addieren und subtrahieren:</b> zuerst gleichnamig machen (kgV der Nenner), dann nur die Zähler rechnen: \(\frac{2}{3} + \frac{3}{4} = \frac{8}{12} + \frac{9}{12} = \frac{17}{12}\)</li>
+<li><b>Multiplizieren:</b> Zähler mal Zähler, Nenner mal Nenner. Vorher über Kreuz kürzen spart Arbeit: \(\frac{4}{9} \cdot \frac{15}{8} = \frac{1}{3} \cdot \frac{5}{2} = \frac{5}{6}\) (4 und 8 durch 4, 9 und 15 durch 3)</li>
+<li><b>Dividieren:</b> mit dem Kehrwert multiplizieren: \(\frac{3}{4} : \frac{9}{8} = \frac{3}{4} \cdot \frac{8}{9} = \frac{24}{36} = \frac{2}{3}\)</li>
+<li><b>Doppelbruch:</b> Zählerbruch geteilt durch Nennerbruch: \(\dfrac{\frac{2}{5}}{\frac{4}{15}} = \frac{2}{5} \cdot \frac{15}{4} = \frac{30}{20} = \frac{3}{2}\)</li>
+<li><b>Bruchteil einer Zahl:</b> «\(\frac{3}{4}\) von 48» heisst \(\frac{3}{4} \cdot 48 = 48 : 4 \cdot 3 = 36\).</li>
+</ul>
+<div class="bsp"><b>Gemischte Zahlen:</b> zuerst in Brüche umwandeln.<br>\(3\tfrac{1}{4} - 1\tfrac{2}{3} = \frac{13}{4} - \frac{5}{3} = \frac{39}{12} - \frac{20}{12} = \frac{19}{12} = 1\tfrac{7}{12}\)</div>
+
+<h3>Brüche vergleichen und umwandeln</h3>
+<ul><li><b>Vergleichen:</b> gleichnamig machen. \(\frac{5}{8}\) oder \(\frac{3}{5}\)? \(\frac{25}{40} > \frac{24}{40}\), also ist \(\frac{5}{8}\) grösser.</li>
+<li><b>Bruch → Dezimalzahl:</b> Zähler durch Nenner teilen. Auswendig: \(\frac{1}{2} = 0.5\), \(\frac{1}{4} = 0.25\), \(\frac{3}{4} = 0.75\), \(\frac{1}{5} = 0.2\), \(\frac{1}{8} = 0.125\), \(\frac{1}{3} = 0.\overline{3}\), \(\frac{2}{3} = 0.\overline{6}\)</li>
+<li><b>Dezimalzahl → Bruch:</b> \(0.35 = \frac{35}{100} = \frac{7}{20}\)</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>In Aufgabe 1 stehen kurze Rechnungen. Oft heisst es «Gib das Resultat als gekürzten Bruch an». Schreibe jeden Schritt auf eine eigene Zeile.</p>
+<div class="bsp">\(\left(\frac{2}{3} - \frac{1}{4}\right) : \frac{5}{6}\)<br>
+1. Klammer: \(\frac{8}{12} - \frac{3}{12} = \frac{5}{12}\)<br>
+2. Teilen: \(\frac{5}{12} \cdot \frac{6}{5} = \frac{30}{60} = \frac{1}{2}\)</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>\(-3^2 = -9\), aber \((-3)^2 = 9\). Die Hochzahl gilt nur für die 3, wenn keine Klammer steht.</li>
+<li>\(\frac{1}{2} + \frac{1}{3}\) ist nicht \(\frac{2}{5}\). Nenner werden beim Addieren nie addiert: \(\frac{3}{6} + \frac{2}{6} = \frac{5}{6}\).</li>
+<li>Kürzen geht nur bei Faktoren: In \(\frac{3 + 5}{3}\) darfst du die 3 nicht wegstreichen. Zuerst rechnen: \(\frac{8}{3}\).</li>
+<li>Gemischte Zahlen nie direkt multiplizieren: \(2\tfrac{1}{2} \cdot 2\) ist 5, nicht \(4\tfrac{1}{2}\).</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>\(18 - 12 : 3 \cdot 2\)</li>
+<li>\((-2)^3 - (-3)^2\)</li>
+<li>\(\frac{3}{4} + \frac{5}{6}\) (als gemischte Zahl)</li>
+<li>\(2\tfrac{1}{2} \cdot \frac{4}{15}\)</li>
+<li>\(\left(1 - \frac{1}{3}\right) : \left(\frac{1}{2} + \frac{1}{4}\right)\)</li>
+<li>Wie viel sind drei Fünftel von 45?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(18 - 4 \cdot 2 = 18 - 8 = 10\)</li>
+<li>\(-8 - 9 = -17\)</li>
+<li>\(\frac{9}{12} + \frac{10}{12} = \frac{19}{12} = 1\tfrac{7}{12}\)</li>
+<li>\(\frac{5}{2} \cdot \frac{4}{15} = \frac{20}{30} = \frac{2}{3}\)</li>
+<li>\(\frac{2}{3} : \frac{3}{4} = \frac{2}{3} \cdot \frac{4}{3} = \frac{8}{9}\)</li>
+<li>\(45 : 5 \cdot 3 = 27\)</li></ol></details>`,
 
 M2: R`<table><tr><th>Regel</th><th>Beispiel</th></tr>
 <tr><td>\(a^m \cdot a^n = a^{m+n}\)</td><td>\(2^3 \cdot 2^4 = 2^7\)</td></tr>
