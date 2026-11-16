@@ -1,5 +1,5 @@
 # Prüft die Aufgaben-Generatoren und baut alle Pakete auf Windows, macOS und Linux.
-# Ein Tag v* (z. B. v1.4.1) erstellt zusätzlich einen Release-Entwurf mit allen Dateien.
+# Nach einem Push auf main entsteht ein Release-Entwurf für die Version in package.json (siehe Job «release»).
 name: Bauen
 
 on:
@@ -87,24 +87,30 @@ jobs:
             dist/gymi-trainer-zh-*-x86_64.pkg.tar.zst
             dist/Gymi-Trainer-ZH-*-x86_64.AppImage
 
+  # Release-Entwurf für die Version in package.json (nur nach einem Push auf main oder einem Tag v*).
+  # Ist die Version schon veröffentlicht, passiert nichts. Ein älterer Entwurf derselben Version wird ersetzt.
   release:
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: github.event_name == 'push'
     needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
+      - uses: actions/checkout@v6
       - uses: actions/download-artifact@v8
         with:
           path: out
           merge-multiple: true
-      - name: Prüfsummen
-        run: cd out && sha256sum * > SHA256SUMS.txt && cat SHA256SUMS.txt
-      - name: Release-Entwurf
+      - name: Release-Entwurf erstellen
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "$GITHUB_REF_NAME" out/* \
-            --repo "$GITHUB_REPOSITORY" --draft \
-            --title "Gymi-Trainer ZH ${GITHUB_REF_NAME#v}" \
-            --notes "Installation und erster Start: siehe README. Die Programme sind nicht von Microsoft oder Apple beglaubigt; beim ersten Start fragt das System nach."
+          VER=$(node -p "require('./package.json').version"); TAG="v$VER"; R="$GITHUB_REPOSITORY"
+          if gh api "repos/$R/releases?per_page=100" --jq ".[] | select(.tag_name==\"$TAG\" and (.draft|not)) | .id" | grep -q .; then
+            echo "$TAG ist schon veröffentlicht. Für einen neuen Release die Version in package.json erhöhen."; exit 0
+          fi
+          for id in $(gh api "repos/$R/releases?per_page=100" --jq ".[] | select(.tag_name==\"$TAG\" and .draft) | .id"); do gh api -X DELETE "repos/$R/releases/$id"; done
+          (cd out && sha256sum * > SHA256SUMS.txt && cat SHA256SUMS.txt)
+          awk -v h="## Neu in $VER" '$0==h{f=1;next} /^## /{f=0} f' README.md > notes.md
+          printf '\nInstallation und erster Start: siehe [README](https://github.com/%s#installieren). Die Programme sind nicht von Microsoft oder Apple beglaubigt; beim ersten Start fragt das System nach.\n' "$R" >> notes.md
+          gh release create "$TAG" out/* --repo "$R" --draft --target "$GITHUB_SHA" --title "Gymi-Trainer ZH $VER" --notes-file notes.md

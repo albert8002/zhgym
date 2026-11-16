@@ -64,14 +64,12 @@ Hinweise:
 
 ### Automatisch bauen (GitHub Actions)
 - Jeder Push auf `main` prüft die Generatoren, baut alle Pakete auf echten Windows-, macOS- und Linux-Rechnern und startet die gebaute App einmal zur Probe. Die Dateien liegen danach unter «Actions» beim jeweiligen Lauf.
-- Ein Versions-Tag erzeugt zusätzlich einen Release-Entwurf mit allen Paketen und Prüfsummen. Ablauf für eine neue Version:
-  ```
-  # Version in package.json erhöhen, z. B. auf 1.4.1
-  git commit -am "Version 1.4.1"
-  git tag v1.4.1
-  git push origin main v1.4.1
-  ```
-  Danach auf GitHub unter «Releases» den Entwurf prüfen und veröffentlichen.
+- Danach entsteht ein Release-Entwurf mit allen Paketen und Prüfsummen für die Version in `package.json`. Ablauf für eine neue Version:
+  1. Version in `package.json` erhöhen (z. B. auf 1.4.1) und unter «Neu in 1.4.1» in dieser Datei notieren, was neu ist.
+  2. Committen und auf `main` pushen.
+  3. Auf GitHub unter «Releases» den Entwurf prüfen und «Publish release» klicken. Das erstellt auch den Tag `v1.4.1`.
+
+  Solange die Version nicht veröffentlicht ist, ersetzt jeder Push den Entwurf. Eine veröffentlichte Version bleibt unverändert.
 
 ## Neu in 1.4.0
 - Endlos-Training: einzelne Themen wählen, nicht nur ganze Bereiche. Dazu «Meine 5 schwächsten Themen» und «Keine». In der Auswertung übernimmt «Genau diese Themen im Endlos-Training üben» die schwächsten Themen.
