@@ -186,13 +186,79 @@ ggT \(= 2^2 \cdot 3 = 12\); kgV \(= 2^3 \cdot 3 \cdot 5 \cdot 7 = 840\). Kontrol
 <li>nach kgV(4, 6) = 12 Minuten</li>
 <li>ggT(48, 72) = 24 cm; \(2 + 3 = 5\) Stücke</li></ol></details>`,
 
-M4: R`<ul><li><b>Zusammenfassen:</b> nur gleichartige Glieder: \(3x + 5y - x + 2y = 2x + 7y\)</li>
-<li><b>Multiplizieren:</b> Zahlen mal Zahlen, Variablen mal Variablen: \(3x \cdot 4x = 12x^2\)</li>
-<li><b>Ausmultiplizieren:</b> \(a(b + c) = ab + ac\), zum Beispiel \(-2(3x - 5) = -6x + 10\)</li>
-<li><b>Ausklammern (faktorisieren):</b> den gemeinsamen Faktor nach vorne: \(6x + 9 = 3(2x + 3)\); \(4x^2 - 6x = 2x(2x - 3)\)</li>
-<li><b>Einsetzen:</b> für \(x = -2\): \(3x^2 - x = 3 \cdot (-2)^2 - (-2) = 12 + 2 = 14\)</li></ul>
-<div class="merke"><b>Merke:</b> Minus vor der Klammer dreht alle Vorzeichen in der Klammer: \(-(2x - 3) = -2x + 3\).</div>
-<div class="falle"><b>Falle:</b> Beim Einsetzen negativer Zahlen immer Klammern setzen. \(x \cdot x = x^2\), aber \(x + x = 2x\). Binomische Formeln sind an der ZAP2 nicht verlangt.</div>`,
+M4: R`<div class="merke"><b>Kurz:</b> Nur gleichartige Glieder zusammenfassen. Beim Multiplizieren Zahlen mal Zahlen und Variablen mal Variablen. Minus vor einer Klammer dreht alle Vorzeichen in der Klammer.</div>
+
+<h3>Begriffe</h3>
+<p>Ein <b>Term</b> ist ein Rechenausdruck mit Zahlen und Variablen, zum Beispiel \(3x^2 - 5x + 2\). Die Teile zwischen plus und minus heissen <b>Glieder</b>. Die Zahl vor der Variablen heisst <b>Koeffizient</b>: in \(-5x\) ist es −5.</p>
+
+<h3>Zusammenfassen</h3>
+<p>Gleichartig sind Glieder mit genau derselben Variablen und derselben Hochzahl.</p>
+<ul><li>\(3x + 5y - x + 2y = 2x + 7y\)</li>
+<li>\(4a^2 + 3a - a^2 + 2a = 3a^2 + 5a\) (\(a^2\) und \(a\) bleiben getrennt)</li></ul>
+
+<h3>Multiplizieren</h3>
+<ul><li>\(3x \cdot 4x = 12x^2\)</li>
+<li>\(-2a \cdot 5ab = -10a^2b\)</li>
+<li>\((-x) \cdot (-3x) = 3x^2\) (minus mal minus gibt plus)</li></ul>
+
+<h3>Ausmultiplizieren</h3>
+<p>Der Faktor vor der Klammer wird mit jedem Glied in der Klammer multipliziert: \(a(b + c) = ab + ac\).</p>
+<ul><li>\(-2(3x - 5) = -6x + 10\)</li>
+<li>\(3x(2x - 4) = 6x^2 - 12x\)</li>
+<li><b>Minus vor der Klammer:</b> \(-(2x - 3) = -2x + 3\)</li></ul>
+<div class="bsp">\(2(3a - 4) - (5a - 7) = 6a - 8 - 5a + 7 = a - 1\)</div>
+
+<h3>Ausklammern (faktorisieren)</h3>
+<p>Das Gegenteil von Ausmultiplizieren. Suche den grössten gemeinsamen Faktor: ggT der Zahlen und die Variablen, die in allen Gliedern vorkommen.</p>
+<ul><li>\(6x + 9 = 3(2x + 3)\)</li>
+<li>\(12x^2 - 18x = 6x(2x - 3)\)</li>
+<li><b>Kontrolle:</b> wieder ausmultiplizieren. \(6x \cdot 2x - 6x \cdot 3 = 12x^2 - 18x\). Stimmt.</li></ul>
+
+<h3>Werte einsetzen</h3>
+<p>Jede Variable durch die Zahl ersetzen, <b>negative Zahlen immer in Klammern</b>, dann nach den Rechenregeln rechnen.</p>
+<ul><li>\(x = -2\): \(3x^2 - x = 3 \cdot (-2)^2 - (-2) = 3 \cdot 4 + 2 = 14\)</li>
+<li>\(a = 3\), \(b = -1\): \(2a - 4b^2 = 2 \cdot 3 - 4 \cdot (-1)^2 = 6 - 4 = 2\)</li></ul>
+
+<h3>Einen unbekannten Term bestimmen</h3>
+<p>Wie bei einer Gleichung: Was mit T gemacht wurde, auf beiden Seiten rückgängig machen.</p>
+<div class="bsp">\(T - (2x + 3) = 5x - 1\) → \(T = 5x - 1 + (2x + 3) = 7x + 2\)<br>
+\(T + (3x - 4) = x + 2\) → \(T = x + 2 - (3x - 4) = x + 2 - 3x + 4 = -2x + 6\)<br>
+Kontrolle: \((-2x + 6) + (3x - 4) = x + 2\). Stimmt.</div>
+
+<h3>Terme aus Text</h3>
+<table><tr><th>Text</th><th>Term</th></tr>
+<tr><td>das Dreifache einer Zahl x, vermindert um 5</td><td>\(3x - 5\)</td></tr>
+<tr><td>die Hälfte der Summe von a und 4</td><td>\(\frac{a + 4}{2}\)</td></tr>
+<tr><td>das Quadrat der Differenz von x und 1</td><td>\((x - 1)^2\)</td></tr>
+<tr><td>Umfang eines Rechtecks: Länge x, Breite 3 kürzer</td><td>\(2x + 2(x - 3) = 4x - 6\)</td></tr></table>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Aufgabe 1 enthält oft «Vereinfache so weit wie möglich» oder «Klammere so weit wie möglich aus». Das Resultat hat keine Klammern mehr (beim Vereinfachen) oder den grösstmöglichen Faktor vor der Klammer (beim Ausklammern).</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>\(x \cdot x = x^2\), aber \(x + x = 2x\).</li>
+<li>\(3x + 2y\) und \(x^2 + x\) lassen sich nicht zusammenfassen.</li>
+<li>\(3x^2\) für \(x = -2\) ist \(3 \cdot 4 = 12\), nicht \((3 \cdot (-2))^2 = 36\). Die Hochzahl gilt nur für x.</li>
+<li>Beim Ausklammern nicht zu wenig herausnehmen: \(12x^2 - 18x = 2x(6x - 9)\) ist richtig, aber nicht fertig.</li>
+<li>Binomische Formeln sind an der ZAP für das Kurzgymnasium nicht verlangt.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>\(5a - 3b + 2a + 7b - a\)</li>
+<li>\(-3x \cdot (-2x) \cdot y\)</li>
+<li>\(4(2x - 3) - 3(x - 5)\)</li>
+<li>Klammere aus: \(15a^2 - 10a\)</li>
+<li>Wert von \(2x^2 - 3x\) für \(x = -3\)</li>
+<li>Bestimme T: \(T - (4x - 1) = 2x + 5\)</li>
+<li>Schreibe als Term: das Doppelte einer Zahl n, vermehrt um 7</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(6a + 4b\)</li>
+<li>\(6x^2y\)</li>
+<li>\(8x - 12 - 3x + 15 = 5x + 3\)</li>
+<li>\(5a(3a - 2)\)</li>
+<li>\(2 \cdot 9 - 3 \cdot (-3) = 18 + 9 = 27\)</li>
+<li>\(T = 2x + 5 + 4x - 1 = 6x + 4\)</li>
+<li>\(2n + 7\)</li></ol></details>`,
 
 M5: R`<p>Bruchterme rechnet man wie Brüche mit Zahlen.</p>
 <ul><li><b>Kürzen</b> nur durch Faktoren: \(\frac{6x^2}{9x} = \frac{2x}{3}\) (für \(x \neq 0\))</li>
