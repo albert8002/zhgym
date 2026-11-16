@@ -11,10 +11,50 @@ D1: R`<p>Im Kanton Zürich gibt es <b>5 Wortarten</b>. Die Partikeln teilt man n
 <tr><td>Partikel: Präposition</td><td>unveränderlich, steht vor einem Nomen oder Pronomen und bestimmt den Fall</td><td>in, auf, mit, wegen, im, zum</td></tr>
 <tr><td>Partikel: Konjunktion</td><td>unveränderlich, verbindet Wörter oder Sätze</td><td>und, oder, aber, weil, dass, obwohl</td></tr>
 <tr><td>Partikel: übrige</td><td>unveränderlich, alle anderen</td><td>heute, dort, sehr, gern, nicht, oft, ja</td></tr></table>
+
+<h3>So findest du die Wortart</h3>
+<ol><li>Lässt es sich konjugieren (ich gehe, du gehst, er ging)? → <b>Verb</b></li>
+<li>Kann ein Artikel davor stehen, und schreibt man es gross? → <b>Nomen</b></li>
+<li>Passt es zwischen Artikel und Nomen (das <i>schnelle</i> Auto)? → <b>Adjektiv</b></li>
+<li>Lässt es sich deklinieren und begleitet oder ersetzt es ein Nomen (der, mein, er, jemand)? → <b>Pronomen</b></li>
+<li>Sonst ist es unveränderlich → <b>Partikel</b>. Steht es vor einem Nomen oder Pronomen und bestimmt den Fall? → Präposition. Verbindet es Wörter oder Sätze? → Konjunktion. Sonst → übrige Partikel.</li></ol>
+<p>Einige Partikeln lassen sich steigern (gern – lieber, oft – öfter). Sie bleiben Partikeln, weil sie nicht zwischen Artikel und Nomen passen.</p>
+
+<h3>Pronomen: viele Arten, eine Wortart</h3>
+<p>Alle diese Wörter sind <b>Pronomen</b>: Artikel (der, die, das, ein), Personalpronomen (ich, du, sie), Possessivpronomen (mein, unser), Demonstrativpronomen (dieser, jener), Relativpronomen (der, welcher im Relativsatz), Fragepronomen (wer, welcher), unbestimmte Pronomen (jemand, niemand, kein, alle, man).</p>
+
+<h3>Eine Wortart je nach Gebrauch</h3>
+<ul><li><b>Nominalisierung:</b> Mit Artikel wird ein Verb oder Adjektiv zum Nomen: das Lesen, beim Schwimmen, etwas Gutes.</li>
+<li><b>während:</b> «Während des Films schlief er ein.» → Präposition. «Während er schlief, …» → Konjunktion.</li>
+<li><b>bis:</b> «bis morgen» → Präposition. «Warte, bis er kommt.» → Konjunktion.</li></ul>
+
 <div class="merke"><b>Merke:</b> Artikel (der, die, das, ein, eine) sind <b>Pronomen</b>. Ein Adjektiv bleibt ein Adjektiv, auch wenn es beim Verb steht: «Sie singt <b>laut</b>.» → Adjektiv.</div>
 <div class="bsp"><b>Beispiel:</b> Der (Pronomen) alte (Adjektiv) Hund (Nomen) schläft (Verb) oft (übrige Partikel) im (Präposition) Garten (Nomen).</div>
-<div class="falle"><b>Falle:</b> «im», «zum», «beim» sind Präposition und Artikel in einem Wort. Sie zählen als <b>Präposition</b>. In einer Zeile nur 1 Kreuz: 2 Kreuze geben 0 Punkte.</div>
-<h3>Steigerung</h3><p>Positiv – Komparativ – Superlativ: schnell – schneller – am schnellsten. Unregelmässig: gut – besser – am besten; viel – mehr – am meisten; gern – lieber – am liebsten.</p>`,
+<div class="bsp"><b>Mit Nebensatz:</b> Weil (Konjunktion) es (Pronomen) heute (übrige Partikel) sehr (übrige Partikel) kalt (Adjektiv) ist (Verb), bleiben (Verb) wir (Pronomen) drinnen (übrige Partikel).</div>
+
+<h3>Steigerung</h3>
+<p>Positiv – Komparativ – Superlativ: schnell – schneller – am schnellsten. Unregelmässig: gut – besser – am besten; viel – mehr – am meisten; gern – lieber – am liebsten.</p>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Ein Text mit nummerierten Wörtern und eine Tabelle mit 7 Spalten. Du setzt für jedes Wort genau ein Kreuz.</p>
+<div class="falle"><b>Fallen:</b><ul>
+<li>«im», «zum», «beim» sind Präposition und Artikel in einem Wort. Sie zählen als <b>Präposition</b>.</li>
+<li>In einer Zeile nur 1 Kreuz: 2 Kreuze geben 0 Punkte.</li>
+<li>Nicht nach der Bedeutung gehen, sondern die Proben machen: «gern» passt nicht zwischen Artikel und Nomen → übrige Partikel.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Bestimme alle Wortarten: «Meine Schwester liest gern spannende Bücher.»</li>
+<li>Bestimme alle Wortarten: «Trotz des Regens spielten die Kinder draussen.»</li>
+<li>Welche Wortart hat «Laufen» in «Das Laufen macht Spass»?</li>
+<li>Steigere «viel» und «gut».</li>
+<li>«Warte, bis ich komme.» Welche Wortart hat «bis»?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Meine (Pronomen), Schwester (Nomen), liest (Verb), gern (übrige Partikel), spannende (Adjektiv), Bücher (Nomen)</li>
+<li>Trotz (Präposition), des (Pronomen), Regens (Nomen), spielten (Verb), die (Pronomen), Kinder (Nomen), draussen (übrige Partikel)</li>
+<li>Nomen (Nominalisierung mit Artikel)</li>
+<li>viel – mehr – am meisten; gut – besser – am besten</li>
+<li>Konjunktion (verbindet zwei Sätze)</li></ol></details>`,
 
 D2: R`<p>Ein Verb kann aus mehreren Teilen bestehen.</p>
 <table><tr><th>Teil</th><th>Erkennen</th><th>Beispiel</th></tr>
