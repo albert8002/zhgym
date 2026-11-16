@@ -1,0 +1,16 @@
+Gymi-Trainer ZH – verwendete Bausteine anderer Anbieter
+
+Electron (MIT-Lizenz) – https://www.electronjs.org
+KaTeX 0.19.1 (MIT-Lizenz) – https://katex.org
+hunspell-asm 4.0.2 (MIT-Lizenz) – https://github.com/kwonoj/hunspell-asm
+dictionary-de-ch 3.0.0, Wörterbuch Deutsch (Schweiz) (GPL-2.0 oder GPL-3.0) – https://github.com/wooorm/dictionaries
+Atkinson Hyperlegible (SIL Open Font License 1.1) – Braille Institute
+Bricolage Grotesque (SIL Open Font License 1.1) – Atelier Triay, Mathieu Triay
+OpenDyslexic (SIL Open Font License 1.1) – Abbie Gonzalez
+
+Volle Lizenztexte für KaTeX und die Schriften: Ordner vendor/licenses.
+Electron, hunspell-asm und das Wörterbuch bringen ihre Lizenztexte selbst mit.
+
+Offizielle Prüfungen: Die PDF-Dateien gehören dem Kanton Zürich. Sie werden nicht mit der App verteilt,
+sondern auf Wunsch von www.zh.ch heruntergeladen.
+Web-Modus: Sätze aus der deutschsprachigen Wikipedia (CC BY-SA 4.0), Zahlen aus Wikidata (CC0).

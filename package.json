@@ -1,0 +1,181 @@
+{
+  "name": "gymi-trainer-zh",
+  "productName": "Gymi-Trainer ZH",
+  "version": "1.3.0",
+  "description": "Lern- und Prüfungstrainer für die Zentrale Aufnahmeprüfung Kurzgymnasium (Kanton Zürich)",
+  "main": "main.js",
+  "author": "Gymi-Trainer",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/run.mjs",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux && bash tools/pacman-optdepends.sh",
+    "dist:dir": "electron-builder --linux dir",
+    "dist:mac": "electron-builder --mac --arm64 && bash tools/mac-pack.sh"
+  },
+  "dependencies": {
+    "dictionary-de-ch": "^3.0.0",
+    "hunspell-asm": "^4.0.2"
+  },
+  "build": {
+    "appId": "ch.gymitrainer.zh",
+    "productName": "Gymi-Trainer ZH",
+    "directories": {
+      "app": ".",
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**/*",
+      "package.json",
+      "!app/**/*.map"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": true,
+      "icon": "build/icon.png"
+    },
+    "portable": {
+      "artifactName": "Gymi-Trainer-ZH-${version}-portable.exe"
+    },
+    "electronDownload": {
+      "cache": "./.electron-cache"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Gymi-Trainer ZH",
+      "artifactName": "Gymi-Trainer-ZH-${version}-Setup.exe",
+      "installerLanguages": [
+        "de_DE"
+      ],
+      "language": "1031",
+      "deleteAppDataOnUninstall": false
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "pacman",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.png",
+      "category": "Education",
+      "executableName": "gymi-trainer-zh",
+      "synopsis": "Lerntrainer für die Gymiprüfung Kurzgymnasium Zürich",
+      "maintainer": "Gymi-Trainer",
+      "vendor": "Gymi-Trainer",
+      "desktop": {
+        "entry": {
+          "Name": "Gymi-Trainer ZH",
+          "GenericName": "Lerntrainer",
+          "Comment": "Lern- und Prüfungstrainer für die Zentrale Aufnahmeprüfung Kurzgymnasium (Kanton Zürich)",
+          "Keywords": "Gymi;ZAP;Zürich;Prüfung;Lernen;Mathematik;Deutsch;",
+          "StartupWMClass": "Gymi-Trainer ZH"
+        }
+      },
+      "syncDesktopName": true
+    },
+    "pacman": {
+      "artifactName": "${name}-${version}-1-x86_64.pkg.tar.zst",
+      "compression": "zstd",
+      "depends": [
+        "alsa-lib",
+        "at-spi2-core",
+        "cairo",
+        "dbus",
+        "expat",
+        "gcc-libs",
+        "glib2",
+        "glibc",
+        "gtk3",
+        "hicolor-icon-theme",
+        "libcups",
+        "libx11",
+        "libxcb",
+        "libxcomposite",
+        "libxdamage",
+        "libxext",
+        "libxfixes",
+        "libxkbcommon",
+        "libxrandr",
+        "mesa",
+        "nspr",
+        "nss",
+        "pango",
+        "systemd-libs",
+        "xdg-utils"
+      ],
+      "fpm": [
+        "--pacman-optional-depends",
+        "speech-dispatcher: Vorlesen (Sprachausgabe)",
+        "--description",
+        "Lern- und Prüfungstrainer für die Zentrale Aufnahmeprüfung Kurzgymnasium (Kanton Zürich)"
+      ]
+    },
+    "appImage": {
+      "artifactName": "Gymi-Trainer-ZH-${version}-x86_64.AppImage"
+    },
+    "copyright": "© 2026 Gymi-Trainer ZH",
+    "publish": null,
+    "mac": {
+      "target": [
+        {
+          "target": "dir",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "category": "public.app-category.education",
+      "icon": "build/icon-mac.png",
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false,
+      "darkModeSupport": true,
+      "artifactName": "Gymi-Trainer-ZH-${version}-mac-${arch}.${ext}",
+      "extendInfo": {
+        "NSHumanReadableCopyright": "© 2026 Gymi-Trainer ZH"
+      }
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.10.3",
+    "electron-builder": "^26.18.0"
+  },
+  "homepage": "https://github.com/albert8002/zhgym",
+  "desktopName": "gymi-trainer-zh.desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albert8002/zhgym.git"
+  }
+}
