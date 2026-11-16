@@ -541,15 +541,64 @@ Das erste Dreieck braucht 3, jedes weitere 2: Term \(2n + 1\). Figur 20: \(2 \cd
 <li>\(3n + 2 = 62\) → \(n = 20\)</li>
 <li>\(9 \cdot 10 = 90\)</li></ol></details>`,
 
-M10: R`<table><tr><th>Grösse</th><th>Umrechnung</th></tr>
+M10: R`<div class="merke"><b>Kurz:</b> Von einer grossen in eine kleine Einheit: multiplizieren (die Zahl wird grösser). Von klein nach gross: dividieren. Länge Faktor 10 pro Stufe, Fläche Faktor 100, Volumen Faktor 1000. Zeit ist nicht dezimal.</div>
+
+<h3>Die Einheiten</h3>
+<table><tr><th>Grösse</th><th>Umrechnung</th></tr>
 <tr><td>Länge</td><td>1 km = 1000 m; 1 m = 10 dm = 100 cm = 1000 mm</td></tr>
 <tr><td>Fläche (Faktor 100)</td><td>1 m² = 100 dm² = 10 000 cm²; 1 a = 100 m²; 1 ha = 100 a = 10 000 m²; 1 km² = 100 ha</td></tr>
-<tr><td>Volumen (Faktor 1000)</td><td>1 m³ = 1000 dm³; 1 dm³ = 1000 cm³</td></tr>
+<tr><td>Volumen (Faktor 1000)</td><td>1 m³ = 1000 dm³; 1 dm³ = 1000 cm³; 1 cm³ = 1000 mm³</td></tr>
 <tr><td>Hohlmass</td><td>1 dm³ = 1 l; 1 cm³ = 1 ml; 1 l = 10 dl = 100 cl = 1000 ml; 1 hl = 100 l; 1 m³ = 1000 l</td></tr>
 <tr><td>Gewicht</td><td>1 t = 1000 kg; 1 kg = 1000 g; 1 g = 1000 mg</td></tr>
-<tr><td>Zeit</td><td>1 h = 60 min; 1 min = 60 s; 1 d = 24 h</td></tr></table>
-<div class="merke"><b>Merke:</b> Bei Flächen springt das Komma pro Einheit um 2 Stellen, bei Volumen um 3 Stellen.</div>
-<div class="falle"><b>Falle:</b> Zeit ist nicht dezimal: 2.5 h = 2 h 30 min (nicht 2 h 50 min); 1.2 h = 1 h 12 min.</div>`,
+<tr><td>Zeit</td><td>1 d = 24 h; 1 h = 60 min; 1 min = 60 s</td></tr></table>
+
+<h3>Warum Faktor 100 und 1000?</h3>
+<p>Ein Quadrat mit 1 m Seite hat 10 dm mal 10 dm, also 100 dm². Ein Würfel mit 1 m Kante hat \(10 \cdot 10 \cdot 10 = 1000\) dm³. Darum springt das Komma bei Flächen um 2 Stellen pro Stufe, bei Volumen um 3.</p>
+
+<h3>Beispiele</h3>
+<ul><li>Länge: \(3.5\) m = 350 cm; \(2.4\) km = 2400 m; 85 mm = \(8.5\) cm</li>
+<li>Fläche: \(4.2\) m² = 42 000 cm²; 750 cm² = \(0.075\) m²; \(3.6\) ha = 36 000 m²</li>
+<li>Volumen: \(2.5\) dm³ = \(2.5\) l = 2500 cm³; \(0.8\) m³ = 800 l; 350 ml = \(3.5\) dl</li>
+<li>Gewicht: \(1.25\) t = 1250 kg; 450 g = \(0.45\) kg</li></ul>
+
+<h3>Zeit umrechnen</h3>
+<ul><li>Dezimal → Stunden und Minuten: Nachkommateil mal 60. \(1.2\) h = 1 h + \(0.2 \cdot 60\) min = 1 h 12 min; \(2.5\) h = 2 h 30 min</li>
+<li>Minuten → Dezimal: durch 60 teilen. 2 h 45 min = \(2 + \frac{45}{60}\) h = \(2.75\) h; 135 min = 2 h 15 min = \(2.25\) h</li>
+<li><b>Geschwindigkeit:</b> km/h durch \(3.6\) ergibt m/s. 72 km/h = 20 m/s; 15 m/s = 54 km/h</li></ul>
+
+<h3>Gemischte Einheiten</h3>
+<p>Zuerst alles in dieselbe Einheit umrechnen, dann rechnen: 3 m 45 cm + 80 cm = \(3.45\) m + \(0.80\) m = \(4.25\) m.</p>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Gib in m² an: \(3.4\) a + 250 dm²<br>
+\(3.4\) a = 340 m²; 250 dm² = \(2.5\) m² → zusammen \(342.5\) m²</div>
+<div class="bsp">Gib in m an: \(0.045\) km + \(3.2\) m + 85 cm<br>
+45 m + \(3.2\) m + \(0.85\) m = \(49.05\) m</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>1 m² ist nicht 100 cm², sondern 10 000 cm². 1 m³ ist nicht 1000 cm³, sondern 1 000 000 cm³.</li>
+<li>Zeit ist nicht dezimal: \(2.5\) h = 2 h 30 min, nicht 2 h 50 min.</li>
+<li>Prüfe dein Resultat mit gesundem Menschenverstand: Wird die Einheit kleiner, muss die Zahl grösser werden.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>\(0.75\) km in m</li>
+<li>\(3.2\) m² in cm²</li>
+<li>4500 cm³ in l</li>
+<li>\(1.8\) h in Stunden und Minuten</li>
+<li>\(2.5\) ha in m²</li>
+<li>2 m³ in l</li>
+<li>90 km/h in m/s</li>
+<li>\(1.2\) m + 35 cm + 8 mm in cm</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>750 m</li>
+<li>32 000 cm²</li>
+<li>\(4.5\) l</li>
+<li>1 h 48 min</li>
+<li>25 000 m²</li>
+<li>2000 l</li>
+<li>25 m/s</li>
+<li>120 + 35 + \(0.8\) = \(155.8\) cm</li></ol></details>`,
 
 M11: R`<p>\(G\) = Grundwert (das Ganze, 100 %), \(W\) = Prozentwert (der Teil), \(p\) = Prozentsatz.</p>
 <div class="merke">\(W = G \cdot \frac{p}{100}\) \(\quad G = \frac{W \cdot 100}{p}\) \(\quad p = \frac{W}{G} \cdot 100\)</div>
