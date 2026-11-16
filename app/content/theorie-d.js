@@ -266,13 +266,59 @@ D6: R`<p>Es gibt 4 Fälle. Die Frage zeigt den Fall.</p>
 <tr><td>Dativ</td><td>Wem?</td><td>dem alten Hund</td><td>der alten Katze</td><td>dem alten Pferd</td><td>den alten Tieren</td></tr>
 <tr><td>Genitiv</td><td>Wessen?</td><td>des alten Hundes</td><td>der alten Katze</td><td>des alten Pferdes</td><td>der alten Tiere</td></tr></table>
 <p>Mit «ein»: ein alter Hund, eine alte Katze, ein altes Pferd (Nominativ); einen alten Hund (Akkusativ); einem alten Hund (Dativ); eines alten Hundes (Genitiv).</p>
+
+<h3>Den Fall bestimmen</h3>
+<ul><li><b>Frageprobe</b> mit dem Verb: «Ich helfe meiner Schwester.» → Wem helfe ich? → Dativ.</li>
+<li><b>Ersatzprobe:</b> Bei weiblichen und sächlichen Nomen sehen manche Fälle gleich aus. Setze ein männliches Nomen ein, dann siehst du den Fall: «Ich sehe die Katze» → «Ich sehe <b>den</b> Hund» → Akkusativ.</li></ul>
+
+<h3>Verben verlangen einen Fall</h3>
+<ul><li><b>Dativ:</b> helfen, danken, gehören, gefallen, folgen, antworten, vertrauen («Ich danke dir.»)</li>
+<li><b>Akkusativ:</b> sehen, fragen, besuchen, brauchen, kennen («Ich frage dich.»)</li>
+<li><b>Dativ und Akkusativ:</b> geben, schenken, zeigen, erklären («Ich schenke <b>meiner Mutter</b> (wem?) <b>einen Strauss</b> (was?).»)</li></ul>
+
 <h3>Fall nach Präposition</h3><ul>
 <li>Akkusativ: durch, für, gegen, ohne, um</li>
 <li>Dativ: aus, bei, mit, nach, seit, von, zu, gegenüber</li>
 <li>Genitiv: wegen, trotz, während, statt, innerhalb, ausserhalb</li>
 <li>Akkusativ oder Dativ: an, auf, hinter, in, neben, über, unter, vor, zwischen. <b>Wohin?</b> → Akkusativ («Ich lege das Buch auf den Tisch.»). <b>Wo?</b> → Dativ («Das Buch liegt auf dem Tisch.»).</li></ul>
+
+<h3>Adjektive ohne Artikel</h3>
+<p>Fehlt der Artikel, zeigt das Adjektiv den Fall: heisser Tee (Nominativ), heissen Tee (Akkusativ), mit heissem Tee (Dativ); kalte Milch, mit kalter Milch.</p>
+
+<h3>Pronomen</h3>
+<table><tr><th>Nominativ</th><td>ich</td><td>du</td><td>er</td><td>sie</td><td>es</td><td>wir</td><td>ihr</td><td>sie</td></tr>
+<tr><th>Akkusativ</th><td>mich</td><td>dich</td><td>ihn</td><td>sie</td><td>es</td><td>uns</td><td>euch</td><td>sie</td></tr>
+<tr><th>Dativ</th><td>mir</td><td>dir</td><td>ihm</td><td>ihr</td><td>ihm</td><td>uns</td><td>euch</td><td>ihnen</td></tr></table>
+
 <div class="merke"><b>Merke:</b> Im Dativ Mehrzahl bekommt das Nomen ein -n: mit den Kindern. Einige männliche Nomen enden ausser im Nominativ immer auf -(e)n: der Junge, den Jungen, dem Jungen, des Jungen. Ebenso: Mensch, Nachbar, Held, Bär, Kunde, Löwe, Affe, Herr (dem Herrn).</div>
-<div class="falle"><b>Falle:</b> Pronomen richtig deklinieren: ich – mich – mir; er – ihn – ihm; sie (Mehrzahl) – sie – ihnen. Beim Relativpronomen bestimmt die Rolle im Relativsatz den Fall: «der Mann, <b>dem</b> ich helfe».</div>`,
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Setze die Wörter in Klammern in den richtigen Fall.<br>
+«Wir gehen mit (unser neuer Nachbar) ins Kino.» → mit <b>unserem neuen Nachbarn</b> (mit + Dativ)<br>
+«Wegen (das schlechte Wetter) bleiben wir zu Hause.» → wegen <b>des schlechten Wetters</b> (wegen + Genitiv)</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Pronomen richtig deklinieren: ich – mich – mir; er – ihn – ihm; sie (Mehrzahl) – sie – ihnen.</li>
+<li>Beim Relativpronomen bestimmt die Rolle im Relativsatz den Fall: «der Mann, <b>dem</b> ich helfe».</li>
+<li>Alle Wörter der Gruppe anpassen: Artikel, Adjektiv und Nomen.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Welche Fälle? «Ich schenke meiner Mutter einen Strauss.»</li>
+<li>«Trotz (der starke Regen) spielten wir.»</li>
+<li>«Die Katze springt auf (der Tisch).»</li>
+<li>«Das Buch liegt unter (das Bett).»</li>
+<li>«Ich danke (du).»</li>
+<li>«Wir sprechen mit (der Junge).»</li>
+<li>«Sie trinkt (heiss) Tee.»</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>meiner Mutter: Dativ; einen Strauss: Akkusativ</li>
+<li>trotz des starken Regens</li>
+<li>auf den Tisch (wohin? Akkusativ)</li>
+<li>unter dem Bett (wo? Dativ)</li>
+<li>dir</li>
+<li>mit dem Jungen</li>
+<li>heissen Tee</li></ol></details>`,
 
 D7: R`<p><b>Umstellprobe:</b> Was du zusammen vor die Personalform schieben kannst, ist ein Satzglied.</p>
 <table><tr><th>Satzglied</th><th>Frage</th><th>Beispiel</th></tr>
