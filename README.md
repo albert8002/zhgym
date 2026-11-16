@@ -76,6 +76,7 @@ Hinweise:
 - Lernen → Üben: Jede Aufgabenart lässt sich einzeln üben (Knopf «Üben»), mit Erklärung zu Quelle und Schwierigkeit.
 - Inhalte → Pakete: ankreuzen, welche Pakete verwendet werden, auch die eingebaute Datenbank. «Nur das neueste Paket» mit einem Klick. Die App zeigt, welche Themen mit der Auswahl keine Aufgaben mehr haben. Simulationen funktionieren immer.
 - Farben: alle Texte in den Themen hell, dunkel und Kontrast mindestens 4.5:1 (WCAG AA), Rahmen von Eingabefeldern mindestens 3:1. Wochenbericht und Arbeitsblätter immer auf hellem Papier.
+- Theorie ausgebaut: alle 56 Themen (25 Mathematik, 31 Deutsch) mit Schritt-für-Schritt-Vorgehen, mehr Beispielen, typischen Prüfungsaufgaben, Fallen und «Selbst prüfen» mit aufklappbaren Lösungen. Auf Arbeitsblättern bleiben die Lösungen verborgen.
 - Korrekturen: «ab hier: offizielle Prüfungen» überlappt den Balken nicht mehr; Überspringen der letzten Aufgabe beendet die Runde (vorher kam eine 9. Aufgabe); der Importbericht bleibt nach dem Import stehen.
 
 ## Neu in 1.3.0
