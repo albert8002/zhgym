@@ -562,8 +562,39 @@ D11: R`<p><b>Synonym:</b> Wort mit gleicher oder ähnlicher Bedeutung (schnell �
 <li>verlogen</li></ol></details>`,
 
 D12: R`<p><b>Oberbegriff:</b> fasst mehrere Wörter zusammen. <b>Unterbegriffe:</b> gehören zum Oberbegriff. Werkzeug → Hammer, Zange, Säge.</p>
-<p><b>Wortfeld:</b> Wörter mit ähnlicher Bedeutung aus einem Bereich. Wortfeld «gehen»: schlendern (gemütlich), rennen (sehr schnell), schleichen (leise), humpeln (mit Schmerzen), stapfen (mit schweren Schritten).</p>
-<div class="merke"><b>Merke:</b> Im Aufsatz zeigt das genaue Wort aus dem Wortfeld, was passiert: «Sie schlich ins Zimmer» sagt mehr als «Sie ging ins Zimmer».</div>`,
+
+<h3>Begriffe haben Stufen</h3>
+<p>Lebewesen → Tier → Säugetier → Hund → Dackel. Jede Stufe ist der Oberbegriff der nächsten.</p>
+<div class="merke"><b>Genauester Oberbegriff:</b> Wähle den Oberbegriff, der auf alle Wörter passt, aber so genau wie möglich ist. Apfel, Birne, Kirsche → <b>Obst</b> (nicht «Essen» und nicht «Pflanzen»).</div>
+
+<h3>Wortfelder</h3>
+<p><b>Wortfeld:</b> Wörter mit ähnlicher Bedeutung aus einem Bereich. Sie unterscheiden sich in einer Kleinigkeit.</p>
+<table><tr><th>Wortfeld</th><th>Wörter und ihr Unterschied</th></tr>
+<tr><td>gehen</td><td>schlendern (gemütlich), rennen (sehr schnell), schleichen (leise), humpeln (mit Schmerzen), stapfen (mit schweren Schritten)</td></tr>
+<tr><td>sagen</td><td>flüstern (leise), rufen (laut), murmeln (undeutlich), behaupten (ohne Beweis), erklären (damit jemand versteht), schimpfen (wütend)</td></tr>
+<tr><td>sehen</td><td>blicken (kurz), starren (lange, ohne sich zu bewegen), spähen (heimlich, suchend), betrachten (genau, in Ruhe), beobachten (über längere Zeit)</td></tr></table>
+<div class="merke"><b>Merke:</b> Im Aufsatz zeigt das genaue Wort aus dem Wortfeld, was passiert: «Sie schlich ins Zimmer» sagt mehr als «Sie ging ins Zimmer».</div>
+
+<h3>So gehst du vor</h3>
+<ul><li><b>Oberbegriff gesucht:</b> Was haben alle Wörter gemeinsam? Passt dein Begriff auf jedes einzelne Wort?</li>
+<li><b>Wort passt nicht:</b> Bei jedem Wort fragen: «Ist das ein …?» Hammer, Zange, Säge, Nagel: Der Nagel ist kein Werkzeug, sondern wird mit einem Werkzeug bearbeitet.</li>
+<li><b>Treffendes Wort gesucht:</b> Was sagt der Satz über das Wie? Leise, schnell, heimlich, wütend? Dann das Wort mit genau dieser Bedeutung wählen.</li></ul>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Oberbegriff: Tulpe, Rose, Nelke</li>
+<li>Oberbegriff: Gitarre, Geige, Trompete</li>
+<li>Welches Wort gehört nicht dazu? Hammer, Zange, Säge, Nagel</li>
+<li>Treffendes Verb: «Er ___ heimlich durch das Schlüsselloch.»</li>
+<li>Treffendes Verb: «Das Publikum ___ laut: Zugabe!»</li>
+<li>Nenne 3 Unterbegriffe zu «Fahrzeug».</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Blumen</li>
+<li>Musikinstrumente</li>
+<li>Nagel (kein Werkzeug)</li>
+<li>spähte</li>
+<li>rief</li>
+<li>zum Beispiel Auto, Velo, Bus</li></ol></details>`,
 
 D13: R`<p>In der Prüfung suchst du für einen Satz ein Wort aus dem Text, das passt.</p>
 <div class="merke"><b>Vorgehen:</b> 1. Satz lesen und klären, welche Wortart fehlt. 2. Die angegebene Stelle im Text suchen. 3. Das Wort genau so abschreiben, wie es dort steht.</div>
