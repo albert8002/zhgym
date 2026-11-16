@@ -1154,15 +1154,57 @@ A'(6 − 1 | 0 − 1) = A'(5 | −1); B'(6 − 4 | −1) = B'(2 | −1); C'(6 �
 <li>Z(4 | 1)</li>
 <li>P'(7 | 2)</li></ol></details>`,
 
-M21: R`<table><tr><th>Körper</th><th>Ecken</th><th>Kanten</th><th>Flächen</th></tr>
+M21: R`<div class="merke"><b>Kurz:</b> Prisma: zwei gleiche, parallele Grundflächen und Rechtecke als Seiten. Pyramide: eine Grundfläche und Dreiecke, die sich in der Spitze treffen. Kontrolle: Ecken − Kanten + Flächen = 2.</div>
+
+<h3>Ecken, Kanten, Flächen</h3>
+<table><tr><th>Körper</th><th>Ecken</th><th>Kanten</th><th>Flächen</th></tr>
 <tr><td>Würfel, Quader</td><td>8</td><td>12</td><td>6</td></tr>
 <tr><td>Prisma mit n-Eck als Grundfläche</td><td>2n</td><td>3n</td><td>n + 2</td></tr>
 <tr><td>Pyramide mit n-Eck als Grundfläche</td><td>n + 1</td><td>2n</td><td>n + 1</td></tr></table>
+<ul><li>Dreiecksprisma: 6 Ecken, 9 Kanten, 5 Flächen.</li>
+<li>Fünfeckpyramide: 6 Ecken, 10 Kanten, 6 Flächen.</li></ul>
 <div class="merke"><b>Kontrolle (Eulersche Formel):</b> Ecken − Kanten + Flächen = 2. Würfel: \(8 - 12 + 6 = 2\).</div>
-<ul><li><b>Netz:</b> der aufgeklappte Körper. Ein Würfel hat 11 verschiedene Netze.</li>
-<li><b>Ansichten:</b> von vorne, von oben, von rechts. Würfelkörper aus einzelnen Würfeln skizzieren und zählen.</li>
-<li><b>Schnittfiguren:</b> Wird ein Würfel mit einer ebenen Fläche geschnitten, entsteht zum Beispiel ein Quadrat, ein Rechteck oder ein Dreieck.</li></ul>
-<div class="falle"><b>Falle:</b> Beim Netz prüfen, ob 2 Flächen beim Falten aufeinanderliegen würden. Beim Zählen von Würfeln auch die versteckten Würfel hinten und unten mitzählen.</div>`,
+
+<h3>Netze</h3>
+<p>Ein Netz ist der aufgeklappte Körper: alle Flächen zusammenhängend in einer Ebene.</p>
+<ul><li><b>Würfel:</b> 6 Quadrate, es gibt 11 verschiedene Netze. Nie mehr als 4 Quadrate in einer Reihe, nie 4 Quadrate als 2 × 2-Block.</li>
+<li><b>Gegenüberliegende Flächen:</b> Liegen 3 Quadrate in einer Reihe, sind das erste und das dritte beim Würfel gegenüber. Bei einem Spielwürfel ergeben gegenüberliegende Augen zusammen 7.</li>
+<li><b>Quader:</b> 3 Paare gleicher Rechtecke.</li>
+<li><b>Prisma:</b> 2 Grundflächen und ein Streifen aus Rechtecken (so lang wie der Umfang der Grundfläche).</li>
+<li><b>Pyramide:</b> Grundfläche mit einem Dreieck an jeder Seite.</li></ul>
+<p><b>Netz prüfen:</b> Im Kopf falten. Eine Fläche als Boden wählen, die anderen hochklappen. Würden 2 Flächen aufeinanderliegen, ist es kein Netz.</p>
+
+<h3>Ansichten und Würfelgebäude</h3>
+<ul><li><b>Ansichten:</b> von vorne (Vorderansicht), von oben (Draufsicht), von der Seite (Seitenansicht). Jede Ansicht zeigt nur, wo Würfel sichtbar sind, nicht wie viele hintereinander stehen.</li>
+<li><b>Bauplan:</b> In jedes Feld der Draufsicht die Anzahl Würfel schreiben, die dort übereinander stehen. Die Summe ist die Anzahl Würfel.</li></ul>
+<div class="bsp">Bauplan mit zwei Reihen: hinten 3 und 2, vorne 1 und 1.<br>Anzahl Würfel: \(3 + 2 + 1 + 1 = 7\). Von vorne sieht man links 3 und rechts 2 Würfel hoch.</div>
+
+<h3>Schnittfiguren</h3>
+<p>Wird ein Würfel mit einer ebenen Fläche geschnitten, entsteht je nach Lage ein Dreieck, ein Quadrat, ein Rechteck, ein Trapez oder sogar ein Fünf- oder Sechseck.</p>
+
+<h3>So kommt es an der Prüfung</h3>
+<p>Typisch sind: Welche Figuren sind Würfelnetze? Welche Ansicht gehört zum Gebäude? Wie viele Würfel braucht es mindestens oder höchstens? Zeichne bei Unsicherheit einen Bauplan.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Beim Netz prüfen, ob 2 Flächen beim Falten aufeinanderliegen würden.</li>
+<li>Beim Zählen von Würfeln auch die versteckten Würfel hinten und unten mitzählen.</li>
+<li>Eine Kante gehört zu 2 Flächen, eine Ecke zu mindestens 3. Nicht doppelt zählen.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Sechseckprisma: Ecken, Kanten, Flächen?</li>
+<li>Pyramide mit einem Achteck als Grundfläche: Ecken, Kanten, Flächen?</li>
+<li>Prüfe die Eulersche Formel am Fünfeckprisma.</li>
+<li>Welche Augenzahl liegt beim Spielwürfel gegenüber der 2?</li>
+<li>Bauplan: hinten 2, 3, 1 und vorne 1, 2, 0. Wie viele Würfel?</li>
+<li>Kann ein Würfelnetz 5 Quadrate in einer Reihe haben?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>12 Ecken, 18 Kanten, 8 Flächen</li>
+<li>9 Ecken, 16 Kanten, 9 Flächen</li>
+<li>\(10 - 15 + 7 = 2\)</li>
+<li>5</li>
+<li>\(2 + 3 + 1 + 1 + 2 + 0 = 9\)</li>
+<li>Nein, höchstens 4.</li></ol></details>`,
 
 M22: R`<table><tr><th>Körper</th><th>Volumen</th><th>Oberfläche</th></tr>
 <tr><td>Würfel</td><td>\(V = a^3\)</td><td>\(O = 6a^2\)</td></tr>
