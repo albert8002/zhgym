@@ -66,17 +66,65 @@ M1: R`<div class="merke"><b>Kurz:</b> 1. Klammern, 2. Potenzen, 3. Punkt (· und
 <li>\(\frac{2}{3} : \frac{3}{4} = \frac{2}{3} \cdot \frac{4}{3} = \frac{8}{9}\)</li>
 <li>\(45 : 5 \cdot 3 = 27\)</li></ol></details>`,
 
-M2: R`<table><tr><th>Regel</th><th>Beispiel</th></tr>
-<tr><td>\(a^m \cdot a^n = a^{m+n}\)</td><td>\(2^3 \cdot 2^4 = 2^7\)</td></tr>
-<tr><td>\(a^m : a^n = a^{m-n}\)</td><td>\(x^7 : x^2 = x^5\)</td></tr>
-<tr><td>\((a^m)^n = a^{m \cdot n}\)</td><td>\((2^3)^2 = 2^6 = 64\)</td></tr>
-<tr><td>\(a^n \cdot b^n = (a \cdot b)^n\)</td><td>\(2^3 \cdot 5^3 = 10^3\)</td></tr>
-<tr><td>\(a^0 = 1\) und \(a^{-n} = \frac{1}{a^n}\) (für \(a \neq 0\))</td><td>\(10^{-2} = \frac{1}{100} = 0.01\)</td></tr></table>
-<p><b>Zehnerpotenzen:</b> \(3.2 \cdot 10^5 = 320\,000\); \(4 \cdot 10^{-3} = 0.004\).</p>
-<h3>Quadratwurzel</h3><p>\(\sqrt{a}\) ist die Zahl ≥ 0, die mit sich selbst multipliziert \(a\) ergibt: \(\sqrt{49} = 7\).</p>
-<ul><li>\(\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}\), zum Beispiel \(\sqrt{50} = \sqrt{25} \cdot \sqrt{2} = 5\sqrt{2}\)</li>
-<li>\(\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}\)</li></ul>
-<div class="falle"><b>Falle:</b> \(2^3 \cdot 2^4\) ist \(2^7\), nicht \(4^7\). Die Regeln gelten nur bei gleicher Basis oder gleichem Exponenten. \(\sqrt{a + b}\) ist nicht \(\sqrt{a} + \sqrt{b}\): \(\sqrt{9 + 16} = 5\), aber \(3 + 4 = 7\).</div>`,
+M2: R`<div class="merke"><b>Kurz:</b> \(a^n = a \cdot a \cdot \ldots \cdot a\) (n Faktoren). Beim Multiplizieren mit gleicher Basis Hochzahlen addieren, beim Dividieren subtrahieren, beim Potenzieren multiplizieren. \(\sqrt{a}\) ist die Zahl ≥ 0, die im Quadrat a ergibt.</div>
+
+<h3>Begriffe</h3>
+<p>In \(2^5 = 32\) ist 2 die <b>Basis</b>, 5 die <b>Hochzahl</b> (der Exponent) und 32 der Wert der <b>Potenz</b>: \(2^5 = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 32\).</p>
+<p><b>Auswendig:</b> Quadratzahlen \(11^2 = 121\), \(12^2 = 144\), \(13^2 = 169\), \(14^2 = 196\), \(15^2 = 225\), \(16^2 = 256\), \(17^2 = 289\), \(18^2 = 324\), \(19^2 = 361\), \(20^2 = 400\). Kubikzahlen \(2^3 = 8\), \(3^3 = 27\), \(4^3 = 64\), \(5^3 = 125\), \(10^3 = 1000\).</p>
+
+<h3>Potenzregeln</h3>
+<table><tr><th>Regel</th><th>Zahlen</th><th>Mit Variablen</th></tr>
+<tr><td>\(a^m \cdot a^n = a^{m+n}\)</td><td>\(2^3 \cdot 2^4 = 2^7\)</td><td>\(x^3 \cdot x^5 = x^8\)</td></tr>
+<tr><td>\(a^m : a^n = a^{m-n}\)</td><td>\(5^6 : 5^4 = 5^2 = 25\)</td><td>\(\frac{a^7}{a^4} = a^3\)</td></tr>
+<tr><td>\((a^m)^n = a^{m \cdot n}\)</td><td>\((2^3)^2 = 2^6 = 64\)</td><td>\((y^2)^5 = y^{10}\)</td></tr>
+<tr><td>\(a^n \cdot b^n = (a \cdot b)^n\)</td><td>\(2^3 \cdot 5^3 = 10^3\)</td><td>\((3x^2)^3 = 27x^6\)</td></tr>
+<tr><td>\(\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}\)</td><td>\(\left(\frac{2}{3}\right)^2 = \frac{4}{9}\)</td><td>\(\left(\frac{x}{2}\right)^3 = \frac{x^3}{8}\)</td></tr>
+<tr><td>\(a^0 = 1\) (für \(a \neq 0\))</td><td>\(7^0 = 1\)</td><td>\(x^4 : x^4 = x^0 = 1\)</td></tr>
+<tr><td>\(a^{-n} = \frac{1}{a^n}\)</td><td>\(2^{-3} = \frac{1}{8}\)</td><td>\(x^2 : x^5 = x^{-3} = \frac{1}{x^3}\)</td></tr></table>
+<div class="bsp"><b>Schritt für Schritt:</b> \((2a^3)^2 \cdot 3a = 4a^6 \cdot 3a = 12a^7\)<br>Zuerst die Klammer (jeder Faktor wird potenziert: \(2^2 = 4\), \((a^3)^2 = a^6\)), dann Zahlen mal Zahlen und Variablen mal Variablen.</div>
+
+<h3>Zehnerpotenzen</h3>
+<ul><li>\(10^3 = 1000\), \(10^{-2} = \frac{1}{100} = 0.01\). Die Hochzahl sagt, um wie viele Stellen das Komma wandert.</li>
+<li><b>Wissenschaftliche Schreibweise:</b> eine Zahl zwischen 1 und 10 mal eine Zehnerpotenz. \(320\,000 = 3.2 \cdot 10^5\); \(0.004 = 4 \cdot 10^{-3}\); \(0.00045 = 4.5 \cdot 10^{-4}\)</li>
+<li><b>Rechnen:</b> Zahlen und Zehnerpotenzen getrennt. \((3 \cdot 10^4) \cdot (2 \cdot 10^5) = 6 \cdot 10^9\); \((8 \cdot 10^6) : (2 \cdot 10^2) = 4 \cdot 10^4\)</li></ul>
+
+<h3>Quadratwurzel</h3>
+<p>\(\sqrt{a}\) ist die Zahl ≥ 0, die mit sich selbst multipliziert \(a\) ergibt: \(\sqrt{49} = 7\), \(\sqrt{0.09} = 0.3\), \(\sqrt{\frac{1}{4}} = \frac{1}{2}\). Aus negativen Zahlen gibt es keine Quadratwurzel.</p>
+<ul><li>\(\sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}\): <b>teilweise Wurzel ziehen</b> mit der grössten Quadratzahl: \(\sqrt{72} = \sqrt{36 \cdot 2} = 6\sqrt{2}\)</li>
+<li>\(\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}\): \(\sqrt{\frac{9}{25}} = \frac{3}{5}\)</li>
+<li>Gleiche Wurzeln zusammenfassen wie Variablen: \(3\sqrt{5} + 2\sqrt{5} = 5\sqrt{5}\)</li>
+<li><b>Abschätzen:</b> \(\sqrt{50}\) liegt zwischen 7 und 8, weil \(49 < 50 < 64\). Genauer: \(\sqrt{50} \approx 7.07\).</li>
+<li><b>Kubikwurzel:</b> \(\sqrt[3]{27} = 3\), weil \(3^3 = 27\).</li></ul>
+
+<h3>So kommt es an der Prüfung</h3>
+<div class="bsp">Vereinfache so weit wie möglich: \(\frac{2^5 \cdot 2^3}{2^6}\)<br>
+Zähler: \(2^{5+3} = 2^8\). Bruch: \(2^{8-6} = 2^2 = 4\).</div>
+<p>Oft ist das Resultat eine Potenz mit Variablen, zum Beispiel \(12a^7\). Schreibe es ohne Klammern und ohne negative Hochzahlen, wenn nichts anderes verlangt ist.</p>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>\(2^3 \cdot 2^4 = 2^7\), nicht \(4^7\). Die Basis bleibt gleich.</li>
+<li>\(2^3 = 8\), nicht \(2 \cdot 3 = 6\).</li>
+<li>\(3^0 = 1\), nicht 0.</li>
+<li>\((a + b)^2\) ist nicht \(a^2 + b^2\): \((3 + 4)^2 = 49\), aber \(9 + 16 = 25\).</li>
+<li>\(\sqrt{a + b}\) ist nicht \(\sqrt{a} + \sqrt{b}\): \(\sqrt{9 + 16} = 5\), aber \(3 + 4 = 7\).</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>\(5^3 \cdot 5^{-1}\)</li>
+<li>\((2x^3)^4\)</li>
+<li>\(\frac{a^9}{a^3 \cdot a^2}\)</li>
+<li>\((4 \cdot 10^3) \cdot (6 \cdot 10^{-5})\) als Dezimalzahl</li>
+<li>\(\sqrt{75}\) teilweise ziehen</li>
+<li>Zwischen welchen ganzen Zahlen liegt \(\sqrt{90}\)?</li>
+<li>\(\left(\frac{2}{3}\right)^3\)</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>\(5^{3-1} = 5^2 = 25\)</li>
+<li>\(2^4 \cdot x^{12} = 16x^{12}\)</li>
+<li>\(\frac{a^9}{a^5} = a^4\)</li>
+<li>\(24 \cdot 10^{-2} = 0.24\)</li>
+<li>\(\sqrt{25 \cdot 3} = 5\sqrt{3}\)</li>
+<li>zwischen 9 und 10, weil \(81 < 90 < 100\)</li>
+<li>\(\frac{8}{27}\)</li></ol></details>`,
 
 M3: R`<ul><li><b>Primzahl:</b> hat genau 2 Teiler (1 und sich selbst): 2, 3, 5, 7, 11, 13 … Die 1 ist keine Primzahl.</li>
 <li><b>Primfaktorzerlegung:</b> \(60 = 2^2 \cdot 3 \cdot 5\)</li>
