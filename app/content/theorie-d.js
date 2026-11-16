@@ -1148,7 +1148,41 @@ D25: R`<div class="merke"><b>Kurz:</b> Erst beschreiben (Überblick, dann geordn
 
 D26: R`<ul><li><b>Teil 1, Erlebnis</b> (Präteritum): knapp und konkret erzählen.</li>
 <li><b>Teil 2, Reflexion</b> (Präsens): Was bedeutet das Erlebnis? Wie sehe ich es heute? Was gilt allgemein?</li></ul>
-<div class="merke"><b>Merke:</b> Beide Teile kommen vor, im Verhältnis, das der Auftrag nahelegt. Steht «berichte kurz», ist das Erlebnis der kleinere Teil.</div>`,
+<div class="merke"><b>Merke:</b> Beide Teile kommen vor, im Verhältnis, das der Auftrag nahelegt. Steht «berichte kurz», ist das Erlebnis der kleinere Teil.</div>
+
+<h3>Teil 1: das Erlebnis</h3>
+<ul><li>Einen einzigen, konkreten Moment wählen, nicht die ganzen Ferien.</li>
+<li>Wer, wo, wann kurz klären, dann direkt zum wichtigen Moment.</li>
+<li>Gefühle und Gedanken in diesem Moment zeigen.</li></ul>
+
+<h3>Teil 2: die Reflexion</h3>
+<p>Reflektieren heisst: über das Erlebnis nachdenken. Hilfreiche Fragen:</p>
+<ul><li>Warum war dieser Moment wichtig für mich?</li>
+<li>Was habe ich daraus gelernt?</li>
+<li>Würde ich heute anders handeln? Warum?</li>
+<li>Gilt das auch für andere Menschen oder allgemein?</li></ul>
+<p><b>Übergänge:</b> «Wenn ich heute daran denke, …», «Damals verstand ich noch nicht, dass …», «Dieses Erlebnis hat mir gezeigt, …»</p>
+
+<div class="bsp"><b>Auftrag:</b> «Berichte kurz von einem Moment, in dem du Mut gebraucht hast, und denke darüber nach, was Mut bedeutet.»<br>
+Erlebnis (etwa ein Drittel, Präteritum): Ich sollte im Schwimmunterricht vom Dreimeterbrett springen, stand oben und wollte zurück …<br>
+Reflexion (etwa zwei Drittel, Präsens): Mut heisst für mich nicht, keine Angst zu haben. Mut heisst, etwas trotz Angst zu tun …</div>
+
+<div class="falle"><b>Fallen:</b><ul>
+<li>Die Reflexion besteht nur aus «Es war schön.» Das ist zu wenig.</li>
+<li>Das Erlebnis ist so lang, dass für die Reflexion keine Zeit bleibt.</li>
+<li>Die Reflexion hat nichts mit dem Erlebnis zu tun.</li></ul></div>
+
+<h3>Selbst prüfen</h3>
+<ol class="check">
+<li>Erlebnis oder Reflexion? «Mein Herz klopfte, als ich die Hand hob.»</li>
+<li>Erlebnis oder Reflexion? «Heute weiss ich, dass Fragen kein Zeichen von Schwäche ist.»</li>
+<li>Welche Zeitformen brauchen die beiden Teile?</li>
+<li>Der Auftrag sagt «Erzähle kurz von …». Welcher Teil wird länger?</li></ol>
+<details class="lsg"><summary>Lösungen</summary><ol>
+<li>Erlebnis</li>
+<li>Reflexion</li>
+<li>Erlebnis im Präteritum, Reflexion im Präsens</li>
+<li>die Reflexion</li></ol></details>`,
 
 D27: R`<ul><li>Satzanfänge wechseln: nicht dreimal «Dann». Besser: Kurz darauf, Plötzlich, Als …, Trotzdem.</li>
 <li>Haupt- und Nebensätze mischen, keine Bandwurmsätze.</li>
